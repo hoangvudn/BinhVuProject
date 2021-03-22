@@ -5,6 +5,12 @@
           "userName": "hoangvu",
           "email": "nguyenhoangvudnvn@gmail.com",
           "password": "123456789"
+        },
+        {
+          "id": 4,
+          "userName": "binh",
+          "email": "binh@gmail.com",
+          "password": "123456789"
         }
     ]
 }
