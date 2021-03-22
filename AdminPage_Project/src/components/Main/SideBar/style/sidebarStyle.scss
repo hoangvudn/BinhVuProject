@@ -1,0 +1,49 @@
+$base-color: #F4F6FD;
+.blockSideBar {
+    position: absolute;
+    top: 100px;
+    width: 20%;
+    height: 100%;
+    background : $base-color;
+    &__menuSideBar {
+        list-style: none;
+        // position: relative;
+        // top: 50px;
+        // width: 5%; 
+        // height: 50px;
+        //background: rebeccapurple;
+    }
+    &__listItem {
+        cursor: pointer;
+        padding: 10px 20px;
+        width: 20%;
+        margin-top: 10px;
+        margin-left:50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //background: blue;
+    }
+    &__listItem:hover {
+        color: blueviolet;
+        //background: blueviolet;
+    }
+    // &__menuLogo img {
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 50px;
+    // }
+    // &__logoutIcon {
+    //     position: absolute;
+    //     right: 100px;
+    //     top: 40px;
+    //     width: 5%; 
+    //     height: 50px;
+        
+    // }
+    // &__logoutIcon img {
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 50px;
+    // }
+}
