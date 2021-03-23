@@ -15,25 +15,29 @@ const UsersList = () => {
         const getUsersList = () => dispatch(getUsersAction());
         getUsersList(); 
     }, []);
+    
 
-    const users = useSelector(state => state.usersList.usersList);
-    console.log("List User:",users)
+  
+    const usersGroup = useSelector(state => state.usersList.usersList);
+    console.log("List User:",usersGroup);
     return (
+        <React.Fragment>
         <>
-           <table>
-               <thread>
+           <table className="blockUserListMain">
+               <thead>
                    <tr>
-                        <th>User Name</th>
-                        <th>Email</th>
+                        <th >User Name</th>
+                        <th >Email</th>
                    </tr>
-                </thread>
-                   <tbody>
-                       {users.map(user => (
+                </thead>
+                   <tbody>  
+                       {usersGroup.map(user => (
                            <User key={user.id} user={user} />
                        ))}
                    </tbody>
            </table>
         </>
+        </React.Fragment>
     );
 };
 export default UsersList;

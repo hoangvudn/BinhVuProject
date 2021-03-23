@@ -58,6 +58,7 @@ const EditTour = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.user}
+                    placeholder="image Url"
                 />
                 {errors.imageUrl && touched.imageUrl && errors.imageUrl}
                 <input
@@ -66,6 +67,7 @@ const EditTour = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.pass}
+                     placeholder="place"
                 />
                 {errors.place && touched.place && errors.place}
                 <input
@@ -74,6 +76,7 @@ const EditTour = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
+                    placeholder="name"
                 />
                 {errors.name && touched.name && errors.name}
                 <input
@@ -82,6 +85,7 @@ const EditTour = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
+                    placeholder="day amount"
                 />
                 {errors.dayTotal && touched.dayTotal && errors.dayTotal}
                 <input
@@ -90,10 +94,11 @@ const EditTour = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
+                    placeholder="transport"
                 />
                 {errors.transport && touched.transport && errors.transport}
             </div>  
-            <div className="blockEditUsersList__buttonSave">
+            <div className="blockEditUsersList__buttonSave_Tour">
                 <button type="submit" disabled={isSubmitting}>
                     EDIT
                 </button>

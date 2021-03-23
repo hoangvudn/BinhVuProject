@@ -1,10 +1,7 @@
 import logo from './logo.svg';
 import React, { Component }  from 'react';
-//import { Admin, Resource, ListGuesser } from "react-admin";
-//import jsonServerProvider from "ra-data-json-server";
-import { Provider } from "react-redux";
 
-import Header from './components/Header/index'
+import Header from './components/Header/'
 import SideBar from './components/Main/SideBar/index'
 import UsersList from './components/Main/MainCotent/Users/UsersList'
 // import EditUsersList from './components/Main/MainCotent/Users/'
@@ -16,11 +13,11 @@ import './App.css';
 function App() {  
   return (
        <div className="App">
-          <Header  />
-         <UsersList /> 
-          <SideBar />
-        {/* {/* <EditUsersList /> */}
-        <EditTour /> 
+            <Header  />
+            <UsersList /> 
+            <SideBar />
+          {/* {/* <EditUsersList /> */}
+          {/* <EditTour />  */}
        </div>
   );
 }

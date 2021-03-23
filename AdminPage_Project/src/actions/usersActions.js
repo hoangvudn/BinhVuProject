@@ -11,11 +11,11 @@ import axiosConfig from "../data/configDatabase/axois";
 //Get users list 
 export function getUsersAction() {
     return dispatch => {
-        dispatch(getUsers());
+        dispatch(getUsersList());
 
         //Ask the API
         axiosConfig 
-         .get("/users")
+         .get("./usersGroup")
          .then(response => {
              dispatch(getUsersSucces(response.data));
          })
@@ -25,7 +25,7 @@ export function getUsersAction() {
     };
 }
 
-export const getUsers = () => ({
+export const getUsersList = () => ({
     type: GET_USER
 });
 

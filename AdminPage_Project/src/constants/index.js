@@ -6,6 +6,7 @@ export const GET_USER = "GET_USER";
 export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
 export const GET_USER_ERROR = "GET_USER_ERROR";
 
+
 // export const GET_USER_DELETED = "GET_USER_DELETED";
 // export const USER_DELETED_SUCCESS = "USER_DELETED_SUCCESS ";
 // export const USER_DELETED_ERROR = "USER_DELETED_ERROR";
