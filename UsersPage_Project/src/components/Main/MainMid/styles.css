@@ -1,0 +1,21 @@
+.overview-container{
+   visibility: visible;
+   min-height: 305px;
+   background-color: rgba(0, 60, 113, 0.13);
+   
+}
+.selecive-mid-tour{
+   font-size: 18px;
+   color: #003C71;
+}
+.quality-mid-tour{
+   font-size: 18px;
+   color: #003C71;
+   font-weight: 600;
+}
+.recent-view-mid-tours{
+   font-size: 35px;
+   color: #003C71;
+   font-weight: 500px;
+   margin-top: 20px;
+}

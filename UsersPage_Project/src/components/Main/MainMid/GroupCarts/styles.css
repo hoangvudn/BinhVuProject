@@ -1,0 +1,53 @@
+.box-mid-card{
+   display: flex !important;
+   background: white;
+}
+.img-mid-card{
+   width: 120px;
+   height: 120px;
+}
+.card-content{
+   width: 231.56px;
+   padding: 3px 0px 0px 10px;
+}
+.card-mid-name{
+   width: 208.56px;
+   height: 87px;
+}
+.card-mid-content-name{
+   color: #003C71;
+   font-weight: bold;
+   font-size: 15px;
+}
+.card-mid-price{
+   display: flex;
+   justify-content: flex-end;
+   font-size: 18px;
+   font-weight: bold;
+   color: #00C1DE;
+}
+.card-mid-price p{
+   padding: 0;
+   margin: 0;
+}
+.card-mid-price small{
+   padding-left: 2px;
+}
+.delete-mid-card{
+   position: relative;
+   top: -4px;
+   left: -1px;
+}
+.set-top-tours{
+   color: white;
+   margin: 0;
+   font-weight: 800;
+}
+.amount-top-tours{
+   color: white;
+   padding: 0px;
+}
+.address-tours img{
+   position: relative;
+   left: 4px;
+}
