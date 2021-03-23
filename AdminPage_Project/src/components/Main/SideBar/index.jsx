@@ -43,6 +43,7 @@ export default  SideBar;
 //         </Menu.Item>
 //         {/* <Menu.Item key="3" icon={<UploadOutlined />}>
 //           nav 3
+
 //         </Menu.Item>
 //         <Menu.Item key="4" icon={<UserOutlined />}>
 //           nav 4
@@ -58,6 +59,11 @@ export default  SideBar;
 //       </Content>
 //       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
 //     </Layout>
+//   </Layout>
+//    //  document.getElementById('container')
+// );
+// }
+// export default  SideBar;
 //   </Layout>
 //    //  document.getElementById('container')
 // );
