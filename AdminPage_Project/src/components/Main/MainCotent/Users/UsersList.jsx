@@ -30,11 +30,11 @@ const UsersList = () => {
                         <th >Email</th>
                    </tr>
                 </thead>
-                   <tbody>  
+                <tbody className="blockUserListMain__listItemGroup">  
                        {usersGroup.map(user => (
                            <User key={user.id} user={user} />
                        ))}
-                   </tbody>
+                </tbody>
            </table>
         </>
         </React.Fragment>
@@ -57,5 +57,9 @@ export default UsersList;
 //    return (
            
 //    )
+// }
+// export default  UsersList;
+// }
+// export default  UsersList;
 // }
 // export default  UsersList;

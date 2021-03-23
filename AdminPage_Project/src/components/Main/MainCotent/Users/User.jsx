@@ -1,6 +1,6 @@
 import React from 'react';
 import EditUsersList from './EditUser';
-import DataGrid from 'devextreme-react/data-grid';
+
 import $ from "jquery";
 import "./style/usersStyle.scss";
 
@@ -8,10 +8,14 @@ import { useDispatch } from "react-redux";
 
 const User = ({ user }) => {
     return (
-         <tr>
+        <>
+         <tr className="blockUserListMain__listItem">
              <td>{user.userName}</td>
              <td>{user.email}</td>
+             <button>EDIT</button>
+             <button>DELETE</button>
          </tr>
+        </>
     )
 }
 

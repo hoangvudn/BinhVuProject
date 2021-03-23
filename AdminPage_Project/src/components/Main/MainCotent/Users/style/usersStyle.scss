@@ -42,8 +42,24 @@ $base-color: #F4F6FD;
     }
 }
 .blockUserListMain {
-    position: absolute;
-    left: 500px;
+    position: relative;
+    left: 400px;
+    width: 50%;
     top: 200px;
-    
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+    &__listItemGroup {
+        position: absolute;
+        top: 30px;
+        width: 100%;
+    }  
+    &__listItem {
+        position: relative;
+        background: rgb(214, 156, 185);
+        width: 300px;
+    }
 }
+// .blockUserListItem {
+//     position: relative;
+    
+ 
+// }
