@@ -11,6 +11,7 @@ import {
    createHistoryTour,
    deleteTour,
 } from '../redux/actions';
+//SDASDFASDFADSFADSF
 function CheckLayOut({ component: Component, ...props
    
 }) {
