@@ -4,7 +4,7 @@ import React, { Component }  from 'react';
 import Header from './components/Header/'
 import SideBar from './components/Main/SideBar/index'
 import UsersList from './components/Main/MainCotent/Users/UsersList'
-// import EditUsersList from './components/Main/MainCotent/Users/'
+import EditUsersList from './components/Main/MainCotent/Users/EditUser'
 import EditTour from './components/Main/MainCotent/Tour/editTour'
 
 import './App.css';
@@ -16,7 +16,7 @@ function App() {
             <Header  />
             <UsersList /> 
             <SideBar />
-          {/* {/* <EditUsersList /> */}
+            {/* <EditUsersList /> */}
           {/* <EditTour />  */}
        </div>
   );

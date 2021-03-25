@@ -1,10 +1,13 @@
-import React from 'react';
-import { Formik } from 'formik'
-// import React, { useState } from 'react'
+import React, { useEffect, useRef } from 'react';
+import { Formik } from 'formik';
+import Swal from "sweetalert2";
 
-// const [user, setUser] = useState({
-       
-// })
+import { useDispatch, useSelector } from "react-redux";
+import {
+  editProducAction,
+  updateProductAction
+} from "../../../../actions/usersActions";
+
 const EditUsersList = () => { 
    return (
         <Formik initialValues={{ user: '', pass: '', email:''}}
@@ -12,11 +15,11 @@ const EditUsersList = () => {
                 const errors = {};
                 //--------------------------VALIDATE PASS---------------------
                 if (!values.user) {
-                    errors.user = 'Required';
+                    errors.user = 'Required';  
                 }
                 //--------------------------VALIDATE PASS---------------------
                 if (!values.pass) {
-                    errors.pass = 'Required';
+                    errors.pass = 'Required';   
                 }
                 //----------------------------VALIDATE EMAIL------------------
                 if (!values.email) {
