@@ -8,19 +8,17 @@ const Header = () => {
    const [showSideBar, setShowSideBar] = useState(false);
    return (
       <>
-          <div  className="blockHeader">
+         <div  className="blockHeader">
              <div className="blockHeader__menuLogo">
-                <img src={menuLogo} alt='' onClick={() => setShowSideBar(!showSideBar)}/>
+                <img src={menuLogo} alt='logoSideBar' onClick={() => setShowSideBar(!showSideBar)} className="hambugerSideBar"/>
              </div>   
              <div className="blockHeader__logoutIcon">
                  <label >Administrator</label>
-                 <img src={logoutIcon}/>
+                 <img src={logoutIcon} className="blockHeader__modalLogOut" />
              </div> 
-          </div>
-          
-          {/* SHOW SIDE BAR */}
-          <SideBar show={showSideBar}/> 
-      </>    
+         </div>
+         <SideBar show={showSideBar}/> 
+      </>
    )
 }
 export default Header;

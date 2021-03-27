@@ -44,7 +44,7 @@ const EditUser = ({ match, history }) => {
              userName: userNameRef.current.value,
              email: emailRef.current.value
          });
-         Swal.fire("Saved", "User updated successfully", "ok");
+         Swal.fire("Saved", "User updated", "ok");
          //Return to Homepage
          history.push(`/`);
      };

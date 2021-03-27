@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
           <Header/>
-          <SideBar /> 
+    
               <div className="blockContainer">
                  <Switch>
                    <Route exact path="/" component={UsersList} />
