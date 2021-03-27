@@ -1,7 +1,14 @@
 import {
     GET_USER,
     GET_USER_SUCCESS,
-    GET_USER_ERROR
+    GET_USER_ERROR,
+
+    GET_USER_EDIT,
+    USER_EDIT_ERROR,
+    USER_EDIT_SUCCESS,
+    GET_USER_UPDATE,
+    USER_UPDATE_SUCCESS,
+    USER_UPDATE_ERROR
   } from "../constants/index"
   
   const initialState = {
@@ -13,6 +20,7 @@ import {
   
   export default function(state =  initialState, action) {
       switch (action.type) {
+        //---------------GET USER----------------------------------
           case GET_USER:
               return {
                  ...state,
@@ -34,7 +42,44 @@ import {
                     loading: false,
                     error: true 
               };
-            default:
-                return state;
+      //--------------------EDIT USER------------------------------------
+          case GET_USER_EDIT:
+               return {
+                    ...state,
+                    error: null
+               };
+          case USER_EDIT_SUCCESS:
+               return {
+                   ...state,
+                   error: null,
+                   user: action.payload
+               };
+          case USER_EDIT_ERROR:
+               return {
+                   ...state,
+                   error: true
+               };     
+          case GET_USER_UPDATE:
+               return {
+                   ...state,
+                   error: null
+               };
+          case USER_UPDATE_SUCCESS:
+               return {
+                   ...state,
+                   error: null,
+                   usersList: state.usersList.map(user => 
+                       user.id === action.payload.id
+                       ? (user = action.payload)
+                       : user
+                   )
+               };
+           case USER_UPDATE_ERROR:
+               return {
+                   ...state,
+                   error: true
+               }; 
+          default:
+               return state;
       }
   }

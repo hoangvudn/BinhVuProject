@@ -44,18 +44,80 @@ $base-color: #F4F6FD;
 .blockUserListMain {
     position: relative;
     left: 400px;
-    width: 50%;
+    width: 550px;
     top: 200px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+    box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px; 
+    &__userName {
+        position: absolute;
+        left: 0px;
+    }
+
+    &__itemUser {
+        position: relative;
+        width: 20%;
+    }
     &__listItemGroup {
         position: absolute;
         top: 30px;
-        width: 100%;
+        width: 550px;
     }  
     &__listItem {
         position: relative;
-        background: rgb(214, 156, 185);
-        width: 300px;
+        background: rgb(110, 221, 19);
+        width: 450px;
+    }
+}
+
+.blockEditUser {
+    position: relative;
+    top: 200px;
+    left:600%;
+    width: 400%;
+    height: 250px;
+    //background: grey;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background: yellow;
+    }
+    &__formEdit {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        // background: rebeccapurple;
+    }
+    &__labelEmail {
+        position: relative;
+        left: -20px;
+    }
+    &__inputItem {
+        position: relative;
+        margin-top: 20px;
+    }
+    &__inputEmail {
+        position: relative;
+        left: 40px;
+    }
+    &__inputUserName {
+        position: relative;
+        left: 20px;
+    }
+    &__buttonSave {
+        position: relative;
+        top: 50px;
+        width: 100px;
+        height: 50px;
+        
+    }
+    &__buttonSave:hover {
+        cursor: pointer; 
+        background: royalblue;
+        border-radius: 5px;
     }
 }
 // .blockUserListItem {

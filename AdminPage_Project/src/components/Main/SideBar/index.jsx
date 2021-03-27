@@ -1,8 +1,8 @@
 import React from 'react';
 import "./style/sidebarStyle.scss";
-const SideBar = () => {
+const SideBar = ( { show } ) => {
    return (
-          <div  className="blockSideBar">
+          <div  className={ show ? "blockSideBar active" : "blockSideBar"}>
              <ul className="blockSideBar__menuSideBar">
                  <li className="blockSideBar__listItem">USERS</li>
                  <li className="blockSideBar__listItem">TOUR</li>

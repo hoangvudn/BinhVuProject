@@ -19,15 +19,15 @@ const UsersList = () => {
 
   
     const usersGroup = useSelector(state => state.usersList.usersList);
+    
     console.log("List User:",usersGroup);
     return (
-        <React.Fragment>
         <>
            <table className="blockUserListMain">
                <thead>
                    <tr>
-                        <th >User Name</th>
-                        <th >Email</th>
+                        <th className="blockUserListMain__userName">User Name</th>
+                        <th className="blockUserListMain__email">Email</th>
                    </tr>
                 </thead>
                 <tbody className="blockUserListMain__listItemGroup">  
@@ -37,7 +37,6 @@ const UsersList = () => {
                 </tbody>
            </table>
         </>
-        </React.Fragment>
     );
 };
 export default UsersList;

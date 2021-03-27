@@ -1,35 +1,29 @@
 {
   "usersGroup": [
-        {
-          "id": 1,
-          "userName": "hoangvu",
-          "email": "nguyenhoangvudnvn@gmail.com",
-          "password": "123456789"
-        },
-        {
-          "id": 2,
-          "userName": "binh",
-          "email": "binh@gmail.com",
-          "password": "123456789"
-        },
-        {
-          "id": 3,
-          "userName": "tho",
-          "email": "binh@gmail.com",
-          "password": "123456789"
-        },
-        {
-          "id": 4,
-          "userName": "lan",
-          "email": "binh@gmail.com",
-          "password": "123456789"
-        },
-        {
-          "id": 5,
-          "userName": "hue",
-          "email": "binh@gmail.com",
-          "password": "123456789"
-        }
-
-    ]
+    {
+      "id": 1,
+      "userName": "hoangvu1",
+      "email": "nguyenhoangsvudnvn@gmail.com"
+    },
+    {
+      "id": 2,
+      "userName": "sunrise",
+      "email": "honda@gmail.com"
+    },
+    {
+      "id": 3,
+      "userName": "w1",
+      "email": "SD@GMAIL.COM"
+    },
+    {
+      "id": 4,
+      "userName": "fgfg",
+      "email": "ss@gmai.com"
+    },
+    {
+      "id": 5,
+      "userName": "thichhuyendieu",
+      "email": "binh@gmail.com"
+    }
+  ]
 }

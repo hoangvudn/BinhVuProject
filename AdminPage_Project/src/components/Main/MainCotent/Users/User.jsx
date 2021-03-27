@@ -1,5 +1,6 @@
 import React from 'react';
 import EditUsersList from './EditUser';
+import { Link } from 'react-router-dom';
 
 import $ from "jquery";
 import "./style/usersStyle.scss";
@@ -10,9 +11,12 @@ const User = ({ user }) => {
     return (
         <>
          <tr className="blockUserListMain__listItem">
-             <td>{user.userName}</td>
-             <td>{user.email}</td>
-             <button>EDIT</button>
+             <td className="blockUserListMain__itemUser">{user.userName}</td>
+             <td className="blockUserListMain__itemEmail">{user.email}</td>
+             <Link to={`/usersList/edit/${user.id}`}> 
+                        <button >EDIT</button>
+             </Link>
+          
              <button>DELETE</button>
          </tr>
         </>

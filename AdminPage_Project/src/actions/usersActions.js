@@ -70,12 +70,12 @@ export const editUser = () => ({
 });
 
 export const editUserSuccess = user => ({
-    type: GET_USER_SUCCESS,
+    type: USER_EDIT_SUCCESS,
     payload: user
 });
 
 export const editUserError = () => ({
-    type: GET_USER_ERROR
+    type: USER_EDIT_ERROR
 });
 
 //Change a user in the API and the gloal state
@@ -89,7 +89,7 @@ export function updateUserAction(user) {
           .then(response => {
               console.log(response);
               dispatch(updateUserSuccess(response.data));
-              Swal.fire("Saved","User updated successfully","OK");
+              //Swal.fire("Saved","User updated successfully","OK");
           })
           .catch(error => {
               console.log(error);
