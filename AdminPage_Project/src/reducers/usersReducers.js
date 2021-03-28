@@ -8,7 +8,10 @@ import {
     USER_EDIT_SUCCESS,
     GET_USER_UPDATE,
     USER_UPDATE_SUCCESS,
-    USER_UPDATE_ERROR
+    USER_UPDATE_ERROR,
+    ADD_USER,
+    ADD_USER_SUCCESS,
+    ADD_USER_ERROR
   } from "../constants/index"
   
   const initialState = {
@@ -42,6 +45,23 @@ import {
                     loading: false,
                     error: true 
               };
+      //--------------------ADD USER-------------------------------------
+          case ADD_USER:
+              return {
+                  ...state,
+                  error: null
+              };
+          case ADD_USER_SUCCESS:
+              return {
+                  ...state,
+                  error: null,
+                  usersList: [...state.usersList, action.payload]
+              };
+          case ADD_USER_ERROR:
+              return {
+                  ...state,
+                  error: true
+              }
       //--------------------EDIT USER------------------------------------
           case GET_USER_EDIT:
                return {

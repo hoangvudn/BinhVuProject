@@ -1,29 +1,43 @@
 {
-  "usersGroup": [
+  "users": [
     {
       "id": 1,
-      "userName": "hoangvu1",
+      "userName": "hoangvu7",
       "email": "nguyenhoangsvudnvn@gmail.com"
     },
     {
       "id": 2,
-      "userName": "sunrise1",
+      "userName": "sunhouse",
       "email": "honda@gmail.com"
     },
     {
       "id": 3,
       "userName": "honda",
-      "email": "SD@yahoo.com"
+      "email": "SD@yahoo.com",
+      "password": "111111111"
     },
     {
       "id": 4,
       "userName": "fgfg",
-      "email": "ss@gmai.com"
+      "email": "ss@gmai.com",
+      "password": "111111111"
     },
     {
       "id": 5,
       "userName": "thichhuyendieu",
-      "email": "binh@gmail.com"
+      "email": "binh@gmail.com",
+      "password": "111111111"
+    },
+    {
+      "userName": "dff",
+      "email": "hoangvu@gmail.com",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "userName": "sun",
+      "email": "mattroi@gmail.com"
     }
   ]
 }

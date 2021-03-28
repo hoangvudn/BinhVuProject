@@ -18,7 +18,9 @@ const User = ({ user }) => {
              </Link>
           
              <button>DELETE</button>
+           
          </tr>
+        
         </>
     )
 }

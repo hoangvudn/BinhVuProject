@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { Link } from 'react-router-dom'
 //import EditUsersList from './editUser';
 //import DataGrid from 'devextreme-react/data-grid';
 import User from "./User";
@@ -18,9 +19,9 @@ const UsersList = () => {
     
 
   
-    const usersGroup = useSelector(state => state.usersList.usersList);
+    const users = useSelector(state => state.usersList.usersList);
     
-    console.log("List User:",usersGroup);
+    console.log("List User:",users);
     return (
         <>
            <table className="blockUserListMain">
@@ -31,11 +32,13 @@ const UsersList = () => {
                    </tr>
                 </thead>
                 <tbody className="blockUserListMain__listItemGroup">  
-                       {usersGroup.map(user => (
+                       {users.map(user => (
                            <User key={user.id} user={user} />
                        ))}
                 </tbody>
            </table>
+           <Link to={"/usersList/new"}> ADD USER
+           </Link>
         </>
     );
 };

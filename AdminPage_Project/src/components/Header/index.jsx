@@ -17,8 +17,8 @@ const Header = () => {
                  <img src={logoutIcon} className="blockHeader__modalLogOut" />
              </div> 
          </div>
-         <SideBar show={showSideBar}/> 
-      </>
+         <SideBar show={showSideBar}/>
+      </> 
    )
-}
+};
 export default Header;

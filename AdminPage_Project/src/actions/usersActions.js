@@ -3,6 +3,10 @@ import {
     GET_USER_SUCCESS,
     GET_USER_ERROR,
 
+    ADD_USER,
+    ADD_USER_SUCCESS,
+    ADD_USER_ERROR,
+
     GET_USER_EDIT,
     USER_EDIT_SUCCESS,
     USER_EDIT_ERROR,
@@ -14,8 +18,40 @@ import Swal from 'sweetalert2';
 import axiosConfig from "../data/configDatabase/axois";
 // import { error } from "jquery";
 
+//Create new user 
+export function createNewUserAction(user) {
+    return dispatch => {
+         dispatch(newUser());
+         //Insert to the API
+         axiosConfig
+            .post("/users",user)
+            .then(reponse => {
+                console.log(reponse);
+                //if insert correctly
+                dispatch(newUserSucces(user));
+            })
+            .catch(error => {
+                console.log(error);
+                // If there is an error
+                dispatch(newUserError());
+            });
+    };
+}
 
+export const newUser = () => ({
+    type: ADD_USER
+});
 
+export const newUserSucces = user => ({
+    type: ADD_USER_SUCCESS,
+    payload: user
+});
+
+export const newUserError = error => ({
+    type: ADD_USER_ERROR,
+});
+
+//-----------------------FETCH DATA------------------------
 //Get users list 
 export function getUsersAction() {
     return dispatch => {
@@ -23,7 +59,7 @@ export function getUsersAction() {
 
         //Ask the API
         axiosConfig 
-         .get("./usersGroup")
+         .get("./users")
          .then(response => {
              dispatch(getUsersSucces(response.data));
          })
@@ -53,7 +89,7 @@ export function editUserAction(id) {
 
         //Get users from the API
         axiosConfig
-          .get(`/usersGroup/${id}`)
+          .get(`/users/${id}`)
           .then(response => {
               console.log(response.data);
               dispatch(editUserSuccess(response.data));
@@ -85,7 +121,7 @@ export function updateUserAction(user) {
 
         //Update user in the API
         axiosConfig
-          .put(`/usersGroup/${user.id}`, user)
+          .put(`/users/${user.id}`, user)
           .then(response => {
               console.log(response);
               dispatch(updateUserSuccess(response.data));
