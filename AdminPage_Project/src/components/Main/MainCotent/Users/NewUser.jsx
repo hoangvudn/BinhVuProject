@@ -18,7 +18,7 @@ const NewUser = ({ history }) => {
         e.preventDefault();
         //validate
         if ( userName.trim() === "" || email.trim() === "" || password.trim() === "") {
-            alert("Not Null ");
+            alert("Value not null ");
             return;
         }
         // If it success
@@ -30,10 +30,15 @@ const NewUser = ({ history }) => {
     return (
          <>
             <div className="blockNewUser">
+                <div className="blockNewUser__headerTitle">
+                        <h2>ADD USER</h2>
+                </div>
+                   
                 <form onSubmit={handleSubmit}>
                    <div>
                        <label>User Name</label>
                        <input 
+                          className="blockNewUser__inputUserName"
                           type="text"
                           placeholder = "user name"
                           value={userName}
@@ -44,6 +49,7 @@ const NewUser = ({ history }) => {
                    <div>
                        <label> Email </label>
                        <input 
+                          className="blockNewUser__inputEmail"
                           type="email"
                           placeholder = "email"
                           value={email}
@@ -52,8 +58,9 @@ const NewUser = ({ history }) => {
                    </div>
 
                    <div>
-                       <label> Pass </label>
+                       <label> PassWord </label>
                        <input 
+                          className="blockNewUser__inputPass"
                           type="password"
                           placeholder = "password"
                           value={password}
@@ -63,10 +70,12 @@ const NewUser = ({ history }) => {
 
                    <button 
                       type="submit"
+                      className="blockNewUser__buttonAddUser"
                    >
-                           ADD USER
+                      ADD USER
                    </button>
                 </form>
+              
             </div>
          </>
     );

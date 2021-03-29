@@ -12,7 +12,11 @@ import {
     USER_EDIT_ERROR,
     GET_USER_UPDATE,
     USER_UPDATE_SUCCESS,
-    USER_UPDATE_ERROR
+    USER_UPDATE_ERROR,
+
+    GET_USER_DELETED,
+    USER_DELETED_SUCCESS,
+    USER_DELETED_ERROR
 } from "../constants/index";
 import Swal from 'sweetalert2';
 import axiosConfig from "../data/configDatabase/axois";
@@ -82,7 +86,7 @@ export const getUsersError = () => ({
     type: GET_USER_ERROR
 });
 
-//Function Edit Users 
+//----------------------------------Function Edit Users-----------------------------------
 export function editUserAction(id) {
     return dispatch => {
         dispatch(editUser(id));
@@ -147,7 +151,37 @@ export const updateUserError = () => ({
     type: USER_UPDATE_ERROR
 });
 
+//---------------------------Function Delete User---------------------------------------------------
+export function deleteUserAction(id) {
+    return dispatch => {
+        dispatch(deleteUser(id));
 
+        //Delete user from the API
+        axiosConfig
+          .delete(`/users/${id}`)
+          .then(response => {
+              console.log(response);
+              dispatch(deleteUserSuccess(id));
+          })
+          .catch(error => {
+              console.log(error);
+              dispatch(deleteUserError());
+          });
+    };
+};
+
+export const deleteUser = () => ({
+    type: GET_USER_DELETED
+});
+
+export const deleteUserSuccess = id => ({
+    type: USER_DELETED_SUCCESS,
+    payload: id
+});
+
+export const deleteUserError = () => ({
+    type: USER_DELETED_ERROR
+});
 //----------------------------------------CREATE NEW USER--------------------------------------------//
 
 // //Create New User 

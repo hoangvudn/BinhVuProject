@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "userName": "hoangvu7",
-      "email": "nguyenhoangsvudnvn@gmail.com"
-    },
-    {
-      "id": 2,
-      "userName": "sunhouse",
-      "email": "honda@gmail.com"
-    },
-    {
       "id": 3,
       "userName": "honda",
       "email": "SD@yahoo.com",
@@ -38,6 +28,18 @@
       "id": 7,
       "userName": "sun",
       "email": "mattroi@gmail.com"
+    },
+    {
+      "userName": "thien nguyen",
+      "email": "thien@gmail.com",
+      "password": "123456789",
+      "id": 9
+    },
+    {
+      "userName": "tesla",
+      "email": "Musk@gmail.com",
+      "password": "999033248193423",
+      "id": 10
     }
   ]
 }

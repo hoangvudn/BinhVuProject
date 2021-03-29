@@ -1,23 +1,43 @@
 import React from 'react';
 import EditUsersList from './EditUser';
 import { Link } from 'react-router-dom';
-
-import $ from "jquery";
+import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
+import Swal from "sweetalert2";
 import "./style/usersStyle.scss";
 
 import { useDispatch } from "react-redux";
+import { deleteUserAction } from "../../../../actions/usersActions"
 
 const User = ({ user }) => {
+    
+    const dispatch = useDispatch();
+
+    const confirmDeleteUser = id => {
+        Swal.fire({
+            title: "WARNING!",
+            text: "Do you want delete User : " + `${user.userName}` ,
+            type:"warning",
+            showCancelButton: true,
+            confirmButtonText: " YES "
+        }).then(result => {
+            if (result.value) {
+                Swal.fire("Deleted User", " User has been deleted ", "ok");
+
+                dispatch(deleteUserAction(id));
+            }
+        });
+    };
+
     return (
         <>
          <tr className="blockUserListMain__listItem">
              <td className="blockUserListMain__itemUser">{user.userName}</td>
              <td className="blockUserListMain__itemEmail">{user.email}</td>
-             <Link to={`/usersList/edit/${user.id}`}> 
-                        <button >EDIT</button>
+             <Link to={`/usersList/edit/${user.id}`} > 
+                     <AiFillEdit className="blockUserListMain__editIcon"/>
              </Link>
           
-             <button>DELETE</button>
+             <AiFillDelete className="blockUserListMain__deleteIcon" onClick={() => confirmDeleteUser(user.id)}/>
            
          </tr>
         

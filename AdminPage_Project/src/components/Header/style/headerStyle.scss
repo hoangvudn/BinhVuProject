@@ -7,11 +7,14 @@ $base-color: #82A2F4;
     height: 100px;
     background : #82A2F4;
     &__menuLogo {
-        position: relative;
+        position: absolute;
         top: 50px;
         width: 5%; 
         height: 50px;
         //background: rebeccapurple;
+    }
+    &__menuLogo:hover {
+        cursor: pointer;
     }
     &__menuLogo img {
         position: absolute;
@@ -37,7 +40,14 @@ $base-color: #82A2F4;
         width: 100%;
         height: 50px;
     }
-}
-.hambugerSideBar:hover {
-    cursor: pointer;
+    &__hambugerSideBar:hover {
+        cursor: pointer;
+    }
+    &__hambugerSideBar {
+        position: relative;
+        left: 30px;
+        width: 65%;
+        height: 50px;
+        
+    }
 }

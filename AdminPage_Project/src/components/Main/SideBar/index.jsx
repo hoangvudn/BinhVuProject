@@ -1,13 +1,20 @@
 import React from 'react';
 import "./style/sidebarStyle.scss";
 import menuLogo from '../../images/nav.png';
-import { useState } from 'react';
+import { MdCardTravel } from 'react-icons/md';
+import { FaUserAlt } from 'react-icons/fa';
 const SideBar = ( { show } ) => {
    return (
           <div  className={ show ? "blockSideBar active" : "blockSideBar"}>
              <ul className="blockSideBar__menuSideBar">
-                 <li className="blockSideBar__listItem">USERS</li>
-                 <li className="blockSideBar__listItem">TOUR</li>
+                <div className="blockSideBar__groupItem">
+                      <FaUserAlt className="blockSideBar__icon"/>
+                      <li >USERS</li>
+                </div>
+                 <div className="blockSideBar__groupItem">
+                      <MdCardTravel className="blockSideBar__icon"/>
+                      <li >TOUR</li>
+                 </div>
              </ul>
           </div>
    )

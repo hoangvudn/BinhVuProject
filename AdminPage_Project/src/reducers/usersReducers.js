@@ -11,7 +11,10 @@ import {
     USER_UPDATE_ERROR,
     ADD_USER,
     ADD_USER_SUCCESS,
-    ADD_USER_ERROR
+    ADD_USER_ERROR,
+    GET_USER_DELETED,
+    USER_DELETED_SUCCESS,
+    USER_DELETED_ERROR
   } from "../constants/index"
   
   const initialState = {
@@ -99,6 +102,24 @@ import {
                    ...state,
                    error: true
                }; 
+           case GET_USER_DELETED:
+               return {
+                   ...state,
+                   error: null
+               };
+           case USER_DELETED_SUCCESS:
+               return {
+                   ...state,
+                   error: null,
+                   usersList: state.usersList.filter(
+                       user => user.id !== action.payload
+                   )
+               };
+            case USER_DELETED_ERROR:
+                return {
+                    ...state,
+                    error: true
+                }
           default:
                return state;
       }
