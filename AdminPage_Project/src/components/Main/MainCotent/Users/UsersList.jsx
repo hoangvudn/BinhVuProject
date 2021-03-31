@@ -2,7 +2,7 @@ import React, { useEffect, Component } from "react"
 import { Link } from 'react-router-dom'
 
 import { AiOutlineUserAdd } from 'react-icons/ai';
-
+import SearchUser from '../Users/SearchUser';
 
 //import EditUsersList from './editUser';
 //import DataGrid from 'devextreme-react/data-grid';
@@ -34,9 +34,7 @@ const UsersList = () => {
                    <tr>
                         <th className="blockUserListMain__userName">User Name</th>
                         <th className="blockUserListMain__email">Email</th>
-                        
-                   </tr>
-                        
+                   </tr>         
                 </thead>
                
                 <tbody className="blockUserListMain__listItemGroup">  
@@ -44,11 +42,12 @@ const UsersList = () => {
                            <User key={user.id} user={user} />
                        ))}
                 </tbody>
+             
                 <Link to={"/usersList/new" } >  
                     <AiOutlineUserAdd className="blockUserListMain__linkToAddUser"/> 
                 </Link>
            </table>
-      
+           <SearchUser />
           
         </>
     );
