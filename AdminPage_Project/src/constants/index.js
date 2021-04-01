@@ -20,4 +20,31 @@ export const GET_USER_DELETED = "GET_USER_DELETED";
 export const USER_DELETED_SUCCESS = "USER_DELETED_SUCCESS ";
 export const USER_DELETED_ERROR = "USER_DELETED_ERROR";
 
+//================================================================================================
+//---------------------------------------TOUR-----------------------------------------------------
+export const ADD_TOUR = "ADD_TOUR";
+export const ADD_TOUR_SUCCESS = "ADD_TOUR_SUCCESS";
+export const ADD_TOUR_ERROR = "ADD_TOUR_ERROR";
+
+export const GET_TOUR = "GET_TOUR";
+export const GET_TOUR_SUCCESS = "GET_TOUR_SUCCESS";
+export const GET_TOUR_ERROR = "GET_TOUR_ERROR";
+
+
+export const GET_TOUR_EDIT = "GET_TOUR_EDIT";
+export const TOUR_EDIT_SUCCESS = "TOUR_EDIT_SUCCESS";
+export const TOUR_EDIT_ERROR = "TOUR_EDITED_ERROR";
+
+export const GET_TOUR_UPDATE = "GET_TOUR_UPDATE";
+export const TOUR_UPDATE_SUCCESS = "TOUR_UPDATE_SUCCESS ";
+export const TOUR_UPDATE_ERROR = "TOUR_UPDATE_ERROR";
+
+
+export const GET_TOUR_DELETED = "GET_TOUR_DELETED";
+export const TOUR_DELETED_SUCCESS = "TOUR_DELETED_SUCCESS ";
+export const TOUR_DELETED_ERROR = "TOUR_DELETED_ERROR";
+
+
+
+
 

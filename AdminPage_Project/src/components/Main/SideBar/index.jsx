@@ -1,6 +1,7 @@
 import React from 'react';
 import "./style/sidebarStyle.scss";
 import menuLogo from '../../images/nav.png';
+import { Link } from 'react-router-dom';
 import { MdCardTravel } from 'react-icons/md';
 import { FaUserAlt } from 'react-icons/fa';
 const SideBar = ( { show } ) => {
@@ -8,13 +9,17 @@ const SideBar = ( { show } ) => {
           <div  className={ show ? "blockSideBar active" : "blockSideBar"}>
              <ul className="blockSideBar__menuSideBar">
                 <div className="blockSideBar__groupItem">
+                   <Link to={"/usersList"} >
                       <FaUserAlt className="blockSideBar__icon"/>
                       <li >USERS</li>
+                   </Link>
                 </div>
-                 <div className="blockSideBar__groupItem">
-                      <MdCardTravel className="blockSideBar__icon"/>
-                      <li >TOUR</li>
-                 </div>
+                <Link to={"/toursList"} >
+                  <div className="blockSideBar__groupItem">
+                        <MdCardTravel className="blockSideBar__icon"/>
+                        <li >TOUR</li>
+                  </div>
+                </Link>           
              </ul>
           </div>
    )

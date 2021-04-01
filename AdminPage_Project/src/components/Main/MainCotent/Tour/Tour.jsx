@@ -6,13 +6,13 @@ import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import Swal from "sweetalert2";
 
 import { useDispatch } from "react-redux";
-import { deleteTourAction } from "../../../../actions/ToursActions"
+import { deleteTourAction } from "../../../../actions/toursActions"
 // import React, { useState } from 'react'
 
 // const [tour, setUser] = useState({
        
 // })
-const Tour = () => { 
+const Tour = ({ tour }) => { 
     const dispatch = useDispatch();
 
     const confirmDeleteTour = id => {
