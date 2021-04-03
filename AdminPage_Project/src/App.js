@@ -9,6 +9,8 @@ import EditUser from './components/Main/MainCotent/Users/EditUser'
 
 import ToursList from './components/Main/MainCotent/Tour/ToursList'
 import EditTour from './components/Main/MainCotent/Tour/EditTour'
+import NewTour from './components/Main/MainCotent/Tour/NewTour'
+
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './styles/index.scss'
@@ -31,7 +33,7 @@ function App() {
                    <Route exact path="/usersList/new" component={NewUser} />
                    <Route exact path="/usersList/edit/:id" component={EditUser} />
                    <Route exact path="/toursList" component={ToursList} />
-                   {/* <Route exact path="/toursList/new" component={NewTour} /> */}
+                   <Route exact path="/toursList/new" component={NewTour} />
                    <Route exact path="/toursList/edit/:id" component={EditTour} />  
                  </Switch>
                </div>

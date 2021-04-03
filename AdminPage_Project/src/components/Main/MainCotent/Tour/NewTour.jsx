@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik'
- import React, { useState } from 'react'
+
 
 import { createNewTourAction } from "../../../../actions/toursActions";
 import { useDispatch, useSelecttor } from "react-redux";
@@ -8,11 +8,11 @@ import { useState } from "react";
 const NewTour = ({ history }) => {
     const [ image, setImage ] = useState("");
     const [ place, setPlace ] = useState("");
-    const [ tourName, setTourName ] = useState("");
-    const [ dayAmount, setDayAmount ] = useState("");
+    const [ name, setTourName ] = useState("");
+    const [ day, setDayAmount ] = useState("");
     const [ transports, setTransports ] = useState("");
     const [ price, setPrice ] = useState("");
-    const [ startDay, setStartDay ] = useState("");
+    const [ start, setStartDay ] = useState("");
     const [ apply, setApply ] = useState("");
     //Create new tour
     const dispatch = useDispatch();
@@ -21,16 +21,16 @@ const NewTour = ({ history }) => {
     const handleSubmit = e => {
         e.preventDefault();
         //validate
-        if ( image.trim() === "" || place.trim() === "" || tourName.trim() === "" ||
-             dayAmount.trim() === "" || transports.trim() === "" || price.trim() === "" ||
-             startDay.trim() === "" || apply.trim() === ""
+        if ( image.trim() === "" || place.trim() === "" || name.trim() === "" ||
+             day.trim() === "" || transports.trim() === "" || price.trim() === "" ||
+             start.trim() === "" || apply.trim() === ""
         ) {
             alert("Value not null ");
             return;
         }
         // If it success then Add New Tour 
-        addTour({ image, place, tourName, dayAmount, transports, price, startDay, apply });
-        // return tour list page
+        addTour({ image, place, name, day, transports, price, start, apply });
+        // return Tour List page
         history.push(`/toursList`);
     };
 
@@ -70,7 +70,7 @@ const NewTour = ({ history }) => {
                           className="blockNewTour__inputTourName"
                           type="text"
                           placeholder = "tour name"
-                          value = {tourName}
+                          value = {name}
                           onChange={ e => setTourName(e.target.value)}
                        />
                    </div>
@@ -81,7 +81,7 @@ const NewTour = ({ history }) => {
                           className="blockNewTour__inputDayAmount"
                           type="text"
                           placeholder = "day amount"
-                          value = {dayAmount}
+                          value = {day}
                           onChange={ e => setDayAmount(e.target.value)}
                        />
                    </div>
@@ -111,10 +111,10 @@ const NewTour = ({ history }) => {
                    <div>
                        <label> Start Day </label>
                        <input 
-                          className="blockNewTour__inputPrice"
+                          className="blockNewTour__inputDayStart"
                           type="text"
-                          placeholder = "price"
-                          value = {price}
+                          placeholder = "start day"
+                          value = {start}
                           onChange = { e => setStartDay(e.target.value)}
                        />
                    </div>
@@ -124,8 +124,8 @@ const NewTour = ({ history }) => {
                        <input 
                           className="blockNewTour__inputApply"
                           type="text"
-                          placeholder = "price"
-                          value = {price}
+                          placeholder = "apply"
+                          value = {apply}
                           onChange = { e => setApply(e.target.value)}
                        />
                    </div>

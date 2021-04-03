@@ -43,9 +43,9 @@ const ToursList = () => {
                             ))}
                     </tbody>
                 
-                    {/* <Link to={"/toursList/new" } >  
+                    <Link to={"/toursList/new" } >  
                         <AiOutlineUserAdd className="blockTourListMain__linkToAddUser"/> 
-                    </Link> */}
+                    </Link>
                 </table>
           </div>
             
