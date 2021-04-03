@@ -39,8 +39,10 @@ const Tour = ({ tour }) => {
                 <td className="blockTourListMain__itemName">{tour.name}</td>
                 <td className="blockTourListMain__itemDayAmount">{tour.day}</td>
                 <td className="blockTourListMain__itemTransports">{tour.transports}</td>
+                <td className="blockTourListMain__itemPrice">{tour.price}</td>
                 <td className="blockTourListMain__itemStartDay">{tour.start}</td>
                 <td className="blockTourListMain__itemApplyPassenger">{tour.apply}</td>
+                
                 <Link to={`/toursList/edit/${tour.id}`} > 
                         <AiFillEdit className="blockTourListMain__editIcon"/>
                 </Link>

@@ -12,7 +12,8 @@ import EditTour from './components/Main/MainCotent/Tour/EditTour'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './styles/index.scss'
-
+import TestTable from './components/Main/MainCotent/Tour/TestTable'
+import './styles/index.scss'
 import './App.css';
 
 
@@ -22,7 +23,7 @@ function App() {
   return (
     <Router>
           <Header/>
-     
+          {/* <TestTable /> */}
               <div className="blockContainer">
                  <Switch>
                    <Route exact path="/" component={UsersList} />

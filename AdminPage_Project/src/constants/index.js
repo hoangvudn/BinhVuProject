@@ -1,3 +1,4 @@
+//===================================MANAGER-----USER===========================================
 export const ADD_USER = "ADD_USER";
 export const ADD_USER_SUCCESS = "ADD_USER_SUCCESS";
 export const ADD_USER_ERROR = "ADD_USER_ERROR";
@@ -20,8 +21,14 @@ export const GET_USER_DELETED = "GET_USER_DELETED";
 export const USER_DELETED_SUCCESS = "USER_DELETED_SUCCESS ";
 export const USER_DELETED_ERROR = "USER_DELETED_ERROR";
 
-//================================================================================================
-//---------------------------------------TOUR-----------------------------------------------------
+export const GET_USER_SEARCH = "GET_USER_SEARCH";
+export const USER_SEARCH_SUCCESS = "USER_SEARCH_SUCCESS";
+export const USER_SEARCH_ERROR = "USER_SEARCH_ERROR";
+
+
+//=========================================================================================================
+//------------------------------------MANAGER-----TOUR-----------------------------------------------------
+
 export const ADD_TOUR = "ADD_TOUR";
 export const ADD_TOUR_SUCCESS = "ADD_TOUR_SUCCESS";
 export const ADD_TOUR_ERROR = "ADD_TOUR_ERROR";

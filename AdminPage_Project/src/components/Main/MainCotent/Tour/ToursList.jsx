@@ -25,7 +25,7 @@ const ToursList = () => {
           <div className="blockTourListMain">
                 <table className="blockTourListMain__table">
                     <thead>
-                        <tr>
+                        <tr className="blockTourListMain__fixed">
                             <th className="blockTourListMain__imageUrl">Image URL</th>
                             <th className="blockTourListMain__place">Place</th>
                             <th className="blockTourListMain__tourName">Tour Name</th>
@@ -43,9 +43,9 @@ const ToursList = () => {
                             ))}
                     </tbody>
                 
-                    <Link to={"/toursList/new" } >  
+                    {/* <Link to={"/toursList/new" } >  
                         <AiOutlineUserAdd className="blockTourListMain__linkToAddUser"/> 
-                    </Link>
+                    </Link> */}
                 </table>
           </div>
             

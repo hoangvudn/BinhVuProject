@@ -64,87 +64,92 @@ const EditTour = ({ match, history }) => {
          });
          Swal.fire("Saved", "Tour updated", "ok");
          //Return to Homepage
-         history.push(`/`);
+         history.push(`/toursList`);
      };
 
    return (
       
       <>
         <div class="blockEditTour">
-            <h3 className="blockEditTour__title"> EDIT USER</h3>
+            <h3 className="blockEditTour__title"> EDIT TOUR </h3>
             <form onSubmit={handleUpdateTour} className="blockEditTour__formEdit">
-              <div className="blockEditTour__inputItem">
-                  <label>Image Url</label>
-                  <input  className="blockEditTour__inputTourName"
-                      type="text"
-                      defaultValue={tour.image}
-                      ref={imageRef}
-                  />
-              </div>
+                <div className="blockEditTour__formEdit__leftItem">
+                        <div className="blockEditTour__formEdit__inputLeftItem">
+                            <label className="blockEditTour__formEdit__labelImageUrl">Image Url</label>
+                            <input  className="blockEditTour__formEdit__inputImageUrl"
+                                type="text"
+                                defaultValue={tour.image}
+                                ref={imageRef}
+                            />
+                        </div>
 
-              <div className="blockEditTour__inputItem">
-                  <label className="blockEditTour__labelEmail">Place</label>
-                  <input className="blockEditTour__inputEmail"
-                      type="text"
-                      defaultValue={tour.place}
-                      ref={placeRef}
-                  />
-              </div>
+                        <div className="blockEditTour__formEdit__inputLeftItem">
+                            <label className="blockEditTour__formEdit__labelPlace">Place</label>
+                            <input className="blockEditTour__formEdit__inputPlace"
+                                type="text"
+                                defaultValue={tour.place}
+                                ref={placeRef}
+                            />
+                        </div>
 
-              <div className="blockEditTour__inputItem">
-                  <label className="blockEditTour__labelEmail">Name</label>
-                  <input className="blockEditTour__inputEmail"
-                      type="text"
-                      defaultValue={tour.name}
-                      ref={nameRef}
-                  />
-              </div>
+                        <div className="blockEditTour__formEdit__inputLeftItem">
+                            <label className="blockEditTour__formEdit__labelTourName">Name</label>
+                            <input className="blockEditTour__formEdit__inputTourName"
+                                type="text"
+                                defaultValue={tour.name}
+                                ref={nameRef}
+                            />
+                        </div>
 
-              <div className="blockEditTour__inputItem">
-                  <label className="blockEditTour__labelEmail">Day</label>
-                  <input className="blockEditTour__inputEmail"
-                      type="text"
-                      defaultValue={tour.day}
-                      ref={dayRef}
-                  />
-              </div>
+                        <div className="blockEditTour__formEdit__inputLeftItem">
+                            <label className="blockEditTour__formEdit__labelDay">Day</label>
+                            <input className="blockEditTour__formEdit__inputDay"
+                                type="text"
+                                defaultValue={tour.day}
+                                ref={dayRef}
+                            />
+                        </div>
+                </div>
+                {/* --------------------------------------------------------------------- */}
+                <div className="blockEditTour__formEdit__rightItem">
+                        <div className="blockEditTour__formEdit__inputRightItem">
+                            <label className="blockEditTour__formEdit__labelTransports">Transports</label>
+                            <input className="blockEditTour__formEdit__inputTransports"
+                                type="text"
+                                defaultValue={tour.transports}
+                                ref={transportsRef}
+                            />
+                        </div>
 
-              <div className="blockEditTour__inputItem">
-                  <label className="blockEditTour__labelEmail">Transports</label>
-                  <input className="blockEditTour__inputEmail"
-                      type="text"
-                      defaultValue={tour.transports}
-                      ref={transportsRef}
-                  />
-              </div>
+                        <div className="blockEditTour__formEdit__inputRightItem">
+                            <label className="blockEditTour__formEdit__labelPrice">Price</label>
+                            <input className="blockEditTour__formEdit__inputPrice"
+                                type="text"
+                                defaultValue={tour.price}
+                                ref={priceRef}
+                            />
+                        </div>
 
-              <div className="blockEditTour__inputItem">
-                  <label className="blockEditTour__labelEmail">Price</label>
-                  <input className="blockEditTour__inputEmail"
-                      type="text"
-                      defaultValue={tour.price}
-                      ref={priceRef}
-                  />
-              </div>
+                        <div className="blockEditTour__formEdit__inputRightItem">
+                            <label className="blockEditTour__formEdit__labelStart">Start</label>
+                            <input className="blockEditTour__formEdit__inputStart"
+                                type="text"
+                                defaultValue={tour.start}
+                                ref={startRef}
+                            />
+                        </div>
 
-              <div className="blockEditTour__inputItem">
-                  <label className="blockEditTour__labelEmail">Start</label>
-                  <input className="blockEditTour__inputEmail"
-                      type="text"
-                      defaultValue={tour.start}
-                      ref={startRef}
-                  />
-              </div>
+                        <div className="blockEditTour__formEdit__inputRightItem">
+                            <label className="blockEditTour__formEdit__labelApply">Apply</label>
+                            <input className="blockEditTour__formEdit__inputApply"
+                                type="text"
+                                defaultValue={tour.apply}
+                                ref={applyRef}
+                            />
+                        </div>
 
-              <div className="blockEditTour__inputItem">
-                  <label className="blockEditTour__labelEmail">Apply</label>
-                  <input className="blockEditTour__inputEmail"
-                      type="text"
-                      defaultValue={tour.apply}
-                      ref={applyRef}
-                  />
-              </div>
-
+                </div>
+              
               <button type="submit" className="blockEditTour__buttonSave">
                     SAVE
               </button>

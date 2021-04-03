@@ -16,7 +16,12 @@ import {
 
     GET_USER_DELETED,
     USER_DELETED_SUCCESS,
-    USER_DELETED_ERROR
+    USER_DELETED_ERROR,
+
+    GET_USER_SEARCH,
+    USER_SEARCH_SUCCESS,
+    USER_SEARCH_ERROR
+
 } from "../constants/index";
 import Swal from 'sweetalert2';
 import axiosConfig from "../data/configDatabase/axois";
@@ -182,6 +187,16 @@ export const deleteUserSuccess = id => ({
 export const deleteUserError = () => ({
     type: USER_DELETED_ERROR
 });
+//---------------------------Function Search User------------------------------------------------------
+
+// export function searchUserAction(value) {
+//     return dispatch => {
+//         dispatch(searchUser(value));
+
+  
+//     }
+// }
+
 //----------------------------------------CREATE NEW USER--------------------------------------------//
 
 // //Create New User 
