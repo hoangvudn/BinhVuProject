@@ -9,15 +9,15 @@ const SideBar = ( { show } ) => {
           <div  className={ show ? "blockSideBar active" : "blockSideBar"}>
              <ul className="blockSideBar__menuSideBar">
                 <div className="blockSideBar__groupItem">
-                   <Link to={"/usersList"} >
+                   <Link to={"/usersList"} className="blockSideBar__linkTitle">
                       <FaUserAlt className="blockSideBar__icon"/>
-                      <li >USERS</li>
+                      <li>USERS</li>
                    </Link>
                 </div>
-                <Link to={"/toursList"} >
+                <Link to={"/toursList"} className="blockSideBar__linkTitle"> 
                   <div className="blockSideBar__groupItem">
                         <MdCardTravel className="blockSideBar__icon"/>
-                        <li >TOUR</li>
+                        <li>TOUR</li>
                   </div>
                 </Link>           
              </ul>

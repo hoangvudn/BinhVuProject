@@ -8,13 +8,17 @@ $base-color: #82A2F4;
     //background : $base-color;
     box-shadow: rgba(69, 69, 204, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     &__menuSideBar {
-        list-style: none;
+        list-style-type: none;
         // position: relative;
         // top: 50px;
         // width: 5%; 
         // height: 50px;
         //background: rebeccapurple;
     }
+    &__linkTitle {
+       text-decoration: none;
+    }
+ 
     &__listItem {
         cursor: pointer;
         padding: 10px 20px;
@@ -41,7 +45,7 @@ $base-color: #82A2F4;
         border-radius: 5px;
     }
     &__groupItem li {
-        position: relative;
+        position: absolute;
         top: 5px;
         left: 50px;
         font-weight: bold;
