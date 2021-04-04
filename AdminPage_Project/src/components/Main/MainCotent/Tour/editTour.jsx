@@ -48,7 +48,7 @@ const EditTour = ({ match, history }) => {
              startRef.current.value.trim() === "" ||
              applyRef.current.value.trim() === "" 
          ) {
-            <p>ERROR. Value null</p>;
+            alert("Value not null")
             return;
          }
          tourUpdated({

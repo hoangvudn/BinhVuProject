@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Formik } from 'formik';
 import "./style/tourStyle.scss";
 import { AiOutlineUserAdd } from 'react-icons/ai';
+import { GoDiffAdded } from 'react-icons/go';
 import { useDispatch, useSelector } from "react-redux";
 import { getToursAction } from "../../../../actions/toursActions";
 import Tour from './Tour';
@@ -43,10 +44,11 @@ const ToursList = () => {
                             ))}
                     </tbody>
                 
-                    <Link to={"/toursList/new" } >  
-                        <AiOutlineUserAdd className="blockTourListMain__linkToAddUser"/> 
-                    </Link>
+                   
                 </table>
+                <Link to={"/toursList/new" } >  
+                        <GoDiffAdded className="blockTourListMain__linkToAddTour"/> 
+                    </Link>
           </div>
             
             {/* <SearchTour /> */}

@@ -14,7 +14,9 @@ import {
     ADD_USER_ERROR,
     GET_USER_DELETED,
     USER_DELETED_SUCCESS,
-    USER_DELETED_ERROR
+    USER_DELETED_ERROR,
+    GET_USER_SEARCH,
+    USER_SEARCH_SUCCESS
   } from "../constants/index"
   
   const initialState = {
@@ -119,6 +121,17 @@ import {
                 return {
                     ...state,
                     error: true
+                }
+            case GET_USER_SEARCH:
+                return {
+                    ...state,
+                    error: true
+                }
+            case USER_SEARCH_SUCCESS:
+                return {
+                    ...state,
+                    error: null,
+                    usersList: state.usersList
                 }
           default:
                return state;

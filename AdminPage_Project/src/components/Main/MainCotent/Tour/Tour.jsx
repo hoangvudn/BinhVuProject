@@ -34,14 +34,15 @@ const Tour = ({ tour }) => {
    return (
         <>
             <tr className="blockTourListMain__listItem">
-                <td className="blockTourListMain__itemImage">{tour.image}</td>
-                <td className="blockTourListMain__itemPlace">{tour.place}</td>
-                <td className="blockTourListMain__itemName">{tour.name}</td>
-                <td className="blockTourListMain__itemDayAmount">{tour.day}</td>
-                <td className="blockTourListMain__itemTransports">{tour.transports}</td>
-                <td className="blockTourListMain__itemPrice">{tour.price}</td>
-                <td className="blockTourListMain__itemStartDay">{tour.start}</td>
-                <td className="blockTourListMain__itemApplyPassenger">{tour.apply}</td>
+                <td className="blockTourListMain__itemImage"> <img src= {tour.image} alt="image coutryside"/>  </td>
+                <td className="blockTourListMain__itemPlace"> {tour.place}  </td>
+                <td className="blockTourListMain__itemName">  {tour.name}   </td>
+                <td className="blockTourListMain__itemDayAmount"> {tour.day} </td>
+                <td className="blockTourListMain__itemTransports"> <img src = {tour.transports} alt="image coutryside"/> </td>
+                <td className="blockTourListMain__itemPrice"> {tour.price} </td>
+                <td className="blockTourListMain__itemStartDay"> {tour.start} </td>
+                {/* <td className="blockTourListMain__itemStartDay"> {tour.descriptions} </td> */}
+                <td className="blockTourListMain__itemApplyPassenger"> {tour.apply} </td>
                 
                 <Link to={`/toursList/edit/${tour.id}`} > 
                         <AiFillEdit className="blockTourListMain__editIcon"/>

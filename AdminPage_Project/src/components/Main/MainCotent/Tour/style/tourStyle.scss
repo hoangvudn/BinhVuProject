@@ -1,6 +1,6 @@
 
 $base-color: #F4F6FD;
-$border-color: rgb(180, 116, 116);
+$border-color: #82A2F4;
 .blockToursList {
     position: absolute;
     top: 100px;
@@ -39,8 +39,7 @@ $border-color: rgb(180, 116, 116);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-      
+        align-items: center;   
     }
 }
 .blockTourListMain {
@@ -54,39 +53,54 @@ $border-color: rgb(180, 116, 116);
      &__table {
          width: 100%;
          height: 100%;
-         background: whitesmoke;
+         box-shadow: rgba(69, 69, 204, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+         //background: whitesmoke;
+         border-collapse: collapse;
      }
      &__itemImage {
-         border : 1px dashed $border-color;
+         border : 1px solid $border-color;
+         max-width: 100px;
+         max-height: 90px;
+         height: 50px;
+     }
+     &__itemImage img {
+         width: 100%;
+         height: 100%;
      }
      &__itemPlace {
-        border : 1px dashed $border-color;
+        border : 1px solid $border-color;
     }
     &__itemName {
-        border : 1px dashed $border-color;
+        border : 1px solid $border-color;
     }
     &__itemDayAmount {
-        border : 1px dashed $border-color;
+        border : 1px solid $border-color;
     }
     &__itemTransports {
-        border : 1px dashed $border-color;
+        border : 1px solid $border-color;
         width: 80px;
      
         // overflow: hidden;
     }
     &__itemPrice {
-        border : 1px dashed $border-color;
+        border : 1px solid $border-color;
     }
     &__itemStartDay {
-        border : 1px dashed $border-color;
+        border : 1px solid $border-color;
     }
     &__itemApplyPassenger {
-        border : 1px dashed $border-color;
+        border : 1px solid $border-color;
     }
-    &__fixed {
-        // position: fixed;
-        // top: 170px;
+
+    &__linkToAddTour {
+        position: absolute;
+        top: 0px;
+        right: 0;
     }
+    // &__fixed {
+    //     // position: fixed;
+    //     // top: 170px;
+    // }
     // box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px; 
     // &__tourName {
     //     position: absolute;
