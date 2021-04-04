@@ -8,7 +8,9 @@ import "./style/usersStyle.scss";
 import { useDispatch } from "react-redux";
 import { deleteUserAction } from "../../../../actions/usersActions"
 
+
 const User = ({ user }) => {
+
     
     const dispatch = useDispatch();
 
@@ -22,11 +24,11 @@ const User = ({ user }) => {
         }).then(result => {
             if (result.value) {
                 Swal.fire("Deleted User", " User has been deleted ", "ok");
-
                 dispatch(deleteUserAction(id));
             }
         });
     };
+   
 
     return (
         <>

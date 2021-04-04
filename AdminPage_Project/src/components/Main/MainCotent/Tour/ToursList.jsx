@@ -46,11 +46,11 @@ const ToursList = () => {
                 
                    
                 </table>
-                <Link to={"/toursList/new" } >  
-                        <GoDiffAdded className="blockTourListMain__linkToAddTour"/> 
-                    </Link>
+               
           </div>
-            
+          <Link to={"/toursList/new" } >  
+                <GoDiffAdded className="blockTourListMain__linkToAddTour"/> 
+          </Link>
             {/* <SearchTour /> */}
      </>
    );

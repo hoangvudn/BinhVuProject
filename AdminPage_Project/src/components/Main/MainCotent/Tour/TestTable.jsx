@@ -1,137 +1,109 @@
-import React from 'react';
-import { Formik } from 'formik';
-import "./style/tourStyle.scss";
+.blockNewTour {
+  position: absolute;
+  top: 200px;
+  left: 37%;
+  width: 650px;
+  height: 350px;
+  //background: grey;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
-
-const columns = [
-    { id: 'name', label: 'Name', minWidth: 170 },
-    { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
-    {
-      id: 'population',
-      label: 'Population',
-      minWidth: 170,
-      align: 'right',
-      format: (value) => value.toLocaleString('en-US'),
-    },
-    {
-      id: 'size',
-      label: 'Size\u00a0(km\u00b2)',
-      minWidth: 170,
-      align: 'right',
-      format: (value) => value.toLocaleString('en-US'),
-    },
-    {
-      id: 'density',
-      label: 'Density',
-      minWidth: 170,
-      align: 'right',
-      format: (value) => value.toFixed(2),
-    },
-  ];
-  
-  function createData(name, code, population, size) {
-    const density = population / size;
-    return { name, code, population, size, density };
+  &__title {
+      position: relative;
+      top: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: gray;
+      // background: yellow;
+  }
+  &__formNew {
+      position: absolute;
+      display: flex;
+      // flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      // background: rebeccapurple;
+    
+      &__inputLeftItem {
+          position: relative;
+          margin-top: 20px;
+          left: -22%;
+      }
+      &__inputImageUrl {
+          position: relative;
+          left: 19px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+      }
+      &__inputPlace {
+          position: relative;
+          left: 50px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+      }
+      &__inputTourName {
+          position: relative;
+          left: 44px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+      }
+      &__inputDay {
+          position: relative;
+          left: 60px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+      }
+      //----------------------------Right Item--------------------------------------
+      &__inputRightItem {
+          position: relative;
+          margin-top: 20px;
+          left: 10%;
+      }
+      &__inputTransports {
+          position: relative;
+          left: 20px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+      }
+      &__inputPrice {
+          position: relative;
+          left: 59px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+      }
+      &__inputStart {
+          position: relative;
+          left: 62px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+      }
+      &__inputApply {
+          position: relative;
+          left: 53px;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+      }
   }
   
-  const rows = [
-    createData('India', 'IN', 1324171354, 3287263),
-    createData('China', 'CN', 1403500365, 9596961),
-    createData('Italy', 'IT', 60483973, 301340),
-    createData('United States', 'US', 327167434, 9833520),
-    createData('Canada', 'CA', 37602103, 9984670),
-    createData('Australia', 'AU', 25475400, 7692024),
-    createData('Germany', 'DE', 83019200, 357578),
-    createData('Ireland', 'IE', 4857000, 70273),
-    createData('Mexico', 'MX', 126577691, 1972550),
-    createData('Japan', 'JP', 126317000, 377973),
-    createData('France', 'FR', 67022000, 640679),
-    createData('United Kingdom', 'GB', 67545757, 242495),
-    createData('Russia', 'RU', 146793744, 17098246),
-    createData('Nigeria', 'NG', 200962417, 923768),
-    createData('Brazil', 'BR', 210147125, 8515767),
-  ];
-  
-  const useStyles = makeStyles({
-    root: {
-      width: '100%',
-    },
-    container: {
-      maxHeight: 440,
-    },
-  });
-  
-
-
-const TestTable = () => { 
-    const classes = useStyles();
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
-
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(+event.target.value);
-        setPage(0);
-    };
-
-   
-   return (
-            <Paper className={classes.root}>
-            <TableContainer className={classes.container}>
-            <Table stickyHeader aria-label="sticky table">
-                <TableHead>
-                <TableRow>
-                    {columns.map((column) => (
-                    <TableCell
-                        key={column.id}
-                        align={column.align}
-                        style={{ minWidth: column.minWidth }}
-                    >
-                        {column.label}
-                    </TableCell>
-                    ))}
-                </TableRow>
-                </TableHead>
-                <TableBody>
-                {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    return (
-                    <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                        {columns.map((column) => {
-                        const value = row[column.id];
-                        return (
-                            <TableCell key={column.id} align={column.align}>
-                            {column.format && typeof value === 'number' ? column.format(value) : value}
-                            </TableCell>
-                        );
-                        })}
-                    </TableRow>
-                    );
-                })}
-                </TableBody>
-            </Table>
-            </TableContainer>
-            <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
-            component="div"
-            count={rows.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onChangePage={handleChangePage}
-            onChangeRowsPerPage={handleChangeRowsPerPage}
-            />
-        </Paper>
-   );
+  &__buttonSave {
+      position: absolute;
+      top: 210px;
+      width: 100px;
+      height: 50px;
+  }
+  &__buttonSave:hover {
+      cursor: pointer; 
+      background: rgb(9, 206, 75);
+      border-radius: 5px;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
 }
-export default TestTable;

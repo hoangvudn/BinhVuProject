@@ -207,126 +207,6 @@
           "abouttDay": "T3, 06/12/2020"
         }
       ]
-    },
-    {
-      "type": 1,
-      "id": 10,
-      "image": "//cdn2.ivivu.com/2020/11/04/10/ivivu-cho-noi-dau-nam-bia-360x225.gif",
-      "place": "Cần Thơ, Châu Đốc,Miền Tây",
-      "name": "Tour Miền Tây 3N2D: Châu Đốc-Trà Sư-Cần Thơ Lễ 30/4",
-      "day": "3 Ngày 2 Đêm",
-      "transports": [
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "Viếng Miếu Bà Chúa Xứ",
-        "Khám Phá Rừng Tràm Trà Sư",
-        "Văn Hóa Chợ Nỗi Cần Thơ"
-      ],
-      "price": "6.390.000",
-      "start": "03-11-2020",
-      "apply": "2 khách",
-      "startDays": [
-        "03-11-2020",
-        "10-11-2020",
-        "10-11-2020",
-        "10-11-2020",
-        "10-11-2020",
-        "10-11-2020"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "T3, 03/11/2020",
-          "abouttDay": "T3, 08/11/2020"
-        },
-        {
-          "startDay": "T3, 10/11/2020",
-          "abouttDay": "T3, 15/11/2020"
-        },
-        {
-          "startDay": "T3, 17/11/2020",
-          "abouttDay": "T3, 12/11/2020"
-        },
-        {
-          "startDay": "T3, 24/11/2020",
-          "abouttDay": "T3, 29/11/2020"
-        },
-        {
-          "startDay": "T3, 01/12/2020",
-          "abouttDay": "T3, 06/12/2020"
-        }
-      ]
-    },
-    {
-      "type": 1,
-      "id": 11,
-      "image": "//cdn2.ivivu.com/2020/10/26/10/ivivu-simacai-bia-360x225.gif",
-      "place": "Hà Giang, Sapa",
-      "name": "Tour Hà Giang 4N3D: Hoàng Su Phì-Simacai-Bắc Hà-Sapa",
-      "day": "2 Ngày 1 Đêm",
-      "transports": [
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "Check In Hoàng Su Phì",
-        "Du Lịch Sapa",
-        "Chiêm Ngưỡng Ruộng Bậc Thang"
-      ],
-      "price": "5.650.000",
-      "start": "03-11-2020",
-      "apply": "2 khách",
-      "startDays": [
-        "03-11-2020",
-        "10-11-2020",
-        "10-11-2020",
-        "10-11-2020",
-        "10-11-2020",
-        "10-11-2020"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "T3, 03/11/2020",
-          "abouttDay": "T3, 08/11/2020"
-        },
-        {
-          "startDay": "T3, 10/11/2020",
-          "abouttDay": "T3, 15/11/2020"
-        },
-        {
-          "startDay": "T3, 17/11/2020",
-          "abouttDay": "T3, 12/11/2020"
-        },
-        {
-          "startDay": "T3, 24/11/2020",
-          "abouttDay": "T3, 29/11/2020"
-        },
-        {
-          "startDay": "T3, 01/12/2020",
-          "abouttDay": "T3, 06/12/2020"
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "image": "//cdn2.ivivu.com/2019/04/04/10/tour-da-nangba-na-hill-cau-vang-360x225.jpg",
-      "place": "SaiGon",
-      "name": "Dragon",
-      "day": "2",
-      "transports": "Bicycle",
-      "price": "5.234.668",
-      "start": "2",
-      "apply": "5"
-    },
-    {
-      "id": 13,
-      "image": "//cdn2.ivivu.com/2019/04/04/10/tour-da-nangba-na-hill-cau-vang-360x225.jpg",
-      "place": "HoiAn",
-      "name": "Tik",
-      "day": "2",
-      "transports": "Bus",
-      "price": "2.000.000",
-      "start": "02-10-2021",
-      "apply": "2"
     }
   ],
   "users": [
@@ -359,6 +239,12 @@
       "email": "yamaha@gmail.com",
       "password": "11232313123",
       "id": 10
+    },
+    {
+      "userName": "wer",
+      "email": "wer@gmail.com",
+      "password": "132313789433",
+      "id": 11
     }
   ],
   "createSearchTour": [

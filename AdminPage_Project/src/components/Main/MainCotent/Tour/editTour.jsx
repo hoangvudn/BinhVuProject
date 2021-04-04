@@ -76,7 +76,7 @@ const EditTour = ({ match, history }) => {
                 <div className="blockEditTour__formEdit__leftItem">
                         <div className="blockEditTour__formEdit__inputLeftItem">
                             <label className="blockEditTour__formEdit__labelImageUrl">Image Url</label>
-                            <input  className="blockEditTour__formEdit__inputImageUrl"
+                            <input className="blockEditTour__formEdit__inputImageUrl"
                                 type="text"
                                 defaultValue={tour.image}
                                 ref={imageRef}
