@@ -1,0 +1,41 @@
+.box-mid{
+   display: flex !important;
+   background: white;
+   &__img{
+      width: 120px;
+      height: 120px;
+   }
+   &__content{
+      // min-width: 2.56px;
+      padding: 3px 0px 0px 10px;
+      &-div{
+         // width: 208.56px;
+         height: 87px;
+         &-name{
+            color: #003C71;
+            font-weight: bold;
+            font-size: 15px;
+         }
+
+      }
+      &--price{
+         display: flex;
+         justify-content: flex-end;
+         font-size: 18px;
+         font-weight: bold;
+         color: #00C1DE;
+         p{
+            padding: 0;
+            margin: 0;
+         }
+         small{
+            padding-left: 2px;
+         }
+      }
+   }
+   &__delete-card{
+      position: relative;
+      top: -4px;
+      left: -1px;
+   }
+}

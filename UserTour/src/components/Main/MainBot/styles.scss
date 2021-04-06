@@ -1,0 +1,44 @@
+.tours{
+   background: #f0f0f0;
+   &__title{
+      display: flex !important;
+      justify-content: space-between;
+      border-bottom: 2px solid #003C71;
+      h3{
+         font-size: 33px;
+         color: #003C71;
+      }
+      span{
+         color: #003C71;
+         font-size: 18px;
+         padding-top: 30px;
+         cursor: pointer;
+      }
+   }
+   &__box{
+      padding-bottom: 20px;
+   }
+   &__box--more{
+      display: flex !important;
+      justify-content: center;
+      margin-bottom: 20px;
+      &-hover{
+         background: white;
+         border: 1px solid white;
+         opacity: 0.7;
+      }
+      &-hover:hover{
+         cursor: pointer;
+         opacity: 1 !important;
+         color: #003C71;   
+      }
+   }
+}
+
+input[type="radio"]{
+display: none;
+}
+.star{
+   cursor: pointer;
+   transition: color 200ms;
+}
