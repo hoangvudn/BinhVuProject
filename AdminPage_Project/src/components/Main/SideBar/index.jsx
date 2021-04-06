@@ -8,18 +8,21 @@ const SideBar = ( { show } ) => {
    return (
           <div  className={ show ? "blockSideBar active" : "blockSideBar"}>
              <ul className="blockSideBar__menuSideBar">
-                <div className="blockSideBar__groupItem">
-                   <Link to={"/usersList"} className="blockSideBar__linkTitle">
-                      <FaUserAlt className="blockSideBar__icon"/>
-                      <li>USERS</li>
-                   </Link>
-                </div>
-                <Link to={"/toursList"} className="blockSideBar__linkTitle"> 
-                  <div className="blockSideBar__groupItem">
-                        <MdCardTravel className="blockSideBar__icon"/>
-                        <li>TOUR</li>
-                  </div>
-                </Link>           
+            
+                  <Link to={"/usersList"} className="blockSideBar__linkTitle">
+                      <div className="blockSideBar__groupItem">
+                        <FaUserAlt className="blockSideBar__icon"/>
+                        <li>USERS</li>
+                     </div>
+                  </Link>
+           
+                  <Link to={"/toursList"} className="blockSideBar__linkTitle"> 
+                     <div className="blockSideBar__groupItem">
+                           <MdCardTravel className="blockSideBar__icon"/>
+                           <li>TOUR</li>
+                     </div>
+                  </Link> 
+                  
              </ul>
           </div>
    )
