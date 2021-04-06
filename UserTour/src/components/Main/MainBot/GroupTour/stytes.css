@@ -1,0 +1,84 @@
+
+.tours-container{
+   width: 1170px;
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto;
+   
+}
+.tour-introduction{
+   background: rgb(247, 172, 172) !important;
+}
+.gly-map-marker{
+   position: relative !important;
+   bottom: 28px;
+   display: flex !important;
+   /* justify-content: center; */
+   flex: none !important;
+   padding-right: 5px;
+   min-width: 99px;
+   height: 28px;
+   background: rgba(0,70,126,0.8);
+   color: rgb(11, 11, 14);
+}
+.tour-top-padding{
+   padding-top: 28px;
+}
+.name-tour{
+   position: relative;
+   bottom: 20px;
+   display: flex;
+   justify-content: center;
+   color: #003C71;
+   font-weight: bold;
+   font-size: 16px;
+}
+.image-tour{
+   width: 359.8px;
+   height: 224.88px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+.place-tour{
+   padding-top: 0px;
+   padding-left: 2px;
+   color: white;
+   font-size: 16px;
+   font-weight: 500;
+}
+.surround-name{
+   padding: 0px 10px 0px 10px;
+}
+.day-bot-tour{
+   padding-left: 2px;
+}
+.transports-tour{
+   display: flex;
+   justify-content: flex-end;
+}
+.desription-tour{
+   height: 75px;
+   color: #00abc5;
+}
+.price-bot-tour{
+   display: flex;
+   justify-content: flex-end;
+   color: #00C1DE;
+   font-size: 22px;
+   font-weight: bold;
+}
+.unit-bot-tour{
+   padding-top: 5px;
+   padding-left: 3px;
+}
+.box-tour{
+   height: 444.4px;
+   background: #fff;
+}
+.box-hover:hover{
+   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+   transition: all .3s ease;
+   cursor: pointer;
+}

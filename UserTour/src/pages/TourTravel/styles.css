@@ -1,0 +1,41 @@
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+   width: 100%;
+   border: 1px solid #ddd;
+ }
+ 
+ th, td {
+   text-align: left;
+   padding: 16px;
+ }
+ 
+ tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+ .hover-scroll-to-view:hover{
+    background: rgba(166, 168, 177, 0.329) !important;
+    
+ }
+ .view-active{
+   background: rgba(166, 168, 177, 0.329) !important;
+   transition: all .3s ease;
+ }
+
+ input[type="radio"]{
+   display: none;
+   }
+   .star{
+      cursor: pointer;
+      transition: color 200ms;
+   }
+
+.react-datepicker__input-container input{
+   width: 107.93px;
+   height: 30px;
+   border: none;
+   border: 1px solid rgb(204, 204, 204);
+}
+/* .react-datepicker{
+font-size: 20px;
+} */
