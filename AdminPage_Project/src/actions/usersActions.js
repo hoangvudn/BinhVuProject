@@ -22,6 +22,8 @@ import {
     USER_SEARCH_SUCCESS,
     USER_SEARCH_ERROR
 
+    
+
 } from "../constants/index";
 import Swal from 'sweetalert2';
 import axiosConfig from "../data/configDatabase/axois";
@@ -68,7 +70,7 @@ export function getUsersAction() {
 
         //Ask the API
         axiosConfig 
-         .get("./users")
+         .get(`./users`)
          .then(response => {
              dispatch(getUsersSucces(response.data));
          })
@@ -189,11 +191,35 @@ export const deleteUserError = () => ({
 });
 //---------------------------Function Search User------------------------------------------------------
 
-// export function searchUserAction(value) {
-//     return dispatch => {
-//         dispatch(searchUser(value));
+ export function searchUserAction(value) {
+    return dispatch => {
+        dispatch(searchUser(value));
+        axiosConfig
+           .get(`./users/?q=${value}`)
+           .then(response => {
+                 console.log("SEARCH Da",response);
+                 dispatch(searchUserSuccess(response.data));
+           })
+           .catch(error => {
+            console.log(error);
+            dispatch(searchUserError());
+        });
+    };
+};
 
-  
+ export const searchUser = () => ({
+     type: GET_USER_SEARCH
+ });
+
+ export const searchUserSuccess = usersList => ({
+     type: USER_SEARCH_SUCCESS,
+     payload: usersList
+ })
+
+ export const searchUserError = () => ({
+     type: USER_SEARCH_ERROR
+ })
+
 //     }
 // }
 

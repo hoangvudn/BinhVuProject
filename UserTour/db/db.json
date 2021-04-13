@@ -702,6 +702,12 @@
       "email": "bjnhphan951@yahoo.com",
       "password": "222222222",
       "id": 2
+    },
+    {
+      "userName": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456789",
+      "id": 3
     }
   ],
   "createSearchTour": [

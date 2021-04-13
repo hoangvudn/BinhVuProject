@@ -25,6 +25,11 @@ export const GET_USER_SEARCH = "GET_USER_SEARCH";
 export const USER_SEARCH_SUCCESS = "USER_SEARCH_SUCCESS";
 export const USER_SEARCH_ERROR = "USER_SEARCH_ERROR";
 
+export const GET_USER_LOGIN = "GET_USER_LOGIN";
+export const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS"
+export const USER_LOGIN_ERROR = "USER_LOGIN_ERROR"
+
+
 
 //=========================================================================================================
 //------------------------------------MANAGER-----TOUR-----------------------------------------------------
@@ -48,8 +53,9 @@ export const TOUR_UPDATE_ERROR = "TOUR_UPDATE_ERROR";
 
 
 export const GET_TOUR_DELETED = "GET_TOUR_DELETED";
-export const TOUR_DELETED_SUCCESS = "TOUR_DELETED_SUCCESS ";
+export const TOUR_DELETED_SUCCESS = "TOUR_DELETED_SUCCESS";
 export const TOUR_DELETED_ERROR = "TOUR_DELETED_ERROR";
+
 
 
 

@@ -51,7 +51,10 @@ $base-color: #F4F6FD;
         position: absolute;
         left: 0px;
     }
-
+    &__email {
+        position: absolute;
+        right: 310px;
+    }
     &__itemUser {
         position: relative;
         width: 35%;

@@ -36,7 +36,7 @@ const EditUser = ({ match, history }) => {
              userNameRef.current.value.trim() === "" ||
              emailRef.current.value.trim() === ""
          ) {
-            <p>ERROR. Value null</p>;
+            alert("Value not null")
             return;
          }
          userUpdated({

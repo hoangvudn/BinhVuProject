@@ -5,6 +5,15 @@ import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import Swal from "sweetalert2";
 import "./style/usersStyle.scss";
 
+
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import { useDispatch } from "react-redux";
 import { deleteUserAction } from "../../../../actions/usersActions"
 
@@ -32,17 +41,15 @@ const User = ({ user }) => {
 
     return (
         <>
-         <tr className="blockUserListMain__listItem">
-             <td className="blockUserListMain__itemUser">{user.userName}</td>
-             <td className="blockUserListMain__itemEmail">{user.email}</td>
-             <Link to={`/usersList/edit/${user.id}`} > 
-                     <AiFillEdit className="blockUserListMain__editIcon"/>
-             </Link>
-          
-             <AiFillDelete className="blockUserListMain__deleteIcon" onClick={() => confirmDeleteUser(user.id)}/>
-           
-         </tr>
-        
+            <tr className="blockUserListMain__listItem">
+                <td className="blockUserListMain__itemUser">{user.userName}</td>
+                <td className="blockUserListMain__itemEmail">{user.email}</td>
+                <Link to={`/usersList/edit/${user.id}`} > 
+                        <AiFillEdit className="blockUserListMain__editIcon"/>
+                </Link>
+            
+                <AiFillDelete className="blockUserListMain__deleteIcon" onClick={() => confirmDeleteUser(user.id)}/>  
+            </tr>  
         </>
     )
 }
@@ -52,7 +59,28 @@ export default  User;
 
 
 //------------------------------------------------------------EXAMPLE------------------------------------------
-// // const columns = ['CompanyName', 'City', 'State', 'Phone', 'Fax'];
+
+
+{/* <TableRow >
+<TableCell component="th" scope="row">
+  {user.userName}
+</TableCell>
+<TableCell align="right">{user.password}</TableCell>
+<TableCell align="right" options={{
+                  search: true
+              }}>{user.email}</TableCell>
+{/* <TableCell align="right">{user.fat}</TableCell>
+<TableCell align="right">{row.carbs}</TableCell>
+<TableCell align="right">{row.protein}</TableCell> */}
+//  <Link to={`/usersList/edit/${user.id}`} > 
+//        <AiFillEdit className="blockUserListMain__editIcon"/>
+// </Link>
+
+// <AiFillDelete className="blockUserListMain__deleteIcon" onClick={() => confirmDeleteUser(user.id)}/>
+// </TableRow>
+
+
+// // const columns = ['CompanyName', 'City', 'State', 'Phone', 'Fax']; */}
 
 // // // import React, { useState } from 'react'
 

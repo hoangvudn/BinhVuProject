@@ -26,7 +26,6 @@ const Tour = ({ tour }) => {
         }).then(result => {
             if (result.value) {
                 Swal.fire("Deleted Tour", " Tour has been deleted ", "ok");
-
                 dispatch(deleteTourAction(id));
             }
         });
@@ -34,7 +33,7 @@ const Tour = ({ tour }) => {
    return (
         <>
             <tr className="blockTourListMain__listItem">
-                <td className="blockTourListMain__itemImage"> <img src= {tour.image} alt="image coutryside"/>  </td>
+                <td className="blockTourListMain__itemImage"> <img src= {tour.image} alt="image countryside"/>  </td>
                 <td className="blockTourListMain__itemPlace"> {tour.place}  </td>
                 <td className="blockTourListMain__itemName">  {tour.name}   </td>
                 <td className="blockTourListMain__itemDayAmount"> {tour.day} </td>
@@ -44,14 +43,16 @@ const Tour = ({ tour }) => {
                 {/* <td className="blockTourListMain__itemStartDay"> {tour.descriptions} </td> */}
                 <td className="blockTourListMain__itemApplyPassenger"> {tour.apply} </td>
                 
-                <Link to={`/toursList/edit/${tour.id}`} > 
-                        <AiFillEdit className="blockTourListMain__editIcon"/>
-                </Link>
-            
-                <AiFillDelete className="blockTourListMain__deleteIcon" onClick={() => confirmDeleteTour(tour.id)}/>
+                <div className="blockTourListMain__groupIcon"> 
+                    <Link to={`/toursList/edit/${tour.id}`} > 
+                            <AiFillEdit className="blockTourListMain__groupIcon__editIcon"/>
+                    </Link>
+                
+                    <AiFillDelete className="blockTourListMain__groupIcon__deleteIcon" onClick={() => confirmDeleteTour(tour.id)}/>
+                </div>
             
             </tr>
-        
+          
         </>      
    )
 }

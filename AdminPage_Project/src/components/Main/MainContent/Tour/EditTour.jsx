@@ -63,7 +63,7 @@ const EditTour = ({ match, history }) => {
              apply: applyRef.current.value  
          });
          Swal.fire("Saved", "Tour updated", "ok");
-         //Return to Homepage
+         //Return to tour list
          history.push(`/toursList`);
      };
 

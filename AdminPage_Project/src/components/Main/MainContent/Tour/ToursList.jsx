@@ -44,7 +44,6 @@ const ToursList = () => {
                             ))}
                     </tbody>
                 
-                   
                 </table>
                
           </div>
