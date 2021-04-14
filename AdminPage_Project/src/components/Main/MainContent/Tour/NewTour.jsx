@@ -5,8 +5,13 @@ import  Swal  from "sweetalert2";
 import { createNewTourAction } from "../../../../actions/toursActions";
 import { useDispatch, useSelecttor } from "react-redux";
 import { useState } from "react";
+<<<<<<< HEAD
 //import DatePicker from "react-datepicker"
 
+=======
+import DatePicker from "react-datepicker"
+import 'react-datepicker/dist/react-datepicker.css';
+>>>>>>> 6fd9696084211fe41123d15101d19eb94611510d
 const NewTour = ({ history }) => {
     const [ image, setImage ] = useState("");
     const [ place, setPlace ] = useState("");
@@ -46,6 +51,12 @@ const NewTour = ({ history }) => {
        
                 <div className="blockNewTour__title">
                         <h2>ADD TOUR</h2>
+<<<<<<< HEAD
+=======
+                        <DatePicker selected={startDate} onChange={date => setStartDate(date)}
+                           dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
+                        />
+>>>>>>> 6fd9696084211fe41123d15101d19eb94611510d
                 </div>
             
                    

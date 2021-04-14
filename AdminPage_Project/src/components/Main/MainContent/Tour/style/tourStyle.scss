@@ -412,6 +412,68 @@ $border-color: #82A2F4;
     }
 }
 
+//react-Datepicker
+.random{
+   font-size: 16px !important;
+}
+
+.react-datepicker__day-name{
+   font-size: 16px;
+}
+
+.react-datepicker__current-month{
+   font-size: 16px;
+}
+
+.react-datepicker__day{
+   width: 38px;
+   line-height: 38px;
+}
+
+.react-datepicker__day-name{
+   width: 38px;
+   line-height: 38px;
+   color: #fff !important;
+   font-weight: bold;
+}
+
+.color-blue{
+   font-size: 16px;
+   color: #003C71;
+   font-weight: bold;
+}
+
+.react-datepicker__day--selected{
+   color: cyan !important;
+   border-radius: 5px !important;
+   box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff !important;
+   transition: all .5s !important;
+   background-color: #003C71 !important;
+}
+
+.react-datepicker__header{
+   background-color: #003C71 !important;
+}
+
+.react-datepicker__current-month{
+   color: #f79321 !important;
+}
+
+.react-datepicker-ignore-onclickoutside{
+   color: #003C71 !important;
+}
+
+.react-datepicker-ignore-onclickoutside:focus{
+   outline: none !important;
+   border: none !important;
+   color: cyan !important;
+   border-radius: 5px !important;
+   box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff !important;
+   transition: all .5s !important;
+   background-color: #003C71 !important;
+}
+// ------------------------------------------------------------------------
+
 .blockSearchTour {
     position: absolute;
     display: flex;
