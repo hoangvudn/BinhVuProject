@@ -6,7 +6,7 @@ import { createNewTourAction } from "../../../../actions/toursActions";
 import { useDispatch, useSelecttor } from "react-redux";
 import { useState } from "react";
 import DatePicker from "react-datepicker"
-
+import 'react-datepicker/dist/react-datepicker.css';
 const NewTour = ({ history }) => {
     const [ image, setImage ] = useState("");
     const [ place, setPlace ] = useState("");
@@ -47,7 +47,9 @@ const NewTour = ({ history }) => {
        
                 <div className="blockNewTour__title">
                         <h2>ADD TOUR</h2>
-                        <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+                        <DatePicker selected={startDate} onChange={date => setStartDate(date)}
+                           dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
+                        />
                 </div>
             
                    
