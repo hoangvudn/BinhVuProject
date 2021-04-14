@@ -23,8 +23,7 @@ const SearchUser = () => {
     const users = useSelector(state => state.usersList.usersList);
     console.log("List Search :",users);
  
-    return (
-        
+    return (    
         <>
            <div>
                  <form  onSubmit={handleSubmit1} className="blockSearchUser">
@@ -34,17 +33,9 @@ const SearchUser = () => {
                                     name="searchUser"
                                     ref={valueSearchRef}
                                     placeholder="Search..."
-                                    // onChange={handleChange}
-                                    // onBlur={handleBlur}
-                                    // value={values.searchUser}
                                     onChange={e => setValueSearch(e.target.value)}
                                 />
                            </div>  
-                           {/* <div className="blockSearchUser__buttonSave">
-                                <button type="submit" onClick="">
-                                    SEARCH
-                                </button>
-                           </div> */}
                  </form>
             </div>
         </>

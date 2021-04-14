@@ -33,9 +33,10 @@ function App() {
     //  <BasicTable />
     //  <BasicTable1 />
      <HomePage />
-    // <Router>
+   
     //       {/* <Header/> */}
     //       {/* <TestTable /> */}
+    //  <Router>
     //       <LogInForm />
     //           <div className="blockContainer">
     //              <Switch>
@@ -48,7 +49,7 @@ function App() {
     //                <Route exact path="/toursList/edit/:id" component={EditTour} />   */}
     //              </Switch>
     //            </div>
-    // </Router>
+    //  </Router>
   );
 }
 

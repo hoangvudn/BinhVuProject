@@ -51,7 +51,7 @@ const BasicTable1 = () => {
 
   return (
      
-                          <Grid container justify='center' alignContent='center'>
+            <Grid container justify='center' alignContent='center'>
                 <Grid item xs={6} md={4}>
                     <Paper elevation={4} style={{ padding: '20px 15px', marginTop: '30px' }}>
                         <Typography variant="headline" gutterBottom>

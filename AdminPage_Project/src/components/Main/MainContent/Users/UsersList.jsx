@@ -23,22 +23,17 @@ const UsersList = ( {history} ) => {
         getUsersList(); 
     }, []);
      
-//    const columns = [
-//         {title: "Place", field: "userName"},
-//         {title: "Name", field: "email"}
-//     ]
 
     const users = useSelector(state => state.usersList.usersList);
     console.log("List User New:",users);
-    
+
     return (
-        <>
-           
+        <>     
            <table className="blockUserListMain">
                <thead>
                    <tr>
                         <th className="blockUserListMain__userName">User Name</th>
-                        <th className="blockUserListMain__email">Password</th>
+                        <th className="blockUserListMain__email">Email</th>
                    </tr>         
                 </thead>
                

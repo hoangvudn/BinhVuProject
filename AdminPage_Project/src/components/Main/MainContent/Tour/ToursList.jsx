@@ -48,6 +48,7 @@ const ToursList = () => {
                 </table>
                
           </div>
+          
           <Link to={"/toursList/new" } >  
                 <GoDiffAdded className="blockTourListMain__linkToAddTour"/> 
           </Link>

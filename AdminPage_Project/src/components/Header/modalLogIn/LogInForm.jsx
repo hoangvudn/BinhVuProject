@@ -42,19 +42,18 @@ const LogInForm = ({ history }) => {
                 >
                     {({ errors, touched }) => (
                         <Form >
-                            <Field name="userName" onChange={(e) => setUserName(e.tar)} />
-                            {errors.userName && touched.userName ? (
-                                <div>{errors.userName}</div>
+                            <Field name="userName" />
+                                {errors.userName && touched.userName ? (
+                                    <div>{errors.userName}</div>
                             ) : null}
                             <Field name="password" />
-                            {errors.password && touched.password ? (
-                                <div>{errors.password}</div>
+                                {errors.password && touched.password ? (
+                                    <div>{errors.password}</div>
                             ) : null}
-                            {/* <Field name="email" type="email" />
-                            {errors.email && touched.email ? <div>{errors.email}</div> : null} */}
+
                             <button type="submit">Submit</button>
                         </Form>
-                    )}
+                    )}  
                 </Formik>
            </div>
        </>

@@ -14,7 +14,7 @@ import NewTour from '../Tour/NewTour'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './styles/index.scss'
-import DatePicker from "react-datepicker"
+
 
 
 
@@ -22,11 +22,10 @@ import DatePicker from "react-datepicker"
 // const dataProvider = jsonServerProvider("http://localhost:3001"); //only port 3001
 const HomePage = () => {  
   
-  const [startDate, setStartDate] = useState(new Date());
   return (
     <Router>
           <Header/>
-          <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+     
           {/* <TestTable /> */}
               <div className="blockContainer">
                  <Switch>
