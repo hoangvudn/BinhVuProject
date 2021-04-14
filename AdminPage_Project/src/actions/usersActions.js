@@ -22,8 +22,6 @@ import {
     USER_SEARCH_SUCCESS,
     USER_SEARCH_ERROR
 
-    
-
 } from "../constants/index";
 import Swal from 'sweetalert2';
 import axiosConfig from "../data/configDatabase/axois";
@@ -189,6 +187,7 @@ export const deleteUserSuccess = id => ({
 export const deleteUserError = () => ({
     type: USER_DELETED_ERROR
 });
+
 //---------------------------Function Search User------------------------------------------------------
 
  export function searchUserAction(value) {
@@ -197,11 +196,11 @@ export const deleteUserError = () => ({
         axiosConfig
            .get(`./users/?q=${value}`)
            .then(response => {
-                 console.log("SEARCH Da",response);
+                 console.log("search result:",response);
                  dispatch(searchUserSuccess(response.data));
            })
            .catch(error => {
-            console.log(error);
+            console.log("NO display record: ",error);
             dispatch(searchUserError());
         });
     };
@@ -220,42 +219,3 @@ export const deleteUserError = () => ({
      type: USER_SEARCH_ERROR
  })
 
-//     }
-// }
-
-//----------------------------------------CREATE NEW USER--------------------------------------------//
-
-// //Create New User 
-// export function createNewUserAction(user) {
-//     //dispatch is in charge to call the 2 actions that we have here 
-//     return dispatch => {
-//         //Here i call the function that allows me to create the "newUser"
-//         dispatch(newUser());
-//         //Insert in the API
-//         axoisConfig
-//           .post("/users", user)
-//           .then(response => {
-//               console.log(response);
-//               // If insert correctly
-//               dispatch(newUserSucces(user))
-//           })
-//           .catch(error => {
-//               console.log(error);
-//               // If there is an error 
-//               dispatch(newUserError());
-//           });
-//     };
-// }
-
-// export const newUser = () => ({
-//     type: ADD_USER
-// });
-
-// export const newUserSucces = user => ({
-//     type: ADD_USER_SUCCESS,
-//     payload: user
-// });
-
-// export const newUserError = error => ({
-//     type: ADD_USER_ERROR
-// });

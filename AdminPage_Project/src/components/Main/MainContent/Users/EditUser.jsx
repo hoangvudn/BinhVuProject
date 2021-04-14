@@ -14,6 +14,7 @@ const EditUser = ({ match, history }) => {
      // Create userNameRef, emailRef
      const userNameRef = useRef("");
      const emailRef = useRef("");
+     const passwordRef = useRef("");
 
 
      //Create alias to use function dispatch to excute action edit
@@ -34,7 +35,8 @@ const EditUser = ({ match, history }) => {
          e.preventDefault();
          if (
              userNameRef.current.value.trim() === "" ||
-             emailRef.current.value.trim() === ""
+             emailRef.current.value.trim() === "" ||
+             passwordRef.current.value.trim() === ""
          ) {
             alert("Value not null")
             return;
@@ -42,7 +44,8 @@ const EditUser = ({ match, history }) => {
          userUpdated({
              id,
              userName: userNameRef.current.value,
-             email: emailRef.current.value
+             email: emailRef.current.value,
+             password: passwordRef.current.value
          });
          Swal.fire("Saved", "User updated", "ok");
          //Return to Homepage
@@ -70,6 +73,15 @@ const EditUser = ({ match, history }) => {
                       type="email"
                       defaultValue={user.email}
                       ref={emailRef}
+                  />
+              </div>
+
+              <div className="blockEditUser__inputItem">
+                  <label className="blockEditUser__labelPassWord">Password</label>
+                  <input className="blockEditUser__inputPassWord"
+                      type="password"
+                      defaultValue={user.password}
+                      ref={passwordRef}
                   />
               </div>
 

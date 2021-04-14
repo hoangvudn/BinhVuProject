@@ -7,6 +7,7 @@ import { GoDiffAdded } from 'react-icons/go';
 import { useDispatch, useSelector } from "react-redux";
 import { getToursAction } from "../../../../actions/toursActions";
 import Tour from './Tour';
+import SearchTour from './SearchTour';
 import './style/tourStyle.scss'
 const ToursList = () => { 
     const dispatch = useDispatch();
@@ -50,7 +51,7 @@ const ToursList = () => {
           <Link to={"/toursList/new" } >  
                 <GoDiffAdded className="blockTourListMain__linkToAddTour"/> 
           </Link>
-            {/* <SearchTour /> */}
+          <SearchTour />
      </>
    );
 }

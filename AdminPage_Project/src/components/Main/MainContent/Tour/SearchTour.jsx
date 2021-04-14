@@ -3,44 +3,44 @@ import { Formik } from 'formik';
 
 import { useDispatch, useSelector } from "react-redux";
 import {
-    searchUserAction
-} from "../../../../actions/usersActions";
+    searchTourAction
+} from "../../../../actions/toursActions";
 
-const SearchUser = () => {
+const SearchTour = () => {
     const dispatch = useDispatch();
     const [valueSearch, setValueSearch] = useState("");
-    const valueSearchRef= useRef("");
+    const valueSearchRef = useRef("");
 
     useEffect(() => {
-        const getUsersListSearch = () => dispatch(searchUserAction(valueSearch));
-        getUsersListSearch(); 
+        const getToursListSearch = () => dispatch(searchTourAction(valueSearch));
+        getToursListSearch(); 
     }, [dispatch, valueSearch]);
 
-    const handleSubmit1 = e => {
+    const handleSubmit = e => {
         e.preventDefault();
     }
   
-    const users = useSelector(state => state.usersList.usersList);
-    console.log("List Search :",users);
+    const toursTravel = useSelector(state => state.toursList.toursList);
+    console.log("List Search :", toursTravel);
  
     return (
         
         <>
            <div>
-                 <form  onSubmit={handleSubmit1} className="blockSearchUser">
-                             <div className="blockSearchUser__inputItem">
+                 <form  onSubmit={handleSubmit} className="blockSearchTour">
+                             <div className="blockSearchTour__inputItem">
                                <input
                                     type="text"
-                                    name="searchUser"
+                                    name="searchTour"
                                     ref={valueSearchRef}
                                     placeholder="Search..."
                                     // onChange={handleChange}
                                     // onBlur={handleBlur}
-                                    // value={values.searchUser}
+                                    // value={values.searchTour}
                                     onChange={e => setValueSearch(e.target.value)}
                                 />
                            </div>  
-                           {/* <div className="blockSearchUser__buttonSave">
+                           {/* <div className="blockSearchTour__buttonSave">
                                 <button type="submit" onClick="">
                                     SEARCH
                                 </button>
@@ -50,14 +50,14 @@ const SearchUser = () => {
         </>
 
           
-    //    <Formik initialValues={{ searchUser: ''}} 
+    //    <Formik initialValues={{ searchTour: ''}} 
     //            validate={values => {
     //                 const errors = {};
     //                 //check validate input user value
-    //                 if(!values.searchUser) {
-    //                     errors.searchUser = "Required";
+    //                 if(!values.searchTour) {
+    //                     errors.searchTour = "Required";
     //                 } else if ( values.length < 5 ) {
-    //                     errors.searchUser = "Must > 5 character"
+    //                     errors.searchTour = "Must > 5 character"
     //                 }
     //                 return errors;
     //            }}
@@ -72,17 +72,17 @@ const SearchUser = () => {
     //                 isSubmitting,
     //                 /* and other goodies */
     //              }) => (
-    //                 <form onSubmit={handleSubmit} className="blockSearchUser">
-    //                         <div className="blockSearchUser__inputItem">
+    //                 <form onSubmit={handleSubmit} className="blockSearchTour">
+    //                         <div className="blockSearchTour__inputItem">
     //                             <input
     //                                 type="text"
-    //                                 name="searchUser"
+    //                                 name="searchTour"
     //                                 onChange={handleChange}
     //                                 onBlur={handleBlur}
-    //                                 value={values.searchUser}
+    //                                 value={values.searchTour}
     //                             />
     //                        </div>  
-    //                        <div className="blockSearchUser__buttonSave">
+    //                        <div className="blockSearchTour__buttonSave">
     //                             <button type="submit" disabled={isSubmitting}>
     //                                 SEARCH
     //                             </button>
@@ -92,4 +92,4 @@ const SearchUser = () => {
     //    </Formik>;
     )
 }
-export default SearchUser;
+export default SearchTour;

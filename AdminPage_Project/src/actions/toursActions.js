@@ -16,7 +16,11 @@ import {
 
     GET_TOUR_DELETED,
     TOUR_DELETED_SUCCESS,
-    TOUR_DELETED_ERROR
+    TOUR_DELETED_ERROR,
+
+    GET_TOUR_SEARCH,
+    TOUR_SEARCH_SUCCESS,
+    TOUR_SEARCH_ERROR
 } from "../constants/index";
 import Swal from 'sweetalert2';
 import axiosConfig from "../data/configDatabase/axois";
@@ -182,39 +186,34 @@ export const deleteTourSuccess = id => ({
 export const deleteTourError = () => ({
     type: TOUR_DELETED_ERROR
 });
-//----------------------------------------CREATE NEW TOUR--------------------------------------------//
 
-// //Create New Tour 
-// export function createNewTourAction(tour) {
-//     //dispatch is in charge to call the 2 actions that we have here 
-//     return dispatch => {
-//         //Here i call the function that allows me to create the "newTour"
-//         dispatch(newTour());
-//         //Insert in the API
-//         axoisConfig
-//           .post("/tours", tour)
-//           .then(response => {
-//               console.log(response);
-//               // If insert correctly
-//               dispatch(newTourSucces(tour))
-//           })
-//           .catch(error => {
-//               console.log(error);
-//               // If there is an error 
-//               dispatch(newTourError());
-//           });
-//     };
-// }
+//---------------------------Function Search Tour------------------------------------------------------
 
-// export const newTour = () => ({
-//     type: ADD_TOUR
-// });
+export function searchTourAction(value) {
+    return dispatch => {
+        dispatch(searchTour(value));
+        axiosConfig
+           .get(`./toursTravel/?q=${value}`)
+           .then(response => {
+                 console.log("search result:",response);
+                 dispatch(searchTourSuccess(response.data));
+           })
+           .catch(error => {
+            console.log("NO display record: ",error);
+            dispatch(searchTourError());
+        });
+    };
+};
 
-// export const newTourSucces = tour => ({
-//     type: ADD_TOUR_SUCCESS,
-//     payload: tour
-// });
+ export const searchTour = () => ({
+     type: GET_TOUR_SEARCH
+ });
 
-// export const newTourError = error => ({
-//     type: ADD_TOUR_ERROR
-// });
+ export const searchTourSuccess = toursList => ({
+     type: TOUR_SEARCH_SUCCESS,
+     payload: toursList
+ })
+
+ export const searchTourError = () => ({
+     type: TOUR_SEARCH_ERROR
+ })

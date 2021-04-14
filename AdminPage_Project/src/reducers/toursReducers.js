@@ -16,7 +16,12 @@ import {
 
     GET_TOUR_DELETED,
     TOUR_DELETED_SUCCESS,
-    TOUR_DELETED_ERROR
+    TOUR_DELETED_ERROR,
+
+    GET_TOUR_SEARCH,
+    TOUR_SEARCH_SUCCESS,
+    TOUR_SEARCH_ERROR
+
   } from "../constants/index"
   
   const initialState = {
@@ -122,6 +127,23 @@ import {
                     ...state,
                     error: true
                 }
+           case GET_TOUR_SEARCH:
+                return {
+                    ...state,
+                    error: true
+                }
+            case TOUR_SEARCH_SUCCESS:
+                return {
+                    ...state,
+                    error: null,
+                    toursList: action.payload
+                    //user: {}
+                }
+            case TOUR_SEARCH_ERROR: 
+                return {
+                    ...state,
+                    error: true
+                }     
           default:
                return state;
       }

@@ -424,7 +424,13 @@ $border-color: #82A2F4;
     //background: red;
     &__inputItem {
        position: relative;
+       left: -97px;
     }
+    &__inputItem input {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+     }
  
     &__buttonSave {
         position: relative;

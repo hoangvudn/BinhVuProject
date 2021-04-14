@@ -93,6 +93,17 @@
       "start": "10-10-2021",
       "apply": "2 passenger",
       "id": 12
+    },
+    {
+      "image": "//cdn2.ivivu.com/2020/10/26/10/ivivu-simacai-bia-360x225.gif",
+      "place": "Malaysia",
+      "name": "VietTravel",
+      "day": "2",
+      "transports": "https://img.icons8.com/material-rounded/12/000000/bus.png",
+      "price": "5.300.777",
+      "start": "12-05-2021",
+      "apply": "2 passenger",
+      "id": 13
     }
   ],
   "users": [
@@ -114,8 +125,9 @@
     },
     {
       "id": 10,
-      "userName": "yamaha1",
-      "email": "yamaha@gmail.com"
+      "userName": "angle",
+      "email": "angle@gmail.com",
+      "password": "123456789"
     },
     {
       "userName": "hi",

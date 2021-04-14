@@ -152,6 +152,17 @@ $base-color: #F4F6FD;
         border-left: none;
         border-right: none;
     }
+    &__labelPassWord {
+        position: relative;
+        left: -5px;
+    }
+    &__inputPassWord {
+        position: relative;
+        left: 26px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
     &__buttonSave {
         position: relative;
         top: 50px;
@@ -230,6 +241,12 @@ $base-color: #F4F6FD;
     &__inputItem {
        position: relative;
     }
+    &__inputItem input {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+     }
+  
  
     &__buttonSave {
         position: relative;
