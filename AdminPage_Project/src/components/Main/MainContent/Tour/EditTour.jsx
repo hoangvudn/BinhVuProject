@@ -19,7 +19,11 @@ const EditTour = ({ match, history }) => {
      const transportsRef = useRef("");
      const priceRef = useRef("");
      const startRef = useRef("");
+     const descriptionsRef = useRef("");
      const applyRef = useRef("");
+     const introductionRef = useRef("");
+     const imageIntroductionRef = useRef("");
+     const  titleImageRef = useRef("");
 
 
      //Create alias to use function dispatch to excute action edit
@@ -39,14 +43,18 @@ const EditTour = ({ match, history }) => {
      const handleUpdateTour = e => {
          e.preventDefault();
          if (
-             imageRef.current.value.trim() === "" ||
-             placeRef.current.value.trim() === "" ||
-             nameRef.current.value.trim() === "" ||
-             dayRef.current.value.trim() === "" ||
-             transportsRef.current.value.trim() === "" ||
-             priceRef.current.value.trim() === "" ||
-             startRef.current.value.trim() === "" ||
-             applyRef.current.value.trim() === "" 
+            imageRef.current.value.trim() === "" ||
+            placeRef.current.value.trim() === "" ||
+            nameRef.current.value.trim() === "" ||
+            dayRef.current.value.trim() === "" ||
+            transportsRef.current.value.trim() === "" ||
+            priceRef.current.value.trim() === "" ||
+            startRef.current.value.trim() === "" ||
+            descriptionsRef.current.value.trim() === "" ||
+            applyRef.current.value.trim() === "" ||
+            introductionRef.current.value.trim() === "" ||
+            imageIntroductionRef.current.value.trim() === "" ||
+            titleImageRef.current.value.trim() === "" 
          ) {
             alert("Value not null")
             return;
@@ -60,7 +68,11 @@ const EditTour = ({ match, history }) => {
              transports: transportsRef.current.value,
              price: priceRef.current.value,
              start: startRef.current.value,
-             apply: applyRef.current.value  
+             descriptions: descriptionsRef.current.value,
+             apply: applyRef.current.value,
+             introduction: introductionRef.current.value,
+             imageIntroduction: imageIntroductionRef.current.value,
+             titleImage: titleImageRef.current.value,
          });
          Swal.fire("Saved", "Tour updated", "ok");
          //Return to tour list
@@ -109,6 +121,24 @@ const EditTour = ({ match, history }) => {
                                 ref={dayRef}
                             />
                         </div>
+
+                        <div className="blockEditTour__formEdit__inputLeftItem">
+                            <label className="blockEditTour__formEdit__labelDescriptions">Descriptions</label>
+                            <input className="blockEditTour__formEdit__inputDescriptions"
+                                type="text"
+                                defaultValue={tour.descriptions}
+                                ref={descriptionsRef}
+                            />
+                        </div>
+
+                        <div className="blockEditTour__formEdit__inputLeftItem">
+                            <label className="blockEditTour__formEdit__labelIntroduction">Introduction</label>
+                            <input className="blockEditTour__formEdit__inputIntroduction"
+                                type="text"
+                                defaultValue={tour.introduction}
+                                ref={introductionRef}
+                            />
+                        </div>
                 </div>
                 {/* --------------------------------------------------------------------- */}
                 <div className="blockEditTour__formEdit__rightItem">
@@ -145,6 +175,24 @@ const EditTour = ({ match, history }) => {
                                 type="text"
                                 defaultValue={tour.apply}
                                 ref={applyRef}
+                            />
+                        </div>
+
+                        <div className="blockEditTour__formEdit__inputRightItem">
+                            <label className="blockEditTour__formEdit__labelImageIntroduction">Image Introduction</label>
+                            <input className="blockEditTour__formEdit__inputImageIntroduction"
+                                type="text"
+                                defaultValue={tour. imageIntroduction}
+                                ref={imageIntroductionRef}
+                            />
+                        </div>
+
+                        <div className="blockEditTour__formEdit__inputRightItem">
+                            <label className="blockEditTour__formEdit__labelTitleImage">Title Image</label>
+                            <input className="blockEditTour__formEdit__inputTitleImage"
+                                type="text"
+                                defaultValue={tour.titleImage}
+                                ref={titleImageRef}
                             />
                         </div>
 

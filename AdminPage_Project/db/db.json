@@ -1,55 +1,19 @@
 {
   "toursTravel": [
     {
-      "type": 1,
       "id": 1,
       "image": "https://cdn2.ivivu.com/2020/05/15/16/ivivu-man-moc-chau-360x225.gif",
       "place": "Yên bái",
       "name": "Tour Mù Cang Chải 2N1D: Bản Lướt - Ngọc Chiến - Sơn La",
       "day": "4 Ngày 3 Đêm",
-      "transports": [
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "Ngắm Măm Xôi Tú Lệ",
-        "Bản Lướt Ngọc Chiến",
-        "Đồi Chè Thanh Sơn"
-      ],
+      "transports": "https://img.icons8.com/material-rounded/14/000000/bus.png",
       "price": "5290000",
       "start": "13-11-2021",
+      "descriptions": "Ngắm Măm Xôi Tú Lệ,Bản Lướt Ngọc Chiến,Đồi Chè Thanh Sơn",
       "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ],
       "introduction": "Mộc Châu khiến dân tình 'đứng ngồi không yên' ",
       "imageIntroduction": "http://cdn2.ivivu.com/2019/12/24/14/ivivu-doi-che-trai-tim.gif",
-      "titleImage": "Đồi Chè Trái Tim"
+      "titleImage": "Đồi Chè Trái Bi"
     },
     {
       "type": 1,

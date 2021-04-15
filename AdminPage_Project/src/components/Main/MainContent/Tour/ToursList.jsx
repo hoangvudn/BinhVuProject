@@ -37,6 +37,9 @@ const ToursList = () => {
                             <th className="blockTourListMain__startDay">Start Day</th>
                             <th className="blockTourListMain__descriptions">Descriptions</th>
                             <th className="blockTourListMain__applyPassenger">Apply</th>
+                            <th className="blockTourListMain__introduction">Introduction</th>
+                            <th className="blockTourListMain__imageIntroduction">Image Introduction</th>
+                            <th className="blockTourListMain__titleImage">Title Image</th>
                         </tr>  
                     </thead>
                     
