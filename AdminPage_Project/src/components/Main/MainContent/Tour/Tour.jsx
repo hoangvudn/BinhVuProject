@@ -43,10 +43,12 @@ const Tour = ({ tour }) => {
                 <td className="blockTourListMain__itemDayAmount"> {tour.day} </td>
                 <td className="blockTourListMain__itemTransports"> <img src = {tour.transports} alt="image coutryside"/> </td>
                 <td className="blockTourListMain__itemPrice"> {tour.price} </td>
-                {/* <td className="blockTourListMain__itemStartDay">{moment(tour.start).subtract(10, 'days').calendar()}</td> */}
                 <td className="blockTourListMain__itemStartDay"> {dateStart}  </td>
-                {/* <td className="blockTourListMain__itemStartDay"> {tour.descriptions} </td> */}
+                <td className="blockTourListMain__itemDescriptions"> {tour.descriptions} </td>
                 <td className="blockTourListMain__itemApplyPassenger"> {tour.apply} </td>
+                <td className="blockTourListMain__itemIntroduction"> {tour.introduction} </td>
+                <td className="blockTourListMain__itemImageIntroduction"> {tour.imageIntroduction} </td>
+                <td className="blockTourListMain__itemTitleImage"> {tour.titleImage} </td>
                 
                 <div className="blockTourListMain__groupIcon"> 
                     <Link to={`/toursList/edit/${tour.id}`} > 

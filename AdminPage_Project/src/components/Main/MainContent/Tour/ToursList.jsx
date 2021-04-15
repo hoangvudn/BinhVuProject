@@ -35,6 +35,7 @@ const ToursList = () => {
                             <th className="blockTourListMain__transports">Transport</th>
                             <th className="blockTourListMain__price">Price</th>
                             <th className="blockTourListMain__startDay">Start Day</th>
+                            <th className="blockTourListMain__descriptions">Descriptions</th>
                             <th className="blockTourListMain__applyPassenger">Apply</th>
                         </tr>  
                     </thead>
