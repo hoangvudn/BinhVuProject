@@ -19,7 +19,7 @@ const NewTour = ({ history }) => {
     //const [ start, setStartDay ] = useState("");
     const [ apply, setApply ] = useState("");
   
-    const [startTemp, setStartDate] = useState(null);
+    const [startTemp, setStartDate] = useState(new Date());
 
     // const [checkInDate, setCheckInDate] = useState(null);
     // const [checkOutDate, setCheckOutDate] = useState(null);
@@ -82,7 +82,7 @@ const NewTour = ({ history }) => {
                         <div>
                                 <DatePicker selected={startTemp} 
                                             onChange={date => setStartDate(date)}
-                                            dateFormat="MM-dd-yyyy"
+                                            dateFormat="dd-MM-yyyy"
                                 // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
                                 />
                         </div>

@@ -4,10 +4,10 @@ import "./style/tourStyle.scss";
 import { Link } from 'react-router-dom';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import Swal from "sweetalert2";
-import moment from 'moment'
+
 import { useDispatch } from "react-redux";
 import { deleteTourAction } from "../../../../actions/toursActions"
-import Moment from 'react-moment';
+
 // import React, { useState } from 'react'
 
 // const [tour, setUser] = useState({
@@ -31,6 +31,8 @@ const Tour = ({ tour }) => {
             }
         });
     };
+    const dateStart = tour.start;
+    console.log("Ngay:", dateStart);
    return (
         <>
             
@@ -42,7 +44,7 @@ const Tour = ({ tour }) => {
                 <td className="blockTourListMain__itemTransports"> <img src = {tour.transports} alt="image coutryside"/> </td>
                 <td className="blockTourListMain__itemPrice"> {tour.price} </td>
                 {/* <td className="blockTourListMain__itemStartDay">{moment(tour.start).subtract(10, 'days').calendar()}</td> */}
-                <td className="blockTourListMain__itemStartDay"><Moment format="YYYY/MM/DD"> 19-04-1976 </Moment></td>
+                <td className="blockTourListMain__itemStartDay"> {dateStart}  </td>
                 {/* <td className="blockTourListMain__itemStartDay"> {tour.descriptions} </td> */}
                 <td className="blockTourListMain__itemApplyPassenger"> {tour.apply} </td>
                 

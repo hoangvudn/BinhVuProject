@@ -104,55 +104,15 @@
       "titleImage": "Chùa Bái Đính."
     },
     {
-      "type": 1,
       "id": 3,
       "image": "//cdn2.ivivu.com/2019/04/04/10/tour-da-nangba-na-hill-cau-vang-360x225.jpg",
       "place": "Đà Nẵng, Huế",
       "name": "Tour Thanh Hóa 4N3: HCM - Hà Nội - Pù Luông - Thác Hiêu",
       "day": "4 Ngày 3 Đêm",
-      "transports": [
-        "https://img.icons8.com/material-rounded/12/000000/bus.png"
-      ],
-      "descriptions": [
-        "Khu Du Lịch Bà Nà Núi Chúa",
-        "Tham Quan Động Phong Nha",
-        "Phố Cổ Hội An"
-      ],
+      "transports": "https://img.icons8.com/material-rounded/12/000000/bus.png",
       "price": "5190000",
-      "start": "16-11-2020",
-      "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ],
-      "introduction": "Với hành trình 4 ngày tại Phương Bắc, không những mang nét đặc sắc về kiến trúc, cảnh quan thiên nhiên, mà nơi đây còn chứa đựng giá trị tâm linh, phật tích quý báu qua nhiều năm lịch sử. Đặc trưng trong chương trình hành hương vãng cảnh chùa cầu may mắn, bình an, phước lộc cho gia đình,... là một trong những nét văn hóa đặc trưng đã có từ bao đời nay của người Việt. Cùng iVIVU khám phá ngay hôm nay! ",
-      "imageIntroduction": "//cdn2.ivivu.com/2020/07/08/15/ivivu-bai-dinh.gif",
-      "titleImage": "Chùa Bái Đính."
+      "start": "16-11-2021",
+      "apply": "2 khách"
     },
     {
       "type": 1,

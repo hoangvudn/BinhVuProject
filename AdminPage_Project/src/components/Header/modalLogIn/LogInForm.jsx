@@ -35,7 +35,7 @@ const LogInForm = ({ history }) => {
                         console.log(values);
                       
                         //<HomePage />
-                        alert("Welcome to MuongThanh:");
+                        //alert("Welcome to MuongThanh:");
                         history.push(`/HomePage`);
                         
                     }}
@@ -51,7 +51,7 @@ const LogInForm = ({ history }) => {
                                     <div>{errors.password}</div>
                             ) : null}
 
-                            <button type="submit">Submit</button>
+                            <button type="submit" >Submit</button>
                         </Form>
                     )}  
                 </Formik>
