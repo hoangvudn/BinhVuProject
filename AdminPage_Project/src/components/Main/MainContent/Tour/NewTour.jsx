@@ -5,13 +5,10 @@ import  Swal  from "sweetalert2";
 import { createNewTourAction } from "../../../../actions/toursActions";
 import { useDispatch, useSelecttor } from "react-redux";
 import { useState } from "react";
-<<<<<<< HEAD
-//import DatePicker from "react-datepicker"
-
-=======
+import moment from 'moment';
 import DatePicker from "react-datepicker"
 import 'react-datepicker/dist/react-datepicker.css';
->>>>>>> 6fd9696084211fe41123d15101d19eb94611510d
+
 const NewTour = ({ history }) => {
     const [ image, setImage ] = useState("");
     const [ place, setPlace ] = useState("");
@@ -19,31 +16,47 @@ const NewTour = ({ history }) => {
     const [ day, setDayAmount ] = useState("");
     const [ transports, setTransports ] = useState("");
     const [ price, setPrice ] = useState("");
-    const [ start, setStartDay ] = useState("");
+    //const [ start, setStartDay ] = useState("");
     const [ apply, setApply ] = useState("");
+  
+    const [startTemp, setStartDate] = useState(null);
+
+    // const [checkInDate, setCheckInDate] = useState(null);
+    // const [checkOutDate, setCheckOutDate] = useState(null);
+
+    // const handleCheckInDate = (date) => {
+    //     setCheckInDate(date);
+    //     setCheckOutDate(null);
+    // };
+
+    // const handleCheckOutDate = (date) => {
+    //     setCheckOutDate(date);
+    // };
 
 
     //Create new tour
     const dispatch = useDispatch();
     const addTour = tour => dispatch(createNewTourAction(tour));
+    
 
     const handleSubmit = e => {
         e.preventDefault();
         //validate
         if ( image.trim() === "" || place.trim() === "" || name.trim() === "" ||
-             day.trim() === "" || transports.trim() === "" || price.trim() === "" ||
-             start.trim() === "" || apply.trim() === ""
+             day.trim() === "" || transports.trim() === "" || price.trim() === "" || apply.trim() === ""
         ) {
             alert("Value not null ");
             return;
         }
+        const start = moment(startTemp).format("DD-MM-YYYY");
         // If it success then Add New Tour 
         addTour({ image, place, name, day, transports, price, start, apply });
         // Swal.fire("Saved", "User Added", "ok");
         // return Tour List page
         history.push(`/toursList`);
+      
     };
-
+   
     return (
          <>
     
@@ -51,15 +64,8 @@ const NewTour = ({ history }) => {
        
                 <div className="blockNewTour__title">
                         <h2>ADD TOUR</h2>
-<<<<<<< HEAD
-=======
-                        <DatePicker selected={startDate} onChange={date => setStartDate(date)}
-                           dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                        />
->>>>>>> 6fd9696084211fe41123d15101d19eb94611510d
                 </div>
-            
-                   
+         
                 <form onSubmit={handleSubmit}  className="blockNewTour__formNew">
                     <div className="blockNewTour__formNew__leftItem">
                         <div className="blockNewTour__formNew__inputLeftItem">
@@ -73,6 +79,14 @@ const NewTour = ({ history }) => {
                             />
                         </div>
 
+                        <div>
+                                <DatePicker selected={startTemp} 
+                                            onChange={date => setStartDate(date)}
+                                            dateFormat="MM-dd-yyyy"
+                                // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
+                                />
+                        </div>
+            
                         <div  className="blockNewTour__formNew__inputLeftItem">
                             <label className="blockNewTour__formNew__labelPlace"> Place </label>
                             <input 
@@ -132,7 +146,7 @@ const NewTour = ({ history }) => {
                             />
                         </div>
 
-                        <div className="blockNewTour__formNew__inputRightItem">
+                        {/* <div className="blockNewTour__formNew__inputRightItem">
                             <label className="blockNewTour__formNew__labelStart"> Start Day </label>
                             <input 
                                 className="blockNewTour__formNew__inputStart"
@@ -141,7 +155,7 @@ const NewTour = ({ history }) => {
                                 value = {start}
                                 onChange = { e => setStartDay(e.target.value)}
                             />
-                        </div>
+                        </div> */}
 
                         <div className="blockNewTour__formNew__inputRightItem">
                             <label className="blockNewTour__formNew__labelApply"> Apply </label>
