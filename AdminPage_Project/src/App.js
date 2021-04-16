@@ -32,24 +32,24 @@ function App() {
     //  <TestTable />
     //  <BasicTable />
     //  <BasicTable1 />
-     <HomePage />
+    //  <HomePage />
    
     //       {/* <Header/> */}
     //       {/* <TestTable /> */}
-    //  <Router>
-    //       <LogInForm />
-    //           <div className="blockContainer">
-    //              <Switch>
-    //                <Route exact path="/HomePage" component={HomePage} />
-    //                {/* <Route exact path="/usersList" component={UsersList} />
-    //                <Route exact path="/usersList/new" component={NewUser} />
-    //                <Route exact path="/usersList/edit/:id" component={EditUser} />
-    //                <Route exact path="/toursList" component={ToursList} />
-    //                <Route exact path="/toursList/new" component={NewTour} />
-    //                <Route exact path="/toursList/edit/:id" component={EditTour} />   */}
-    //              </Switch>
-    //            </div>
-    //  </Router>
+     <Router>
+          <LogInForm />
+              <div className="blockContainer">
+                 <Switch>
+                   <Route exact path="/HomePage" component={HomePage} />
+                   {/* <Route exact path="/usersList" component={UsersList} />
+                   <Route exact path="/usersList/new" component={NewUser} />
+                   <Route exact path="/usersList/edit/:id" component={EditUser} />
+                   <Route exact path="/toursList" component={ToursList} />
+                   <Route exact path="/toursList/new" component={NewTour} />
+                   <Route exact path="/toursList/edit/:id" component={EditTour} />   */}
+                 </Switch>
+               </div>
+     </Router>
   );
 }
 

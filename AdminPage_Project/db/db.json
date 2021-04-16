@@ -431,56 +431,19 @@
       "titleImage": "Chùa Bái Đính."
     },
     {
-      "type": 1,
       "id": 13,
       "image": "//cdn2.ivivu.com/2020/07/08/14/ivivu-chua-tam-chuc-360x225.gif",
       "place": "Hạ Long",
       "name": "Tour Miền Bắc 4N3D: Sài Gòn - Hạ Long - Ninh Bình - Sapa",
       "day": "6 Ngày 5 Đêm",
-      "transports": [
-        "https://img.icons8.com/ios-filled/12/000000/airport.png",
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "Ngắm Măm Xôi Tú Lệ",
-        "Bản Lướt Ngọc Chiến",
-        "Đồi Chè Thanh Sơn"
-      ],
+      "transports": "https://img.icons8.com/ios-filled/12/000000/airport.png,https://img.icons8.com/material-rounded/14/000000/bus.png",
       "price": "7950000",
-      "start": "18-04-2021",
+      "start": "16-04-2021",
+      "descriptions": "Ngắm Măm Xôi Tú Lệ,Bản Lướt Ngọc Chiến,Đồi Chè Thanh Sơn",
       "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ],
       "introduction": "Với hành trình 4 ngày tại Phương Bắc, không những mang nét đặc sắc về kiến trúc, cảnh quan thiên nhiên, mà nơi đây còn chứa đựng giá trị tâm linh, phật tích quý báu qua nhiều năm lịch sử. Đặc trưng trong chương trình hành hương vãng cảnh chùa cầu may mắn, bình an, phước lộc cho gia đình,... là một trong những nét văn hóa đặc trưng đã có từ bao đời nay của người Việt. Cùng iVIVU khám phá ngay hôm nay! ",
       "imageIntroduction": "//cdn2.ivivu.com/2020/07/08/15/ivivu-bai-dinh.gif",
-      "titleImage": "Chùa Bái Đính."
+      "titleImage": "Chùa Bái Đính1"
     },
     {
       "type": 1,
