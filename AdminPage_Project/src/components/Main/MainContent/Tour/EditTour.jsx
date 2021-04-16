@@ -87,7 +87,7 @@ const EditTour = ({ match, history }) => {
             <form onSubmit={handleUpdateTour} className="blockEditTour__formEdit">
                 <div className="blockEditTour__formEdit__leftItem">
                         <div className="blockEditTour__formEdit__inputLeftItem">
-                            <label className="blockEditTour__formEdit__labelImageUrl">Image Url</label>
+                            <label className="blockEditTour__formEdit__labelLeft">Image Url</label>
                             <input className="blockEditTour__formEdit__inputImageUrl"
                                 type="text"
                                 defaultValue={tour.image}
@@ -96,7 +96,7 @@ const EditTour = ({ match, history }) => {
                         </div>
 
                         <div className="blockEditTour__formEdit__inputLeftItem">
-                            <label className="blockEditTour__formEdit__labelPlace">Place</label>
+                            <label className="blockEditTour__formEdit__labelLeft">Place</label>
                             <input className="blockEditTour__formEdit__inputPlace"
                                 type="text"
                                 defaultValue={tour.place}
@@ -105,7 +105,7 @@ const EditTour = ({ match, history }) => {
                         </div>
 
                         <div className="blockEditTour__formEdit__inputLeftItem">
-                            <label className="blockEditTour__formEdit__labelTourName">Name</label>
+                            <label className="blockEditTour__formEdit__labelLeft">Name</label>
                             <input className="blockEditTour__formEdit__inputTourName"
                                 type="text"
                                 defaultValue={tour.name}
@@ -114,7 +114,7 @@ const EditTour = ({ match, history }) => {
                         </div>
 
                         <div className="blockEditTour__formEdit__inputLeftItem">
-                            <label className="blockEditTour__formEdit__labelDay">Day</label>
+                            <label className="blockEditTour__formEdit__labelLeft">Day</label>
                             <input className="blockEditTour__formEdit__inputDay"
                                 type="text"
                                 defaultValue={tour.day}
@@ -123,7 +123,7 @@ const EditTour = ({ match, history }) => {
                         </div>
 
                         <div className="blockEditTour__formEdit__inputLeftItem">
-                            <label className="blockEditTour__formEdit__labelDescriptions">Descriptions</label>
+                            <label className="blockEditTour__formEdit__labelLeft">Descriptions</label>
                             <input className="blockEditTour__formEdit__inputDescriptions"
                                 type="text"
                                 defaultValue={tour.descriptions}
@@ -132,7 +132,7 @@ const EditTour = ({ match, history }) => {
                         </div>
 
                         <div className="blockEditTour__formEdit__inputLeftItem">
-                            <label className="blockEditTour__formEdit__labelIntroduction">Introduction</label>
+                            <label className="blockEditTour__formEdit__labelLeft">Introduction</label>
                             <input className="blockEditTour__formEdit__inputIntroduction"
                                 type="text"
                                 defaultValue={tour.introduction}

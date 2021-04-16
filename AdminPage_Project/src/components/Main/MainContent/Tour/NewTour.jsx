@@ -19,7 +19,12 @@ const NewTour = ({ history }) => {
     //const [ start, setStartDay ] = useState("");
     const [ apply, setApply ] = useState("");
   
-    const [startTemp, setStartDate] = useState(new Date());
+    const [ startTemp, setStartDate ] = useState(new Date());
+    const [ descriptions, setDescriptions ] = useState("");
+    const [ introduction, setIntroduction ] = useState("");
+    const [ imageIntroduction, setImageIntroduction ] = useState("");
+    const [ titleImage, setTitleImage ] = useState("");
+
 
     // const [checkInDate, setCheckInDate] = useState(null);
     // const [checkOutDate, setCheckOutDate] = useState(null);
@@ -43,14 +48,16 @@ const NewTour = ({ history }) => {
         e.preventDefault();
         //validate
         if ( image.trim() === "" || place.trim() === "" || name.trim() === "" ||
-             day.trim() === "" || transports.trim() === "" || price.trim() === "" || apply.trim() === ""
+             day.trim() === "" || transports.trim() === "" || price.trim() === "" || apply.trim() === ""||
+             descriptions.trim() === "" || introduction.trim() === "" || imageIntroduction.trim() === "" || titleImage.trim() === ""
         ) {
             alert("Value not null ");
             return;
         }
         const start = moment(startTemp).format("DD-MM-YYYY");
         // If it success then Add New Tour 
-        addTour({ image, place, name, day, transports, price, start, apply });
+        addTour({ image, place, name, day, transports, price, start, descriptions,
+                  apply, introduction, imageIntroduction, titleImage });
         // Swal.fire("Saved", "User Added", "ok");
         // return Tour List page
         history.push(`/toursList`);
@@ -79,13 +86,7 @@ const NewTour = ({ history }) => {
                             />
                         </div>
 
-                        <div>
-                                <DatePicker selected={startTemp} 
-                                            onChange={date => setStartDate(date)}
-                                            dateFormat="dd-MM-yyyy"
-                                // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                />
-                        </div>
+                       
             
                         <div  className="blockNewTour__formNew__inputLeftItem">
                             <label className="blockNewTour__formNew__labelPlace"> Place </label>
@@ -119,6 +120,28 @@ const NewTour = ({ history }) => {
                                 onChange={ e => setDayAmount(e.target.value)}
                             />
                         </div>
+
+                        <div className="blockNewTour__formNew__inputLeftItem">
+                            <label className="blockNewTour__formNew__labelDescriptions"> Descriptions </label>
+                            <input 
+                                className="blockNewTour__formNew__inputDescriptions"
+                                type="text"
+                                placeholder = "Descriptions"
+                                value = {descriptions}
+                                onChange={ e => setDescriptions(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="blockNewTour__formNew__inputLeftItem">
+                            <label className="blockNewTour__formNew__labelIntroduction"> Introduction </label>
+                            <input 
+                                className="blockNewTour__formNew__inputIntroduction"
+                                type="text"
+                                placeholder = "Introduction"
+                                value = {introduction}
+                                onChange={ e => setIntroduction(e.target.value)}
+                            />
+                        </div>
                     </div>
 
                   {/* /----------------------------------------------------------/ */}
@@ -145,7 +168,17 @@ const NewTour = ({ history }) => {
                                 onChange = { e => setPrice(e.target.value)}
                             />
                         </div>
-
+                        
+                        <div className="blockNewTour__formNew__inputRightItem">
+                               <label className="blockNewTour__formNew__labelStart"> Start Day </label>
+                                <DatePicker selected={startTemp} 
+                                            onChange={date => setStartDate(date)}
+                                            dateFormat="dd-MM-yyyy"
+                                            minDate={new Date()}
+                                            className="blockNewTour__formNew__inputDatepicker"
+                                // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
+                                />
+                        </div>
                         {/* <div className="blockNewTour__formNew__inputRightItem">
                             <label className="blockNewTour__formNew__labelStart"> Start Day </label>
                             <input 
@@ -165,6 +198,28 @@ const NewTour = ({ history }) => {
                                 placeholder = "apply"
                                 value = {apply}
                                 onChange = { e => setApply(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="blockNewTour__formNew__inputRightItem">
+                            <label className="blockNewTour__formNew__labelImageIntroduction"> Image Introduction </label>
+                            <input 
+                                className = "blockNewTour__formNew__inputImageIntroduction"
+                                type = "text"
+                                placeholder = "Image Introduction"
+                                value = {imageIntroduction}
+                                onChange = { e => setImageIntroduction(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="blockNewTour__formNew__inputRightItem">
+                            <label className="blockNewTour__formNew__labelTitleImage"> Title Image </label>
+                            <input 
+                                className = "blockNewTour__formNew__inputTitleImage"
+                                type = "text"
+                                placeholder = "Title Image"
+                                value = {titleImage}
+                                onChange = { e => setTitleImage(e.target.value)}
                             />
                         </div>
                     </div>

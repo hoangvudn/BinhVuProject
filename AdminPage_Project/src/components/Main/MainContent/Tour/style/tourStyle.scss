@@ -221,10 +221,10 @@ $border-color: #82A2F4;
 
 .blockEditTour {
     position: absolute;
-    top: 200px;
-    left: 37%;
-    width: 650px;
-    height: 350px;
+    top: 140px;
+    left: 32%;
+    width: 750px;
+    height: 450px;
     //background: grey;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
@@ -245,6 +245,10 @@ $border-color: #82A2F4;
         align-items: center;
         width: 100%;
         // background: rebeccapurple;
+        &__labelLeft {
+            position: relative;
+            left: -20px;
+        }
       
         &__inputLeftItem {
             position: relative;
@@ -313,11 +317,41 @@ $border-color: #82A2F4;
             border-left: none;
             border-right: none;
         }
+        &__inputDescriptions {
+            position: relative;
+            left: 0px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        &__inputIntroduction {
+            position: relative;
+            left: 0px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        &__inputImageIntroduction {
+            position: relative;
+            left: 20px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        &__inputTitleImage {
+            position: relative;
+            left: 77px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        
+       
     }
     
     &__buttonSave {
         position: absolute;
-        top: 210px;
+        top: 310px;
         width: 100px;
         height: 50px;
     }
@@ -419,6 +453,13 @@ $border-color: #82A2F4;
         &__inputApply {
             position: relative;
             left: 54px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        &__inputDatepicker {
+            position: relative;
+            left: 30px;
             border-top: none;
             border-left: none;
             border-right: none;

@@ -181,52 +181,16 @@
       "titleImage": "Chùa Bái Đính."
     },
     {
-      "type": 1,
       "id": 6,
       "image": "//cdn2.ivivu.com/2020/09/23/14/ivivu-hang-va-bia2-360x225.gif",
       "place": "Quảng Bình",
       "name": "Tour Thám Hiểm Phong Nha 2N1D: Khám Phá Hang Va",
       "day": "2 Ngày 1 Đêm",
-      "transports": [
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "Thạch Nhũ Huyền Bí",
-        "Dòng Sông Ngầm Trong Hang Động",
-        "Hang Nước Nứt"
-      ],
+      "transports": "https://img.icons8.com/material-rounded/14/000000/bus.png",
       "price": "6300000",
       "start": "18-04-2021",
+      "descriptions": "Thạch Nhũ Huyền Bí,Dòng Sông Ngầm Trong Hang Động,Hang Nước Nứt",
       "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ],
       "introduction": "Với hành trình 4 ngày tại Phương Bắc, không những mang nét đặc sắc về kiến trúc, cảnh quan thiên nhiên, mà nơi đây còn chứa đựng giá trị tâm linh, phật tích quý báu qua nhiều năm lịch sử. Đặc trưng trong chương trình hành hương vãng cảnh chùa cầu may mắn, bình an, phước lộc cho gia đình,... là một trong những nét văn hóa đặc trưng đã có từ bao đời nay của người Việt. Cùng iVIVU khám phá ngay hôm nay! ",
       "imageIntroduction": "//cdn2.ivivu.com/2020/07/08/15/ivivu-bai-dinh.gif",
       "titleImage": "Chùa Bái Đính."
@@ -934,6 +898,21 @@
           "abouttDay": "30-04-2021"
         }
       ]
+    },
+    {
+      "id": 21,
+      "image": "asd",
+      "place": "asd",
+      "name": "asd",
+      "day": "asd",
+      "transports": "asd",
+      "price": "asd",
+      "start": "23-04-2021",
+      "descriptions": "aasd",
+      "apply": "2",
+      "introduction": "asdsad",
+      "imageIntroduction": "asdsa",
+      "titleImage": "dasdsadsa"
     }
   ],
   "users": [
