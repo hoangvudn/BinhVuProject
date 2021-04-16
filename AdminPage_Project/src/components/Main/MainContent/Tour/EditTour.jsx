@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Formik } from 'formik';
 import Swal from "sweetalert2";
 
 import { useDispatch, useSelector } from "react-redux";
+import moment from 'moment';
+import DatePicker from "react-datepicker";
 import {
   editTourAction,
   updateTourAction
@@ -18,12 +20,14 @@ const EditTour = ({ match, history }) => {
      const dayRef = useRef("");
      const transportsRef = useRef("");
      const priceRef = useRef("");
-     const startRef = useRef("");
+     //const startRef = useRef("");
      const descriptionsRef = useRef("");
      const applyRef = useRef("");
      const introductionRef = useRef("");
      const imageIntroductionRef = useRef("");
      const  titleImageRef = useRef("");
+
+     const [ startTemp, setStartDate ] = useState(new Date());
 
 
      //Create alias to use function dispatch to excute action edit
@@ -39,6 +43,7 @@ const EditTour = ({ match, history }) => {
 
      // Access to global state
      const tour = useSelector(state => state.toursList.tour);
+     const start = moment(startTemp).format("DD-MM-YYYY");
      console.log("tour is:", tour);
      const handleUpdateTour = e => {
          e.preventDefault();
@@ -49,7 +54,7 @@ const EditTour = ({ match, history }) => {
             dayRef.current.value.trim() === "" ||
             transportsRef.current.value.trim() === "" ||
             priceRef.current.value.trim() === "" ||
-            startRef.current.value.trim() === "" ||
+            //startRef.current.value.trim() === "" ||
             descriptionsRef.current.value.trim() === "" ||
             applyRef.current.value.trim() === "" ||
             introductionRef.current.value.trim() === "" ||
@@ -67,7 +72,7 @@ const EditTour = ({ match, history }) => {
              day: dayRef.current.value,
              transports: transportsRef.current.value,
              price: priceRef.current.value,
-             start: startRef.current.value,
+             start: start,
              descriptions: descriptionsRef.current.value,
              apply: applyRef.current.value,
              introduction: introductionRef.current.value,
@@ -161,13 +166,23 @@ const EditTour = ({ match, history }) => {
                         </div>
 
                         <div className="blockEditTour__formEdit__inputRightItem">
+                               <label className="blockEditTour__formEdit__labelStart"> Start Day </label>
+                                <DatePicker selected={startTemp} 
+                                            onChange={date => setStartDate(date)}
+                                            dateFormat="dd-MM-yyyy"
+                                            minDate={new Date()}
+                                            className="blockEditTour__formEdit__inputDatepicker"
+                                // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
+                                />
+                        </div>
+                        {/* <div className="blockEditTour__formEdit__inputRightItem">
                             <label className="blockEditTour__formEdit__labelStart">Start</label>
                             <input className="blockEditTour__formEdit__inputStart"
                                 type="text"
                                 defaultValue={tour.start}
                                 ref={startRef}
                             />
-                        </div>
+                        </div> */}
 
                         <div className="blockEditTour__formEdit__inputRightItem">
                             <label className="blockEditTour__formEdit__labelApply">Apply</label>

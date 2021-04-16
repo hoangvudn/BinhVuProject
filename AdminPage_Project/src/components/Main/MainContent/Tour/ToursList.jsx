@@ -24,22 +24,37 @@ const ToursList = () => {
     console.log("List tour:",toursTravel);
     return (
         <>
+         
           <div className="blockTourListMain">
+          {/* <div className="blockTourListMain__headerFixed">
+                <span className="blockTourListMain__headerFixed__imageUrl">Image URL</span>
+                <span className="blockTourListMain__headerFixed__place">Place</span>
+                <span className="blockTourListMain__headerFixed__tourName">Tour Name</span>
+                <span className="blockTourListMain__headerFixed__dayAmount">Day Amount</span>
+                <span className="blockTourListMain__headerFixed__transports">Transports</span>
+                <span className="blockTourListMain__headerFixed__price">Price</span>
+                <span className="blockTourListMain__headerFixed__startDay">Start Day</span>
+                <span className="blockTourListMain__headerFixed__descriptions">Descriptions</span>
+                <span className="blockTourListMain__headerFixed__applyPassenger">Apply</span>
+                <span className="blockTourListMain__headerFixed__introduction">introduction</span>
+                <span className="blockTourListMain__headerFixed__imageIntroduction">Image Introduction</span>
+                <span className="blockTourListMain__headerFixed__titleImage">Title Image</span>
+          </div> */}
                 <table className="blockTourListMain__table">
                     <thead>
                         <tr className="blockTourListMain__fixed">
-                            <th className="blockTourListMain__imageUrl">Image URL</th>
-                            <th className="blockTourListMain__place">Place</th>
-                            <th className="blockTourListMain__tourName">Tour Name</th>
-                            <th className="blockTourListMain__dayAmount">Day Amount</th>
-                            <th className="blockTourListMain__transports">Transport</th>
-                            <th className="blockTourListMain__price">Price</th>
-                            <th className="blockTourListMain__startDay">Start Day</th>
-                            <th className="blockTourListMain__descriptions">Descriptions</th>
-                            <th className="blockTourListMain__applyPassenger">Apply</th>
-                            <th className="blockTourListMain__introduction">Introduction</th>
-                            <th className="blockTourListMain__imageIntroduction">Image Introduction</th>
-                            <th className="blockTourListMain__titleImage">Title Image</th>
+                            <th className="blockTourListMain__fixed__imageUrl">Image URL</th>
+                            <th className="blockTourListMain__fixed__place">Place</th>
+                            <th className="blockTourListMain__fixed__tourName">Tour Name</th>
+                            <th className="blockTourListMain__fixed__dayAmount">Day Amount</th>
+                            <th className="blockTourListMain__fixed__transports">Transport</th>
+                            <th className="blockTourListMain__fixed__price">Price</th>
+                            <th className="blockTourListMain__fixed__startDay">Start Day</th>
+                            <th className="blockTourListMain__fixed__descriptions">Descriptions</th>
+                            <th className="blockTourListMain__fixed__applyPassenger">Apply</th>
+                            <th className="blockTourListMain__fixed__introduction">Introduction</th>
+                            <th className="blockTourListMain__fixed__imageIntroduction">Image Introduction</th>
+                            <th className="blockTourListMain__fixed__titleImage">Title Image</th>
                         </tr>  
                     </thead>
                     

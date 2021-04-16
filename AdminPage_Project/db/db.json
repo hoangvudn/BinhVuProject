@@ -130,52 +130,16 @@
       "titleImage": "Chùa Bái Đính."
     },
     {
-      "type": 1,
       "id": 5,
       "image": "//cdn2.ivivu.com/2020/10/26/10/ivivu-simacai-bia-360x225.gif",
       "place": "Hà Giang, Sapa",
       "name": "Tour Hà Giang 4N3D: Hoàng Su Phì-Simacai-Bắc Hà-Sapa",
       "day": "2 Ngày 1 Đêm",
-      "transports": [
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "Check In Hoàng Su Phì",
-        "Du Lịch Sapa",
-        "Chiêm Ngưỡng Ruộng Bậc Thang"
-      ],
+      "transports": "https://img.icons8.com/material-rounded/14/000000/bus.png",
       "price": "5650000",
-      "start": "18-04-2021",
+      "start": "17-04-2021",
+      "descriptions": "Check In Hoàng Su Phì,Du Lịch Sapa,Chiêm Ngưỡng Ruộng Bậc Thang",
       "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ],
       "introduction": "Với hành trình 4 ngày tại Phương Bắc, không những mang nét đặc sắc về kiến trúc, cảnh quan thiên nhiên, mà nơi đây còn chứa đựng giá trị tâm linh, phật tích quý báu qua nhiều năm lịch sử. Đặc trưng trong chương trình hành hương vãng cảnh chùa cầu may mắn, bình an, phước lộc cho gia đình,... là một trong những nét văn hóa đặc trưng đã có từ bao đời nay của người Việt. Cùng iVIVU khám phá ngay hôm nay! ",
       "imageIntroduction": "//cdn2.ivivu.com/2020/07/08/15/ivivu-bai-dinh.gif",
       "titleImage": "Chùa Bái Đính."
@@ -196,52 +160,16 @@
       "titleImage": "Chùa Bái Đính."
     },
     {
-      "type": 1,
       "id": 7,
       "image": "https://cdn2.ivivu.com/2020/05/15/16/ivivu-man-moc-chau-360x225.gif",
       "place": "Yên bái",
       "name": "Tour Mù Cang Chải 2N1D: Bản Lướt - Ngọc Chiến - Sơn La",
       "day": "4 Ngày 3 Đêm",
-      "transports": [
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "Ngắm Măm Xôi Tú Lệ",
-        "Bản Lướt Ngọc Chiến",
-        "Đồi Chè Thanh Sơn"
-      ],
+      "transports": "https://img.icons8.com/material-rounded/14/000000/bus.png",
       "price": "5290000",
-      "start": "18-04-2021",
+      "start": "17-04-2021",
+      "descriptions": "Ngắm Măm Xôi Tú Lệ,Bản Lướt Ngọc Chiến,Đồi Chè Thanh Sơn",
       "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ],
       "introduction": "Với hành trình 4 ngày tại Phương Bắc, không những mang nét đặc sắc về kiến trúc, cảnh quan thiên nhiên, mà nơi đây còn chứa đựng giá trị tâm linh, phật tích quý báu qua nhiều năm lịch sử. Đặc trưng trong chương trình hành hương vãng cảnh chùa cầu may mắn, bình an, phước lộc cho gia đình,... là một trong những nét văn hóa đặc trưng đã có từ bao đời nay của người Việt. Cùng iVIVU khám phá ngay hôm nay! ",
       "imageIntroduction": "//cdn2.ivivu.com/2020/07/08/15/ivivu-bai-dinh.gif",
       "titleImage": "Chùa Bái Đính."
@@ -802,53 +730,19 @@
       ]
     },
     {
-      "type": 2,
       "id": 19,
       "image": "http://dulichviet.com.vn/images/bandidau/TOUR%20TTX/du-lich-my-2019.jpg",
       "place": "New York",
       "name": "Tour Mỹ - New York - Philadelphia - Washington D.C",
       "day": "7 Ngày 6 Đêm",
-      "transports": [
-        "https://img.icons8.com/ios-filled/12/000000/airport.png",
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "See Vancouver's highlights",
-        "Free time to participate",
-        "Gardens Explore Vancouver"
-      ],
+      "transports": "https://img.icons8.com/ios-filled/12/000000/airport.png,https://img.icons8.com/material-rounded/14/000000/bus.png",
       "price": "47000000",
-      "start": "16-11-2020",
+      "start": "01-05-2021",
+      "descriptions": "See Vancouver's highlights,Free time to participate,Gardens Explore Vancouver",
       "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ]
+      "introduction": "qưewqewqe",
+      "imageIntroduction": "qưewqeqwe",
+      "titleImage": "ưqewqewew"
     },
     {
       "type": 2,
@@ -901,7 +795,7 @@
     },
     {
       "id": 21,
-      "image": "asd",
+      "image": "https://dulichviet.com.vn/images/bandidau/TOUR%20TTX/LITTLE%20SAIGON/du-lich-canada-mua-thu.jpg",
       "place": "asd",
       "name": "asd",
       "day": "asd",
@@ -913,6 +807,21 @@
       "introduction": "asdsad",
       "imageIntroduction": "asdsa",
       "titleImage": "dasdsadsa"
+    },
+    {
+      "image": "XXXXX",
+      "place": "xxxx",
+      "name": "xxxxx",
+      "day": "2",
+      "transports": "xxxxx",
+      "price": "9.999.999",
+      "start": "30-04-2021",
+      "descriptions": "XXXX",
+      "apply": "2",
+      "introduction": "xxxx",
+      "imageIntroduction": "TTTTTTTTTTTT",
+      "titleImage": "TTTTTTTTTTTTTTTTTT",
+      "id": 22
     }
   ],
   "users": [

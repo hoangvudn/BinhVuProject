@@ -421,13 +421,7 @@ $border-color: #82A2F4;
             border-left: none;
             border-right: none;
         }
-        &__inputDatepicker {
-            position: relative;
-            left: 30px;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-        }
+        
        
     }
     
@@ -657,14 +651,14 @@ $border-color: #82A2F4;
     display: flex;
     // justify-content: center;
     // align-items: center;
-    right: -20px;
-    top: 125px;
-    width: 320px;
+    left: 400px;
+    top: 140px;
+    width: 280px;
     height: 50px;
     //background: red;
     &__inputItem {
        position: relative;
-       right: 0px;
+       left: -97px;
     }
     &__inputItem input {
         border-top: none;
