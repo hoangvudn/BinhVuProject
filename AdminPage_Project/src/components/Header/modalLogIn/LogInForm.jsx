@@ -3,6 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import { useState } from 'react'
 import * as Yup from 'yup';
 import { Link, useHistory } from "react-router-dom"
+import './style/logInStyle.scss'
 import HomePage from '../../../components/Main/MainContent/HomePage/HomePage'
 
 
@@ -30,60 +31,75 @@ const LogInForm = () => {
   /// console.log("UserName:", userName);
    return (
        <>
-           <div>
-            <h1>LOG IN PAGE</h1>
-            <Formik
-                    initialValues={{ email: '', password: '' }}
-                    validate={values => {
-                        const errors = {};
-                        if (!values.email) {
-                        errors.email = 'Required';
-                        } else if (
-                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                        ) {
-                        errors.email = 'Invalid email address';
-                        }
-                        return errors;
-                    }}
-                   
-                    onSubmit={(values) => { 
-                   
-                        history.push("/HomePage")
-                    }}
-            >
-            {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting,
-                /* and other goodies */
-            }) => (
-                <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    name="email"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                />
-                {errors.email && touched.email && errors.email}
-                <input
-                    type="password"
-                    name="password"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.password}
-                />
-                {errors.password && touched.password && errors.password}
-                <button type="submit" disabled={isSubmitting}>
-                    Submit
-                </button>
-                </form>
-            )}
-            </Formik>
+           <div className="blockLoginForm">
+                    <h1>LOG IN</h1>
+                    <Formik
+                            initialValues={{ user: '', password: '' }}
+                            validate={values => {
+                                const errors = {};
+                                if (!values.user) {
+                                errors.user = 'Required';
+                                } else if ( values.user!=="admin" ) {
+                                errors.user = 'User not exit';
+                                }
+                                if (!values.password) {
+                                    errors.password = 'Required';
+                                    } else if ( values.password!=="admin" ) {
+                                    errors.password = 'Pass fail';
+                                    }
+                                return errors;
+                            }}
+                        
+                            onSubmit={(values) => { 
+                                history.push("/HomePage")
+                            }}
+                    >
+                    {({
+                        values,
+                        errors,
+                        touched,
+                        handleChange,
+                        handleBlur,
+                        handleSubmit,
+                        isSubmitting,
+                        /* and other goodies */
+                    }) => (
+                        <form onSubmit={handleSubmit} className="blockLoginForm__inputItem">
+                          <div>
+                                <label>User</label>
+                                <input className="blockLoginForm__inputUser"
+                                    type="text"
+                                    name="user"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.user}
+                                />
+                                
+                          </div>
+
+                          <div className="blockLoginForm__error">
+                                {errors.user && touched.user && errors.user}
+                          </div>
+                    
+                          <div>
+                                <label>PassWord</label>
+                                <input className="blockLoginForm__inputPassWord"
+                                    type="password"
+                                    name="password"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.password}
+                                />
+                         </div>
+                         <div className="blockLoginForm__errorPass">
+                                {errors.password && touched.password && errors.password}
+                         </div>  
+                            <button type="submit" disabled={isSubmitting} className="blockLoginForm__buttonSave">
+                                LOG IN
+                            </button>
+                        </form>
+                    )}
+                    </Formik>
           </div>
        </>
    );

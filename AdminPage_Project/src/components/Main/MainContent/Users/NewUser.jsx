@@ -21,6 +21,11 @@ const NewUser = ({ history }) => {
             alert("Value not null ");
             return;
         }
+
+        if ( userName.length < 5) {
+            alert("User must > 5 character");
+            return;
+        }
         // If it success
         addUser({ userName, email, password });
         // return home page
@@ -65,6 +70,7 @@ const NewUser = ({ history }) => {
                           placeholder = "password"
                           value={password}
                           onChange={ e => setPassword(e.target.value)}
+                          min="5" max="15"
                        />
                    </div>
 

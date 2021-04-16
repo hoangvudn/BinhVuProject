@@ -1,0 +1,60 @@
+.blockLoginForm {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background: blueviolet;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    top: 130px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__inputUser {
+        position: relative;
+        left: 52px;
+    }
+    &__inputPassWord {
+        position: relative;
+        left: 15px;
+    }
+    div {
+        margin-top: 20px;
+    }
+    &__buttonSave {
+        position: relative;
+        top: 45px;
+        left: 83px;
+        width: 90px;
+        height: 50px;
+        border-radius: 5px;
+    }
+    &__buttonSave:hover {
+        cursor: pointer;
+        background: yellowgreen;
+    }
+    &__error {
+        position: absolute;
+        top: 130px;
+        left: 137px;
+        color: red;
+
+    }
+    &__errorPass {
+        position: absolute;
+        top: 175px;
+        left: 137px;
+        color: red;
+
+    }
+}
+
+.blockLoginForm h1 {
+    position: absolute;
+    top: 0px;
+    color: white;
+}
+
+.blockLoginForm label {
+    color: white;
+}

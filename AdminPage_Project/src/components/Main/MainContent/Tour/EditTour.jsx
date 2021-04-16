@@ -87,6 +87,9 @@ const EditTour = ({ match, history }) => {
    return (
       
       <>
+        <div>
+            BACK
+        </div>
         <div class="blockEditTour">
             <h3 className="blockEditTour__title"> EDIT TOUR </h3>
             <form onSubmit={handleUpdateTour} className="blockEditTour__formEdit">
@@ -159,7 +162,7 @@ const EditTour = ({ match, history }) => {
                         <div className="blockEditTour__formEdit__inputRightItem">
                             <label className="blockEditTour__formEdit__labelPrice">Price</label>
                             <input className="blockEditTour__formEdit__inputPrice"
-                                type="text"
+                                type="number"
                                 defaultValue={tour.price}
                                 ref={priceRef}
                             />

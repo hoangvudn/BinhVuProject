@@ -54,6 +54,16 @@ const NewTour = ({ history }) => {
             alert("Value not null ");
             return;
         }
+
+        if (place.length < 2) {
+            alert("Place Must > 2 character");
+            return;
+        }
+        if (name.length < 5) {
+            alert("Name must > 5 character");
+            return;
+        }
+
         const start = moment(startTemp).format("DD-MM-YYYY");
         // If it success then Add New Tour 
         addTour({ image, place, name, day, transports, price, start, descriptions,
@@ -162,7 +172,7 @@ const NewTour = ({ history }) => {
                             <label className="blockNewTour__formNew__labelPrice"> Price </label>
                             <input 
                                 className="blockNewTour__formNew__inputPrice"
-                                type="text"
+                                type="number"
                                 placeholder = "price"
                                 value = {price}
                                 onChange = { e => setPrice(e.target.value)}
