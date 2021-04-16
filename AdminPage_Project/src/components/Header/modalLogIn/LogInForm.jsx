@@ -31,7 +31,7 @@ const LogInForm = () => {
    return (
        <>
            <div>
-            <h1>Anywhere in your app!</h1>
+            <h1>LOG IN PAGE</h1>
             <Formik
                     initialValues={{ email: '', password: '' }}
                     validate={values => {
@@ -45,9 +45,10 @@ const LogInForm = () => {
                         }
                         return errors;
                     }}
-                    handleChange={values=> setUserName(values.email)}
+                   
                     onSubmit={(values) => { 
-                        history.replace("/HomePage")
+                   
+                        history.push("/HomePage")
                     }}
             >
             {({

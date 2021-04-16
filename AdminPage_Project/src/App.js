@@ -37,9 +37,10 @@ function App() {
     //       {/* <Header/> */}
     //       {/* <TestTable /> */}
      <Router>
-          <LogInForm />
+          {/* <LogInForm /> */}
               <div className="blockContainer">
                  <Switch>
+                   <Route exact path="/" component={LogInForm} />
                    <Route exact path="/HomePage" component={HomePage} />
                    {/* <Route exact path="/usersList" component={UsersList} />
                    <Route exact path="/usersList/new" component={NewUser} />
