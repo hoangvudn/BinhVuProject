@@ -25,21 +25,32 @@ const NewTour = ({ history }) => {
     const [ imageIntroduction, setImageIntroduction ] = useState("");
     const [ titleImage, setTitleImage ] = useState("");
 
+    //=========================Convert Image To Base64===========================
+            //const [baseImage, setBaseImage] = useState('');
+            const uploadImage = async (e) => {
+            const file = e.target.files[0];
+            const base64 = await convertBase64(file);
+            console.log("binary file:",base64);
+            setImage(base64);
+            //console.log("binary file:",file);
+            };
+        
+            const convertBase64 = (file) => {
+            return new Promise((resolve, reject) => {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(file);
+        
+                fileReader.onload = () => {
+                resolve(fileReader.result);
+                };
+        
+                fileReader.onerror = (error) => {
+                reject(error);
+                };
+            });
+            }
+    //=========================================================================== 
 
-    // const [checkInDate, setCheckInDate] = useState(null);
-    // const [checkOutDate, setCheckOutDate] = useState(null);
-
-    // const handleCheckInDate = (date) => {
-    //     setCheckInDate(date);
-    //     setCheckOutDate(null);
-    // };
-
-    // const handleCheckOutDate = (date) => {
-    //     setCheckOutDate(date);
-    // };
-
-
-    //Create new tour
     const dispatch = useDispatch();
     const addTour = tour => dispatch(createNewTourAction(tour));
     
@@ -88,15 +99,20 @@ const NewTour = ({ history }) => {
                         <div className="blockNewTour__formNew__inputLeftItem">
                             <label className="blockNewTour__formNew__labelImageUrl">Image Url</label>
                             <input 
+                                type="file"
+                                onChange = {(e) => {
+                                uploadImage(e);
+                                }}
+                                //value={image}
+                            />
+                            {/* <input 
                                 className="blockNewTour__formNew__inputImageUrl"
                                 type = "text"
                                 placeholder = "image url"
                                 value = {image}
                                 onChange = { e => setImage(e.target.value)}
-                            />
+                            /> */}
                         </div>
-
-                       
             
                         <div  className="blockNewTour__formNew__inputLeftItem">
                             <label className="blockNewTour__formNew__labelPlace"> Place </label>

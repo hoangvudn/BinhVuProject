@@ -15,7 +15,32 @@ import { deleteTourAction } from "../../../../actions/toursActions"
 // })
 const Tour = ({ tour }) => { 
     const dispatch = useDispatch();
-
+    
+    //========================Convert Image To Binary=======================
+        //     const [baseImage, setBaseImage] = useState('');
+        //     const uploadImage = async (e) => {
+        //     const file = e.target.files[0];
+        //     const base64 = await convertBase64(file);
+        //     console.log("binary file:",base64);
+        //     setBaseImage(base64);
+        //     //console.log("binary file:",file);
+        //     };
+        
+        //     const convertBase64 = (file) => {
+        //     return new Promise((resolve, reject) => {
+        //         const fileReader = new FileReader();
+        //         fileReader.readAsDataURL(file);
+        
+        //         fileReader.onload = () => {
+        //         resolve(fileReader.result);
+        //         };
+        
+        //         fileReader.onerror = (error) => {
+        //         reject(error);
+        //         };
+        //     });
+        // }
+    //======================================================================
     const confirmDeleteTour = id => {
         Swal.fire({
             title: "WARNING!",
