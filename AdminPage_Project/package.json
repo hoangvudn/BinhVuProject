@@ -26,6 +26,7 @@
     "momen": "0.0.1-security",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
+    "numeral": "^2.0.6",
     "preact": "10.5.12",
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^3.13.3",

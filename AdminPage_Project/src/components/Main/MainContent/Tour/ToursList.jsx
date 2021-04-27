@@ -42,7 +42,21 @@ const ToursList = () => {
           </div> */}
                 <table className="blockTourListMain__table">
                     <thead>
-                        <tr className="blockTourListMain__fixed">
+                         <tr>
+                            <th className="blockTourListMain__imageUrl">Image URL</th>
+                            <th className="blockTourListMain__place">Place</th>
+                            <th className="blockTourListMain__tourName">Tour Name</th>
+                            <th className="blockTourListMain__dayAmount">Day Amount</th>
+                            <th className="blockTourListMain__transports">Transport</th>
+                            <th className="blockTourListMain__price">Price</th>
+                            <th className="blockTourListMain__startDay">Start Day</th>
+                            <th className="blockTourListMain__descriptions">Descriptions</th>
+                            <th className="blockTourListMain__applyPassenger">Apply</th>
+                            <th className="blockTourListMain__introduction">Introduction</th>
+                            <th className="blockTourListMain__imageIntroduction">Image Introduction</th>
+                            <th className="blockTourListMain__titleImage">Title Image</th>
+                        </tr>  
+                        {/* <tr className="blockTourListMain__fixed">
                             <th className="blockTourListMain__fixed__imageUrl">Image URL</th>
                             <th className="blockTourListMain__fixed__place">Place</th>
                             <th className="blockTourListMain__fixed__tourName">Tour Name</th>
@@ -55,7 +69,7 @@ const ToursList = () => {
                             <th className="blockTourListMain__fixed__introduction">Introduction</th>
                             <th className="blockTourListMain__fixed__imageIntroduction">Image Introduction</th>
                             <th className="blockTourListMain__fixed__titleImage">Title Image</th>
-                        </tr>  
+                        </tr>   */}
                     </thead>
                     
                     <tbody className="blockTourListMain__listItemGroup">  

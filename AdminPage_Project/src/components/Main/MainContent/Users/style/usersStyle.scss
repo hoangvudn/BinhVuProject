@@ -1,4 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 $base-color: #F4F6FD;
+.blockTable {
+    position: absolute;
+    top: 200px;
+    left: 25%;
+    width: 60%;
+    background: blueviolet;
+    &__headTitle {
+        background: black;
+    }
+    &__buttonGroup {
+        display: flex;
+        background: black;
+    }
+}
 .blockUsersList {
     position: absolute;
     top: 100px;
@@ -6,6 +21,7 @@ $base-color: #F4F6FD;
     width: 80%;
     height: 100%;
     background : white;
+    font-family: 'Roboto', sans-serif;
 }
 
 //--------------------------------------STYLE EDIT USERS---------------------------------------
@@ -42,66 +58,97 @@ $base-color: #F4F6FD;
     }
 }
 .blockUserListMain {
-    position: relative;
-    left: 400px;
-    width: 550px;
-    top: 200px;
-    box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px; 
-    &__userName {
-        position: absolute;
-        left: 0px;
-    }
-    &__email {
-        position: absolute;
-        right: 310px;
-    }
-    &__itemUser {
-        position: relative;
-        width: 35%;
-    }
-    &__itemEmail {
-        position: relative;
-        width: 50%;
-    }
-    &__listItemGroup {
-        position: absolute;
-        left: 0px;
-        top: 30px;
+    position: absolute;
+    left: 15%;
+    width: 65%;
+    top: 100px;
+    height: 350px;
+    box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px;
+    max-height: 400px;
+    overflow-x: auto;
+    overflow-y: auto; 
+    margin: 0px auto;
+    &__table {
         width: 100%;
-    }  
-    &__listItem {
-        position: relative;
-        background: white;
-        box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px; 
-        width: 450px;
+        height: 100%;
+        background: paleturquoise;
+        &--headUserName {
+            position: sticky;
+            top: 0;
+            border-bottom: black;
+        }
+        &--headEmail {
+            position: sticky;
+            top: 0;
+        }
+        &--headActionIcon {
+            position: sticky;
+            top: 0;
+        }
     }
-    &__editIcon {
-        width: 50px;
-    }
-    &__deleteIcon {
-        width: 32px;
-    }
-    &__deleteIcon:hover {
-        cursor: pointer;
-    }
-    &__linkToAddUser {
-        position: relative;
-        left: 450px;
-        top: -90px;
-        width: 100px;
-        height: 50px;
-        text-decoration: none;
+    
+    
+    // &__userName {
+    //     position: absolute;
+    //     left: 0px;
+    // }
+    // &__email {
+    //     position: absolute;
+    //     right: 310px;
+    // }
+    // &__itemUser {
+    //     position: relative;
+    //     width: 35%;
+    // }
+    // &__itemEmail {
+    //     position: relative;
+    //     width: 50%;
+    // }
+    // &__listItemGroup {
+    //     position: absolute;
+    //     left: 0px;
+    //     top: 30px;
+    //     width: 100%;
+    // }  
+    // &__listItem {
+    //     position: relative;
+    //     background: white;
+    //     box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px; 
+    //     width: 450px;
+    // }
+    // &__editIcon {
+    //     width: 50px;
+    // }
+    // &__deleteIcon {
+    //     width: 32px;
+    // }
+    // &__deleteIcon:hover {
+    //     cursor: pointer;
+    // }
+    // &__itemIcon {
+    //     display: flex;
+    //     &--editIcon {
+    //         margin-left: 50px;
+    //     }
+    // }
+    // &__linkToAddUser {
+    //     position: relative;
+    //     left: 450px;
+    //     top: 0px;
+    //     width: 100px;
+    //     height: 50px;
+    //     text-decoration: none;
        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    &__searchUser {
-        position: relative;
-        width: 500px;
-        height: 200px;
-        background: red;
-    }
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+    // &__searchUser {
+    //     position: relative;
+    //     width: 500px;
+    //     height: 200px;
+    //     background: red;
+    // }
 }
 
 .blockEditUser {

@@ -38,7 +38,7 @@ function App() {
     //       {/* <TestTable /> */}
      <Router>
           {/* <LogInForm /> */}
-              <div className="blockContainer">
+              <div >
                  <Switch>
                    <Route exact path="/" component={LogInForm} />
                    <Route exact path="/HomePage" component={HomePage} />

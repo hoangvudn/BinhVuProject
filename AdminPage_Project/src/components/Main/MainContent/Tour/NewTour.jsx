@@ -6,8 +6,10 @@ import { createNewTourAction } from "../../../../actions/toursActions";
 import { useDispatch, useSelecttor } from "react-redux";
 import { useState } from "react";
 import moment from 'moment';
+import Numeral from 'numeral';
 import DatePicker from "react-datepicker"
 import 'react-datepicker/dist/react-datepicker.css';
+import { PermDeviceInformation } from '@material-ui/icons';
 
 const NewTour = ({ history }) => {
     const [ image, setImage ] = useState("");
@@ -50,11 +52,15 @@ const NewTour = ({ history }) => {
             });
             }
     //=========================================================================== 
+    //======================================Check Price==========================
+        let priceType =  Numeral(price);
+        let priceTypeEdit = priceType.format();
+    //============================================================================
 
     const dispatch = useDispatch();
     const addTour = tour => dispatch(createNewTourAction(tour));
     
-
+ 
     const handleSubmit = e => {
         e.preventDefault();
         //validate
@@ -74,9 +80,11 @@ const NewTour = ({ history }) => {
             alert("Name must > 5 character");
             return;
         }
-
+        
+    
         const start = moment(startTemp).format("DD-MM-YYYY");
         // If it success then Add New Tour 
+        setPrice(priceTypeEdit);
         addTour({ image, place, name, day, transports, price, start, descriptions,
                   apply, introduction, imageIntroduction, titleImage });
         // Swal.fire("Saved", "User Added", "ok");
@@ -188,9 +196,9 @@ const NewTour = ({ history }) => {
                             <label className="blockNewTour__formNew__labelPrice"> Price </label>
                             <input 
                                 className="blockNewTour__formNew__inputPrice"
-                                type="number"
+                                type="text"
                                 placeholder = "price"
-                                value = {price}
+                                value = {priceTypeEdit}
                                 onChange = { e => setPrice(e.target.value)}
                             />
                         </div>
@@ -217,7 +225,7 @@ const NewTour = ({ history }) => {
                         </div> */}
 
                         <div className="blockNewTour__formNew__inputRightItem">
-                            <label className="blockNewTour__formNew__labelApply"> Apply </label>
+                            <label className="blockNewTour__formNew__labelApply"> Guest Amount </label>
                             <input 
                                 className="blockNewTour__formNew__inputApply"
                                 type="text"

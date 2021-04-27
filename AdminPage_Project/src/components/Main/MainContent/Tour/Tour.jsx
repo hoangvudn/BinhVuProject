@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { deleteTourAction } from "../../../../actions/toursActions"
 
+import Numeral from 'numeral'
 // import React, { useState } from 'react'
 
 // const [tour, setUser] = useState({
@@ -57,6 +58,9 @@ const Tour = ({ tour }) => {
         });
     };
     const dateStart = tour.start;
+    const priceType =  Numeral(tour.price);
+   // console.log("Price Type: ", priceType.format());
+    const priceTypeEdit = priceType.format();
     console.log("Ngay:", dateStart);
    return (
         <>
@@ -67,7 +71,7 @@ const Tour = ({ tour }) => {
                 <td className="blockTourListMain__itemName">  {tour.name}   </td>
                 <td className="blockTourListMain__itemDayAmount"> {tour.day} </td>
                 <td className="blockTourListMain__itemTransports"> <img src = {tour.transports} alt="image coutryside"/> </td>
-                <td className="blockTourListMain__itemPrice"> {tour.price} </td>
+                <td className="blockTourListMain__itemPrice"> {priceTypeEdit} </td>
                 <td className="blockTourListMain__itemStartDay"> {dateStart}  </td>
                 <td className="blockTourListMain__itemDescriptions"> {tour.descriptions} </td>
                 <td className="blockTourListMain__itemApplyPassenger"> {tour.apply} </td>

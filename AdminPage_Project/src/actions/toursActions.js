@@ -20,7 +20,11 @@ import {
 
     GET_TOUR_SEARCH,
     TOUR_SEARCH_SUCCESS,
-    TOUR_SEARCH_ERROR
+    TOUR_SEARCH_ERROR,
+    GET_USER_LOGIN,
+    GET_USER_SUCCESS,
+    USER_LOGIN_SUCCESS,
+    USER_LOGIN_ERROR
 } from "../constants/index";
 import Swal from 'sweetalert2';
 import axiosConfig from "../data/configDatabase/axois";
@@ -217,3 +221,4 @@ export function searchTourAction(value) {
  export const searchTourError = () => ({
      type: TOUR_SEARCH_ERROR
  })
+

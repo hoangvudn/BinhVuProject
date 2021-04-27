@@ -29,25 +29,31 @@ const UsersList = ( {history} ) => {
 
     return (
         <>     
-           <table className="blockUserListMain">
-               <thead>
-                   <tr>
-                        <th className="blockUserListMain__userName">User Name</th>
-                        <th className="blockUserListMain__email">Email</th>
-                   </tr>         
-                </thead>
-               
-                <tbody className="blockUserListMain__listItemGroup">  
-                       {users.map(user => (
-                           <User key={user.id} user={user} />
-                       ))}
-                </tbody>
-        
-                <Link to={"/usersList/new" } >  
-                    <AiOutlineUserAdd className="blockUserListMain__linkToAddUser"/> 
-                </Link>
-           </table> 
-           <SearchUser />
+            <div className="blockUserListMain">
+                <table className="blockUserListMain__table">
+                    <thead>
+                        <tr>
+                                <th className="blockUserListMain__table--headUserName">User Name</th>
+                                <th className="blockUserListMain__table--headEmail">Email</th>
+                                <th className="blockUserListMain__table--headActionIcon"></th>
+                        </tr>         
+                        </thead>
+                    
+                        <tbody className="blockUserListMain__listItemGroup">  
+                            {users.map(user => (
+                                <User key={user.id} user={user} />
+                            ))}
+                        </tbody>
+                
+                </table>   
+                
+                <SearchUser className="" />
+            </div>
+            <Link to={"/usersList/new" } >  
+                            <AiOutlineUserAdd className="blockUserListMain__linkToAddUser"/> 
+            </Link>
+          
+           
          
         </> 
     );

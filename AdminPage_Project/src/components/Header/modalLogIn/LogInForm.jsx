@@ -31,7 +31,7 @@ const LogInForm = () => {
   /// console.log("UserName:", userName);
    return (
        <>
-           <div className="blockLoginForm">
+           <div className="blockLoginForm" >
                     <h1>LOG IN</h1>
                     <Formik
                             initialValues={{ user: '', password: '' }}

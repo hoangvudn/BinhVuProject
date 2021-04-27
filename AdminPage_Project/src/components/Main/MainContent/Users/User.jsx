@@ -14,6 +14,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from "react-redux";
 import { deleteUserAction } from "../../../../actions/usersActions"
 
@@ -37,19 +41,39 @@ const User = ({ user }) => {
             }
         });
     };
-   
-
+    const useStyles = makeStyles((theme) => ({
+        root: {
+          '& > *': {
+            margin: theme.spacing(1),
+          },
+        },
+        extendedIcon: {
+          marginRight: theme.spacing(1),
+        },
+      }));
+    const classes = useStyles();
     return (
         <>
             <tr className="blockUserListMain__listItem">
                 <td className="blockUserListMain__itemUser">{user.userName}</td>
                 <td className="blockUserListMain__itemEmail">{user.email}</td>
-                <Link to={`/usersList/edit/${user.id}`} > 
-                        <AiFillEdit className="blockUserListMain__editIcon"/>
-                </Link>
-            
-                <AiFillDelete className="blockUserListMain__deleteIcon" onClick={() => confirmDeleteUser(user.id)}/>  
-            </tr>  
+                <td className="blockUserListMain__itemAction">
+                     <Link to={`/usersList/edit/${user.id}`} > 
+                            <Fab color="secondary" aria-label="edit" className="blockUserListMain__itemIcon--editIcon" >
+                                <EditIcon />
+                            </Fab>
+                    </Link>
+                </td>
+                
+                <div className="blockUserListMain__itemAction">
+                                   
+                    <Fab color="secondary" aria-label="delete" onClick={() => confirmDeleteUser(user.id)} className="blockUserListMain__itemIcon--deleteIcon" >
+                        <DeleteIcon />
+                    </Fab>  
+                </div>
+               
+            </tr> 
+        
         </>
     )
 }

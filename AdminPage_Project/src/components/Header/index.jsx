@@ -9,7 +9,7 @@ const Header = () => {
    const [showSideBar, setShowSideBar] = useState(false);
    return (
       <>
-         <div  className="blockHeader">
+         <div  className="blockHeader" >
              <div className="blockHeader__menuLogo">
                 <GiHamburgerMenu onClick={() => setShowSideBar(!showSideBar)} className="blockHeader__hambugerSideBar"/>
                 {/* <img src={menuLogo} alt='logoSideBar' onClick={() => setShowSideBar(!showSideBar)} className="blockHeader__hambugerSideBar"/> */}

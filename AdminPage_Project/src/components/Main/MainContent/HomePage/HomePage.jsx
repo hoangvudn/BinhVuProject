@@ -14,6 +14,7 @@ import NewTour from '../Tour/NewTour'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './styles/index.scss'
+import BasicTable1 from '../Users/BasicTable1';
 //import LogInForm from '../../../Header/modalLogIn/LogInForm';
 
 
@@ -26,6 +27,7 @@ const HomePage = () => {
   return (
     <Router>
           <Header/>
+          {/* <BasicTable1 /> */}
           {/* <TestTable /> */}
               <div className="blockContainer">
                  <Switch>

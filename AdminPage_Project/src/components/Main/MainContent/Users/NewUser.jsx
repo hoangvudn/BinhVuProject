@@ -3,19 +3,33 @@ import { Formik } from 'formik'
 
 
 import { createNewUserAction } from "../../../../actions/usersActions";
-import { useDispatch, useSelecttor } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { Break } from 'devextreme-react/range-selector';
 const NewUser = ({ history }) => {
     const [ userName, setUserName ] = useState("");
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
-
+    const [ userExit, setUserExit ] = useState(false);
+    
     //Create new user
     const dispatch = useDispatch();
     const addUser = user => dispatch(createNewUserAction(user));
+    
+    const users = useSelector(state => state.usersList.usersList);
+    console.log("USER PANDING: ", users);
 
+    const checkUser = users.filter(item => {
+           return item.userName == userName;
+    });
+    console.log("User Balaaa",checkUser);
+    console.log("User Balaaa",checkUser.length);
     const handleSubmit = e => {
+      
         e.preventDefault();
+        // const checkUserName = (userName) =>{
+             
+        // }
         //validate
         if ( userName.trim() === "" || email.trim() === "" || password.trim() === "") {
             alert("Value not null ");
@@ -26,8 +40,22 @@ const NewUser = ({ history }) => {
             alert("User must > 5 character");
             return;
         }
-        // If it success
+        
+        if ( checkUser.length !== 0) {
+            alert("USER EXITED! Please input another user");
+            return;
+        }
+        
+       //  {users.map(user => {
+        //         if (user.userName === userName) {
+        //             alert("Error User exited: ");
+        //             setUserExit(true);
+        //         }    
+        //     })
+        //  }
+        
         addUser({ userName, email, password });
+        //If it success 
         // return home page
         history.push(`/`);
     };

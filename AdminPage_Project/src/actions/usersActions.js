@@ -20,7 +20,11 @@ import {
 
     GET_USER_SEARCH,
     USER_SEARCH_SUCCESS,
-    USER_SEARCH_ERROR
+    USER_SEARCH_ERROR,
+
+    GET_USER_LOGIN,
+    USER_LOGIN_SUCCESS,
+    USER_LOGIN_ERROR
 
 } from "../constants/index";
 import Swal from 'sweetalert2';
@@ -218,4 +222,38 @@ export const deleteUserError = () => ({
  export const searchUserError = () => ({
      type: USER_SEARCH_ERROR
  })
+
+  //=================================Authentication=LOGIN===============================
+
+ export function userAuthAction(userName,password) {
+    return dispatch => {
+        dispatch(authUser(userName,password));
+      //Get user from the API
+      axiosConfig
+        .get(`/users/?userName=${userName}&password=${password}`)
+        .then(response => {
+            console.log(response.data);
+            dispatch(authUserSuccess(response.data));
+        })
+        .catch(error => {
+          console.log(error);
+          dispatch(authUserError());
+      });
+    };
+ };
+
+ export const authUser = () => ({
+        type: GET_USER_LOGIN
+ });
+
+ export const authUserSuccess = toursList => ({
+        type: USER_LOGIN_SUCCESS,
+        payload: toursList
+ });
+
+ export const authUserError = () => ({
+        type: USER_LOGIN_ERROR,
+ });
+
+//=================================================================================
 
