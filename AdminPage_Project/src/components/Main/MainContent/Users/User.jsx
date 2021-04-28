@@ -57,7 +57,7 @@ const User = ({ user }) => {
             <tr className="blockUserListMain__listItem">
                 <td className="blockUserListMain__itemUser">{user.userName}</td>
                 <td className="blockUserListMain__itemEmail">{user.email}</td>
-                <td className="blockUserListMain__itemAction">
+                <td className="blockUserListMain__itemActionEdit">
                      <Link to={`/usersList/edit/${user.id}`} > 
                             <Fab color="secondary" aria-label="edit" className="blockUserListMain__itemIcon--editIcon" >
                                 <EditIcon />
@@ -65,7 +65,7 @@ const User = ({ user }) => {
                     </Link>
                 </td>
                 
-                <div className="blockUserListMain__itemAction">
+                <div className="blockUserListMain__itemActionDelete">
                                    
                     <Fab color="secondary" aria-label="delete" onClick={() => confirmDeleteUser(user.id)} className="blockUserListMain__itemIcon--deleteIcon" >
                         <DeleteIcon />

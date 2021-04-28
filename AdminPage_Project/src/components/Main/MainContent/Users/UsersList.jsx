@@ -37,21 +37,22 @@ const UsersList = ( {history} ) => {
                                 <th className="blockUserListMain__table--headEmail">Email</th>
                                 <th className="blockUserListMain__table--headActionIcon"></th>
                         </tr>         
-                        </thead>
+                    </thead>
                     
-                        <tbody className="blockUserListMain__listItemGroup">  
+                    <tbody className="blockUserListMain__listItemGroup">  
                             {users.map(user => (
                                 <User key={user.id} user={user} />
                             ))}
-                        </tbody>
+                    </tbody>
                 
                 </table>   
                 
-                <SearchUser className="" />
-            </div>
-            <Link to={"/usersList/new" } >  
+                <SearchUser />
+                <Link to={"/usersList/new" } >  
                             <AiOutlineUserAdd className="blockUserListMain__linkToAddUser"/> 
-            </Link>
+                </Link>
+            </div>
+       
           
            
          

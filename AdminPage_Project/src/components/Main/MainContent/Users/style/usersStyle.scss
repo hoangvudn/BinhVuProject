@@ -58,8 +58,6 @@ $base-color: #F4F6FD;
     }
 }
 .blockUserListMain {
-    position: absolute;
-    left: 15%;
     width: 65%;
     top: 100px;
     height: 350px;
@@ -67,26 +65,53 @@ $base-color: #F4F6FD;
     max-height: 400px;
     overflow-x: auto;
     overflow-y: auto; 
-    margin: 0px auto;
+   // margin: 0px auto;
     &__table {
         width: 100%;
         height: 100%;
-        background: paleturquoise;
         &--headUserName {
             position: sticky;
             top: 0;
-            border-bottom: black;
+            background: gray;
         }
         &--headEmail {
             position: sticky;
             top: 0;
+            background: gray;
         }
         &--headActionIcon {
             position: sticky;
             top: 0;
+            background: gray;
         }
     }
-    
+    &__searchItem {
+        position: absolute;
+        top: 50px;
+        width: 300px;
+        height: 50px;
+    }
+    &__blockSearchUser {
+       width: 100%;
+       height: 100%; 
+       
+       &--inputItem input{
+           width: 85%;
+           border-top: none;
+           border-left: none;
+           border-right: none;
+       }
+    }
+    //--------------------------------------------
+    &__linkToAddUser {
+        position: absolute;
+        //left: 450px;
+        top: 30px;
+        right: 16%;
+        width: 100px;
+        height: 50px;
+        text-decoration: none;
+    }   
     
     // &__userName {
     //     position: absolute;
@@ -275,31 +300,31 @@ $base-color: #F4F6FD;
     }
 }
 
-.blockSearchUser {
-    position: absolute;
-    display: flex;
-    // justify-content: center;
-    // align-items: center;
-    left: 400px;
-    top: 140px;
-    width: 280px;
-    height: 50px;
-    //background: red;
-    &__inputItem {
-       position: relative;
-    }
-    &__inputItem input {
-        border-top: none;
-        border-left: none;
-        border-right: none;
-     }
+// .blockSearchUser {
+//     position: absolute;
+//     display: flex;
+//     // justify-content: center;
+//     // align-items: center;
+//     left: 400px;
+//     top: 140px;
+//     width: 280px;
+//     height: 50px;
+//     //background: red;
+//     &__inputItem {
+//        position: relative;
+//     }
+//     &__inputItem input {
+//         border-top: none;
+//         border-left: none;
+//         border-right: none;
+//      }
   
  
-    &__buttonSave {
-        position: relative;
-        left: 20px;
-    }
-}
+//     &__buttonSave {
+//         position: relative;
+//         left: 20px;
+//     }
+// }
 
 
 // .blockUserListItem {

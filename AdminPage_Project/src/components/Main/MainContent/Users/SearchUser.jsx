@@ -25,9 +25,9 @@ const SearchUser = () => {
  
     return (    
         <>
-           <div>
-                 <form  onSubmit={handleSubmit1} className="blockSearchUser">
-                             <div className="blockSearchUser__inputItem">
+           <div className="blockUserListMain__searchItem">
+                 <form  onSubmit={handleSubmit1} className="blockUserListMain__blockSearchUser">
+                             <div className="blockUserListMain__blockSearchUser--inputItem">
                                <input
                                     type="text"
                                     name="searchUser"

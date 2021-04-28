@@ -1428,18 +1428,6 @@
       "email": "namka@gmail.com",
       "password": "123456789",
       "id": 8
-    },
-    {
-      "userName": "hoang",
-      "email": "hoang@gmail.com",
-      "password": "1234567110ozne",
-      "id": 9
-    },
-    {
-      "userName": "abcrew",
-      "email": "dfsdsf@gmail.com",
-      "password": "12313",
-      "id": 10
     }
   ],
   "createSearchTour": [
