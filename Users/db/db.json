@@ -1,70 +1,40 @@
 {
   "toursTravel": [
     {
+      "type": 1,
       "id": 1,
       "image": "https://cdn2.ivivu.com/2020/05/15/16/ivivu-man-moc-chau-360x225.gif",
       "place": "Yên bái",
       "name": "Tour Mù Cang Chải 2N1D: Bản Lướt - Ngọc Chiến - Sơn La",
-      "day": "4 Ngày 4 Đêm",
+      "day": "4 Ngày 3 Đêm",
       "transports": [
-        "121,533"
+        "https://img.icons8.com/material-rounded/14/000000/bus.png"
       ],
       "price": "5290000",
-      "start": "01-05-2021",
-      "descriptions": "Ngắm Măm Xôi Tú Lệ,Bản Lướt Ngọc Chiến,Đồi Chè Thanh Sơn",
+      "start": "02-05-2021",
+      "descriptions": [
+        "Cpuchisa,Bản Lướt Ngọc Chiến,Đồi Chè Thanh Sơn"
+      ],
       "apply": "2 khách",
       "introduction": "Mộc Châu khiến dân tình 'đứng ngồi không yên' ",
       "imageIntroduction": "http://cdn2.ivivu.com/2019/12/24/14/ivivu-doi-che-trai-tim.gif",
       "titleImage": "Đồi Chè Trái Tim"
     },
     {
-      "type": 1,
       "id": 2,
       "image": "//cdn2.ivivu.com/2020/07/08/14/ivivu-chua-tam-chuc-360x225.gif",
       "place": "Hạ Long",
       "name": "Tour Miền Bắc 4N3D: Sài Gòn - Hạ Long - Ninh Bình - Sapa",
       "day": "4 Ngày 3 Đêm",
       "transports": [
-        "https://img.icons8.com/ios-filled/12/000000/airport.png",
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "Ngắm Măm Xôi Tú Lệ",
-        "Bản Lướt Ngọc Chiến",
-        "Đồi Chè Thanh Sơn"
+        "https://img.icons8.com/ios-filled/12/000000/airport.png,https://img.icons8.com/material-rounded/14/000000/bus.png"
       ],
       "price": "7950000",
-      "start": "18-04-2021",
+      "start": "01-05-2021",
+      "descriptions": [
+        "Ngắm SUNRISE,Bản Lướt Ngọc Chiến,Đồi Chè Thanh Sơn"
+      ],
       "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ],
       "introduction": "Với hành trình 4 ngày tại Phương Bắc, không những mang nét đặc sắc về kiến trúc, cảnh quan thiên nhiên, mà nơi đây còn chứa đựng giá trị tâm linh, phật tích quý báu qua nhiều năm lịch sử. Đặc trưng trong chương trình hành hương vãng cảnh chùa cầu may mắn, bình an, phước lộc cho gia đình,... là một trong những nét văn hóa đặc trưng đã có từ bao đời nay của người Việt. Cùng iVIVU khám phá ngay hôm nay! ",
       "imageIntroduction": "//cdn2.ivivu.com/2020/07/08/15/ivivu-bai-dinh.gif",
       "titleImage": "Chùa Bái Đính."
@@ -139,8 +109,8 @@
       "start": "18-04-2021",
       "apply": "2 khách",
       "startDays": [
-        "18-04-2021",
-        "19-04-2021",
+        "17-04-2021",
+        "20-04-2021",
         "21-04-2021",
         "23-04-2021",
         "24-04-2021"
@@ -283,43 +253,12 @@
       "transports": [
         "https://img.icons8.com/material-rounded/14/000000/bus.png"
       ],
-      "descriptions": [
-        "Ngắm Măm Xôi Tú Lệ",
-        "Bản Lướt Ngọc Chiến",
-        "Đồi Chè Thanh Sơn"
-      ],
       "price": "5290000",
-      "start": "18-04-2021",
+      "start": "02-05-2021",
+      "descriptions": [
+        "1Ngắm Măm Xôi Tú Lệ,Bản Lướt Ngọc Chiến,Đồi Chè Thanh Sơn"
+      ],
       "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ],
       "introduction": "Với hành trình 4 ngày tại Phương Bắc, không những mang nét đặc sắc về kiến trúc, cảnh quan thiên nhiên, mà nơi đây còn chứa đựng giá trị tâm linh, phật tích quý báu qua nhiều năm lịch sử. Đặc trưng trong chương trình hành hương vãng cảnh chùa cầu may mắn, bình an, phước lộc cho gia đình,... là một trong những nét văn hóa đặc trưng đã có từ bao đời nay của người Việt. Cùng iVIVU khám phá ngay hôm nay! ",
       "imageIntroduction": "//cdn2.ivivu.com/2020/07/08/15/ivivu-bai-dinh.gif",
       "titleImage": "Chùa Bái Đính."
@@ -878,119 +817,6 @@
           "abouttDay": "30-04-2021"
         }
       ]
-    },
-    {
-      "type": 2,
-      "id": 19,
-      "image": "http://dulichviet.com.vn/images/bandidau/TOUR%20TTX/du-lich-my-2019.jpg",
-      "place": "New York",
-      "name": "Tour Mỹ - New York - Philadelphia - Washington D.C",
-      "day": "7 Ngày 6 Đêm",
-      "transports": [
-        "https://img.icons8.com/ios-filled/12/000000/airport.png",
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "See Vancouver's highlights",
-        "Free time to participate",
-        "Gardens Explore Vancouver"
-      ],
-      "price": "47000000",
-      "start": "18-04-2021",
-      "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ]
-    },
-    {
-      "type": 2,
-      "id": 20,
-      "image": "https://dulichviet.com.vn/images/bandidau/TOUR%20TTX/LITTLE%20SAIGON/du-lich-canada-mua-thu.jpg",
-      "place": "Canada",
-      "name": "Tour Canada - Toronto - Vancouver - Victoria Island",
-      "day": "7 Ngày 6 Đêm",
-      "transports": [
-        "https://img.icons8.com/ios-filled/12/000000/airport.png",
-        "https://img.icons8.com/material-rounded/14/000000/bus.png"
-      ],
-      "descriptions": [
-        "See Vancouver's highlights",
-        "Free time to participate",
-        "Gardens Explore Vancouver"
-      ],
-      "price": "47900000",
-      "start": "18-04-2021",
-      "apply": "2 khách",
-      "startDays": [
-        "18-04-2021",
-        "19-04-2021",
-        "21-04-2021",
-        "23-04-2021",
-        "24-04-2021"
-      ],
-      "calendarDays": [
-        {
-          "startDay": "18-04-2021",
-          "abouttDay": "24-04-2021"
-        },
-        {
-          "startDay": "19-04-2021",
-          "abouttDay": "25-04-2021"
-        },
-        {
-          "startDay": "21-04-2021",
-          "abouttDay": "27-04-2021"
-        },
-        {
-          "startDay": "23-04-2021",
-          "abouttDay": "29-04-2021"
-        },
-        {
-          "startDay": "24-04-2021",
-          "abouttDay": "30-04-2021"
-        }
-      ]
-    },
-    {
-      "id": 21,
-      "image": "https://cdn2.ivivu.com/2020/05/15/16/ivivu-man-moc-chau-360x225.gif",
-      "place": "DâNng",
-      "name": "dfdfdfdfdf",
-      "day": "5",
-      "transports": "train",
-      "price": "555555",
-      "start": "17-04-2021",
-      "descriptions": "dfdf",
-      "apply": "3",
-      "introduction": "sdfsdf",
-      "imageIntroduction": "sfdfd",
-      "titleImage": "dfdf"
     }
   ],
   "users": [
@@ -1005,6 +831,24 @@
       "userName": "hoangvu",
       "email": "hoangvu123@gmail.com",
       "password": "123456789"
+    },
+    {
+      "userName": "binh123",
+      "email": "binh@gmail.com",
+      "password": "1232313",
+      "id": 3
+    },
+    {
+      "userName": "hoangvu1",
+      "email": "hoangvu@gmail.com",
+      "password": "119335802167891983211",
+      "id": 4
+    },
+    {
+      "userName": "hoang",
+      "email": "hoang@gmail.com",
+      "password": "12323213",
+      "id": 5
     }
   ],
   "createSearchTour": [],
@@ -1161,46 +1005,46 @@
       "selectDay": "2021-04-17T17:00:00.000Z",
       "day": "4 Ngày 3 Đêm",
       "infoUser": {
-        "email": "hoang@gmail.com",
-        "name": "hoang",
-        "phone": "099888999",
-        "request": "12345689"
+        "email": "nguyenhoangvudnvn@gmail.com",
+        "name": "asd",
+        "phone": "09052883391",
+        "request": "asd"
       },
       "paymentUser": {
-        "cardUser": "hoang",
-        "cardNumber": "9898989",
+        "cardUser": "hoangVU",
+        "cardNumber": "123213123",
         "checkBacking": "Internet Banking"
       },
       "id": 5
     },
     {
       "userName": "binh1",
-      "image": "//cdn2.ivivu.com/2019/04/04/10/tour-da-nangba-na-hill-cau-vang-360x225.jpg",
-      "place": "Đà Nẵng, Huế",
-      "name": "Tour Thanh Hóa 4N3: HCM - Hà Nội - Pù Luông - Thác Hiêu",
+      "image": "//cdn2.ivivu.com/2020/11/04/10/ivivu-cho-noi-dau-nam-bia-360x225.gif",
+      "place": "Cần Thơ, Châu Đốc,Miền Tây",
+      "name": "Tour Miền Tây 3N2D: Châu Đốc-Trà Sư-Cần Thơ Lễ 30/4",
       "transports": [
-        "https://img.icons8.com/material-rounded/12/000000/bus.png"
+        "https://img.icons8.com/material-rounded/14/000000/bus.png"
       ],
-      "price": "5190000",
+      "price": "6390000",
       "startDays": [
-        "18-04-2021",
-        "19-04-2021",
+        "17-04-2021",
+        "20-04-2021",
         "21-04-2021",
         "23-04-2021",
         "24-04-2021"
       ],
       "countUsers": 2,
-      "selectDay": "2021-04-17T17:00:00.000Z",
-      "day": "4 Ngày 3 Đêm",
+      "selectDay": "2021-04-16T17:00:00.000Z",
+      "day": "3 Ngày 2 Đêm",
       "infoUser": {
-        "email": "hoang@gmail.com",
-        "name": "hoang",
-        "phone": "099888999",
-        "request": "12345689"
+        "email": "nguyenhoangvudnvn@gmail.com",
+        "name": "asd",
+        "phone": "09052883391",
+        "request": "asd"
       },
       "paymentUser": {
-        "cardUser": "hoang",
-        "cardNumber": "9898989",
+        "cardUser": "hoangVU",
+        "cardNumber": "123213123",
         "checkBacking": "Internet Banking"
       },
       "starRating": null,

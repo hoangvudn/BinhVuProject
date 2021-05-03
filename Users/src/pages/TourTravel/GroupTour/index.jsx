@@ -23,14 +23,14 @@ function GroupTour({
    //vận chuyển
    const renderTransports = () => {
       return transports.map((item, index)=>{
-         return(
+         return(  
             <img src={item} style={{marginRight:'8px'}}/>
          );
       })
    }
-
+    console.log("Console position 1: ", transports[1])
    //thông tin tour
-   console.log("descriptions__descriptions: ",descriptions)
+   console.log("descriptions position 2: ",descriptions[2])
    const renderDesriptions = () => {
       return descriptions.map((item, index)=>{
          return(

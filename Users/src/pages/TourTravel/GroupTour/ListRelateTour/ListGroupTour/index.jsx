@@ -15,8 +15,8 @@ function GroupToursList ({
             <img src={item} style={{marginRight:'8px'}}/>
          );
       })
-   }
-
+   };
+   console.log("Console Transports: ", searchTourItem.transports);
    //thông tin tour
    const renderDesriptions = () => {
       return searchTourItem.descriptions.map((item, index)=>{
@@ -25,7 +25,7 @@ function GroupToursList ({
          );
       })
    }
-
+  
    return(
       <Row>
          <Col span={24} className="hover-box-detail box-list"

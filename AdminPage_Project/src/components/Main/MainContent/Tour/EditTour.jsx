@@ -18,10 +18,10 @@ const EditTour = ({ match, history }) => {
      const placeRef = useRef("");
      const nameRef = useRef("");
      const dayRef = useRef("");
-     const transportsRef = useRef("");
+     const transportsRef = useRef([]);
      const priceRef = useRef("");
      //const startRef = useRef("");
-     const descriptionsRef = useRef("");
+     const descriptionsRef = useRef([]);
      const applyRef = useRef("");
      const introductionRef = useRef("");
      const imageIntroductionRef = useRef("");
@@ -52,10 +52,10 @@ const EditTour = ({ match, history }) => {
             placeRef.current.value.trim() === "" ||
             nameRef.current.value.trim() === "" ||
             dayRef.current.value.trim() === "" ||
-            transportsRef.current.value.trim() === "" ||
+            transportsRef.current.value.trim() === [] ||
             priceRef.current.value.trim() === "" ||
             //startRef.current.value.trim() === "" ||
-            descriptionsRef.current.value.trim() === "" ||
+            descriptionsRef.current.value.trim() === [] ||
             applyRef.current.value.trim() === "" ||
             introductionRef.current.value.trim() === "" ||
             imageIntroductionRef.current.value.trim() === "" ||
@@ -64,16 +64,18 @@ const EditTour = ({ match, history }) => {
             alert("Value not null")
             return;
          }
+         
          tourUpdated({
+             type:1,
              id,
              image: imageRef.current.value,
              place: placeRef.current.value,
-             name: nameRef.current.value,
+             name: nameRef.current.value,   
              day: dayRef.current.value,
-             transports: transportsRef.current.value,
+             transports:[transportsRef.current.value],
              price: priceRef.current.value,
              start: start,
-             descriptions: descriptionsRef.current.value,
+             descriptions:[ descriptionsRef.current.value],
              apply: applyRef.current.value,
              introduction: introductionRef.current.value,
              imageIntroduction: imageIntroductionRef.current.value,

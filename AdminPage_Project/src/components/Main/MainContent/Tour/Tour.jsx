@@ -9,6 +9,11 @@ import { useDispatch } from "react-redux";
 import { deleteTourAction } from "../../../../actions/toursActions"
 
 import Numeral from 'numeral'
+
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 // import React, { useState } from 'react'
 
 // const [tour, setUser] = useState({
@@ -62,31 +67,49 @@ const Tour = ({ tour }) => {
    // console.log("Price Type: ", priceType.format());
     const priceTypeEdit = priceType.format();
     console.log("Ngay:", dateStart);
+    //===============================
+    const useStyles = makeStyles((theme) => ({
+        root: {
+          '& > *': {
+            margin: theme.spacing(1),
+          },
+        },
+        extendedIcon: {
+          marginRight: theme.spacing(1),
+        },
+      }));
+    const classes = useStyles();
+    //===============================
    return (
         <>
             
             <tr className="blockTourListMain__listItem">
-                <td className="blockTourListMain__itemImage"> <img src= {tour.image} alt="image countryside"/>  </td>
-                <td className="blockTourListMain__itemPlace"> {tour.place}  </td>
-                <td className="blockTourListMain__itemName">  {tour.name}   </td>
-                <td className="blockTourListMain__itemDayAmount"> {tour.day} </td>
-                <td className="blockTourListMain__itemTransports"> <img src = {tour.transports} alt="image coutryside"/> </td>
-                <td className="blockTourListMain__itemPrice"> {priceTypeEdit} </td>
-                <td className="blockTourListMain__itemStartDay"> {dateStart}  </td>
-                <td className="blockTourListMain__itemDescriptions"> {tour.descriptions} </td>
-                <td className="blockTourListMain__itemApplyPassenger"> {tour.apply} </td>
-                <td className="blockTourListMain__itemIntroduction"> {tour.introduction} </td>
-                <td className="blockTourListMain__itemImageIntroduction"> {tour.imageIntroduction} </td>
-                <td className="blockTourListMain__itemTitleImage"> {tour.titleImage} </td>
-                
-                <div className="blockTourListMain__groupIcon"> 
-                    <Link to={`/toursList/edit/${tour.id}`} > 
-                            <AiFillEdit className="blockTourListMain__groupIcon__editIcon"/>
+                <td className="blockTourListMain__listItem--itemImage"> <img src= {tour.image} alt="image countryside"/>  </td>
+                <td className="blockTourListMain__listItem--itemPlace"> {tour.place}  </td>
+                <td className="blockTourListMain__listItem--itemName">  {tour.name}   </td>
+                <td className="blockTourListMain__listItem--itemDayAmount"> {tour.day} </td>
+                <td className="blockTourListMain__listItem--itemTransports"> <img src = {tour.transports} alt="image coutryside"/> </td>
+                <td className="blockTourListMain__listItem--itemPrice"> {priceTypeEdit} </td>
+                <td className="blockTourListMain__listItem--itemStartDay"> {dateStart}  </td>
+                <td className="blockTourListMain__listItem--itemDescriptions"> {tour.descriptions} </td>
+                <td className="blockTourListMain__listItem--itemApplyPassenger"> {tour.apply} </td>
+                <td className="blockTourListMain__listItem--itemIntroduction"> {tour.introduction} </td>
+                <td className="blockTourListMain__listItem--itemImageIntroduction"> {tour.imageIntroduction} </td>
+                <td className="blockTourListMain__listItem--itemTitleImage"> {tour.titleImage} </td>
+
+                <td className="blockTourListMain__table--itemActionEdit">
+                     <Link to={`/toursList/edit/${tour.id}`}> 
+                            <Fab color="secondary" aria-label="edit" className="blocTourListMain__itemIcon--editIcon" >
+                                <EditIcon />
+                            </Fab>
                     </Link>
+                </td>
                 
-                    <AiFillDelete className="blockTourListMain__groupIcon__deleteIcon" onClick={() => confirmDeleteTour(tour.id)}/>
-                </div>
-            
+                <td className="blockTourListMain__table--itemActionDelete"> 
+                    <Fab color="secondary" aria-label="delete" onClick={() => confirmDeleteTour(tour.id)} className="blockTourListMain__itemIcon--deleteIcon" >
+                        <DeleteIcon />
+                    </Fab>  
+                </td>    
             </tr>
           
         </>      
