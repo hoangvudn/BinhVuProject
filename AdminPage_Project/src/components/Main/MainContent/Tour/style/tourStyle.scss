@@ -4,8 +4,8 @@ $border-color: #82A2F4;
 
 .blockToursList {
     position: absolute;
-    top: 100px;
-    right: 0px;
+    //top: 100px;
+    //right: 0px;
     width: 80%;
     height: 100%;
     background : white;
@@ -15,8 +15,8 @@ $border-color: #82A2F4;
 
 .blockEditToursList {
     position: absolute;
-    top: 200px;
-    left: 40%;
+    //top: 200px;
+    //left: 40%;
     width: 30%;
     height: 50%;
     background: $base-color;
@@ -44,12 +44,12 @@ $border-color: #82A2F4;
     }
 }
 .blockTourListMain {
-     //position: relative;
+     position: absolute;
      //left: 230px;
      width: 100%;
      //background: orange;
      max-height: 480px;
-     //top: 200px;
+     top: 100px;
      overflow-x: auto;
      overflow-y: auto;
      font-size: 12px;
@@ -250,6 +250,25 @@ $border-color: #82A2F4;
             //border-bottom: 1px solid gray;
         }
 
+     }
+     &__searchItem {
+        position: absolute;
+        left: 18%;
+        top: 30px;
+           &--inputItem input{
+               border-left: none;
+               border-right: none;
+               border-top: none;
+           }
+        
+     }
+
+     &__linkToAddTour {
+           position: absolute;
+           top: 20px;
+           right: 2%;
+           width: 45px;
+           height: 45px;
      }
      //===============================================NewStyle==================
     //==========================================
@@ -508,8 +527,8 @@ $border-color: #82A2F4;
 
 .blockEditTour {
     position: absolute;
-    top: 140px;
-    left: 32%;
+    //top: 140px;
+    //left: 32%;
     width: 750px;
     height: 450px;
     //background: grey;
@@ -658,10 +677,10 @@ $border-color: #82A2F4;
 
 .blockNewTour {
     position: absolute;
-    top: 135px;
-    left: 30%;
-    width: 750px;
-    height: 450px;
+    //top: 135px;
+    //left: 30%;
+    width: 80%;
+    height: 520px;
     //background: grey;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   
@@ -686,7 +705,16 @@ $border-color: #82A2F4;
         &__inputLeftItem {
             position: relative;
             margin-top: 20px;
+            top: 10px;
             left: -22%;
+        }
+        &__selectTour {
+            position: relative;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            top: -5px;
+            left: 25px;
         }
         &__inputImageUrl {
             position: relative;
@@ -698,12 +726,14 @@ $border-color: #82A2F4;
         &__inputPlace {
             position: relative;
             left: 65px;
+            top: -5px;
             border-top: none;
             border-left: none;
             border-right: none;
         }
         &__inputTourName {
             position: relative;
+            top: -5px;
             left: 25px;
             border-top: none;
             border-left: none;
@@ -712,6 +742,23 @@ $border-color: #82A2F4;
         &__inputDay {
             position: relative;
             left: 15px;
+            top: -5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        &__inputDescriptions {
+            position: relative;
+            left: 15px;
+            top: -5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        &__inputIntroduction {
+            position: relative;
+            left: 15px;
+            top: -5px;
             border-top: none;
             border-left: none;
             border-right: none;
@@ -720,6 +767,7 @@ $border-color: #82A2F4;
         &__inputRightItem {
             position: relative;
             margin-top: 20px;
+            top: -20px;
             left: 10%;
         }
         &__inputTransports {
@@ -757,20 +805,6 @@ $border-color: #82A2F4;
             border-left: none;
             border-right: none;
         }
-        &__inputDescriptions {
-            position: relative;
-            left: 15px;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-        }
-        &__inputIntroduction {
-            position: relative;
-            left: 15px;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-        }
         &__inputImageIntroduction {
             position: relative;
             left: 15px;
@@ -789,7 +823,7 @@ $border-color: #82A2F4;
     
     &__buttonSave {
         position: absolute;
-        top: 300px;
+        top: 380px;
         width: 100px;
         height: 50px;
     }

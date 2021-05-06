@@ -89,9 +89,7 @@ const EditTour = ({ match, history }) => {
    return (
       
       <>
-        <div>
-            BACK
-        </div>
+      
         <div class="blockEditTour">
             <h3 className="blockEditTour__title"> EDIT TOUR </h3>
             <form onSubmit={handleUpdateTour} className="blockEditTour__formEdit">

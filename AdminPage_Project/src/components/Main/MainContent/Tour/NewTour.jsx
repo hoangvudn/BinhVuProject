@@ -26,7 +26,7 @@ const NewTour = ({ history }) => {
     const [ introduction, setIntroduction ] = useState("");
     const [ imageIntroduction, setImageIntroduction ] = useState("");
     const [ titleImage, setTitleImage ] = useState("");
-
+    const [ statusCountry, setStatusCountry ] = useState("1");
     //=========================Convert Image To Base64===========================
             //const [baseImage, setBaseImage] = useState('');
             const uploadImage = async (e) => {
@@ -34,6 +34,7 @@ const NewTour = ({ history }) => {
             const base64 = await convertBase64(file);
             console.log("binary file:",base64);
             setImage(base64);
+            setTransports(base64);
             //console.log("binary file:",file);
             };
         
@@ -51,7 +52,32 @@ const NewTour = ({ history }) => {
                 };
             });
             }
-    //=========================================================================== 
+    //===========================================================================
+    //=========================Convert Image To Base64===========================
+            //const [baseImage, setBaseImage] = useState('');
+            const uploadImageTransports = async (e) => {
+                const file = e.target.files[0];
+                const base64 = await convertBase64Transports(file);
+                console.log("binary file:",base64);
+                setTransports(base64);
+                //console.log("binary file:",file);
+                };
+            
+                const convertBase64Transports = (file) => {
+                return new Promise((resolve, reject) => {
+                    const fileReader = new FileReader();
+                    fileReader.readAsDataURL(file);
+            
+                    fileReader.onload = () => {
+                    resolve(fileReader.result);
+                    };
+            
+                    fileReader.onerror = (error) => {
+                    reject(error);
+                    };
+                });
+                }
+        //=========================================================================== 
     //======================================Check Price==========================
         let priceType =  Numeral(price);
         let priceTypeEdit = priceType.format();
@@ -59,8 +85,13 @@ const NewTour = ({ history }) => {
 
     const dispatch = useDispatch();
     const addTour = tour => dispatch(createNewTourAction(tour));
-    
- 
+    //===============Set Status Country======================
+    const handleChange = e => {
+        e.preventDefault();
+        setStatusCountry(e.target.value);
+    }
+    console.log("Value Country:", statusCountry)
+    //=======================================================
     const handleSubmit = e => {
         e.preventDefault();
         //validate
@@ -84,13 +115,20 @@ const NewTour = ({ history }) => {
     
         const start = moment(startTemp).format("DD-MM-YYYY");
         // If it success then Add New Tour 
+        const type = Number(statusCountry);
         setPrice(priceTypeEdit);
-        addTour({ image, place, name, day, transports, price, start, descriptions,
+        //============push transports to array=====
+        //const arr1 = transports.split(",");
+        const arrTransports = [];
+         arrTransports.push(transports);
+         console.log("array transports:", arrTransports[1])
+        //=========================================
+        addTour({ type, image, place, name, day, arrTransports, transports, price, start, descriptions,
                   apply, introduction, imageIntroduction, titleImage });
         // Swal.fire("Saved", "User Added", "ok");
         // return Tour List page
         history.push(`/toursList`);
-      
+        
     };
    
     return (
@@ -105,8 +143,25 @@ const NewTour = ({ history }) => {
                 <form onSubmit={handleSubmit}  className="blockNewTour__formNew">
                     <div className="blockNewTour__formNew__leftItem">
                         <div className="blockNewTour__formNew__inputLeftItem">
+                            <label>Select Tour</label>
+                            <select value={statusCountry} onChange={handleChange} className="blockNewTour__formNew__selectTour"> 
+                                <option value="1">Domestic</option>
+                                <option value="2">International</option>
+                            </select>
+                            
+                            {/* <input 
+                                className="blockNewTour__formNew__inputImageUrl"
+                                type = "text"
+                                placeholder = "image url"
+                                value = {image}
+                                onChange = { e => setImage(e.target.value)}
+                            /> */}
+                        </div>
+
+                        <div className="blockNewTour__formNew__inputLeftItem">
                             <label className="blockNewTour__formNew__labelImageUrl">Image Url</label>
                             <input 
+                                className="blockNewTour__formNew__inputImageUrl"
                                 type="file"
                                 onChange = {(e) => {
                                 uploadImage(e);
@@ -185,10 +240,14 @@ const NewTour = ({ history }) => {
                             <label className="blockNewTour__formNew__labelTransports"> Transports </label>
                             <input 
                                 className="blockNewTour__formNew__inputTransports"
-                                type="text"
-                                placeholder = "transports"
-                                value = {transports}
-                                onChange={ e => setTransports(e.target.value)}
+                                type="file"
+                                onChange = {(e) => {
+                                uploadImageTransports(e);
+                                }}
+                                // type="text"
+                                // placeholder = "transports"
+                                // value = {transports}
+                                // onChange={ e => setTransports(e.target.value)}
                             />
                         </div>
 

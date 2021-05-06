@@ -26,9 +26,9 @@ const SearchTour = () => {
     return (
         
         <>
-           <div>
-                 <form  onSubmit={handleSubmit} className="blockSearchTour">
-                             <div className="blockSearchTour__inputItem">
+           <div className="blockTourListMain__searchItem">
+                 <form  onSubmit={handleSubmit} >
+                             <div className="blockTourListMain__searchItem--inputItem">
                                <input
                                     type="text"
                                     name="searchTour"
