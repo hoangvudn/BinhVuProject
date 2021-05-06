@@ -21,6 +21,11 @@ import {
     GET_TOUR_SEARCH,
     TOUR_SEARCH_SUCCESS,
     TOUR_SEARCH_ERROR,
+
+    GET_TOUR_SELECTTOUR,
+    TOUR_SELECTTOUR_SUCCESS,
+    TOUR_SELECTTOUR_ERROR,
+
     GET_USER_LOGIN,
     GET_USER_SUCCESS,
     USER_LOGIN_SUCCESS,
@@ -220,5 +225,35 @@ export function searchTourAction(value) {
 
  export const searchTourError = () => ({
      type: TOUR_SEARCH_ERROR
+ })
+
+//=================================================SEARCH STATUS TOUR=================
+export function selectTourAction(value) {
+    return dispatch => {
+        dispatch(selectTour(value));
+        axiosConfig
+           .get(`./toursTravel/?type=${value}`)
+           .then(response => {
+                 console.log("search result:",response);
+                 dispatch(selectTourSuccess(response.data));
+           })
+           .catch(error => {
+            console.log("NO display record: ",error);
+            dispatch(selectTourError());
+        });
+    };
+};
+
+ export const selectTour = () => ({
+     type: GET_TOUR_SELECTTOUR
+ });
+
+ export const selectTourSuccess = toursList => ({
+     type: TOUR_SELECTTOUR_SUCCESS,
+     payload: toursList
+ })
+
+ export const selectTourError = () => ({
+     type: TOUR_SELECTTOUR_ERROR
  })
 

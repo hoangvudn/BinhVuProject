@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getToursAction } from "../../../../actions/toursActions";
 import Tour from './Tour';
 import SearchTour from './SearchTour';
+import SelectTour from './SelectTour';
 const ToursList = () => { 
     const dispatch = useDispatch();
 
@@ -60,6 +61,7 @@ const ToursList = () => {
                 <GoDiffAdded className="blockTourListMain__linkToAddTour"/> 
           </Link>
           <SearchTour />
+          <SelectTour />
      </>
    );
 }

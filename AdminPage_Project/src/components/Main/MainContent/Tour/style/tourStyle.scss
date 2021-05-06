@@ -262,6 +262,18 @@ $border-color: #82A2F4;
            }
         
      }
+     &__selectTour {
+        position: absolute;
+        left: 38%;
+        top: 33px;
+        width: 200px;
+           &--selectItem {
+               border-left: none;
+               border-right: none;
+               border-top: none;
+           }
+        
+     }
 
      &__linkToAddTour {
            position: absolute;

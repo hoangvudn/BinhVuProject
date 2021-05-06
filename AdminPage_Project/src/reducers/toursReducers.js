@@ -20,7 +20,12 @@ import {
 
     GET_TOUR_SEARCH,
     TOUR_SEARCH_SUCCESS,
-    TOUR_SEARCH_ERROR
+    TOUR_SEARCH_ERROR,
+
+    GET_TOUR_SELECTTOUR,
+    TOUR_SELECTTOUR_SUCCESS,
+    TOUR_SELECTTOUR_ERROR
+
 
   } from "../constants/index"
   
@@ -143,7 +148,25 @@ import {
                 return {
                     ...state,
                     error: true
-                }     
+                } 
+            //============================================
+            case GET_TOUR_SELECTTOUR:
+                return {
+                    ...state,
+                    error: true
+                }
+            case TOUR_SELECTTOUR_SUCCESS:
+                return {
+                        ...state,
+                        error: null,
+                        toursList: action.payload
+                        //user: {}
+                    }
+            case TOUR_SELECTTOUR_ERROR: 
+                    return {
+                        ...state,
+                        error: true
+                    }    
           default:
                return state;
       }

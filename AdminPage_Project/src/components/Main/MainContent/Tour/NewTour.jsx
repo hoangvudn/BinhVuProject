@@ -288,7 +288,7 @@ const NewTour = ({ history }) => {
                             <input 
                                 className="blockNewTour__formNew__inputApply"
                                 type="text"
-                                placeholder = "apply"
+                                placeholder = "Guest amount"
                                 value = {apply}
                                 onChange = { e => setApply(e.target.value)}
                             />
