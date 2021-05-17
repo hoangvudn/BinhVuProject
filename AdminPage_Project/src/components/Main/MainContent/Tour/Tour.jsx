@@ -4,6 +4,7 @@ import "./style/tourStyle.scss";
 import { Link } from 'react-router-dom';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import Swal from "sweetalert2";
+import "./style/responsive.scss";
 
 import { useDispatch } from "react-redux";
 import { deleteTourAction } from "../../../../actions/toursActions"
@@ -62,7 +63,7 @@ const Tour = ({ tour }) => {
             }
         });
     };
-    const dateStart = tour.start;
+    const dateStart = tour.startDays;
     const priceType =  Numeral(tour.price);
    // console.log("Price Type: ", priceType.format());
     const priceTypeEdit = priceType.format();
@@ -94,19 +95,19 @@ const Tour = ({ tour }) => {
                 <td className="blockTourListMain__listItem--itemDescriptions"> {tour.descriptions} </td>
                 <td className="blockTourListMain__listItem--itemApplyPassenger"> {tour.apply} </td>
                 <td className="blockTourListMain__listItem--itemIntroduction"> {tour.introduction} </td>
-                <td className="blockTourListMain__listItem--itemImageIntroduction"> {tour.imageIntroduction} </td>
+                <td className="blockTourListMain__listItem--itemImageIntroduction"> <img src= {tour.imageIntroduction} alt="image introduction"/> </td>
                 <td className="blockTourListMain__listItem--itemTitleImage"> {tour.titleImage} </td>
 
                 <td className="blockTourListMain__table--itemActionEdit">
                      <Link to={`/toursList/edit/${tour.id}`}> 
-                            <Fab color="secondary" aria-label="edit" className="blocTourListMain__itemIcon--editIcon" >
+                            <Fab size="small" color="primary" aria-label="edit" className="blocTourListMain__itemIcon--editIcon" >
                                 <EditIcon />
                             </Fab>
                     </Link>
                 </td>
                 
                 <td className="blockTourListMain__table--itemActionDelete"> 
-                    <Fab color="secondary" aria-label="delete" onClick={() => confirmDeleteTour(tour.id)} className="blockTourListMain__itemIcon--deleteIcon" >
+                    <Fab size="small" color="primary" aria-label="delete" onClick={() => confirmDeleteTour(tour.id)} className="blockTourListMain__itemIcon--deleteIcon" >
                         <DeleteIcon />
                     </Fab>  
                 </td>    

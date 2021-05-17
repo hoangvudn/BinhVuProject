@@ -1,53 +1,96 @@
 $base-color: #82A2F4;
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+*{
+    font-family: 'poppin';
+}
 .blockHeader {
-    position: absolute;
+    // position: absolute;
+    // display: flex;
+    // top: 0px;
+    // width: 100%;
+    // height: 100px;
+    // background : #82A2F4;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: flex;
- 
-    width: 100%;
-    height: 100px;
-    background : #82A2F4;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    min-height: 60px;
+    //background: red;
+    z-index: 1000;
+    //background-image: url(bg-header.jpg);
+    // background: #eaafc8;
+    // background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
+    // background: linear-gradient(to right, #eaafc8, #654ea3);
+    background: rgba(47,137,252,1);
+	background: -moz-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(47,137,252,1)), color-stop(100%, rgba(94,255,201,1)));
+	background: -webkit-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	background: -o-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	background: linear-gradient(135deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#5effc9', GradientType=1 );
     &__menuLogo {
         position: absolute;
-        top: 50px;
+        top: 10px;
+        left: 0;
         width: 5%; 
         height: 50px;
         //background: rebeccapurple;
     }
     &__menuLogo:hover {
         cursor: pointer;
+        
     }
     &__menuLogo img {
         position: absolute;
-        width: 100%;
-        height: 50px;
+        width: 65%;
+        height: 35px;
     }
-    &__logoutIcon {
+    &__groupAdmin {
         position: absolute;
         display: flex;
         right: 100px;
         top: 40px;
         width: 5%; 
         height: 50px;
-        
     }
-    &__logoutIcon label{
+    &__groupAdmin label{
         position: absolute;
         left: -120px;
-        top: 20px;
+        color: white;
+        font-weight: 700;
+        top: -20px;
     }
-    &__logoutIcon img {
+    &__groupAdmin img {
         position: absolute;
-        width: 100%;
-        height: 50px;
+        top: -30px;
+        width: 60%;
+        height: 40px;
+    }
+    &__groupAdmin img:hover {
+       cursor: pointer;
+       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+       border-radius: 35px;
+       transition-duration: 0.8s;
+       
     }
     &__hambugerSideBar:hover {
         cursor: pointer;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 35px;
+        transition-duration: 0.7s;
     }
     &__hambugerSideBar {
-        position: relative;
+        position: absolute;
         left: 30px;
         width: 65%;
         height: 50px;
-        
+        border: none;
+     
     }
 }

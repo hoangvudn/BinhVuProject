@@ -1,0 +1,28 @@
+$base-color: #F4F6FD;
+$border-color: #82A2F4;
+
+@media only screen and (max-width: 1125px) {
+    
+ 
+}
+//============================
+@media only screen and (max-width: 1024px) {
+    .blockNewUser {
+        position: absolute;
+        width: 500px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+}
+
+//============================
+@media only screen and (max-width: 320px) {
+     body {
+         width: 100%;
+     }
+}

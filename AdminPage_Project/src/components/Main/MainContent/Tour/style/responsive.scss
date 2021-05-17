@@ -1,204 +1,395 @@
-// $base-color: #F4F6FD;
-// $border-color: #82A2F4;
+$base-color: #F4F6FD;
+$border-color: #82A2F4;
 
-// @media only screen and (max-width: 1125px) {
-//     .blockTourListMain {
-//         position: relative;
-//         left: 230px;
-//         width: 80%;
-//         max-height: 400px;
-//         top: 200px;
-//         overflow-x: auto;
-//         overflow-y: auto;
-//         font-size: 12px;
+@media only screen and (max-width: 1125px) {
+    .blockTourListMain {
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        width: 100%;
+        max-height: 1185px;
+        /* top: 0px; */
+        overflow-x: auto;
+        overflow-y: auto;
+        font-size: 12px;
+   
+    }
+
+    //============================NEW TOUR===========================
+    .blockNewTour {
+        position: absolute;
+        top: 0px;
+        //top: 135px;
+        //left: 30%;
+        width: 100%;
+        height: 1120px;
+        border: 2px dashed blueviolet;
+        //background: grey;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       
-   
-//         &__fixed {
-//             position: fixed;
-//             top: 180px;
-//             width: 100%;
-//             font-size: 8px;
-//            &__imageUrl {
-//               position: relative;
-//            }
-//            &__place {
-//               position: relative;
-//               left: 33px;
-//            }
-//            &__tourName {
-//                position: relative;
-//                left: 65px;
-//            }
-//            &__dayAmount {
-//                position: relative;
-//                left: 80px;
-//            }
-//            &__transports {
-//                position: relative;
-//                left: 80px;
-//            }
-//            &__price {
-//                position: relative;
-//                left: 90px;
-//            }
-//            &__startDay {
-//                position: relative;
-//                left: 105px;
-//            }
-//            &__descriptions {
-//                position: relative;
-//                left: 140px;
-//            }
-//            &__applyPassenger {
-//                position: relative;
-//                left: 165px;
-//            }
-//            &__introduction {
-//                position: relative;
-//                left: 205px;
-//            }
-//            &__imageIntroduction {
-//                position: relative;
-//                left: 243px;
-//            }
-//            &__titleImage {
-//                position: relative;
-//                left: 280px;
-//            }
-          
-//         }
-//         &__listItem {
-//             height: 44px;
-//         }
-//         &__table {
-//             width: 100%;
-//             height: 100%;
-//             box-shadow: rgba(69, 69, 204, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-//             //background: whitesmoke;
-//             border-collapse: collapse;
-//         }
-//         &__itemImage {
-//             border : 1px solid $border-color;
-//             //max-width: 80px;
-//             width: 70px;
-//             height: 125px;
-//            //height: 50px;
-//         }
-//         &__itemImage img {
-//             width: 100%;
-//             height: 100%;
-//             display: block;
-//         }
-//         &__itemPlace {
-//            border : 1px solid $border-color;
-//            width: 85px;
-//        }
-//        &__itemName {
-//            border : 1px solid $border-color;
-//            width: 115px;
-//        }
-//        &__itemDayAmount {
-//            border : 1px solid $border-color;
-//            width: 85px;
-//        }
-//        &__itemTransports {
-//            border : 1px solid $border-color;
-//            width: 50px;
-//            height: 100px;
+       
+        &__formNew {
+            position: absolute;
+            top: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border: 1px dashed red;
+            // background: rebeccapurple;
+            &__title {
+                position: absolute;
+                top: 30px;
+                color: rgb(55, 55, 241);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: gray;
+                // background: yellow;
+            }
+            &__title h2 {
+                color: blue;
+                font-weight: 900;
+                // background: yellow;
+            }
+            &__leftItem {
+               position: absolute;
+               //background: red;
+               //border: 1px dashed red;
+               top: 110px;
+               //left: 0;
+            }
+      
+            &__inputLeftItem {
+                position: relative;
+                margin-top: 20px;
+                top: 0;
+                left: 5px;
+            }
+            &__lablelSelectTour {
+                position: relative;
+                left: 27px;
+                font-weight: 600;
+            }
+            &__selectTour {
+                position: relative;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                top: -5px;
+                left: 34px;
+            }
+            &__labelImageUrl {
+                position: relative;
+                left: 34px;
+                font-weight: 600;
+            }
+            &__inputImageUrl {
+                position: relative;
+                left: 42px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__labelPlace {
+                position: relative;
+                left: 68px;
+                font-weight: 600;
+            }
+            &__inputPlace {
+                position: relative;
+                left: 76px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__labelTourName {
+                position: relative;
+                left: 26px;
+                font-weight: 600;
+            }
+            &__inputTourName {
+                position: relative;
+                top: -8px;
+                left: 34px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__labelDay {
+                position: relative;
+                left: 15px;
+                font-weight: 600;
+            }
+            &__inputDay {
+                position: relative;
+                left: 22px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            
+            &__labelApply {
+                position: relative;
+                left: 0px;
+                font-weight: 600;
+            }
+            &__inputApply {
+                position: relative;
+                left: 9px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__labelIntroduction {
+                position: relative;
+                left: 13px;
+                font-weight: 600;
+            }
+            &__inputIntroduction {
+                position: relative;
+                left: 22px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            //----------------------------Middle Item--------------------------------------
+            &__middleItem {
+                position: absolute;
+               // padding: 40px 0px 20px;
+                top: 450px
+                //border: 1px solid blue;
+                //top: 45px;
+                //left: 32%;
+                //right: 0;
+                //@debug: 39px;
+                //left: -85px;  
+            }
+            &__inputMiddleItem {
+                position: relative;
+                margin-top: 20px;
+                //top: 0;
+                left: 10px;
+            }
+            &__labelDescriptions {
+                position: relative;
+                left: 50px;
+                font-weight: 600;
+            }
+            &__inputDescriptions1 {
+                position: relative;
+                left: 60px;
+                top: -5px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__inputDescriptions2 {
+                position: relative;
+                left: 150px;
+                top: -5px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__inputDescriptions3 {
+                position: relative;
+                left: 150px;
+                top: -5px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__labelTransports {
+                position: relative;
+                left: 62px;
+                font-weight: 600;
+            }
+            &__inputTransports {
+                position: relative;
+                left: 75px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                width: 250px;
+            }
+            &__labelPrice {
+                position: relative;
+                left: 100px;
+                font-weight: 600;
+            }
+            &__inputPrice {
+                position: relative;
+                left: 115px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__labelStart {
+                position: relative;
+                left: 12px;
+                font-weight: 600;
+            }
+            
+            &__labelImageIntroduction {
+                position: relative;
+                left: -3px;
+                font-weight: 600;
+            }
+            &__inputImageIntroduction {
+                position: relative;
+                left: 10px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            &__labelTitleImage {
+                position: relative;
+                left: 54px;
+                font-weight: 600;
+            }
+            &__inputTitleImage {
+                position: relative;
+                left: 69px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+            //---------------------------------------------------------
+            &__blockDatePicker {
+                position: relative;
+               // background: burlywood;
+               // top: 55px;
+                top: 402px; 
+               // right: 145px;
+                display: flex;
+                width: 200px;
+                height: 300px;
+                //background: blue;
+                align-content:space-between;
+                &__leftItem {
+                    width: 100px;
+                    //background: #f79321;
+                }
+                &__leftItem label{
+                   font-weight: 600;
+                   margin-left: 10px;
+                }
+                &__inputLeftItem {
+                    &--inputDatepicker {
+                        position: relative;
+                        //left: 30px;
+                        width: 85px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                    }
+                }
+                &__rightItem {
+                    width: 100px;
+                    //background: #f79321;
+                }
+                &__rightItem label{
+                   font-weight: 600;
+                   margin-left: 10px;
+                }
+                &__inputRightItem {
+                    &--inputDatepicker {
+                        position: relative;
+                        //left: 30px;
+                        width: 85px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                    }
+                }
+            }
+            
+            &__inputDatepicker1 {
+                position: relative;
+                left: 146px;
+                width: 85px;
+                top: -8px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+        }
+        &__buttonSave1 {
+            position: relative;
+            top: 50px;
+            width: 200px;
+            height: 50px;
+            background: green;
+        }
+        &__buttonSave1:hover {
+            cursor: pointer;
+        }
+        &__buttonSave {
+            position: absolute;
+            top: 1050px;
+            width: 200px;
+            height: 50px;
+            background: rgba(47,137,252,1);
+            background: -moz-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(47,137,252,1)), color-stop(100%, rgba(94,255,201,1)));
+            background: -webkit-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            background: -o-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            background: -ms-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            background: linear-gradient(135deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#5effc9', GradientType=1 );
+            border-radius: 5px;
+            font-weight: 700;
+            color: white;
+            transition-duration: 0.4s;
+        }
+        &__buttonSave:hover {
+            color: white;
+            cursor: pointer; 
+            background-color: #008CBA;
+            border-radius: 5px;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    }
+    //===============================================================
+}
+//============================
+@media only screen and (max-width: 1024px) {
+  
+    .blockTourListMain {
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        width: 100%;
+        max-height: 1185px;
+        /* top: 0px; */
+        overflow-x: auto;
+        overflow-y: auto;
+        font-size: 12px;
+      
+        &__selectTour {
+            position: absolute;
+            left: 46%;
+            top: 33px;
+            width: 200px;
+        }
         
-//            // overflow: hidden;
-//        }
-//        &__itemTransports img {
-//            position: relative;
-//            left: 8%;
-//            width: 25px;
-//            height: 25px;
-//            display: block;
-//        }
-//        &__itemPrice {
-//            border : 1px solid $border-color;
-//            width: 68px;
-//        }
-//        &__itemStartDay {
-//            border : 1px solid $border-color;
-//            width: 75px;
-//        }
-//        &__itemDescriptions {
-//            border : 1px solid $border-color;
-//            width: 105px;
-//        }
-//        &__itemApplyPassenger {
-//            border : 1px solid $border-color;
-//            width: 50px;
-//        }
-//        &__itemIntroduction {
-//            border : 1px solid $border-color;
-//            white-space: nowrap; 
-//            max-width: 120px; 
-//            overflow: hidden;
-//            text-overflow:ellipsis;
-//        }
-//        &__itemImageIntroduction {
-//            border : 1px solid $border-color;
-//            white-space: nowrap; 
-//            max-width: 80px; 
-//            overflow: hidden;
-//            text-overflow:ellipsis;
-//        }
-//        &__itemTitleImage {
-//            border : 1px solid $border-color;
-//            width: 60px;
-//        }
-//        &__linkToAddTour {
-//            position: absolute;
-//            top: 148px;
-//            right: 1%;
-//            width: 45px;
-//            height: 45px;
-//        }
-//        &__groupIcon {
-//            display: flex;
-//            position: relative;
-//            top: 40%;
-//            &__editIcon {
-//                cursor: pointer;
-//                width: 25px;
-//                height: 25px;
-//            }
-//            &__deleteIcon {
-//                cursor: pointer;
-//                position: relative;
-//                width: 25px;
-//                height: 25px;
-//                margin-left: 10px;
-//            }
-   
-//        }
-//    }
-//     //===============================SEARCH TOUR========================================
-//     .blockSearchTour {
-//         position: absolute;
-//         display: flex;
-//         // justify-content: center;
-//         // align-items: center;
-//         right: -20px;
-//         top: 125px;
-//         width: 320px;
-//         height: 50px;
-//         //background: red;
-//         &__inputItem {
-//         position: relative;
-//         right: 0px;
-//         }   
-//         &__inputItem input {
-//             border-top: none;
-//             border-left: none;
-//             border-right: none;
-//         }
-    
-//         &__buttonSave {
-//             position: relative;
-//             left: 20px;
-//         }
-//     }
-// }
+    }
+}
+
+//============================
+@media only screen and (max-width: 320px) {
+     body {
+         width: 100%;
+     }
+}

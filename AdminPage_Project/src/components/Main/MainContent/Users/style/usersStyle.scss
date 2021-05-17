@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+@import './responsive.scss';
+$th-color:rgba(47,137,252,1);
+$bg-th-color: whitesmoke;
 $base-color: #F4F6FD;
+* input:focus {
+    outline: none;
+ }
 .blockTable {
     position: absolute;
     top: 200px;
@@ -75,16 +81,16 @@ $base-color: #F4F6FD;
         }
         &--headUserName {
             position: sticky;
-            color: white;
+            color: $th-color;
             top: 0;
-            background: gray;
+            background: $bg-th-color;
             padding: 10px 8px;
         }
         &--headEmail {
             position: sticky;
-            color: white;
+            color: $th-color;
             top: 0;
-            background: gray;
+            background: $bg-th-color;
         }
         &--itemUser {
             padding: 2px 8px;
@@ -92,13 +98,13 @@ $base-color: #F4F6FD;
         &--headActionIcon {
             position: sticky;
             top: 0;
-            background: gray;
+            background: $bg-th-color;
             z-index: 10;
         }
         &--headActionIcon1 {
             position: sticky;
             top: 0;
-            background: gray;
+            background: $bg-th-color;
             z-index: 10;
         }
         &--itemActionDelete {
@@ -134,6 +140,12 @@ $base-color: #F4F6FD;
     &__listItem {
         border-bottom: 1px solid gray;
     }
+    &__listItem:hover {
+        background: gray;
+        color: whitesmoke;
+        opacity: 0.8;
+        transition-duration: 0.5s;
+    }
     //--------------------------------------------
     &__linkToAddUser {
         position: absolute;
@@ -144,69 +156,6 @@ $base-color: #F4F6FD;
         height: 50px;
         text-decoration: none;
     } 
-
- 
-    // &__userName {
-    //     position: absolute;
-    //     left: 0px;
-    // }
-    // &__email {
-    //     position: absolute;
-    //     right: 310px;
-    // }
-    // &__itemUser {
-    //     position: relative;
-    //     width: 35%;
-    // }
-    // &__itemEmail {
-    //     position: relative;
-    //     width: 50%;
-    // }
-    // &__listItemGroup {
-    //     position: absolute;
-    //     left: 0px;
-    //     top: 30px;
-    //     width: 100%;
-    // }  
-    // &__listItem {
-    //     position: relative;
-    //     background: white;
-    //     box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px; 
-    //     width: 450px;
-    // }
-    // &__editIcon {
-    //     width: 50px;
-    // }
-    // &__deleteIcon {
-    //     width: 32px;
-    // }
-    // &__deleteIcon:hover {
-    //     cursor: pointer;
-    // }
-    // &__itemIcon {
-    //     display: flex;
-    //     &--editIcon {
-    //         margin-left: 50px;
-    //     }
-    // }
-    // &__linkToAddUser {
-    //     position: relative;
-    //     left: 450px;
-    //     top: 0px;
-    //     width: 100px;
-    //     height: 50px;
-    //     text-decoration: none;
-       
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    // }
-    // &__searchUser {
-    //     position: relative;
-    //     width: 500px;
-    //     height: 200px;
-    //     background: red;
-    // }
 }
 
 .blockEditUser {
@@ -325,6 +274,14 @@ $base-color: #F4F6FD;
         margin: 20px 0px 0px 50px;
         width: 150px;
         height: 50px;
+        background: rgba(47,137,252,1);
+        background: -moz-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+        background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(47,137,252,1)), color-stop(100%, rgba(94,255,201,1)));
+        background: -webkit-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+        background: -o-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+        background: -ms-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+        background: linear-gradient(135deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#5effc9', GradientType=1 );
     }
     &__buttonAddUser:hover {
         cursor: pointer; 
@@ -332,36 +289,3 @@ $base-color: #F4F6FD;
         border-radius: 5px;
     }
 }
-
-// .blockSearchUser {
-//     position: absolute;
-//     display: flex;
-//     // justify-content: center;
-//     // align-items: center;
-//     left: 400px;
-//     top: 140px;
-//     width: 280px;
-//     height: 50px;
-//     //background: red;
-//     &__inputItem {
-//        position: relative;
-//     }
-//     &__inputItem input {
-//         border-top: none;
-//         border-left: none;
-//         border-right: none;
-//      }
-  
- 
-//     &__buttonSave {
-//         position: relative;
-//         left: 20px;
-//     }
-// }
-
-
-// .blockUserListItem {
-//     position: relative;
-    
- 
-// }

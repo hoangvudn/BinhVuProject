@@ -21,6 +21,7 @@
     "history": "4.10.1",
     "jquery": "^3.6.0",
     "jszip": "3.6.0",
+    "lodash": "^4.17.21",
     "luxon": "1.26.0",
     "material-table": "^1.69.2",
     "momen": "0.0.1-security",

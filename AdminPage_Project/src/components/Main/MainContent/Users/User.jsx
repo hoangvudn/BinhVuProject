@@ -59,14 +59,14 @@ const User = ({ user }) => {
                 <td className="blockUserListMain__table--itemEmail">{user.email}</td>
                 <td className="blockUserListMain__table--itemActionEdit">
                      <Link to={`/usersList/edit/${user.id}`} > 
-                            <Fab color="secondary" aria-label="edit" className="blockUserListMain__itemIcon--editIcon" >
+                            <Fab size ="small" color="primary" aria-label="edit" className="blockUserListMain__itemIcon--editIcon" >
                                 <EditIcon />
                             </Fab>
                     </Link>
                 </td>
                 
                 <td className="blockUserListMain__table--itemActionDelete"> 
-                    <Fab color="secondary" aria-label="delete" onClick={() => confirmDeleteUser(user.id)} className="blockUserListMain__itemIcon--deleteIcon" >
+                    <Fab size ="small"  color="primary" aria-label="delete" onClick={() => confirmDeleteUser(user.id)} className="blockUserListMain__itemIcon--deleteIcon" >
                         <DeleteIcon />
                     </Fab>  
                 </td>    

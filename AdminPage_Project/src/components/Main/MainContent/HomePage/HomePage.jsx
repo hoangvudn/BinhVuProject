@@ -11,22 +11,19 @@ import ToursList from '../Tour/ToursList'
 import EditTour from '../Tour/EditTour'
 import NewTour from '../Tour/NewTour'
 
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './styles/index.scss'
-import BasicTable1 from '../Users/BasicTable1';
-//import LogInForm from '../../../Header/modalLogIn/LogInForm';
+
 
 
 
 
 
 // const dataProvider = jsonServerProvider("http://localhost:3001"); //only port 3001
-const HomePage = () => {  
-  
+const HomePage = ({logOut}) => {  
   return (
     <Router>
-          <Header/>
+          <Header isLogOut = { logOut }/>
           {/* <BasicTable1 /> */}
           {/* <TestTable /> */}
               <div className="blockContainer">

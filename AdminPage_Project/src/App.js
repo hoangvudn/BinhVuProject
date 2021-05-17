@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import React, { Component }  from 'react';
+import React, { Component, useState }  from 'react';
 import HomePage from './components/Main/MainContent/HomePage/HomePage'
 import LogInForm from './components/Header/modalLogIn/LogInForm'
 
@@ -28,6 +28,10 @@ import BasicTable1 from './components/Main/MainContent/Users/BasicTable1';
 
 // const dataProvider = jsonServerProvider("http://localhost:3001"); //only port 3001
 function App() {  
+  const [loggedIn, setLoggedIn] = useState(false);
+  const handleClick = e => {
+    setLoggedIn(!loggedIn);
+  };
   return (
     //  <TestTable />
     //  <BasicTable />
@@ -40,15 +44,15 @@ function App() {
           {/* <LogInForm /> */}
               <div >
                  <Switch>
-                   <Route exact path="/" component={LogInForm} />
-                   <Route exact path="/HomePage" component={HomePage} />
-                   {/* <Route exact path="/usersList" component={UsersList} />
-                   <Route exact path="/usersList/new" component={NewUser} />
-                   <Route exact path="/usersList/edit/:id" component={EditUser} />
-                   <Route exact path="/toursList" component={ToursList} />
-                   <Route exact path="/toursList/new" component={NewTour} />
-                   <Route exact path="/toursList/edit/:id" component={EditTour} />   */}
+                   {
+                      !loggedIn ?
+                      <Route  path="/"> <LogInForm logIn={handleClick} /> </Route>
+                       :
+                      <Route  path="/"> <HomePage logOut={handleClick}/> </Route>
+                   }
+                   
                  </Switch>
+                 
                </div>
      </Router>
   );

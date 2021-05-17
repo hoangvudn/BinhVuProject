@@ -1,58 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import './responsive.scss';
 .blockLoginForm {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    background: blueviolet;
+    position: absolute;
+    font-family: 'poppin';
+    top: 10%;
+    width: 30%;
+    left: 33%;
+    border-radius: 10px;
+    height: 80vh;
+    font-family: 'poppin';
+    //background: blueviolet;
+    //background-image: url(bg-login.jpg);
+    background: linear-gradient(blue, pink);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    top: 130px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 0.9;
+    //====================================================================================
+    &__title {
+       position: absolute;
+       color: white;
+       font-weight: 700;
+       top: 100px;
+    }
+    &__inputItem{
+        width: 90%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        //background: yellow;
+    }
+    &__inputItemUser {
+        padding: 25px;
+    }
     &__inputUser {
-        position: relative;
-        left: 52px;
+        width: 100%;
+        border: 1px solid white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background:transparent;
+        color: white;
+    }
+    &__inputUser::placeholder {
+        color: white;
+    }
+    &__inputUser:focus {
+        outline: none;
     }
     &__inputPassWord {
-        position: relative;
-        left: 15px;
+        width: 100%;
+        border: 1px solid white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background:transparent;
+       // left: 15px;
     }
-    div {
-        margin-top: 20px;
+    &__inputPassWord::placeholder {
+        color: white;
     }
+    &__inputPassWord:focus {
+        outline: none;
+    }
+    // div {
+    //     margin-top: 20px;
+    // }
     &__buttonSave {
         position: relative;
-        top: 45px;
-        left: 83px;
-        width: 90px;
+        top: 55px;
+        //@debug: 12%;
+        width: 220px;
         height: 50px;
-        border-radius: 5px;
+        border-radius: 100px;
+        border: none;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(to top, black, 20%, cyan);
+        opacity: 0.7;   
     }
     &__buttonSave:hover {
         cursor: pointer;
-        background: yellowgreen;
+        background: linear-gradient(blue, pink);
+        transition-duration: 0.2s;
     }
     &__error {
-        position: absolute;
-        top: 130px;
-        left: 137px;
-        color: red;
+        // position: absolute;
+        // top: 130px;
+        // left: 137px;
+        // color: red;
 
     }
     &__errorPass {
-        position: absolute;
-        top: 175px;
-        left: 137px;
-        color: red;
+        // position: absolute;
+        // top: 175px;
+        // left: 137px;
+        // color: red;
     }
 }
 
-.blockLoginForm h1 {
-    position: absolute;
-    top: 0px;
-    color: white;
-}
+// .blockLoginForm h1 {
+//     position: absolute;
+//     top: 0px;
+//     color: white;
+// }
 
 .blockLoginForm label {
     color: white;
