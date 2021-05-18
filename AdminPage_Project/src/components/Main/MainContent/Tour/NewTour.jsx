@@ -26,15 +26,7 @@ const NewTour = ({ history }) => {
     //const [ startDate, setStartDate ] = useState(new Date());
     const [ startDay1, setStartDay1 ] = useState(null);
     const [ startDays, setStartDays ] = useState([]);
-    const [ startDate3, setStartDate3 ] = useState(new Date());
-    const [ startDate4, setStartDate4 ] = useState(new Date());
-    const [ startDate5, setStartDate5 ] = useState(new Date());
-
     const [ abouttDay1, setAbouttDay1 ] = useState(null);
-    const [ endDate2, setEndDate2 ] = useState(new Date());
-    const [ endDate3, setEndDate3 ] = useState(new Date());
-    const [ endDate4, setEndDate4 ] = useState(new Date());
-    const [ endDate5, setEndDate5 ] = useState(new Date());
     const [ descriptions1, setDescriptions1 ] = useState("");
     const [ descriptions2, setDescriptions2 ] = useState("");
     const [ descriptions3, setDescriptions3 ] = useState("");
@@ -43,7 +35,8 @@ const NewTour = ({ history }) => {
     const [ titleImage, setTitleImage ] = useState("");
     const [ statusCountry, setStatusCountry ] = useState("1");
     const [ calendarDays, setCalendarDays ] = useState([]);
-    const dayRef = useRef("");
+    const startDayRef = useRef("");
+    const endDayRef = useRef("");
     //=========================Convert Tour Image To Base64===========================
             //const [baseImage, setBaseImage] = useState('');
             const uploadImage = async (e) => {
@@ -139,6 +132,14 @@ const NewTour = ({ history }) => {
     const abouttDay = moment(abouttDay1).format("DD-MM-YYYY");
     //let startDays =[];
     const dayArray = () => {
+        if (startDay1 === null || abouttDay1 === null ) {
+            alert("Date range not null! Please input day")
+            return;
+        }
+        if (startDay1 > abouttDay1 ) {
+            alert("End day must > Start day ")
+            return;
+        }
         setCalendarDays([
             ...calendarDays,{
                startDay,
@@ -153,6 +154,8 @@ const NewTour = ({ history }) => {
     }
     const clearDayArray = () => {
         setCalendarDays([]);
+        setStartDay1(null);
+        setAbouttDay1(null);
     }
     console.log("DAY RANGE:,", calendarDays);
     console.log("START DAYS:,", startDays);
@@ -262,14 +265,6 @@ const NewTour = ({ history }) => {
                                 <option value="1">Domestic</option>
                                 <option value="2">International</option>
                             </select>
-                            
-                            {/* <input 
-                                className="blockNewTour__formNew__inputImageUrl"
-                                type = "text"
-                                placeholder = "image url"
-                                value = {image}
-                                onChange = { e => setImage(e.target.value)}
-                            /> */}
                         </div>
 
                         <div className="blockNewTour__formNew__inputLeftItem">
@@ -280,15 +275,7 @@ const NewTour = ({ history }) => {
                                 onChange = {(e) => {
                                 uploadImage(e);
                                 }}
-                                //value={image}
                             />
-                            {/* <input 
-                                className="blockNewTour__formNew__inputImageUrl"
-                                type = "text"
-                                placeholder = "image url"
-                                value = {image}
-                                onChange = { e => setImage(e.target.value)}
-                            /> */}
                         </div>
             
                         <div  className="blockNewTour__formNew__inputLeftItem">
@@ -334,8 +321,6 @@ const NewTour = ({ history }) => {
                                 onChange = { e => setApply(e.target.value)}
                             />
                         </div>
-
-                       
 
                         <div className="blockNewTour__formNew__inputLeftItem">
                             <label className="blockNewTour__formNew__labelIntroduction"> Introduction </label>
@@ -391,10 +376,6 @@ const NewTour = ({ history }) => {
                                 onChange = {(e) => {
                                 uploadImageTransports(e);
                                 }}
-                                // type="text"
-                                // placeholder = "transports"
-                                // value = {transports}
-                                // onChange={ e => setTransports(e.target.value)}
                             />
                         </div>
 
@@ -409,21 +390,6 @@ const NewTour = ({ history }) => {
                             />
                         </div>
 
-                      
-                        
-                        {/* <div className="blockNewTour__formNew__inputRightItem">
-                            <label className="blockNewTour__formNew__labelStart"> Start Day </label>
-                            <input 
-                                className="blockNewTour__formNew__inputStart"
-                                type="text"
-                                placeholder = "start day"
-                                value = {start}
-                                onChange = { e => setStartDay(e.target.value)}
-                            />
-                        </div> */}
-
-                       
-
                         <div className="blockNewTour__formNew__inputMiddleItem">
                             <label className="blockNewTour__formNew__labelImageIntroduction"> Image Introduction </label>
                             <input 
@@ -432,18 +398,7 @@ const NewTour = ({ history }) => {
                                 onChange = {(e) => {
                                 uploadImageImageIntroduction(e);
                                 }}
-                                // type="text"
-                                // placeholder = "transports"
-                                // value = {transports}
-                                // onChange={ e => setTransports(e.target.value)}
                             />
-                            {/* <input 
-                                className = "blockNewTour__formNew__inputImageIntroduction"
-                                type = "text"
-                                placeholder = "Image Introduction"
-                                value = {imageIntroduction}
-                                onChange = { e => setImageIntroduction(e.target.value)}
-                            /> */}
                         </div>
 
                         <div className="blockNewTour__formNew__inputMiddleItem">
@@ -459,140 +414,59 @@ const NewTour = ({ history }) => {
                     </div>
                     {/* =============================Right Item======================================= */}
                     <div className="blockNewTour__formNew__blockDatePicker">
-                            <div className="blockNewTour__formNew__blockDatePicker__leftItem">
-                                <label>Start Day</label>
-                                <div className="blockNewTour__formNew__blockDatePicker__inputLeftItem">
-                                    {/* <label className="blockNewTour__formNew__labelStart"> Start Day Range </label> */}
-                                        <DatePicker selected={startDay1} 
-                                                    onChange={date => setStartDay1(date)}
-                                                    defaultValue=""
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputLeftItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
+                         <div className="blockNewTour__formNew__blockDatePicker__groupSelectDate">
+                                <div className="blockNewTour__formNew__blockDatePicker__leftItem">
+                                    {/* <label>Start Day</label> */}
+                                    <div className="blockNewTour__formNew__blockDatePicker__inputLeftItem">
+                                        {/* <label className="blockNewTour__formNew__labelStart"> Start Day Range </label> */}
+                                            <DatePicker placeholderText="Start Date"
+                                                        selected={startDay1} 
+                                                        onChange={date => setStartDay1(date)}
+                                                        defaultValue=""
+                                                        dateFormat="dd-MM-yyyy"
+                                                        minDate={new Date()}         
+                                                        className="blockNewTour__formNew__blockDatePicker__inputLeftItem--inputDatepicker"
+                                            // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
+                                            />
+                                    </div>
+                                </div>  
+                                {/* -----------------------------------------------------------------*/}
+                                <div className="blockNewTour__formNew__blockDatePicker__rightItem">
+                                    {/* //<label>End Day</label> */}
+                                    <div className="blockNewTour__formNew__blockDatePicker__inputRightItem">
+                                            <DatePicker placeholderText="End Date"
+                                                        selected={abouttDay1} 
+                                                        onChange={date => setAbouttDay1(date)}
+                                                        dateFormat="dd-MM-yyyy"
+                                                        ref={endDayRef}
+                                                        minDate={new Date()}
+                                                        className="blockNewTour__formNew__blockDatePicker__inputRightItem--inputDatepicker"
+                                            />
+                                    </div>
                                 </div>
+                         </div>
+                            
 
-                                <div>
-                                        <input 
-                                            className = "blockNewTour__inputDayRange"
-                                            type = "text"
-                                            placeholder = ""
-                                            value="welcome to FE"
-                                            //onChange = { e => setTitleImage(e.target.value)}
-                                        />
-                                        <div className="blockNewTour__blockDayList">
-                                                {calendarDays.map( list => (
-                                                    <span>{list.startDay} ----- {list.abouttDay}<br /></span>
-                                                    
-                                                ))}
-                                        </div>
+                            <div className="blockNewTour__formNew__blockDatePicker__dayRange">
+                                    <div className="blockNewTour__formNew__blockDatePicker__groupDate">
+                                            {calendarDays.map( list => (
+                                                <span>{list.startDay} ------- {list.abouttDay}<br /></span>    
+                                            ))}
+                                    </div>
 
+                                    <div  className="blockNewTour__formNew__blockDatePicker__groupButton">
                                         <div
-                                            className="blockNewTour__buttonSave1" onClick={dayArray}
+                                            className="blockNewTour__formNew__blockDatePicker__addButton" onClick={dayArray}
                                         >
-                                             ADD DAY
+                                            <span> ADD DAY </span>  
                                         </div>
                                     
                                          <div
-                                            className="blockNewTour__buttonSave2" onClick={clearDayArray}
+                                            className="blockNewTour__formNew__blockDatePicker__clearButton" onClick={clearDayArray}
                                         >
-                                             Clear
+                                             <span> CLEAR </span> 
                                          </div>
-                                </div>
-                                {/* <div className="blockNewTour__formNew__blockDatePicker__inputLeftItem">
-                                        <DatePicker selected={startDate2} 
-                                                    onChange={date => setStartDate2(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputLeftItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div>
-                            
-                                <div className="blockNewTour__formNew__blockDatePicker__inputLeftItem">
-                                        <DatePicker selected={startDate3} 
-                                                    onChange={date => setStartDate3(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputLeftItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div>
-
-                                <div className="blockNewTour__formNew__blockDatePicker__inputLeftItem">
-                                        <DatePicker selected={startDate4} 
-                                                    onChange={date => setStartDate4(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputLeftItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div>
-
-                                <div className="blockNewTour__formNew__blockDatePicker__inputLeftItem">
-                                        <DatePicker selected={startDate5} 
-                                                    onChange={date => setStartDate5(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputLeftItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div> */}
-                            </div>  
-                            {/* -----------------------------------------------------------------*/}
-                            <div className="blockNewTour__formNew__blockDatePicker__rightItem">
-                                <label>End Day</label>
-                                <div className="blockNewTour__formNew__blockDatePicker__inputRightItem">
-                                    {/* <label className="blockNewTour__formNew__labelStart"> Start Day Range </label> */}
-                                        <DatePicker selected={abouttDay1} 
-                                                    onChange={date => setAbouttDay1(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputRightItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div>
-                                
-                                {/* <div className="blockNewTour__formNew__blockDatePicker__inputRightItem">
-                                        <DatePicker selected={endDate2} 
-                                                    onChange={date => setEndDate2(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputRightItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div>
-                            
-                                <div className="blockNewTour__formNew__blockDatePicker__inputRightItem">
-                                        <DatePicker selected={endDate3} 
-                                                    onChange={date => setEndDate3(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputRightItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div>
-
-                                <div className="blockNewTour__formNew__blockDatePicker__inputRightItem">
-                                        <DatePicker selected={endDate4} 
-                                                    onChange={date => setEndDate4(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputRightItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div>
-
-                                <div className="blockNewTour__formNew__blockDatePicker__inputRightItem">
-                                        <DatePicker selected={endDate5} 
-                                                    onChange={date => setEndDate5(date)}
-                                                    dateFormat="dd-MM-yyyy"
-                                                    minDate={new Date()}
-                                                    className="blockNewTour__formNew__blockDatePicker__inputRightItem--inputDatepicker"
-                                        // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
-                                        />
-                                </div> */}
+                                    </div>      
                             </div>
                         </div>
 
@@ -611,98 +485,3 @@ const NewTour = ({ history }) => {
 };
 
 export default NewTour;
-
-
-// const [tour, setTour] = useState({
-       
-// })
-// const NewTour = () => { 
-//    return (
-//             <Formik initialValues={{ tour: '', pass: '', email:''}}
-//                 validate={values => {
-//                 const errors = {};
-//                 //--------------------------VALIDATE PASS---------------------
-//                 if (!values.tour) {
-//                     errors.tour = 'Required';
-//                 }
-//                 //--------------------------VALIDATE PASS---------------------
-//                 if (!values.pass) {
-//                     errors.pass = 'Required';
-//                 }
-//                 //----------------------------VALIDATE EMAIL------------------
-//                 if (!values.email) {
-//                     errors.email = 'Required';
-//                 } else if (
-//                     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-//                 ) {
-//                     errors.email = 'Invalid email address';
-//                 }
-                
-//                 return errors;
-//                 }}
-//                 onSubmit={(values, { setSubmitting }) => {
-//                 setTimeout(() => {
-//                     alert(JSON.stringify(values, null, 2));
-//                     setSubmitting(false);
-//                 }, 400);
-//                 }} 
-//             >
-//                     {({
-//                 values,
-//                 errors,
-//                 touched,
-//                 handleChange,
-//                 handleBlur,
-//                 handleSubmit,
-//                 isSubmitting,
-//                 /* and other goodies */
-//                 }) => (
-//                 <form onSubmit={handleSubmit} className="blockNewToursList">
-//                 <div className="blockNewToursList__inputItem">
-//                     <input
-//                         type="text"
-//                         name="tour"
-//                         onChange={handleChange}
-//                         onBlur={handleBlur}
-//                         value={values.tour}
-//                     />
-//                     {errors.tour && touched.tour && errors.tour}
-//                     <input
-//                         type="password"
-//                         name="pass"
-//                         onChange={handleChange}
-//                         onBlur={handleBlur}
-//                         value={values.pass}
-//                     />
-//                     {errors.pass && touched.pass && errors.pass}
-//                     <input
-//                         type="email"
-//                         name="email"
-//                         onChange={handleChange}
-//                         onBlur={handleBlur}
-//                         value={values.email}
-//                     />
-//                     {errors.email && touched.email && errors.email}
-//                 </div>  
-//                 <div className="blockNewToursList__buttonSave">
-//                     <button type="submit" disabled={isSubmitting}>
-//                         SAVE
-//                     </button>
-//                 </div>
-//                 </form>
-//                 )}
-
-//                 {/* <div  className="blockNewToursList">
-//                 <div className="blockNewToursList__inputItem">
-//                     <input type="text" placeholder="Tour"/>
-//                     <input type="text" placeholder="Pass"/>
-//                     <input type="email" placeholder="Email"/>
-//                 </div>
-//                 <div className="blockNewToursList__buttonSave"> 
-//                     <button>  EDIT  </button>
-//                 </div>
-//                 </div> */}
-//         </Formik>
-//    )
-// }
-// export default  NewTour;
