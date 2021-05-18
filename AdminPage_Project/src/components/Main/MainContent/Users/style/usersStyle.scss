@@ -63,6 +63,24 @@ $base-color: #F4F6FD;
       
     }
 }
+.blockUserListMain::-webkit-scrollbar {
+    width: 10px;
+}
+.blockUserListMain::-webkit-scrollbar-track {
+    //border-radius: 10px;
+    background: #f1f1f1; 
+}
+.blockUserListMain::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #2f89fc;
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #2f89fc), color-stop(100%, #5effc9));
+    background: linear-gradient( 135deg , #2f89fc 0%, #5effc9 100%);
+}
+.blockUserListMain::-webkit-scrollbar-thumb:hover {
+    background: #09ca53;
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #2f89fc), color-stop(100%, #5effc9));
+    background: linear-gradient( 135deg , #e06f13 0%, #5effc9 100%);
+}  
 .blockUserListMain {
     position: absolute;
     width: 65%;

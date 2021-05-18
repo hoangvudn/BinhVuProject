@@ -47,6 +47,25 @@ $bg-th-color: whitesmoke;
         align-items: center;   
     }
 }
+
+.blockTourListMain::-webkit-scrollbar {
+    width: 13px;
+}
+.blockTourListMain::-webkit-scrollbar-track {
+    //border-radius: 10px;
+    background: #f1f1f1; 
+}
+.blockTourListMain::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #2f89fc;
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #2f89fc), color-stop(100%, #5effc9));
+    background: linear-gradient( 135deg , #2f89fc 0%, #5effc9 100%);
+}
+.blockTourListMain::-webkit-scrollbar-thumb:hover {
+    background: #09ca53;
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, #2f89fc), color-stop(100%, #5effc9));
+    background: linear-gradient( 135deg , #e06f13 0%, #5effc9 100%);
+}  
 .blockTourListMain {
      position: absolute;
      //left: 230px;
@@ -56,6 +75,7 @@ $bg-th-color: whitesmoke;
      top: 100px;
      overflow-x: auto;
      overflow-y: auto;
+      
      font-size: 12px;
      box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px;
      //===============================================NewStyle==================
@@ -64,6 +84,7 @@ $bg-th-color: whitesmoke;
         height: 100%;
         //background: gray;
         //border: 1px dashed black;
+        
         &--imageUrl {
             position: sticky;
            // color: white;
@@ -71,7 +92,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
-         
+            z-index: 10;
         }
         &--place {
             position: sticky;
@@ -79,6 +100,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--tourName {
             position: sticky;
@@ -86,6 +108,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--dayAmount {
             position: sticky;
@@ -93,6 +116,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--transports {
             position: sticky;
@@ -100,6 +124,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--price {
             position: sticky;
@@ -107,6 +132,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--startDay {
             position: sticky;
@@ -114,6 +140,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--descriptions {
             position: sticky;
@@ -121,6 +148,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--applyPassenger {
             position: sticky;
@@ -128,6 +156,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--introduction {
             position: sticky;
@@ -135,6 +164,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--imageIntroduction {
             position: sticky;
@@ -142,6 +172,7 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--titleImage {
             position: sticky;
@@ -149,17 +180,20 @@ $bg-th-color: whitesmoke;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 10;
         }
         &--headActionIcon {
             position: sticky;
             top: 0;
             background: $bg-th-color;
             z-index: 10;
+            z-index: 10;
         }
         &--headActionIcon1 {
             position: sticky;
             top: 0;
             background: $bg-th-color;
+            z-index: 10;
             z-index: 10;
         }
         &--itemActionEdit {
@@ -171,6 +205,7 @@ $bg-th-color: whitesmoke;
         opacity: 0.8;
         transition-duration: 0.6s;
         color: whitesmoke;
+        z-index: 0;
      }
      &__listItem {
         // background: blanchedalmond;
@@ -460,7 +495,7 @@ $bg-th-color: whitesmoke;
     //left: 30%;
     width: 100%;
     height: 1300px;
-    border: 2px dashed blueviolet;
+    //border: 2px dashed blueviolet;
     //background: grey;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   
@@ -474,7 +509,7 @@ $bg-th-color: whitesmoke;
         align-items: center;
         height: 100%;
         width: 100%;
-        border: 1px dashed red;
+       // border: 1px dashed red;
         // background: rebeccapurple;
         &__title {
             position: absolute;
@@ -577,7 +612,7 @@ $bg-th-color: whitesmoke;
         }
         &__inputApply {
             position: relative;
-            left: 9px;
+            left: 8px;
             top: -8px;
             border-top: none;
             border-left: none;
@@ -590,7 +625,7 @@ $bg-th-color: whitesmoke;
         }
         &__inputIntroduction {
             position: relative;
-            left: 22px;
+            left: 25px;
             top: -8px;
             border-top: none;
             border-left: none;
@@ -621,7 +656,7 @@ $bg-th-color: whitesmoke;
         }
         &__inputDescriptions1 {
             position: relative;
-            left: 60px;
+            left: 58px;
             top: -5px;
             border-top: none;
             border-left: none;
@@ -629,7 +664,7 @@ $bg-th-color: whitesmoke;
         }
         &__inputDescriptions2 {
             position: relative;
-            left: 150px;
+            left: 156px;
             top: -5px;
             border-top: none;
             border-left: none;
@@ -637,7 +672,7 @@ $bg-th-color: whitesmoke;
         }
         &__inputDescriptions3 {
             position: relative;
-            left: 150px;
+            left: 156px;
             top: -5px;
             border-top: none;
             border-left: none;
@@ -704,10 +739,10 @@ $bg-th-color: whitesmoke;
         }
         //---------------------------------------------------------
         &__blockDatePicker {
-            position: relative;
+            position: absolute;
            // background: burlywood;
            // top: 55px;
-            top: 280px; 
+            top: 815px; 
             //left: -35px;
            // right: 145px;
             display: flex;
@@ -715,7 +750,7 @@ $bg-th-color: whitesmoke;
             justify-content: center;
             align-items: center;
             width: 300px;
-            height: 220px;
+            height: 280px;
             //background: #008CBA;
             box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
             //background: blue;
@@ -772,15 +807,34 @@ $bg-th-color: whitesmoke;
            &__groupDate {
                position: relative;
                top: 7px;
-               width: 67%;
+               width: 69%;
                height: 80%;
                max-height: 150px;
                overflow-x: auto;
                overflow-y: auto;
+               //scrollbar-width: thin;
                border: 1px dashed whitesmoke;
                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
            } 
+           &__groupDate::-webkit-scrollbar {
+                width: 8px;
+           }
+           &__groupDate::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+           }
+           &__groupDate::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background: #2f89fc;
+                background: -webkit-gradient(left top, right bottom, color-stop(0%, #2f89fc), color-stop(100%, #5effc9));
+                background: linear-gradient( 135deg , #2f89fc 0%, #5effc9 100%);
+           }
+           &__groupDate::-webkit-scrollbar-thumb:hover {
+                background: #09ca53;
+                background: -webkit-gradient(left top, right bottom, color-stop(0%, #2f89fc), color-stop(100%, #5effc9));
+                background: linear-gradient( 135deg , #e06f13 0%, #5effc9 100%);
+            }
            &__groupDate span {
+               margin-left: 10px;
               font-size: 12px;
            }
            &__groupButton {
@@ -788,10 +842,12 @@ $bg-th-color: whitesmoke;
               padding-top: 10px;
            }
            &__addButton {
+               position: relative;
+               top: 20px;
                width: 80px;
                height: 35px;
                margin-right: 10px;
-               background: chartreuse;
+               font-weight: 400;
                display: flex;
                justify-content: center;
                align-items: center;
@@ -805,7 +861,10 @@ $bg-th-color: whitesmoke;
                background-image: linear-gradient( 120deg ,#18524d,#154a70 );
            }
            &__clearButton {
+                position: relative;
+                top: 20px;
                 width: 80px;
+                font-weight: 400;
                 height: 35px;
                 background: chartreuse;
                 display: flex;
@@ -825,7 +884,7 @@ $bg-th-color: whitesmoke;
     //===========================================================================================
     &__buttonSave {
         position: absolute;
-        top: 1090px;
+        top: 1130px;
         width: 250px;
         height: 50px;
         background: rgba(47,137,252,1);

@@ -67,13 +67,14 @@ const LogInForm = (props) => {
                         <form onSubmit={handleSubmit} className="blockLoginForm__inputItem">
                           <div className="blockLoginForm__inputItemUser">
                                 {/* <label>User</label> */}
-                                <input className="blockLoginForm__inputUser"
-                                    type="text"
-                                    name="user"
-                                    onChange={ e => setUserName(e.target.value)}
-                                    //onBlur={handleBlur}
-                                    value={userName}
-                                    placeholder="UserName"
+                                <input  className="blockLoginForm__inputUser"
+                                        type="text"
+                                        name="user"
+                                        onChange={ e => setUserName(e.target.value)}
+                                        //onBlur={handleBlur}
+                                        value={userName}
+                                        placeholder="UserName"
+                                        autocomplete="off"
                                 />
                                 <div className="blockLoginForm__error">
                                     {/* {errors.user && touched.user && errors.user} */}

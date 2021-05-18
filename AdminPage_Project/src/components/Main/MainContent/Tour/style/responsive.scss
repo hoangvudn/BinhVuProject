@@ -22,8 +22,8 @@ $border-color: #82A2F4;
         //top: 135px;
         //left: 30%;
         width: 100%;
-        height: 1120px;
-        border: 2px dashed blueviolet;
+        height: 1250px;
+       // border: 2px dashed blueviolet;
         //background: grey;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       
@@ -37,7 +37,7 @@ $border-color: #82A2F4;
             align-items: center;
             height: 100%;
             width: 100%;
-            border: 1px dashed red;
+            //border: 1px dashed red;
             // background: rebeccapurple;
             &__title {
                 position: absolute;
@@ -267,13 +267,13 @@ $border-color: #82A2F4;
             }
             //---------------------------------------------------------
             &__blockDatePicker {
-                position: relative;
+                position: absolute;
                // background: burlywood;
                // top: 55px;
-                top: 402px; 
-               // right: 145px;
+                top: 850px; 
+               // right: 145px; 
                 display: flex;
-                width: 200px;
+                width: 300px;
                 height: 300px;
                 //background: blue;
                 align-content:space-between;
@@ -289,7 +289,7 @@ $border-color: #82A2F4;
                     &--inputDatepicker {
                         position: relative;
                         //left: 30px;
-                        width: 85px;
+                        width: 92px;
                         border-top: none;
                         border-left: none;
                         border-right: none;
@@ -307,7 +307,7 @@ $border-color: #82A2F4;
                     &--inputDatepicker {
                         position: relative;
                         //left: 30px;
-                        width: 85px;
+                        width: 92px;
                         border-top: none;
                         border-left: none;
                         border-right: none;
@@ -337,7 +337,7 @@ $border-color: #82A2F4;
         }
         &__buttonSave {
             position: absolute;
-            top: 1050px;
+            top: 1150px;
             width: 200px;
             height: 50px;
             background: rgba(47,137,252,1);
