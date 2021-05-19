@@ -26,8 +26,8 @@ const Header = ({isLogOut}) => {
    const history = useHistory();
    const handleClick = () => {
          history.push('/');
-         window.location.reload();
          isLogOut(false);
+         window.location.reload();
    }
    return (
       <>

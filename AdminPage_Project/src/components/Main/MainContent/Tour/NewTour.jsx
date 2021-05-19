@@ -19,7 +19,7 @@ const NewTour = ({ history }) => {
     const [ name, setTourName ] = useState("");
     const [ day, setDayAmount ] = useState("");
     const [ transportsTemp, setTransportsTemp ] = useState("");
-    const [ price, setPrice ] = useState("");
+    const [ priceTemp, setPriceTemp ] = useState("");
     //const [ start, setStartDay ] = useState("");
     const [ apply, setApply ] = useState("");
   
@@ -35,6 +35,7 @@ const NewTour = ({ history }) => {
     const [ titleImage, setTitleImage ] = useState("");
     const [ statusCountry, setStatusCountry ] = useState("1");
     const [ calendarDays, setCalendarDays ] = useState([]);
+    const [show , setShow] = useState(false);
     const startDayRef = useRef("");
     const endDayRef = useRef("");
     //=========================Convert Tour Image To Base64===========================
@@ -114,7 +115,7 @@ const NewTour = ({ history }) => {
                 }
         //===========================================================================
     //======================================Check Price==========================
-        let priceType =  Numeral(price);
+        let priceType =  Numeral(priceTemp);
         let priceTypeEdit = priceType.format();
     //============================================================================
 
@@ -147,24 +148,31 @@ const NewTour = ({ history }) => {
             }
         ]);
         setStartDays([
-            ...startDays,{
-                startDay
-            }
-        ]);
+            ...startDays,startDay
+        ])
     }
     const clearDayArray = () => {
         setCalendarDays([]);
         setStartDay1(null);
         setAbouttDay1(null);
+        setStartDays([]);
+        setShow(false);
     }
+    //const startDays = [];
+    //startDays.push(startDay1);
     console.log("DAY RANGE:,", calendarDays);
     console.log("START DAYS:,", startDays);
+    //--------------Show Date Range------------------------
+    const showDate = () => {
+          setShow(true);
+    }
+    //-----------------------------------------------------
     //================================================================
     const handleSubmit = e => { 
         e.preventDefault();
         //validate
         if ( image.trim() === "" || place.trim() === "" || name.trim() === "" ||
-             day.trim() === "" || transportsTemp.trim() === "" || price.trim() === "" || apply.trim() === ""||
+             day.trim() === "" || transportsTemp.trim() === "" || priceTemp.trim() === "" || apply.trim() === ""||
              descriptions1.trim() === "" || descriptions2.trim() === "" || descriptions3.trim() === "" || 
              introduction.trim() === "" || imageIntroduction.trim() === "" || titleImage.trim() === ""
         ) {
@@ -241,8 +249,11 @@ const NewTour = ({ history }) => {
         transports.push(transportsTemp);
          //console.log("array transports:", arrTransports[1])
         //=========================================
-        addTour({ type, image, place, name, day, transports, descriptions,  price, apply, 
-                   startDays, calendarDays, introduction, imageIntroduction, titleImage });
+        const price1 = Numeral(priceTemp);
+        const price = price1.value();
+        console.log("PRICE.....:", price)
+        addTour({ type, image, place, name, day, transports, descriptions,  price, apply, startDays,
+                    calendarDays, introduction, imageIntroduction, titleImage });
         // Swal.fire("Saved", "User Added", "ok");
         // return Tour List page
         history.push(`/toursList`);
@@ -386,7 +397,7 @@ const NewTour = ({ history }) => {
                                 type="text"
                                 placeholder = "price"
                                 value = {priceTypeEdit}
-                                onChange = { e => setPrice(e.target.value)}
+                                onChange = { e => setPriceTemp(e.target.value)}
                             />
                         </div>
 
@@ -426,6 +437,7 @@ const NewTour = ({ history }) => {
                                                         dateFormat="dd-MM-yyyy"
                                                         minDate={new Date()}         
                                                         className="blockNewTour__formNew__blockDatePicker__inputLeftItem--inputDatepicker"
+                                                        onInputClick={showDate} 
                                             // dayClassName={date =>(new Date(date)).getDate() > 0 ?"ramdom":undefined }
                                             />
                                     </div>
@@ -441,13 +453,14 @@ const NewTour = ({ history }) => {
                                                         ref={endDayRef}
                                                         minDate={new Date()}
                                                         className="blockNewTour__formNew__blockDatePicker__inputRightItem--inputDatepicker"
+                                                        onInputClick={showDate}             
                                             />
                                     </div>
                                 </div>
                          </div>
                             
 
-                            <div className="blockNewTour__formNew__blockDatePicker__dayRange">
+                            <div className={ show ? "blockNewTour__formNew__blockDatePicker__dayRange active" : "blockNewTour__formNew__blockDatePicker__dayRange"} >
                                     <div className="blockNewTour__formNew__blockDatePicker__groupDate">
                                             {calendarDays.map( list => (
                                                 <span>{list.startDay} ------- {list.abouttDay}<br /></span>    
@@ -472,7 +485,7 @@ const NewTour = ({ history }) => {
 
                    <button 
                       type="submit"
-                      className="blockNewTour__buttonSave"
+                      className={show ? "blockNewTour__buttonSave active" : "blockNewTour__buttonSave"}
                    >
                       ADD TOUR
                    </button>

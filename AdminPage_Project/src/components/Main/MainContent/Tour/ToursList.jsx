@@ -10,7 +10,7 @@ import { getToursAction } from "../../../../actions/toursActions";
 import Tour from './Tour';
 import SearchTour from './SearchTour';
 import SelectTour from './SelectTour';
-
+import loadingIcon from '../../../../assets/loading2.gif'
 
 const ToursList = () => { 
     const dispatch = useDispatch();
@@ -29,8 +29,8 @@ const ToursList = () => {
     return (
         <React.Fragment>
              {error ? (
-                <div className="font-weight-bold alert alert-danger text-center mt-4">
-                There is an error ...
+                <div className="font-weight-bold alert alert-primary text-center mt-4">
+                  Loading...
                 </div>
             ) : null}
             <>
@@ -60,7 +60,6 @@ const ToursList = () => {
                                         <Tour key={tour.id} tour={tour} />
                                     ))}
                             </tbody>
-                        
                         </table>
                     
                 </div>
@@ -70,7 +69,7 @@ const ToursList = () => {
                 </Link>
                 <SearchTour />
                 <SelectTour />
-                 {loading ? <h1>Loading.....</h1> : null}
+                 {loading ?  <img src={loadingIcon}/> : null}
             </>
         </React.Fragment> 
    );

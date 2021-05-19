@@ -42,7 +42,7 @@ const LogInForm = (props) => {
    console.log("User to Login :",users);
 
    const checkUser = users.filter(item => {
-         return item.userName == userName && item.password == passWord && item.role == 0;
+         return (item.userName == userName) && (item.password == passWord) && (item.role == 0);
    });
    console.log("username is:", checkUser)
 //============================================================================

@@ -103,12 +103,14 @@ $base-color: #F4F6FD;
             top: 0;
             background: $bg-th-color;
             padding: 10px 8px;
+            z-index: 99;
         }
         &--headEmail {
             position: sticky;
             color: $th-color;
             top: 0;
             background: $bg-th-color;
+            z-index: 99;
         }
         &--itemUser {
             padding: 2px 8px;
