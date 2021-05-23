@@ -22,7 +22,8 @@ function MainBot({
    // index hiển thị
    const [indexCheckCountry, setIndexCheckCountry] =useState(0);
    const [indexMoreCountry, setIndexMoreCountry] =useState(0);
-
+   const [indexCheckCountry1, setIndexCheckCountry1] =useState(0);
+   const [indexMoreCountry1, setIndexMoreCountry1] =useState(0);
    useEffect(() => {
       getForeignList(
          {
@@ -52,7 +53,7 @@ function MainBot({
             limit: 6 + indexMoreCountry,
          }
       )
-      }, [indexMoreCountry]);
+   }, [indexMoreCountry]);
    //page 3
    useEffect(() => {
       getCheckTour(
@@ -68,6 +69,34 @@ function MainBot({
       setIndexMoreCountry(indexMoreCountry + 6);
       
    }
+
+   //============================Foreign Tour==============================
+    //page 2
+    useEffect(() => {
+      
+      getForeignList(
+         {
+            page: 1,
+            limit: 6 + indexMoreCountry1,
+         }
+      )
+   }, [indexMoreCountry1]);
+   //page 3
+   useEffect(() => {
+      getCheckTour(
+         {
+            page: 2 + indexCheckCountry1,
+            limit: 6
+         }
+      )
+   }, [indexCheckCountry1]);
+   
+   const handleShowMoreCountry1 = () =>{
+      setIndexCheckCountry(indexCheckCountry1 + 1);
+      setIndexMoreCountry(indexMoreCountry1 + 6);
+      
+   }
+   //=======================End Foreign Tour========================
    //box tour trong nước
    const renderTourInCountry=() => {
       return tourCountryList.map((group, index) => {
@@ -156,6 +185,16 @@ function MainBot({
                   {renderTourForeign()}
                </Row>
             </Col>
+            {(tourCheckCountry.length >1) && (
+               <Col span={24} className="see-more tours__box--more">
+                  <div 
+                     className="hover-see-more tours__box--more-hover"
+                     onClick={()=>{handleShowMoreCountry1()}}
+                  >
+                     Xem thêm..
+                  </div>
+               </Col>
+            )}
          </Row>
       </>
    );

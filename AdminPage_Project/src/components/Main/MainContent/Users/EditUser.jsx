@@ -31,6 +31,7 @@ const EditUser = ({ match, history }) => {
      // Access to global state
      const user = useSelector(state => state.usersList.user);
      console.log("user is:", user);
+     
      const handleUpdateUser = e => {
          e.preventDefault();
          if (
@@ -57,9 +58,9 @@ const EditUser = ({ match, history }) => {
       <>
         <div class="blockEditUser">
             <h3 className="blockEditUser__title"> EDIT USER</h3>
-            <form onSubmit={handleUpdateUser} className="blockEditUser__formEdit">
-              <div className="blockEditUser__inputItem">
-                  <label>User Name</label>
+            <form onSubmit={handleUpdateUser} className="blockEditUser__groupForm">
+              <div className="blockEditUser__groupItem">
+                  <label className="blockNewUser__label">User Name</label>
                   <input  className="blockEditUser__inputUserName"
                       type="text"
                       defaultValue={user.userName}
@@ -67,8 +68,8 @@ const EditUser = ({ match, history }) => {
                   />
               </div>
 
-              <div className="blockEditUser__inputItem">
-                  <label className="blockEditUser__labelEmail">Email</label>
+              <div className="blockEditUser__groupItem">
+                  <label className="blockEditUser__label">Email</label>
                   <input className="blockEditUser__inputEmail"
                       type="email"
                       defaultValue={user.email}
@@ -76,9 +77,9 @@ const EditUser = ({ match, history }) => {
                   />
               </div>
 
-              <div className="blockEditUser__inputItem">
-                  <label className="blockEditUser__labelPassWord">Password</label>
-                  <input className="blockEditUser__inputPassWord"
+              <div className="blockEditUser__groupItem">
+                  <label className="blockEditUser__label">Password</label>
+                  <input className="blockEditUser__inputPass"
                       type="password"
                       defaultValue={user.password}
                       ref={passwordRef}

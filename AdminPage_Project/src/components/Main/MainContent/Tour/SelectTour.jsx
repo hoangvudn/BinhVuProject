@@ -9,12 +9,13 @@ import {
 const SelectTour = () => {
     const dispatch = useDispatch();
     const [valueSearch, setValueSearch] = useState("");
-    const valueSearchRef = useRef("");
+    //const valueSearchRef = useRef("");
 
     useEffect(() => {
         const getToursListSelect = () => dispatch(selectTourAction(valueSearch));
         getToursListSelect(); 
     }, [dispatch, valueSearch]);
+    
     //===============Set Status Country======================
     const handleChange = e => {
         e.preventDefault();
@@ -22,10 +23,7 @@ const SelectTour = () => {
     }
     console.log("Value Country:", valueSearch)
     //=======================================================
-    const handleSubmit = e => {
-        e.preventDefault();
-    }
-    
+
     const toursTravel = useSelector(state => state.toursList.toursList);
     console.log("List Search :", toursTravel);
     
@@ -36,7 +34,7 @@ const SelectTour = () => {
                  <form>
                             <div>
                                 {/* <label>Select Tour</label> */}
-                                <select value={valueSearch} onChange={handleChange} defaultValue="" className="blockTourListMain__selectTour--selectItem"> 
+                                <select value={valueSearch} onChange={handleChange} className="blockTourListMain__selectTour--selectItem"> 
                                     <option value="1">Domestic</option>
                                     <option value="2">International</option>
                                 </select>        

@@ -65,7 +65,8 @@ const ToursList = () => {
                 </div>
                         
                 <Link to={"/toursList/new" } >  
-                        <GoDiffAdded className="blockTourListMain__linkToAddTour"/> 
+                        {/* <GoDiffAdded className="blockTourListMain__linkToAddTour"/>  */}
+                        <span className="blockTourListMain__linkToAddTour">ADD TOUR</span>
                 </Link>
                 <SearchTour />
                 <SelectTour />

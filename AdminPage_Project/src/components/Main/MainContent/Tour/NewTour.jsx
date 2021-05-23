@@ -27,6 +27,7 @@ const NewTour = ({ history }) => {
     const [ startDay1, setStartDay1 ] = useState(null);
     const [ startDays, setStartDays ] = useState([]);
     const [ abouttDay1, setAbouttDay1 ] = useState(null);
+    const [ start, setStart ] = useState("");
     const [ descriptions1, setDescriptions1 ] = useState("");
     const [ descriptions2, setDescriptions2 ] = useState("");
     const [ descriptions3, setDescriptions3 ] = useState("");
@@ -36,8 +37,39 @@ const NewTour = ({ history }) => {
     const [ statusCountry, setStatusCountry ] = useState("1");
     const [ calendarDays, setCalendarDays ] = useState([]);
     const [show , setShow] = useState(false);
+    const placeRef = useRef();
+    const imageRef = useRef();
+    const imageIntroductionRef = useRef();
+    const transportsRef = useRef();
     const startDayRef = useRef("");
     const endDayRef = useRef("");
+
+    const resetData = () => {
+        //setImage("");
+        //console.log("IMAGE TEERER:", image);
+        //imageRef.replaceWith(imageRef.current.value="").clone(true);
+        placeRef.current.focus();
+        imageRef.current.value="";
+        imageIntroductionRef.current.value="";
+        transportsRef.current.value="";
+        setPlace("");
+        setTourName("");
+        setDayAmount("");
+        setTransportsTemp("");
+        setPriceTemp("");
+        setApply("");
+        setStartDay1(null);
+        setAbouttDay1(null);
+        setStartDays([]);
+        setStart("");
+        setDescriptions1("");
+        setDescriptions2("");
+        setDescriptions3("");
+        setIntroduction("");
+        setTitleImage("");
+        setStatusCountry("1");
+        setCalendarDays([]);  
+    }
     //=========================Convert Tour Image To Base64===========================
             //const [baseImage, setBaseImage] = useState('');
             const uploadImage = async (e) => {
@@ -131,7 +163,8 @@ const NewTour = ({ history }) => {
     //=====================DAY RANGE==================================
     const startDay = moment(startDay1).format("DD-MM-YYYY");
     const abouttDay = moment(abouttDay1).format("DD-MM-YYYY");
-    //let startDays =[];
+    // let start = "";
+    const count = 0;
     const dayArray = () => {
         if (startDay1 === null || abouttDay1 === null ) {
             alert("Date range not null! Please input day")
@@ -149,19 +182,27 @@ const NewTour = ({ history }) => {
         ]);
         setStartDays([
             ...startDays,startDay
-        ])
+        ]);
+        
+        if (calendarDays.length == 0) {
+            setStart(startDay);
+        }
     }
     const clearDayArray = () => {
         setCalendarDays([]);
         setStartDay1(null);
         setAbouttDay1(null);
         setStartDays([]);
+        setStart("");
         setShow(false);
     }
+    
     //const startDays = [];
     //startDays.push(startDay1);
     console.log("DAY RANGE:,", calendarDays);
     console.log("START DAYS:,", startDays);
+     console.log("START Count:,", start);
+    // console.log("START Start:,", start);
     //--------------Show Date Range------------------------
     const showDate = () => {
           setShow(true);
@@ -249,59 +290,61 @@ const NewTour = ({ history }) => {
         transports.push(transportsTemp);
          //console.log("array transports:", arrTransports[1])
         //=========================================
+        
         const price1 = Numeral(priceTemp);
         const price = price1.value();
         console.log("PRICE.....:", price)
-        addTour({ type, image, place, name, day, transports, descriptions,  price, apply, startDays,
+        addTour({ type, image, place, name, day, transports, descriptions,  price, start, apply, startDays,
                     calendarDays, introduction, imageIntroduction, titleImage });
-        // Swal.fire("Saved", "User Added", "ok");
+        Swal.fire("Saved", "User Added", "ok");
+        resetData();
         // return Tour List page
-        history.push(`/toursList`);
-        
+        //history.push(`/toursList`);
     };
    
     return (
          <>
     
             <div className="blockNewTour">
-                <form onSubmit={handleSubmit}  className="blockNewTour__formNew">
-                    <div className="blockNewTour__formNew__title">
+                  <div className="blockNewTour__title">
                             <h2>ADD TOUR</h2>
                     </div>
-         
-                    <div className="blockNewTour__formNew__leftItem">
-                        <div className="blockNewTour__formNew__inputLeftItem">
-                            <label className="blockNewTour__formNew__lablelSelectTour" >Select Tour</label>
+                <form onSubmit={handleSubmit}  className="blockNewTour__formNew">
+                  
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label" >Select Tour</label>
                             <select value={statusCountry} onChange={handleChange} className="blockNewTour__formNew__selectTour"> 
                                 <option value="1">Domestic</option>
                                 <option value="2">International</option>
                             </select>
                         </div>
 
-                        <div className="blockNewTour__formNew__inputLeftItem">
-                            <label className="blockNewTour__formNew__labelImageUrl">Image Url</label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label">Image Url</label>
                             <input 
                                 className="blockNewTour__formNew__inputImageUrl"
                                 type="file"
                                 onChange = {(e) => {
                                 uploadImage(e);
                                 }}
+                                ref={imageRef}
                             />
                         </div>
             
-                        <div  className="blockNewTour__formNew__inputLeftItem">
-                            <label className="blockNewTour__formNew__labelPlace"> Place </label>
+                        <div  className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Place </label>
                             <input 
                                 className="blockNewTour__formNew__inputPlace"
                                 type = "text"
                                 placeholder = "place"
                                 value = {place}
+                                ref={placeRef}
                                 onChange = { e => setPlace(e.target.value)}
                             />
                         </div>
 
-                        <div className="blockNewTour__formNew__inputLeftItem">
-                            <label className="blockNewTour__formNew__labelTourName"> Tour Name </label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Tour Name </label>
                             <input 
                                 className="blockNewTour__formNew__inputTourName"
                                 type="text"
@@ -311,8 +354,8 @@ const NewTour = ({ history }) => {
                             />
                         </div>
 
-                        <div className="blockNewTour__formNew__inputLeftItem">
-                            <label className="blockNewTour__formNew__labelDay"> Day Amount </label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Day Amount </label>
                             <input 
                                 className="blockNewTour__formNew__inputDay"
                                 type="text"
@@ -322,8 +365,8 @@ const NewTour = ({ history }) => {
                             />
                         </div>
 
-                        <div className="blockNewTour__formNew__inputLeftItem">
-                            <label className="blockNewTour__formNew__labelApply"> Guest Amount </label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Guest Amount </label>
                             <input 
                                 className="blockNewTour__formNew__inputApply"
                                 type="text"
@@ -333,8 +376,8 @@ const NewTour = ({ history }) => {
                             />
                         </div>
 
-                        <div className="blockNewTour__formNew__inputLeftItem">
-                            <label className="blockNewTour__formNew__labelIntroduction"> Introduction </label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Introduction </label>
                             <input 
                                 className="blockNewTour__formNew__inputIntroduction"
                                 type="text"
@@ -343,13 +386,13 @@ const NewTour = ({ history }) => {
                                 onChange={ e => setIntroduction(e.target.value)}
                             />
                         </div>
-                    </div>
+             
 
                   {/* /----------------------------------------------------------/ */}
 
-                    <div className="blockNewTour__formNew__middleItem">
-                         <div className="blockNewTour__formNew__inputMiddleItem">
-                            <label className="blockNewTour__formNew__labelDescriptions"> Descriptions </label>
+                
+                         <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Descriptions </label>
                             <input 
                                 className="blockNewTour__formNew__inputDescriptions1"
                                 type="text"
@@ -359,8 +402,8 @@ const NewTour = ({ history }) => {
                             />
 
                         </div>
-                        <div className="blockNewTour__formNew__inputMiddleItem">
-                            <label className="blockNewTour__formNew__labelDescriptions1"></label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"></label>
                             <input 
                                 className="blockNewTour__formNew__inputDescriptions2"
                                 type="text"
@@ -369,8 +412,8 @@ const NewTour = ({ history }) => {
                                 onChange={ e => setDescriptions2(e.target.value)}
                             />
                         </div>
-                        <div className="blockNewTour__formNew__inputMiddleItem">
-                            <label className="blockNewTour__formNew__labelDescriptions2"></label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"></label>
                             <input 
                                 className="blockNewTour__formNew__inputDescriptions3"
                                 type="text"
@@ -379,19 +422,20 @@ const NewTour = ({ history }) => {
                                 onChange={ e => setDescriptions3(e.target.value)}
                             />
                         </div>
-                        <div className="blockNewTour__formNew__inputMiddleItem">
-                            <label className="blockNewTour__formNew__labelTransports"> Transports </label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Transports </label>
                             <input 
                                 className="blockNewTour__formNew__inputTransports"
                                 type="file"
                                 onChange = {(e) => {
                                 uploadImageTransports(e);
                                 }}
+                                ref={transportsRef}
                             />
                         </div>
 
-                        <div className="blockNewTour__formNew__inputMiddleItem">
-                            <label className="blockNewTour__formNew__labelPrice"> Price </label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Price </label>
                             <input 
                                 className="blockNewTour__formNew__inputPrice"
                                 type="text"
@@ -401,19 +445,20 @@ const NewTour = ({ history }) => {
                             />
                         </div>
 
-                        <div className="blockNewTour__formNew__inputMiddleItem">
-                            <label className="blockNewTour__formNew__labelImageIntroduction"> Image Introduction </label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Image Introduction </label>
                             <input 
                                 className="blockNewTour__formNew__inputImageIntroduction"
                                 type="file"
                                 onChange = {(e) => {
                                 uploadImageImageIntroduction(e);
                                 }}
+                                ref={imageIntroductionRef}
                             />
                         </div>
 
-                        <div className="blockNewTour__formNew__inputMiddleItem">
-                            <label className="blockNewTour__formNew__labelTitleImage"> Image Title </label>
+                        <div className="blockNewTour__formNew__groupItem">
+                            <label className="blockNewTour__formNew__label"> Image Title </label>
                             <input 
                                 className = "blockNewTour__formNew__inputTitleImage"
                                 type = "text"
@@ -422,7 +467,7 @@ const NewTour = ({ history }) => {
                                 onChange = { e => setTitleImage(e.target.value)}
                             />
                         </div>
-                    </div>
+               
                     {/* =============================Right Item======================================= */}
                     <div className="blockNewTour__formNew__blockDatePicker">
                          <div className="blockNewTour__formNew__blockDatePicker__groupSelectDate">
@@ -450,7 +495,7 @@ const NewTour = ({ history }) => {
                                                         selected={abouttDay1} 
                                                         onChange={date => setAbouttDay1(date)}
                                                         dateFormat="dd-MM-yyyy"
-                                                        ref={endDayRef}
+                                                        //ref={endDayRef}
                                                         minDate={new Date()}
                                                         className="blockNewTour__formNew__blockDatePicker__inputRightItem--inputDatepicker"
                                                         onInputClick={showDate}             
@@ -483,13 +528,24 @@ const NewTour = ({ history }) => {
                             </div>
                         </div>
 
-                   <button 
-                      type="submit"
-                      className={show ? "blockNewTour__buttonSave active" : "blockNewTour__buttonSave"}
-                   >
-                      ADD TOUR
-                   </button>
-               
+                        <button 
+                            type="submit"
+                           // onClick={resetData}
+                            className={show ? "blockNewTour__buttonSave active" : "blockNewTour__buttonSave"}
+                        >
+                            ADD TOUR
+                        </button>
+                            {/* <div className="blockNewTour__groupButtonSubmit">
+                                
+
+                                    <div 
+                                            //type="submit"
+                                            className="blockNewTour__buttonReset"
+                                            onClick={resetData}                       
+                                    >
+                                            RESET
+                                    </div>
+                            </div> */}
                 </form>
               
             </div>

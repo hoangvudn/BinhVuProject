@@ -53,7 +53,7 @@ const UsersList = ( {history} ) => {
            
             <SearchUser />
                 <Link to={"/usersList/new" } >  
-                            <AiOutlineUserAdd className="blockUserListMain__linkToAddUser"/> 
+                        <span className="blockUserListMain__linkToAddUser"> ADD USER </span>
                 </Link>
            
          

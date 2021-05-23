@@ -11,7 +11,8 @@ const NewUser = ({ history }) => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ userExit, setUserExit ] = useState(false);
-    
+    const [ field, setField ] = useState("");
+    const [ error, setError ] = useState("");
     //Create new user
     const dispatch = useDispatch();
     const addUser = user => dispatch(createNewUserAction(user));
@@ -32,12 +33,12 @@ const NewUser = ({ history }) => {
         // }
         //validate
         if ( userName.trim() === "" || email.trim() === "" || password.trim() === "") {
-            alert("Value not null ");
+            setError("Value Not Null");
             return;
         }
 
         if ( userName.length < 5) {
-            alert("User must > 5 character");
+            setError("Value must > 5");
             return;
         }
         
@@ -67,9 +68,9 @@ const NewUser = ({ history }) => {
                         <h2>ADD USER</h2>
                 </div>
                    
-                <form onSubmit={handleSubmit}>
-                   <div>
-                       <label>User Name</label>
+                <form onSubmit={handleSubmit} className="blockNewUser__groupForm">
+                   <div className="blockNewUser__groupItem">
+                       <label className="blockNewUser__label">User Name</label>
                        <input 
                           className="blockNewUser__inputUserName"
                           type="text"
@@ -77,10 +78,11 @@ const NewUser = ({ history }) => {
                           value={userName}
                           onChange={ e => setUserName(e.target.value)}
                        />
+                       <span>{error}</span>
                    </div>
 
-                   <div>
-                       <label> Email </label>
+                   <div className="blockNewUser__groupItem">
+                       <label className="blockNewUser__label"> Email </label>
                        <input 
                           className="blockNewUser__inputEmail"
                           type="email"
@@ -90,8 +92,8 @@ const NewUser = ({ history }) => {
                        />
                    </div>
 
-                   <div>
-                       <label> PassWord </label>
+                   <div className="blockNewUser__groupItem">
+                       <label className="blockNewUser__label"> PassWord </label>
                        <input 
                           className="blockNewUser__inputPass"
                           type="password"
