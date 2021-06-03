@@ -215,10 +215,14 @@ const EditTour = ({ match, history }) => {
   //============================GET LIST DAY=====================================
   // setApply(listDay);
   //======================================Check Price==========================
-  const priceType = Numeral(tour?.price);
-  const priceTypeEdit = priceType.format();
-  // const priceRe =  Numeral(tour?.price);
-  //    priceRef.current.value =  Numeral(priceType.format());
+  let priceType = Numeral(tour?.price);
+  let priceTypeEdit = priceType.format();
+  
+  //----------------------------------
+  let price1 = Numeral(priceTemp);
+  let price2 = price1.format();
+  let price = price1.value();
+  //======================================
   const imgTour = tour.image;
   const imgTransports = tour.transports;
   const imgIntroduction = tour.imageIntroduction;
@@ -251,7 +255,7 @@ const EditTour = ({ match, history }) => {
       day: dayRef.current.value,
       transports: showTransports ? imgTransports : transportsTemp,
       descriptions: descriptions,
-      price: priceRef.current.value,
+      price: price,
       start: start,
       apply: applyRef.current.value,
       startDays: startDays,
@@ -454,16 +458,20 @@ const EditTour = ({ match, history }) => {
 
           <div className="blockEditTour__formEdit__groupItem">
             <label className="blockEditTour__formEdit__label"> Price </label>
-            <input
-              className="blockEditTour__formEdit__inputPrice"
-              type="text"
-              // placeholder ={tour.price}
-              // value = {priceTypeEdit}
-              //placeholder={tour?.price}
-              defaultValue={priceTypeEdit}
-              ref={priceRef}
-              //onChange = { e => setPriceTemp(e.target.value)}
-            />
+            <div className="blockEditTour__formEdit__groupInput">
+                <input
+                  className="blockEditTour__formEdit__inputPrice"
+                  type="type"
+                  //placeholder = {priceTypeEdit}
+                  value = {price2}
+                  //placeholder={tour?.price}
+                    //defaultValue={priceTypeEdit}
+                  //ref={priceRef}
+                  
+                  onChange = { e => setPriceTemp(e.target.value)}
+                />
+                <span className="blockEditTour__formEdit__oldPrice">{priceTypeEdit}</span>
+            </div>
           </div>
 
           <div className="blockEditTour__formEdit__groupItem">

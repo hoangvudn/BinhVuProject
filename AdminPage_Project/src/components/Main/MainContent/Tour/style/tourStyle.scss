@@ -1042,7 +1042,16 @@ $bg-th-color: whitesmoke;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
+        &__oldPrice {
+            position: absolute;
+            top: 13px;
+            right: 2px;
+            width: 85px;
+            height:36px;
+            border-radius: 5px;
+            color: gray;
+            transition-duration: 1.2s;
+        }
         &__inputImageIntroduction {
             position: relative;
             width: 100%;
