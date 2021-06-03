@@ -11,8 +11,11 @@ import ToursList from '../Tour/ToursList'
 import EditTour from '../Tour/EditTour'
 import NewTour from '../Tour/NewTour'
 
+import HistoryTour from '../HistoryTour/HistoryTour'
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './styles/index.scss'
+import TestTable from '../Tour/TestTable';
 
 
 
@@ -28,13 +31,15 @@ const HomePage = ({logOut}) => {
           {/* <TestTable /> */}
               <div className="blockContainer">
                  <Switch>
-                   <Route exact path="/" component={UsersList} />
+                   <Route exact path="/" component={ToursList} />
                    <Route exact path="/usersList" component={UsersList} />
                    <Route exact path="/usersList/new" component={NewUser} />
                    <Route exact path="/usersList/edit/:id" component={EditUser} />
                    <Route exact path="/toursList" component={ToursList} />
                    <Route exact path="/toursList/new" component={NewTour} />
-                   <Route exact path="/toursList/edit/:id" component={EditTour} />  
+                   <Route exact path="/toursList/edit/:id" component={EditTour} /> 
+                   <Route exact path="/historyToursList" component={HistoryTour} />
+                   <Route exact path="/testTable" component={TestTable} />
                  </Switch>
                </div>
     </Router>

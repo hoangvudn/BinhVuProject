@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Formik } from 'formik';
 import Swal from "sweetalert2";
 
@@ -15,8 +15,11 @@ const EditUser = ({ match, history }) => {
      const userNameRef = useRef("");
      const emailRef = useRef("");
      const passwordRef = useRef("");
-
-
+    //=====================VALIDATE================
+    const [ errorUser, setErrorUser ] = useState("");
+    const [ errorEmail, setErrorEmail ] = useState("");
+    const [ errorPass, setErrorPass ] = useState("");
+    //==============================================
      //Create alias to use function dispatch to excute action edit
      const dispatch = useDispatch();
      const userUpdated = user => dispatch(updateUserAction(user));
@@ -34,14 +37,21 @@ const EditUser = ({ match, history }) => {
      
      const handleUpdateUser = e => {
          e.preventDefault();
-         if (
-             userNameRef.current.value.trim() === "" ||
-             emailRef.current.value.trim() === "" ||
-             passwordRef.current.value.trim() === ""
-         ) {
-            alert("Value not null")
+      
+        if ( emailRef.current.value.trim() === "") {
+            setErrorEmail("Value not null")
             return;
-         }
+        } else {
+            setErrorEmail("");
+        }
+        if ( passwordRef.current.value.trim() === "") {
+            setErrorPass("Value not null")
+            return;
+        }
+        if ( passwordRef.current.value.length < 8) {
+            setErrorPass("Password must > 8 character")
+            return;
+        }
          userUpdated({
              id,
              userName: userNameRef.current.value,
@@ -50,7 +60,7 @@ const EditUser = ({ match, history }) => {
          });
          Swal.fire("Saved", "User updated", "ok");
          //Return to Homepage
-         history.push(`/`);
+         history.push(`/usersList`);
      };
 
    return (
@@ -60,8 +70,12 @@ const EditUser = ({ match, history }) => {
             <h3 className="blockEditUser__title"> EDIT USER</h3>
             <form onSubmit={handleUpdateUser} className="blockEditUser__groupForm">
               <div className="blockEditUser__groupItem">
-                  <label className="blockNewUser__label">User Name</label>
+                  <div className="blockEditUser__groupTitle"> 
+                    <label className="blockEditUser__label">User Name</label>
+                    <span className="blockEditUser__error">{errorUser}</span>
+                  </div>    
                   <input  className="blockEditUser__inputUserName"
+                      disabled
                       type="text"
                       defaultValue={user.userName}
                       ref={userNameRef}
@@ -69,7 +83,10 @@ const EditUser = ({ match, history }) => {
               </div>
 
               <div className="blockEditUser__groupItem">
-                  <label className="blockEditUser__label">Email</label>
+                  <div className="blockEditUser__groupTitle"> 
+                     <label className="blockEditUser__label">Email</label>
+                     <span className="blockEditUser__error">{errorEmail}</span>
+                  </div>
                   <input className="blockEditUser__inputEmail"
                       type="email"
                       defaultValue={user.email}
@@ -78,7 +95,10 @@ const EditUser = ({ match, history }) => {
               </div>
 
               <div className="blockEditUser__groupItem">
-                  <label className="blockEditUser__label">Password</label>
+                  <div className="blockEditUser__groupTitle">  
+                     <label className="blockEditUser__label">Password</label>
+                     <span className="blockEditUser__error">{errorPass}</span>
+                  </div>
                   <input className="blockEditUser__inputPass"
                       type="password"
                       defaultValue={user.password}

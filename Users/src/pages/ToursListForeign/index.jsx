@@ -14,7 +14,7 @@ function ToursListForeign({tourForeignList,getTourForeignList}) {
       getTourForeignList(
          {
             page: 1,
-            limit: 5,
+            limit: 6,
          }
       );
 

@@ -92,8 +92,8 @@ function MainBot({
    }, [indexCheckCountry1]);
    
    const handleShowMoreCountry1 = () =>{
-      setIndexCheckCountry(indexCheckCountry1 + 1);
-      setIndexMoreCountry(indexMoreCountry1 + 6);
+      setIndexCheckCountry1(indexCheckCountry1 + 1);
+      setIndexMoreCountry1(indexMoreCountry1 + 6);
       
    }
    //=======================End Foreign Tour========================

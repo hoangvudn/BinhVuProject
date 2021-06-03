@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Formik } from 'formik'
 
-
+import  Swal  from "sweetalert2";
 import { createNewUserAction } from "../../../../actions/usersActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -11,8 +11,12 @@ const NewUser = ({ history }) => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ userExit, setUserExit ] = useState(false);
-    const [ field, setField ] = useState("");
-    const [ error, setError ] = useState("");
+    //=====================VALIDATE================
+    const [ errorUser, setErrorUser ] = useState("");
+    const [ errorEmail, setErrorEmail ] = useState("");
+    const [ errorPass, setErrorPass ] = useState("");
+    //==============================================
+    const userRef = useRef("");
     //Create new user
     const dispatch = useDispatch();
     const addUser = user => dispatch(createNewUserAction(user));
@@ -25,40 +29,66 @@ const NewUser = ({ history }) => {
     });
     console.log("User Balaaa",checkUser);
     console.log("User Balaaa",checkUser.length);
+    //==========================================
+    const clearData = () => {
+          setUserName("");
+          setEmail("");
+          setPassword("");
+          setErrorUser("");
+          setErrorEmail("");
+          setErrorPass("");
+          userRef.current.focus();
+    }
+    //==========================================
     const handleSubmit = e => {
       
         e.preventDefault();
-        // const checkUserName = (userName) =>{
-             
-        // }
-        //validate
-        if ( userName.trim() === "" || email.trim() === "" || password.trim() === "") {
-            setError("Value Not Null");
-            return;
-        }
-
-        if ( userName.length < 5) {
-            setError("Value must > 5");
+        //==============================CHECK VALIDATION====================================
+        if ( userName.trim() === "" && email.trim() === "" && password.trim() === "") {
+            setErrorUser("Value not null");
+            setErrorEmail("Value not null");
+            setErrorPass("Value not null");
             return;
         }
         
+        if ( userName.trim() === "") {
+            setErrorUser("Value not null")
+            return;
+        }
+        if ( userName.length < 4) {
+            setErrorUser("User must > 4 character");
+            return;
+        } else {
+            setErrorUser("");
+        }
         if ( checkUser.length !== 0) {
-            alert("USER EXITED! Please input another user");
+            setErrorUser("User exists!");
             return;
         }
+        if ( email.trim() === "") {
+            setErrorEmail("Value not null")
+            return;
+        } else {
+            setErrorEmail("");
+        }
+        if ( password.trim() === "") {
+            setErrorPass("Value not null")
+            return;
+        }
+        if ( password.length < 8) {
+            setErrorPass("Password must > 8 character")
+            return;
+        }
+       
+    
         
-       //  {users.map(user => {
-        //         if (user.userName === userName) {
-        //             alert("Error User exited: ");
-        //             setUserExit(true);
-        //         }    
-        //     })
-        //  }
-        
+        //==================================================================================        
         addUser({ userName, email, password });
+        clearData();
+        Swal.fire("Saved", "User Added", "OK");
         //If it success 
         // return home page
-        history.push(`/`);
+        //history.push(`/`);
     };
 
     return (
@@ -70,31 +100,40 @@ const NewUser = ({ history }) => {
                    
                 <form onSubmit={handleSubmit} className="blockNewUser__groupForm">
                    <div className="blockNewUser__groupItem">
-                       <label className="blockNewUser__label">User Name</label>
+                       <div className="blockNewUser__groupTitle"> 
+                            <label className="blockNewUser__label">User Name</label>
+                            <span className="blockNewUser__error">{errorUser}</span>
+                       </div>                     
                        <input 
                           className="blockNewUser__inputUserName"
                           type="text"
                           placeholder = "user name"
                           value={userName}
                           onChange={ e => setUserName(e.target.value)}
+                          ref={userRef}
                        />
-                       <span>{error}</span>
                    </div>
 
                    <div className="blockNewUser__groupItem">
-                       <label className="blockNewUser__label"> Email </label>
-                       <input 
+                        <div className="blockNewUser__groupTitle">
+                            <label className="blockNewUser__label"> Email </label>
+                            <span className="blockNewUser__error">{errorEmail}</span>
+                        </div>
+                        <input 
                           className="blockNewUser__inputEmail"
                           type="email"
                           placeholder = "email"
                           value={email}
                           onChange={ e => setEmail(e.target.value)}
-                       />
+                        />
                    </div>
 
                    <div className="blockNewUser__groupItem">
-                       <label className="blockNewUser__label"> PassWord </label>
-                       <input 
+                        <div className="blockNewUser__groupTitle">
+                            <label className="blockNewUser__label"> PassWord </label>
+                            <span className="blockNewUser__error">{errorPass}</span>
+                        </div>
+                            <input 
                           className="blockNewUser__inputPass"
                           type="password"
                           placeholder = "password"

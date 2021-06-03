@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import React, { Component, useState, useEffect  }  from 'react';
 import HomePage from './components/Main/MainContent/HomePage/HomePage'
 import LogInForm from './components/Header/modalLogIn/LogInForm'
-
+import "./styles/index.scss"
 // import Header from './components/Header/'
 // import SideBar from './components/Main/SideBar/index'
 // import UsersList from './components/Main/MainContent/Users/UsersList'
@@ -56,7 +56,8 @@ function App() {
     //       {/* <TestTable /> */}
      <Router>
           {/* <LogInForm /> */}
-              <div >
+              
+              <div className="mainLogInForm">
                  <Switch>
                    {
                       !loggedIn ?

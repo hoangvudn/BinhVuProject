@@ -19,7 +19,13 @@
     align-items: center;
     font-family: 'Poppins', sans-serif;
 }
-
+@media only screen and (max-width: 1125px) {
+  .blockContainer {
+    position: absolute;
+    width: 80%;
+    left: 20%;
+  }
+}
 @media only screen and (max-width: 1024px) {
     .blockContainer {
       position: absolute;

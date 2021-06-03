@@ -71,7 +71,7 @@ $bg-th-color: whitesmoke;
      //left: 230px;
      width: 95%;
      //background: orange;
-     max-height: 480px;
+     max-height: 462px;
      top: 100px;
      overflow-x: auto;
      overflow-y: auto; 
@@ -410,8 +410,41 @@ $bg-th-color: whitesmoke;
             flex-direction: column;
             width: 65%;
         }
+        &__groupTitle {
+            position: relative;
+        }
+        &__groupInput {
+            position: relative;
+        }
+        &__imageHidden {
+            display: none;
+            
+        }
+        &__image {
+            position: absolute;
+            top: 10px;
+            right: 2px;
+            width: 40px;
+            height:36px;
+            transition-duration: 1.2s;
+        }
+        &__image:hover {
+            position: absolute;
+            cursor: pointer;
+            top: 10px;  
+            right: 2px;
+            width: 100px;
+            height: 80px;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            transition-duration: 1.2s;
+        }
         &__label {
             font-weight: 700;
+        }
+        &__error {
+            position: absolute;
+            color: red;
+            right: 0;
         }
         &__selectTour {
             position: relative;
@@ -863,6 +896,9 @@ $bg-th-color: whitesmoke;
             flex-direction: column;
             width: 65%;
         }
+        &__groupInput {
+            position: relative;
+        }
         &__label {
             font-weight: 700;
         }
@@ -883,6 +919,25 @@ $bg-th-color: whitesmoke;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
+        }
+        &__showImage {
+            position: absolute;
+            top: 10px;
+            right: 2px;
+            width: 40px;
+            height:36px;
+            border-radius: 5px;
+            transition-duration: 1.2s;
+        }
+        &__showImage:hover {
+            position: absolute;
+            cursor: pointer;
+            top: 10px;  
+            right: 2px;
+            width: 100px;
+            height: 80px;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            transition-duration: 1.2s;
         }
         &__inputPlace {
             position: relative;
@@ -1096,8 +1151,9 @@ $bg-th-color: whitesmoke;
                //position: relative;
                //display: none;
                top: 7px;
+               //display: flex;
                width: 100%;
-               height: 80%;
+               height: 100%;
                max-height: 150px;
                overflow-x: auto;
                overflow-y: auto;
@@ -1108,6 +1164,33 @@ $bg-th-color: whitesmoke;
                border-radius: 10px;
                background: rgba(255, 255, 255, 0.1) ;
            } 
+           &__groupListDate {
+               display: flex;
+            }
+           &__editStartDate {
+                width: 49%;
+                padding: 5px 0;
+                &--inputDatepicker {
+                    // position: relative;
+                    // //left: 30px;
+                    // width: 90px;
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                }
+            }
+           &__editEndDate {
+             //width: 33%;
+             padding: 5px 0;
+             &--inputDatepicker {
+                // position: relative;
+                // //left: 30px;
+                // width: 90px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+             }
+           }
            &__groupDate::-webkit-scrollbar {
                 width: 8px;
            }

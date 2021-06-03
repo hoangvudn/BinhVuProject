@@ -12,24 +12,29 @@ const SideBar = ( { show } ) => {
           <div  className={ show ? "blockSideBar active" : "blockSideBar"} >
              <ul className="blockSideBar__menuSideBar">
             
-                  <Link to={"/usersList"} className="blockSideBar__linkTitle">
-                        <FaUserAlt className="blockSideBar__linkTitle--icon"/>
+                  <Link to={"/usersList"} className="blockSideBar__menuSideBar__linkTitle">
+                        <FaUserAlt className="blockSideBar__menuSideBar__linkTitle--icon"/>
                         <li>USERS</li>
                   </Link>
            
-                  <Link to={"/toursList"} className="blockSideBar__linkTitle">     
-                        <MdCardTravel className="blockSideBar__linkTitle--icon"/>
+                  <Link to={"/toursList"} className="blockSideBar__menuSideBar__linkTitle">     
+                        <MdCardTravel className="blockSideBar__menuSideBar__linkTitle--icon"/>
                         <li>TOUR</li>
                    
                   </Link> 
 
-                  <Link to={"/toursList"} className="blockSideBar__linkTitle">     
-                        <FaHistory className="blockSideBar__linkTitle--icon"/>
-                        <li className="blockSideBar__linkTitle--historyTitle">TOUR HISTORY</li>
+                  <Link to={"/historyToursList"} className="blockSideBar__menuSideBar__linkTitle">     
+                        <FaHistory className="blockSideBar__menuSideBar__linkTitle--icon"/>
+                        <li className="blockSideBar__menuSideBar__linkTitle--historyTitle">HISTORY</li>
+                  </Link> 
+
+                  <Link to={"/testTable"} className="blockSideBar__menuSideBar__linkTitle">     
+                        <FaHistory className="blockSideBar__menuSideBar__linkTitle--icon"/>
+                        <li className="blockSideBar__menuSideBar__linkTitle--historyTitle">PAGINATION</li>
                   </Link> 
                   
                
-                   {/* <Link to={"http://localhost:3001/"} className="blockSideBar__linkTitle"> 
+                   {/* <Link to={"/http://localhost:3001/"} className="blockSideBar__linkTitle"> 
                      <div className="blockSideBar__groupItem">
                            <MdCardTravel className="blockSideBar__icon"/>
                            <li>LOG OUT</li>

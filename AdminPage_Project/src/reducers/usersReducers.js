@@ -132,8 +132,8 @@ import {
                 return {
                     ...state,
                     error: null,
-                    usersList: action.payload
-                    //user: {}
+                    usersList: action.payload,
+                    user: {}
                 }
             case USER_SEARCH_ERROR: 
                 return {

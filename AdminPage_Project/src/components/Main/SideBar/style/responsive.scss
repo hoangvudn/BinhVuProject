@@ -1,6 +1,20 @@
 $base-color: #F4F6FD;
 $border-color: #82A2F4;
 
+@media only screen and (max-width: 1125px) {
+    .blockSideBar {
+        position: absolute;
+        top: -1314px;
+        //left: -300px;
+        width: 30%;
+    }
+    .blockSideBar.active {
+        position: fixed;
+        top: 60px;
+        //left: 0;
+        width: 18%;
+    }
+}
 @media only screen and (max-width: 1024px) {
     //===============================================================
     .blockSideBar {

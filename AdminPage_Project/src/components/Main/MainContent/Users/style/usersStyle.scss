@@ -231,8 +231,17 @@ $base-color: #F4F6FD;
         width: 75%;
         flex-direction: column;
     }
+    &__groupItem {
+        position: relative;
+    }
     &__label {
+        //width: 40%;
         font-weight: 700;
+    }
+    &__error {
+        position: absolute;
+        right: 0px;
+        color: red;
     }
     &__inputUserName {
         position: relative;
@@ -323,8 +332,16 @@ $base-color: #F4F6FD;
         width: 75%;
         flex-direction: column;
     }
+    &__groupTitle {
+        position: relative;
+    }
     &__label {
         font-weight: 700;
+    }
+    &__error {
+        position: absolute;
+        right: 0px;
+        color: red;
     }
     &__inputUserName {
         position: relative;

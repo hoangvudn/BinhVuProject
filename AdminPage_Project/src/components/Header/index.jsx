@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
  }));
 const Header = ({isLogOut}) => {
    const classes = useStyles();
-   const [showSideBar, setShowSideBar] = useState(false);
+   const [showSideBar, setShowSideBar] = useState(true);
    const history = useHistory();
    const handleClick = () => {
          history.push('/');

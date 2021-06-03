@@ -1,53 +1,55 @@
-import React, { useState } from "react";
+import  { useEffect, Component, useState }  from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
 //import "./App.css";
 import "react-datepicker/dist/react-datepicker.css";
+import * as React from 'react';
+import { DataGrid } from '@material-ui/data-grid';
+import { useDemoData } from '@material-ui/x-grid-data-generator';
+import { useDispatch, useSelector } from "react-redux";
+import { getToursAction } from "../../../../actions/toursActions";
 
 
 const TestTable = () => {
-    const [checkInDate, setCheckInDate] = useState(null);
-    const [checkOutDate, setCheckOutDate] = useState(null);
+  const [data, setData] = useState([
+    { firstName: "Elon", lastName: "Musk" },
+    {
+      firstName: "Jeff",
+      lastName: "Bezos",
+      additionDetails: [{ worth: "Lots" }, { company: "Amazon" }],
+    },
+  ]);
 
-    const handleCheckInDate = (date) => {
-        setCheckInDate(date);
-        setCheckOutDate(null);
-    };
+  const handleChange = (e, index) => {
+    const clonedData = [...data];
 
-    const handleCheckOutDate = (date) => {
-        setCheckOutDate(date);
-    };
+    clonedData[index][e.target.name] = e.target.value;
 
-    return (
-        <div >
-        <div className="input-container">
-          <div>
-            <label>Check-in</label>
-            <DatePicker
-              selected={checkInDate}
-              minDate={new Date()}
-              onChange={handleCheckInDate}
-            />
-          </div>
-          <div>
-            <label>Check-out</label>
-            <DatePicker
-              selected={checkOutDate}
-              minDate={checkInDate}
-              onChange={handleCheckOutDate}
-            />
-          </div>
-        </div>
-        {checkInDate && checkOutDate && (
-          <div className="summary">
-            <p>
-              You book a hotel from {moment(checkInDate).format("LL")} to{" "}
-              {moment(checkOutDate).format("LL")}.
-            </p>
-          </div>
-        )}
-      </div>
-    );
+    setData(clonedData);
+}
+console.log(data)
+  return (
+    <>
+      {data.map((x, i) => {
+        return [
+          <input
+            type="text"
+            name="firstName"
+            value={x.firstName}
+            onChange={handleChange}
+          />,
+
+          <input
+            type="text"
+            name="lastName"
+            value={x.lastName}
+            onChange={handleChange}
+          />,
+          <br></br>,
+        ];
+      })}
+    </>
+  );
 }
 export default TestTable;
 
