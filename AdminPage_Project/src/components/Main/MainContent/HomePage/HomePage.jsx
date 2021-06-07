@@ -15,12 +15,9 @@ import HistoryTour from '../HistoryTour/HistoryTour'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './styles/index.scss'
-import TestTable from '../Tour/TestTable';
-
-
-
-
-
+// import TestTable from '../Tour/TestTable';
+import DetailTour from '../Tour/DetailTour';
+import DetailHistoryTour from '../HistoryTour/DetailHistoryTour';
 
 // const dataProvider = jsonServerProvider("http://localhost:3001"); //only port 3001
 const HomePage = ({logOut}) => {  
@@ -38,8 +35,9 @@ const HomePage = ({logOut}) => {
                    <Route exact path="/toursList" component={ToursList} />
                    <Route exact path="/toursList/new" component={NewTour} />
                    <Route exact path="/toursList/edit/:id" component={EditTour} /> 
+                   <Route exact path="/toursList/detail/:id" component={DetailTour} /> 
                    <Route exact path="/historyToursList" component={HistoryTour} />
-                   <Route exact path="/testTable" component={TestTable} />
+                   <Route exact path="/historyToursList/detail/:id" component={DetailHistoryTour} /> 
                  </Switch>
                </div>
     </Router>

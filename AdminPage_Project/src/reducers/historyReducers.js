@@ -13,7 +13,11 @@ import {
 
     GET_HISTORY_TOUR_SELECT_TOUR,
     TOUR_HISTORY_SELECT_TOUR_SUCCESS,
-    TOUR_HISTORY_SELECT_TOUR_ERROR
+    TOUR_HISTORY_SELECT_TOUR_ERROR,
+
+    GET_HISTORY_TOUR_EDIT,
+    TOUR_HISTORY_EDIT_SUCCESS,
+    TOUR_HISTORY_EDIT_ERROR
 
 } from "../constants/index";
   
@@ -65,23 +69,23 @@ import {
     //               ...state,
     //               error: true
     //           }
-    //   //--------------------EDIT TOUR------------------------------------
-    //       case GET_TOUR_EDIT:
-    //            return {
-    //                 ...state,
-    //                 error: null
-    //            };
-    //       case TOUR_EDIT_SUCCESS:
-    //            return {
-    //                ...state,
-    //                error: null,
-    //                tour: action.payload
-    //            };
-    //       case TOUR_EDIT_ERROR:
-    //            return {
-    //                ...state,
-    //                error: true
-    //            };     
+      //--------------------EDIT TOUR------------------------------------
+          case GET_HISTORY_TOUR_EDIT:
+               return {
+                    ...state,
+                    error: null
+               };
+          case TOUR_HISTORY_EDIT_SUCCESS:
+               return {
+                   ...state,
+                   error: null,
+                   historyTour: action.payload
+               };
+          case TOUR_HISTORY_EDIT_ERROR:
+               return {
+                   ...state,
+                   error: true
+               };     
     //       case GET_TOUR_UPDATE:
     //            return {
     //                ...state,
@@ -130,8 +134,8 @@ import {
                 return {
                     ...state,
                     error: null,
-                    historyToursList: action.payload
-                    //user: {}
+                    historyToursList: action.payload,
+                    historyTour: {}
                 }
             case TOUR_HISTORY_SEARCH_ERROR: 
                 return {
@@ -148,8 +152,8 @@ import {
                 return {
                         ...state,
                         error: null,
-                        historyToursList: action.payload
-                        //user: {}
+                        historyToursList: action.payload,
+                        historyTour: {}
                     }
             case TOUR_HISTORY_SELECT_TOUR_ERROR: 
                     return {

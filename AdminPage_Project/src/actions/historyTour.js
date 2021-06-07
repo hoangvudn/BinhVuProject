@@ -14,7 +14,11 @@ import {
 
   GET_HISTORY_TOUR_SELECT_TOUR,
   TOUR_HISTORY_SELECT_TOUR_SUCCESS,
-  TOUR_HISTORY_SELECT_TOUR_ERROR
+  TOUR_HISTORY_SELECT_TOUR_ERROR,
+
+  GET_HISTORY_TOUR_EDIT,
+  TOUR_HISTORY_EDIT_SUCCESS,
+  TOUR_HISTORY_EDIT_ERROR 
 
 } from "../constants/index";
 import axiosConfig from "../data/configDatabase/axois";
@@ -51,6 +55,38 @@ export const getHistoryError = () => ({
 });
 
 //=====================================================================================================
+//----------------------------------Function Edit Tours-----------------------------------
+export function editHistoryTourAction(id) {
+  return dispatch => {
+      dispatch(editHistoryTour(id));
+
+      //Get tours from the API
+      axiosConfig
+        .get(`/historyBookTour/${id}`)
+        .then(response => {
+            console.log(response.data);
+            dispatch(editHistoryTourSuccess(response.data));
+        })
+        .catch(error => {
+            console.log(error);
+            dispatch(editHistoryTourError());
+        });
+  };
+}
+
+export const editHistoryTour = () => ({
+  type: GET_HISTORY_TOUR_EDIT
+});
+
+export const editHistoryTourSuccess = tour => ({
+  type: TOUR_HISTORY_EDIT_SUCCESS,
+  payload: tour
+});
+
+export const editHistoryTourError = () => ({
+  type: TOUR_HISTORY_EDIT_ERROR
+});
+
 //---------------------------Function Delete History---------------------------------------------------
 export function deleteHistoryAction(id) {
   return dispatch => {

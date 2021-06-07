@@ -15,22 +15,17 @@ const SearchTour = () => {
         const getToursListSearch = () => dispatch(searchTourAction(valueSearch));
         getToursListSearch(); 
     }, [dispatch, valueSearch]);
-
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-    // }
-  
+   
     const toursTravel = useSelector(state => state.toursList.toursList);
     console.log("List Search :", toursTravel);
-    
-    return (
-        
+  
+    return (    
         <>
            <div className="blockTourListMain__searchItem">
                  {/* <form  onSubmit={handleSubmit} > */}
                  <form>
-                             <div className="blockTourListMain__searchItem--inputItem">
-                               <input
+                        <div className="blockTourListMain__searchItem--inputItem">
+                            <input
                                     type="text"
                                     name="searchTour"
                                     ref={valueSearchRef}
@@ -39,13 +34,13 @@ const SearchTour = () => {
                                     // onBlur={handleBlur}
                                     // value={values.searchTour}
                                     onChange={e => setValueSearch(e.target.value)}
-                                />
-                            </div>  
-                           {/* <div className="blockSearchTour__buttonSave">
+                            />
+                        </div>  
+                        {/* <div className="blockSearchTour__buttonSave">
                                 <button type="submit" onClick="">
                                     SEARCH
                                 </button>
-                           </div> */}
+                        </div> */}
                  </form>
             </div>
         </>

@@ -4,16 +4,73 @@ $base-color: #82A2F4;
 
 .blockSideBar {
     position: absolute;
-    top: -800px;
-    //left: -300px;
+    //left: 0px;
+    left: -272px;
     width: 20%;
     height: 100%;
-    transition-duration: 1.2s;
-    background-image: url(bg_1.jpg);
+    transition-duration: 0.9s;
+    background: rgba(47,137,252,1);
+	background: -moz-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(47,137,252,1)), color-stop(100%, rgba(94,255,201,1)));
+	background: -webkit-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	background: -o-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	background: linear-gradient(135deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#5effc9', GradientType=1 );
+    //    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
      //background : $base-color;s
     //box-shadow: rgba(69, 69, 204, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     &__menuSideBar {
         list-style-type: none;
+        &__linkHomeTitle {
+            text-decoration: none;
+            padding: 15px 28px;
+            display:flex;
+            border-bottom: 0.5px solid white;
+            background: #00F260;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+            position: relative;
+            left: -32px;
+            width: 205px;
+            transition-duration: 1.5s;
+            font-weight: 700;
+            color: white;
+            &--icon {
+                position: relative;
+                left: -10px;
+                width: 45px;
+                height: 20px;
+            }   
+            &--homeTitle {
+                position: relative;
+                white-space:nowrap;
+                background-image: url(./giphy.gif);
+                background-size:cover;
+                color: transparent;
+                -moz-background-clip: text;
+                -webkit-background-clip: text;
+                text-transform: uppercase;
+                font-size: 15px;
+                line-height: .75;
+                margin: 7px 0;
+            }
+        }
+  
+        &__linkHomeTitle:hover {
+            background: rgba(47,137,252,1);
+            background: -moz-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(47,137,252,1)), color-stop(100%, rgba(94,255,201,1)));
+            background: -webkit-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            background: -o-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            background: -ms-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            background: linear-gradient(135deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#5effc9', GradientType=1 );
+            transition-duration: 0.7s;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
         &__linkTitle {
             text-decoration: none;
             padding: 15px 28px;
@@ -21,18 +78,19 @@ $base-color: #82A2F4;
             border-bottom: 0.5px solid white;
             position: relative;
             left: -32px;
-            width: 200px;
-            transition-duration: 0.9s;
+            width: 205px;
+            color: white;
+            transition-duration: 1.5s;
             &--icon {
                 margin-right: 20px;
             }
             &--historyTitle {
-              
                 white-space:nowrap;
             }
         }
         &__linkTitle li {
             font-weight: 700;
+            color: white;
         }
         
         &__linkTitle:hover {
@@ -45,6 +103,7 @@ $base-color: #82A2F4;
             background: linear-gradient(135deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#5effc9', GradientType=1 );
             transition-duration: 0.7s;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
         }
     }
   
@@ -52,10 +111,10 @@ $base-color: #82A2F4;
 
 .blockSideBar.active {
     position: fixed;
-    top: 60px;
-    //left: 0;
+    top: 0px;
+    left: 0;
     width: 15%;
-    transition-duration: 1.5s;
+   // transition-duration: 0.88s;
     font-family: 'Poppins', sans-serif;
     // background: #eaafc8;
     // background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
@@ -70,9 +129,10 @@ $base-color: #82A2F4;
 	background: -ms-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
 	background: linear-gradient(135deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#5effc9', GradientType=1 );
-    background-image: url(bg_1.jpg);
-    opacity: 0.8;
-    box-shadow: rgba(69, 69, 204, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    //opacity: 0.9s;
+    //box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    //box-shadow: rgba(69, 69, 204, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 

@@ -35,7 +35,7 @@ const EditTour = ({ match, history }) => {
   const imageIntroductionRef = useRef("");
   const titleImageRef = useRef("");
 
-  const [startTemp, setStartDate] = useState(new Date());
+  const [startTemp, setStartDate] = useState([]);
   const [show, setShow] = useState(true);
   const [image, setImage] = useState("");
   const [transportsTemp, setTransportsTemp] = useState("");
@@ -62,6 +62,7 @@ const EditTour = ({ match, history }) => {
   const [showImage, setShowImage] = useState(true);
   const [showTransports, setShowTransports] = useState(true);
   const [showImgIntroduction, setShowImgIntroduction] = useState(true);
+  const [showPrice, setShowPrice] = useState(true);
   //===================================
   const showDate = () => {
     setShow(true);
@@ -72,6 +73,11 @@ const EditTour = ({ match, history }) => {
     e.preventDefault();
     setStatusCountry(e.target.value);
   };
+  const changeValue = (e) => {
+    e.preventDefault();
+    setPriceTemp(e.target.value);
+    setShowPrice(false);
+  }
   //================================================================
 
   //=========================Convert Tour Image To Base64===========================
@@ -201,23 +207,28 @@ const EditTour = ({ match, history }) => {
   useEffect(() => {
     dispatch(editTourAction(id));
   }, [dispatch, id]);
-  //=======================Update List Date=============
+  //======================= List Date=============
   useEffect(() => {
     if(tour.calendarDays) {
         setListDay(tour.calendarDays);
     }
   }, [tour.calendarDays]);
+ 
   //====================================================
   // Access to global state
   const descriptions = [];
   descriptions.push(descriptions0, descriptions1, descriptions2);
-
+  const dayTemp =[];
+  listDay.map((list,index) => {
+     dayTemp.push(list.startDay);
+  })
+  console.log("NINE ONE ONE: ", dayTemp )
   //============================GET LIST DAY=====================================
   // setApply(listDay);
   //======================================Check Price==========================
   let priceType = Numeral(tour?.price);
   let priceTypeEdit = priceType.format();
-  
+  let priceStandard = priceType.value();
   //----------------------------------
   let price1 = Numeral(priceTemp);
   let price2 = price1.format();
@@ -253,12 +264,12 @@ const EditTour = ({ match, history }) => {
       place: placeRef.current.value,
       name: nameRef.current.value,
       day: dayRef.current.value,
-      transports: showTransports ? imgTransports : transportsTemp,
+      transports: showTransports ? imgTransports : transports,
       descriptions: descriptions,
-      price: price,
-      start: start,
+      price: showPrice ? priceStandard : price,
+      start: dayTemp[0],
       apply: applyRef.current.value,
-      startDays: startDays,
+      startDays: dayTemp,
       calendarDays: listDay,
       introduction: introductionRef.current.value,
       imageIntroduction: showImgIntroduction ? imgIntroduction : imageIntroduction,
@@ -468,7 +479,7 @@ const EditTour = ({ match, history }) => {
                     //defaultValue={priceTypeEdit}
                   //ref={priceRef}
                   
-                  onChange = { e => setPriceTemp(e.target.value)}
+                  onChange = {changeValue}
                 />
                 <span className="blockEditTour__formEdit__oldPrice">{priceTypeEdit}</span>
             </div>
@@ -556,6 +567,7 @@ const EditTour = ({ match, history }) => {
                   {listDay.map((day, index) => {
                   const sDay = new Date(formatDay(day.startDay));
                   const eDay = new Date(formatDay(day.abouttDay));
+                  
                   const arr= [...listDay];
                   console.log("🚀 ~ file: editTour.jsx ~ line 571 ~ {listDay.map ~ listDay", listDay)
                   return(
@@ -574,7 +586,7 @@ const EditTour = ({ match, history }) => {
                                 }}
                                 //defaultValue=""
                                 dateFormat="dd-MM-yyyy"
-                                minDate={sDay}
+                                minDate={eDay}
                                 className="blockEditTour__formEdit__blockDatePicker__editStartDate--inputDatepicker"
                                 // onInputClick={showDate}
                           />

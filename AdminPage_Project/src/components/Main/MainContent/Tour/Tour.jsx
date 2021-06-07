@@ -1,10 +1,11 @@
 import React from 'react';
 import { Formik } from 'formik';
 import "./style/tourStyle.scss";
+import "./style/responsive.scss";
 import { Link } from 'react-router-dom';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import Swal from "sweetalert2";
-import "./style/responsive.scss";
+
 
 import { useDispatch } from "react-redux";
 import { deleteTourAction } from "../../../../actions/toursActions"
@@ -23,30 +24,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 const Tour = ({ tour }) => { 
     const dispatch = useDispatch();
     
-    //========================Convert Image To Binary=======================
-        //     const [baseImage, setBaseImage] = useState('');
-        //     const uploadImage = async (e) => {
-        //     const file = e.target.files[0];
-        //     const base64 = await convertBase64(file);
-        //     console.log("binary file:",base64);
-        //     setBaseImage(base64);
-        //     //console.log("binary file:",file);
-        //     };
-        
-        //     const convertBase64 = (file) => {
-        //     return new Promise((resolve, reject) => {
-        //         const fileReader = new FileReader();
-        //         fileReader.readAsDataURL(file);
-        
-        //         fileReader.onload = () => {
-        //         resolve(fileReader.result);
-        //         };
-        
-        //         fileReader.onerror = (error) => {
-        //         reject(error);
-        //         };
-        //     });
-        // }
     //======================================================================
     const confirmDeleteTour = id => {
         Swal.fire({
@@ -85,18 +62,22 @@ const Tour = ({ tour }) => {
         <>
             
             <tr className="blockTourListMain__listItem">
-                <td className="blockTourListMain__listItem--itemImage"> <img src= {tour.image} alt="image countryside"/>  </td>
+                <td className="blockTourListMain__listItem--itemImage"> 
+                    <Link to={`/toursList/detail/${tour.id}`}> 
+                             <img src= {tour.image} alt="image countryside"/> 
+                    </Link>  
+                </td>
                 <td className="blockTourListMain__listItem--itemPlace"> {tour.place}  </td>
                 <td className="blockTourListMain__listItem--itemName">  {tour.name}   </td>
                 <td className="blockTourListMain__listItem--itemDayAmount"> {tour.day} </td>
-                <td className="blockTourListMain__listItem--itemTransports"> <img src = {tour.transports} alt="image coutryside"/> </td>
+                {/* <td className="blockTourListMain__listItem--itemTransports"> <img src = {tour.transports} alt="image coutryside"/> </td> */}
                 <td className="blockTourListMain__listItem--itemPrice"> {priceTypeEdit} </td>
-                <td className="blockTourListMain__listItem--itemStartDay"> {dateStart}  </td>
-                <td className="blockTourListMain__listItem--itemDescriptions"> {tour.descriptions} </td>
+                {/* <td className="blockTourListMain__listItem--itemStartDay"> {dateStart}  </td> */}
+                {/* <td className="blockTourListMain__listItem--itemDescriptions"> {tour.descriptions} </td>
                 <td className="blockTourListMain__listItem--itemApplyPassenger"> {tour.apply} </td>
                 <td className="blockTourListMain__listItem--itemIntroduction"> {tour.introduction} </td>
                 <td className="blockTourListMain__listItem--itemImageIntroduction"> <img src= {tour.imageIntroduction} alt="image introduction"/> </td>
-                <td className="blockTourListMain__listItem--itemTitleImage"> {tour.titleImage} </td>
+                <td className="blockTourListMain__listItem--itemTitleImage"> {tour.titleImage} </td> */}
 
                 <td className="blockTourListMain__table--itemActionEdit">
                      <Link to={`/toursList/edit/${tour.id}`}> 

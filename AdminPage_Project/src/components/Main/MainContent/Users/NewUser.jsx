@@ -5,24 +5,36 @@ import  Swal  from "sweetalert2";
 import { createNewUserAction } from "../../../../actions/usersActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { Break } from 'devextreme-react/range-selector';
+import { Break, Width } from 'devextreme-react/range-selector';
 const NewUser = ({ history }) => {
     const [ userName, setUserName ] = useState("");
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
-    const [ userExit, setUserExit ] = useState(false);
+    const [ confirmPass, setConfirmPass ] = useState("");
+    const [ role1, setRole1 ] = useState(1);
     //=====================VALIDATE================
     const [ errorUser, setErrorUser ] = useState("");
     const [ errorEmail, setErrorEmail ] = useState("");
     const [ errorPass, setErrorPass ] = useState("");
+    const [ errorConfirmPass, setErrorConfirmPass ] = useState("");
     //==============================================
     const userRef = useRef("");
+    const emailRef = useRef("");
+    const passRef = useRef("");
+    const confirmPassRef = useRef("");
     //Create new user
     const dispatch = useDispatch();
     const addUser = user => dispatch(createNewUserAction(user));
     
     const users = useSelector(state => state.usersList.usersList);
     console.log("USER PANDING: ", users);
+    //===============Set Role======================
+    const handleChange = e => {
+        e.preventDefault();
+        setRole1(e.target.value);
+    }
+    const role = Number(role1);
+    //================================================================
 
     const checkUser = users.filter(item => {
            return item.userName == userName;
@@ -37,6 +49,7 @@ const NewUser = ({ history }) => {
           setErrorUser("");
           setErrorEmail("");
           setErrorPass("");
+          setConfirmPass("");
           userRef.current.focus();
     }
     //==========================================
@@ -48,42 +61,57 @@ const NewUser = ({ history }) => {
             setErrorUser("Value not null");
             setErrorEmail("Value not null");
             setErrorPass("Value not null");
+            userRef.current.focus();
             return;
         }
         
         if ( userName.trim() === "") {
-            setErrorUser("Value not null")
+            setErrorUser("Value not null");
+            userRef.current.focus();
             return;
         }
         if ( userName.length < 4) {
             setErrorUser("User must > 4 character");
+            userRef.current.focus();
             return;
         } else {
             setErrorUser("");
         }
         if ( checkUser.length !== 0) {
             setErrorUser("User exists!");
+            userRef.current.focus();
             return;
         }
         if ( email.trim() === "") {
             setErrorEmail("Value not null")
+            emailRef.current.focus();
             return;
         } else {
             setErrorEmail("");
         }
         if ( password.trim() === "") {
             setErrorPass("Value not null")
+            passRef.current.focus();
             return;
+        } else {
+            setErrorPass("");
         }
         if ( password.length < 8) {
             setErrorPass("Password must > 8 character")
+            passRef.current.focus();
             return;
         }
-       
+        if ( password !== confirmPass ) {
+            setErrorConfirmPass("Pass do not match");
+            confirmPassRef.current.focus();
+            return;
+        } else {
+            setErrorConfirmPass("");
+        }
     
         
         //==================================================================================        
-        addUser({ userName, email, password });
+        addUser({ userName, email, password, role });
         clearData();
         Swal.fire("Saved", "User Added", "OK");
         //If it success 
@@ -124,6 +152,7 @@ const NewUser = ({ history }) => {
                           type="email"
                           placeholder = "email"
                           value={email}
+                          ref={emailRef}
                           onChange={ e => setEmail(e.target.value)}
                         />
                    </div>
@@ -133,15 +162,44 @@ const NewUser = ({ history }) => {
                             <label className="blockNewUser__label"> PassWord </label>
                             <span className="blockNewUser__error">{errorPass}</span>
                         </div>
-                            <input 
+                        <input 
                           className="blockNewUser__inputPass"
                           type="password"
                           placeholder = "password"
                           value={password}
                           onChange={ e => setPassword(e.target.value)}
                           min="5" max="15"
+                          ref={passRef}
                        />
                    </div>
+
+                   
+                   <div className="blockNewUser__groupItem">
+                        <div className="blockNewUser__groupTitle">
+                            <label className="blockNewUser__label"> Confirm PassWord </label>
+                            <span className="blockNewUser__error">{errorConfirmPass}</span>
+                        </div>
+                        <input 
+                          className="blockNewUser__inputPass"
+                          type="password"
+                          placeholder = "confirm password"
+                          value={confirmPass}
+                          onChange={ e => setConfirmPass(e.target.value)}
+                          min="5" max="15"
+                          ref={confirmPassRef}
+                       />
+                   </div>
+                    
+                   <div className="blockNewUser__groupItem">
+                        <div className="blockNewUser__groupTitle">
+                          <label className="blockNewUser__label">Role</label>
+                        </div>
+                        <select value={role1} onChange={handleChange} className="blockNewUser__selectTour"> 
+                            <option value="0">Administrator</option>
+                            <option value="1">User</option>
+                        </select>
+                   </div>
+
 
                    <button 
                       type="submit"
@@ -157,98 +215,3 @@ const NewUser = ({ history }) => {
 };
 
 export default NewUser;
-
-
-// const [user, setUser] = useState({
-       
-// })
-// const NewUser = () => { 
-//    return (
-//             <Formik initialValues={{ user: '', pass: '', email:''}}
-//                 validate={values => {
-//                 const errors = {};
-//                 //--------------------------VALIDATE PASS---------------------
-//                 if (!values.user) {
-//                     errors.user = 'Required';
-//                 }
-//                 //--------------------------VALIDATE PASS---------------------
-//                 if (!values.pass) {
-//                     errors.pass = 'Required';
-//                 }
-//                 //----------------------------VALIDATE EMAIL------------------
-//                 if (!values.email) {
-//                     errors.email = 'Required';
-//                 } else if (
-//                     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-//                 ) {
-//                     errors.email = 'Invalid email address';
-//                 }
-                
-//                 return errors;
-//                 }}
-//                 onSubmit={(values, { setSubmitting }) => {
-//                 setTimeout(() => {
-//                     alert(JSON.stringify(values, null, 2));
-//                     setSubmitting(false);
-//                 }, 400);
-//                 }} 
-//             >
-//                     {({
-//                 values,
-//                 errors,
-//                 touched,
-//                 handleChange,
-//                 handleBlur,
-//                 handleSubmit,
-//                 isSubmitting,
-//                 /* and other goodies */
-//                 }) => (
-//                 <form onSubmit={handleSubmit} className="blockEditUsersList">
-//                 <div className="blockEditUsersList__inputItem">
-//                     <input
-//                         type="text"
-//                         name="user"
-//                         onChange={handleChange}
-//                         onBlur={handleBlur}
-//                         value={values.user}
-//                     />
-//                     {errors.user && touched.user && errors.user}
-//                     <input
-//                         type="password"
-//                         name="pass"
-//                         onChange={handleChange}
-//                         onBlur={handleBlur}
-//                         value={values.pass}
-//                     />
-//                     {errors.pass && touched.pass && errors.pass}
-//                     <input
-//                         type="email"
-//                         name="email"
-//                         onChange={handleChange}
-//                         onBlur={handleBlur}
-//                         value={values.email}
-//                     />
-//                     {errors.email && touched.email && errors.email}
-//                 </div>  
-//                 <div className="blockEditUsersList__buttonSave">
-//                     <button type="submit" disabled={isSubmitting}>
-//                         SAVE
-//                     </button>
-//                 </div>
-//                 </form>
-//                 )}
-
-//                 {/* <div  className="blockEditUsersList">
-//                 <div className="blockEditUsersList__inputItem">
-//                     <input type="text" placeholder="User"/>
-//                     <input type="text" placeholder="Pass"/>
-//                     <input type="email" placeholder="Email"/>
-//                 </div>
-//                 <div className="blockEditUsersList__buttonSave"> 
-//                     <button>  EDIT  </button>
-//                 </div>
-//                 </div> */}
-//         </Formik>
-//    )
-// }
-// export default  NewUser;

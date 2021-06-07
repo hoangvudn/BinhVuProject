@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import Swal from "sweetalert2";
-//import "./style/responsive.scss";
+
 
 import { useDispatch } from "react-redux";
 import { deleteHistoryAction } from "../../../../actions/historyTour"
@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import './style/historyStyle.scss'
 // import React, { useState } from 'react'
 
 // const [history, setUser] = useState({
@@ -69,16 +70,20 @@ const History = ({ history }) => {
     //===============================
    return (
         <>
-            
-            <tr className="blockHistoryListMain__listItem">
-                <td className="blockHistoryListMain__listItem--itemImage"> {history.userName}  </td>
+            {/* <Link to={`/historyToursList/detail/${history.id}`}>  */}
+              <tr className="blockHistoryListMain__listItem" >
+                <td className="blockHistoryListMain__listItem--itemUserName"> 
+                    <Link to={`/historyToursList/detail/${history.id}`}> 
+                        {history.userName}
+                    </Link> 
+                </td>
                 <td className="blockHistoryListMain__listItem--itemPlace"> {history.place}  </td>
-                <td className="blockHistoryListMain__listItem--itemName">  {history.name}   </td>
+                {/* <td className="blockHistoryListMain__listItem--itemName">  {history.name}   </td> */}
                 <td className="blockHistoryListMain__listItem--itemStartDay"> {dateStart}  </td>
                 <td className="blockHistoryListMain__listItem--itemPrice"> {priceTypeEdit} </td>   
                 <td className="blockHistoryListMain__listItem--itemApplyPassenger"> {history.countUsers} </td>
-                <td className="blockHistoryListMain__listItem--moneyTotal"> {total} </td>
-                <td className="blockHistoryListMain__listItem--moneyTotal"> {history.infoUser.email} </td>
+                <td className="blockHistoryListMain__listItem--itemMoneyTotal"> {total} </td>
+                <td className="blockHistoryListMain__listItem--itemUserInfo"> {history.infoUser.email} </td>
                 {/* <td className="blockHistoryListMain__listItem--itemIntroduction">
                      {history?.infoUser.map(list => {
                          <div> 
@@ -99,7 +104,7 @@ const History = ({ history }) => {
                     </Fab>  
                 </td>     */}
             </tr>
-          
+          {/* </Link>  */}
         </>      
    )
 }

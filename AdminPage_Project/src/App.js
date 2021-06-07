@@ -47,13 +47,7 @@ function App() {
     setLoggedIn(!loggedIn);
   };
   return (
-    //  <TestTable />
-    //  <BasicTable />
-    //  <BasicTable1 />
-    //  <HomePage />
-   
-    //       {/* <Header/> */}
-    //       {/* <TestTable /> */}
+
      <Router>
           {/* <LogInForm /> */}
               

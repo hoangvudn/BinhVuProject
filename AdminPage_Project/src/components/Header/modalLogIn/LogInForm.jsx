@@ -52,7 +52,7 @@ const LogInForm = (props) => {
        e.preventDefault();
 
        if ( checkUser.length === 0 ) {
-            alert("USER NOT EXITED! Please input again");
+            alert("User not Administrator! Please input again");
             return;
        };
       onsubmit = props.logIn;
@@ -62,8 +62,6 @@ const LogInForm = (props) => {
        <>
            <div className="blockLoginForm" >
                     <h1 className="blockLoginForm__title">LOG IN</h1>
-                 
-                   
                         <form onSubmit={handleSubmit} className="blockLoginForm__inputItem">
                           <div className="blockLoginForm__inputItemUser">
                                 {/* <label>User</label> */}

@@ -26,6 +26,7 @@ const ToursList = () => {
     const toursTravel = useSelector(state => state.toursList.toursList);
     
     console.log("List tour:",toursTravel);
+
     return (
         <React.Fragment>
              {error ? (
@@ -42,15 +43,15 @@ const ToursList = () => {
                                     <th className="blockTourListMain__table--place">Place</th>
                                     <th className="blockTourListMain__table--tourName">Tour Name</th>
                                     <th className="blockTourListMain__table--dayAmount">Day Amount</th>
-                                    <th className="blockTourListMain__table--transports">Transport</th>
+                                    {/* <th className="blockTourListMain__table--transports">Transport</th> */}
                                     <th className="blockTourListMain__table--price">Price</th>
-                                    <th className="blockTourListMain__table--startDay">Start Day</th>
-                                    <th className="blockTourListMain__table--descriptions">Descriptions</th>
+                                    {/* <th className="blockTourListMain__table--startDay">Start Day</th> */}
+                                    {/* <th className="blockTourListMain__table--descriptions">Descriptions</th>
                                     <th className="blockTourListMain__table--applyPassenger">Guest Amount</th>
                                     <th className="blockTourListMain__table--introduction">Introduction</th>
                                     <th className="blockTourListMain__table--imageIntroduction">Image Introduction</th>
-                                    <th className="blockTourListMain__table--titleImage">Title Image</th>
-                                    <th className="blockTourListMain__table--headActionIcon"></th>
+                                    <th className="blockTourListMain__table--titleImage">Title Image</th> */}
+                                    <th className="blockTourListMain__table--headActionIcon">Action</th>
                                     <th className="blockTourListMain__table--headActionIcon1"></th>
                                 </tr>  
                             </thead>

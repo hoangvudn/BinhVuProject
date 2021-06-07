@@ -246,7 +246,6 @@ const NewTour = ({ history }) => {
             return;
         } else {
             setErrorImg("");
-         
         }
         if (placeRef.current.value === "") {
             setErrorPlace("Value not null!");
@@ -348,7 +347,7 @@ const NewTour = ({ history }) => {
     
             <div className="blockNewTour">
                   <div className="blockNewTour__title">
-                            <h2>ADD TOUR</h2>
+                            <h5>ADD TOUR</h5>
                     </div>
                 <form onSubmit={handleSubmit}  className="blockNewTour__formNew">
                   

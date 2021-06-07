@@ -2,15 +2,12 @@
 @import './responsive.scss';
 .blockLoginForm {
     position: absolute;
-    font-family: 'poppin';
     top: 10%;
     width: 30%;
     left: 33%;
     border-radius: 10px;
     height: 80vh;
-    font-family: 'poppin';
-    //background: blueviolet;
-    //background-image: url(bg-login.jpg);
+    font-family: 'Poppins';
     background: linear-gradient(blue, pink);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     margin: 0 auto;
@@ -22,9 +19,17 @@
     //====================================================================================
     &__title {
        position: absolute;
-       color: white;
        font-weight: 700;
        top: 100px;
+       background-image: url(./giphy.gif);
+       background-size: cover;
+       color: transparent;
+       -moz-background-clip: text;
+       -webkit-background-clip: text;
+       text-transform: uppercase;
+       font-size: 40px;
+       line-height: .75;
+       margin: 10px 0;
     }
     &__inputItem{
         width: 90%;
@@ -88,19 +93,6 @@
         cursor: pointer;
         background: linear-gradient(blue, pink);
         transition-duration: 0.2s;
-    }
-    &__error {
-        // position: absolute;
-        // top: 130px;
-        // left: 137px;
-        // color: red;
-
-    }
-    &__errorPass {
-        // position: absolute;
-        // top: 175px;
-        // left: 137px;
-        // color: red;
     }
 }
 

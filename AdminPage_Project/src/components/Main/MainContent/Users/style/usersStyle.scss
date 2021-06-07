@@ -154,6 +154,8 @@ $base-color: #F4F6FD;
        
        &--inputItem input{
             outline: none;
+            padding: 4px 20px;
+            margin: 8px 0;
             width: 300px;
             border-radius: 5px;
             background: transparent;
@@ -203,9 +205,9 @@ $base-color: #F4F6FD;
 
 .blockEditUser {
     position: absolute;
-    top: 80px;
+    top: 60px;
     width: 500px;
-    height: 400px;
+    height: 525px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -214,8 +216,14 @@ $base-color: #F4F6FD;
     &__title {
        position: absolute; 
        top: 10px;
-       font-weight: 800;
-       color: blue;
+       background-image: url(./giphy.gif);
+       background-size:cover;
+       color: transparent;
+       -moz-background-clip: text;
+       -webkit-background-clip: text;
+       text-transform: uppercase;
+       font-size: 35px;
+       line-height: .75;
     }
     &__groupForm {
         position: absolute;
@@ -276,14 +284,24 @@ $base-color: #F4F6FD;
         border: 1px solid #ccc;
         border-radius: 4px;
     }
+    &__selectTour {
+        position: relative;
+        width: 100%;
+        padding: 4px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
 
     &__buttonSave {
         position: relative;
         //margin: 20px 0px 0px 50px;
         //left: 80px;
-        top: 20px;
+        top: 35px;
         width: 150px;
         height: 50px;
+        color: white;
         background: rgba(47,137,252,1);
         background: -moz-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
         background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(47,137,252,1)), color-stop(100%, rgba(94,255,201,1)));
@@ -304,9 +322,9 @@ $base-color: #F4F6FD;
 .blockNewUser {
     position: absolute;
     //left: 550px;
-    top: 80px;
+    top: 60px;
     width: 500px;
-    height: 400px;
+    height: 525px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -315,8 +333,14 @@ $base-color: #F4F6FD;
     &__headerTitle {
        position: absolute; 
        top: 10px;
-       font-weight: 800;
-       color: blue;
+       background-image: url(./giphy.gif);
+       background-size:cover;
+       color: transparent;
+       -moz-background-clip: text;
+       -webkit-background-clip: text;
+       text-transform: uppercase;
+       font-size: 10px;
+       line-height: .75;
     }
     &__groupForm {
         position: absolute;
@@ -376,6 +400,14 @@ $base-color: #F4F6FD;
         border: 1px solid #ccc;
         border-radius: 4px;
     }
+    &__selectTour {
+        position: relative;
+        padding: 4px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
 
     &__buttonAddUser {
         position: relative;
@@ -384,6 +416,7 @@ $base-color: #F4F6FD;
         top: 20px;
         width: 150px;
         height: 50px;
+        color: white;
         background: rgba(47,137,252,1);
         background: -moz-linear-gradient(-45deg, rgba(47,137,252,1) 0%, rgba(94,255,201,1) 100%);
         background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(47,137,252,1)), color-stop(100%, rgba(94,255,201,1)));
