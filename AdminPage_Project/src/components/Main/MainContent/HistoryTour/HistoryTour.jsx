@@ -15,9 +15,11 @@ import loadingIcon from '../../../../assets/loading2.gif'
 import './style/historyStyle.scss';
 import './style/responsive.scss';
 import SearchHistoryTour from "../HistoryTour/SearchHistoryTour"
+import { array } from "prop-types";
 
 const HistoryTour = () => {
- 
+  
+  const [place, setPlace] = useState();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,12 +31,9 @@ const HistoryTour = () => {
   const loading = useSelector(state => state.historyToursList.loading);
   const error = useSelector(state => state.historyToursList.error);
   const historyBookTour = useSelector(state => state.historyToursList.historyToursList);
+ 
+ let arrday=[];
 
-//   const historyTourAmount = historyBookTour.filter(item => {
-//     return item.userName == "hoangvu";
-//   });
-  
-//   console.log("HHHHHHHH:", historyTourAmount.length);
   return (
       <React.Fragment>
            {error ? (
@@ -46,7 +45,7 @@ const HistoryTour = () => {
               <div  className="headerTitle">
                            <span>MANAGEMENT BOOK TOUR HISTORY</span>
               </div> 
-              <span className="reportTour">TOTAL BOOKED TOUR: {historyBookTour.length}</span>  
+              <span className="reportTour">TOTAL BOOKED TOUR: {historyBookTour.length}</span>   
               <div className="blockHistoryListMain">
                       <table className="blockHistoryListMain__table">
                           <thead>
@@ -73,9 +72,20 @@ const HistoryTour = () => {
                                   ))}
                           </tbody>
                       </table>
+                      <div>
+                          {
+                              historyBookTour.map((list,index) =>{
+                                //list.price
+                                console.log("adfjkdjf",list.price)
+                                arrday.push(parseInt(list.price))
+                                console.log("Array Price Standard", arrday)
+                              })
+                            }
+                      </div>
                   
               </div>       
-              <SearchHistoryTour />
+              <SearchHistoryTour arrday={arrday}/>
+
                {loading ?  <img src={loadingIcon}/> : null}
           </>
       </React.Fragment> 

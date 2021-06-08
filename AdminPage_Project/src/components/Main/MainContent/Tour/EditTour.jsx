@@ -213,7 +213,7 @@ const EditTour = ({ match, history }) => {
         setListDay(tour.calendarDays);
     }
   }, [tour.calendarDays]);
- 
+   console.log("list day edit:", listDay)
   //====================================================
   // Access to global state
   const descriptions = [];

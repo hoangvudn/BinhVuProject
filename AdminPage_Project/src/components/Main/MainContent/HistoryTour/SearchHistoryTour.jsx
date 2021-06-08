@@ -6,7 +6,7 @@ import {
     searchHistoryAction
 } from "../../../../actions/historyTour";
 
-const SearchHistoryTour = () => {
+const SearchHistoryTour = ({arrday}) => {
     const dispatch = useDispatch();
     const [valueSearch, setValueSearch] = useState("");
     const valueSearchRef = useRef("");
@@ -15,9 +15,11 @@ const SearchHistoryTour = () => {
         const getHistoryTourSearch = () => dispatch( searchHistoryAction(valueSearch));
         getHistoryTourSearch(); 
     }, [dispatch, valueSearch]);
-
+    
     const historyBookTour = useSelector(state => state.historyToursList.historyToursList);
     console.log("List Search HISTORY :", historyBookTour);
+    const max =  Math.max(...arrday);
+    console.log("MAX NUMBER:",  Math.max(...arrday));
     return (    
         <>
            <div className="blockHistoryListMain__searchItem">   
@@ -31,6 +33,7 @@ const SearchHistoryTour = () => {
                                     placeholder="Search..."
                                     onChange={e => setValueSearch(e.target.value)}
                             />
+                            <span> MAX MI tOM: {max}</span>
                         </div>  
                  </form>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useEffect, useState} from 'react';
 import { Formik } from 'formik';
 //import "./style/historyStyle.scss";
 import { Link } from 'react-router-dom';
@@ -43,6 +43,7 @@ const History = ({ history }) => {
     const dateStart = moment(history.selectDay).format("DD-MM-YYYY");
     //const start = moment(dateStart).format("DD-MM-YYYY");
     //================Convert Number=================
+   
     const priceType =  Numeral(history.price);
     const priceValue = priceType.value();
     const guestAmount = Numeral(history.countUsers);
@@ -50,6 +51,25 @@ const History = ({ history }) => {
     const total1 = parseInt(priceValue) * parseInt(guestValue);
     const total2 = Numeral(total1);
     const total = total2.format();
+
+   //const array = [];
+   // array = [];
+   
+    // const shots = [
+    //   {id: 1, amount: 2},
+    //   {id: 2, amount: 4},
+    //   {id: 3, amount: 52},
+    //   {id: 4, amount: 78},
+    //   {id: 5, amount: 13},
+    //   {id: 6, amount: 33}
+    // ];
+
+    // const max = shots.reduce(function(prev, current) {
+    //   return (prev.amount > current.amount) ? prev : current
+    // })
+   
+    
+
     //================================================
    // console.log("Price Type: ", priceType.format());
     const priceTypeEdit = priceType.format();
@@ -73,7 +93,7 @@ const History = ({ history }) => {
             {/* <Link to={`/historyToursList/detail/${history.id}`}>  */}
               <tr className="blockHistoryListMain__listItem" >
                 <td className="blockHistoryListMain__listItem--itemUserName"> 
-                    <Link to={`/historyToursList/detail/${history.id}`}> 
+                    <Link to={`/historyToursList/detail/${history.id}`} className="blockHistoryListMain__listItem--linkDetail"> 
                         {history.userName}
                     </Link> 
                 </td>
