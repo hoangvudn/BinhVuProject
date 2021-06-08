@@ -1,121 +1,64 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Formik } from 'formik';
-import Swal from "sweetalert2";
+import { Formik } from 'formik'
+
+import  Swal  from "sweetalert2";
+
+import { useDispatch, useSelector} from "react-redux";
+import moment from 'moment';
+import Numeral from 'numeral';
+import DatePicker from "react-datepicker"
+import DatePicker1 from "react-datepicker"
+import 'react-datepicker/dist/react-datepicker.css';
+import { getHistoryAction } from "../../../../actions/historyTour";
+
+import loadingIcon from '../../../../assets/loading2.gif'
 import './style/historyStyle.scss';
 import './style/responsive.scss';
+import DetailReportTour from "./DetailReportTour"
+//import { array } from "prop-types";
 
-import { useDispatch, useSelector } from "react-redux";
-import moment from 'moment';
-
-import Numeral from 'numeral';
-import DatePicker from "react-datepicker";
-import {
-  editHistoryTourAction,
-  updateTourAction
-} from "../../../../actions/historyTour";
-import { nullFormat } from "numeral";
-
-// //Declare match and history of react router, 
-// {match to get id} and {history to redirect to homepage after edited successfully} 
-const ReportTour = ({ match, history }) => { 
-  const [infoUser, setInfoUser] = useState([]);
-  const [infoPayment, setinfoPayment] = useState([]);
-  const dispatch = useDispatch();
-  //const historyBookTour = useSelector((state) => state.toursList.historyBookTour);
-  const historyBookTour = useSelector(state => state.historyToursList.historyTour);
- // console.log("User Information: ", historyBookTour?.infoUser.phone);
- 
+const ReportTour = () => {
   
+  const [place, setPlace] = useState();
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(editHistoryTourAction(id));
-  }, [dispatch, id]);
+      const getHistoryList = () => dispatch(getHistoryAction());
+      getHistoryList(); 
+  }, []);
+  
 
-  //======================= Info User =============
-    useEffect(() => {
-      if(historyBookTour.infoUser) {
-          setInfoUser(historyBookTour?.infoUser);
-      }
-    }, [historyBookTour.infoUser]);
-    console.log ("OOIIIII", infoUser);
-  //====================================================
-  //======================= Info Payment =============
-   useEffect(() => {
-     if(historyBookTour.paymentUser) {
-       setinfoPayment(historyBookTour?.paymentUser);
-     }
-   }, [historyBookTour.paymentUser]);
-   console.log ("TYURYURY", infoPayment);
-//====================================================
-  // }, [historyBookTour.calendarDays]);
-  const dateStart = moment(historyBookTour?.selectDay).format("DD-MM-YYYY");
-  //======================================PRICE==========
-    const priceType =  Numeral(historyBookTour?.price);
-    const priceTypeEdit = priceType.format();
-    //============================================
-  return (
-     <>
-          <div className="blockDetailHistoryTour">
-              <div className="blockDetailHistoryTour__headerTitle"> 
-                  <h2> HISTORY BOOK TOUR DETAIL </h2>
-              </div>
-              <div className="blockDetailHistoryTour__topContain">
-                  <div className="blockDetailHistoryTour__topContain__leftItem">
-                      <img src={historyBookTour?.image} />
-                  </div>
-                  <div className="blockDetailHistoryTour__topContain__rightItem">
-                    <div className="blockDetailHistoryTour__topContain__rightItem--mainTitle">
-                       <span> Tour Name: {historyBookTour?.name} </span>
-                    </div>
-                    <div className="blockDetailHistoryTour__topContain__rightItem--mainTitle">
-                       <span> Place: {historyBookTour?.place} </span>
-                    </div>
-                    <div className="blockDetailHistoryTour__topContain__rightItem--mainTitle">
-                       <span> Date Start: {dateStart} </span>
-                    </div>
-                    <div className="blockDetailHistoryTour__topContain__rightItem--mainTitle">
-                       <span> Price: {priceTypeEdit} VND </span>
-                    </div>
-                    <div className="blockDetailHistoryTour__topContain__rightItem--mainTitle">
-                       <span> Day Amount: {historyBookTour?.day}  </span>
-                    </div>
-                    <div className="blockDetailHistoryTour__topContain__rightItem--mainTitle">
-                       <span> Guest Amount: {historyBookTour?.countUsers} </span>
-                    </div>
-                  </div>
-              </div>
-              {/* ==================================================================================== */}
-              <div className="blockDetailHistoryTour__middleContain">
-                  <div className="blockDetailHistoryTour__middleContain__leftItem">
-                     <div className="blockDetailHistoryTour__middleContain__leftItem--listItem">
-                        <span> Name: {infoUser.name} </span>
-                        <span> Email: {infoUser.email} </span>
-                        <span> Phone: {infoUser.phone} </span>
-                     </div> 
-                  </div>
-                  <div className="blockDetailHistoryTour__middleContain__middleItem">
-                     <div className="blockDetailHistoryTour__middleContain__middleItem--listItem">
-                        <img src={historyBookTour?.transports} />
-                     </div> 
-                  </div>
-                  <div className="blockDetailHistoryTour__middleContain__rightItem">
-                      <div className="blockDetailHistoryTour__middleContain__rightItem--listItem">
-                          <span> Card Information: {infoPayment.cardUser} </span>
-                          <span> Card Number: {infoPayment.cardNumber} </span>
-                          <span> Payment : {infoPayment.checkBacking} </span>
-                      </div> 
-                  </div>  
-              </div>
-
-              {/* ==================================================================================== */}
-              {/* <div className="blockDetailHistoryTour__footerContain">
-                <div className="blockDetailHistoryTour__footerContain__introduction">
-                     
-                </div>
-              </div> */}
-          </div>
-
-     </>
-  )
-}
-export default  ReportTour;
+  const loading = useSelector(state => state.historyToursList.loading);
+  const error = useSelector(state => state.historyToursList.error);
+  const historyBookTour = useSelector(state => state.historyToursList.historyToursList);
  
+ let arrPrice=[0];
+ let arrAmount=[0];
+ 
+  return (
+      <React.Fragment>
+           {error ? (
+              <div className="font-weight-bold alert alert-primary text-center mt-4">
+                Loading...
+              </div>
+          ) : null}
+          <>
+              <div  className="headerTitle">
+                           <span>REPORT BOOK TOUR HISTORY</span>
+              </div> 
+              <div>
+                  {
+                     historyBookTour.map((list,index) => {
+                        arrPrice.push(parseInt(list.price))
+                        arrAmount.push(parseInt(list.countUsers))
+                     })
+                  }
+              </div>
+              <DetailReportTour arrPrice={arrPrice} arrAmount={arrAmount}/>
+
+               {loading ?  <img src={loadingIcon}/> : null}
+          </>
+      </React.Fragment> 
+ );
+}
+export default ReportTour;

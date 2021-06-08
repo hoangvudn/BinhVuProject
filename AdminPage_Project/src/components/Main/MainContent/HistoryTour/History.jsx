@@ -52,24 +52,6 @@ const History = ({ history }) => {
     const total2 = Numeral(total1);
     const total = total2.format();
 
-   //const array = [];
-   // array = [];
-   
-    // const shots = [
-    //   {id: 1, amount: 2},
-    //   {id: 2, amount: 4},
-    //   {id: 3, amount: 52},
-    //   {id: 4, amount: 78},
-    //   {id: 5, amount: 13},
-    //   {id: 6, amount: 33}
-    // ];
-
-    // const max = shots.reduce(function(prev, current) {
-    //   return (prev.amount > current.amount) ? prev : current
-    // })
-   
-    
-
     //================================================
    // console.log("Price Type: ", priceType.format());
     const priceTypeEdit = priceType.format();

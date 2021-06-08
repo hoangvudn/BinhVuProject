@@ -18,6 +18,7 @@ import './styles/index.scss'
 // import TestTable from '../Tour/TestTable';
 import DetailTour from '../Tour/DetailTour';
 import DetailHistoryTour from '../HistoryTour/DetailHistoryTour';
+import ReportTour from '../Report/ReportTour';
 
 // const dataProvider = jsonServerProvider("http://localhost:3001"); //only port 3001
 const HomePage = ({logOut}) => {  
@@ -38,6 +39,7 @@ const HomePage = ({logOut}) => {
                    <Route exact path="/toursList/detail/:id" component={DetailTour} /> 
                    <Route exact path="/historyToursList" component={HistoryTour} />
                    <Route exact path="/historyToursList/detail/:id" component={DetailHistoryTour} /> 
+                   <Route exact path="/reportHistoryTour" component={ReportTour} /> 
                  </Switch>
                </div>
     </Router>

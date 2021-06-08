@@ -15,7 +15,7 @@ import loadingIcon from '../../../../assets/loading2.gif'
 import './style/historyStyle.scss';
 import './style/responsive.scss';
 import SearchHistoryTour from "../HistoryTour/SearchHistoryTour"
-import { array } from "prop-types";
+//import { array } from "prop-types";
 
 const HistoryTour = () => {
   
@@ -31,8 +31,6 @@ const HistoryTour = () => {
   const loading = useSelector(state => state.historyToursList.loading);
   const error = useSelector(state => state.historyToursList.error);
   const historyBookTour = useSelector(state => state.historyToursList.historyToursList);
- 
- let arrday=[];
 
   return (
       <React.Fragment>
@@ -44,8 +42,7 @@ const HistoryTour = () => {
           <>
               <div  className="headerTitle">
                            <span>MANAGEMENT BOOK TOUR HISTORY</span>
-              </div> 
-              <span className="reportTour">TOTAL BOOKED TOUR: {historyBookTour.length}</span>   
+              </div>   
               <div className="blockHistoryListMain">
                       <table className="blockHistoryListMain__table">
                           <thead>
@@ -71,20 +68,9 @@ const HistoryTour = () => {
                                       <History key={history.id} history={history} />
                                   ))}
                           </tbody>
-                      </table>
-                      <div>
-                          {
-                              historyBookTour.map((list,index) =>{
-                                //list.price
-                                console.log("adfjkdjf",list.price)
-                                arrday.push(parseInt(list.price))
-                                console.log("Array Price Standard", arrday)
-                              })
-                            }
-                      </div>
-                  
+                      </table>       
               </div>       
-              <SearchHistoryTour arrday={arrday}/>
+              <SearchHistoryTour />
 
                {loading ?  <img src={loadingIcon}/> : null}
           </>

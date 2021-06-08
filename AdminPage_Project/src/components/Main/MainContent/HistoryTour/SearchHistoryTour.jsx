@@ -6,7 +6,7 @@ import {
     searchHistoryAction
 } from "../../../../actions/historyTour";
 
-const SearchHistoryTour = ({arrday}) => {
+const SearchHistoryTour = () => {
     const dispatch = useDispatch();
     const [valueSearch, setValueSearch] = useState("");
     const valueSearchRef = useRef("");
@@ -18,8 +18,23 @@ const SearchHistoryTour = ({arrday}) => {
     
     const historyBookTour = useSelector(state => state.historyToursList.historyToursList);
     console.log("List Search HISTORY :", historyBookTour);
-    const max =  Math.max(...arrday);
-    console.log("MAX NUMBER:",  Math.max(...arrday));
+    
+    // let max =  Math.max(...arrPrice);
+    // console.log("MAX NUMBER:", ( Math.max(...arrPrice)));
+    
+    // const sum = arrPrice.reduce((a, b) => {
+    //     return  a + b;
+    // });
+
+    // const sumGuest = arrAmount.reduce((a,b) => {
+    //     return a + b;
+    // });
+      
+
+    //let total = arrday.reduce((total1, currentValue) => total1 = total1 + currentValue.prix,0));
+    // console.log("TOtal mi tom: ", sum );
+    // console.log("TOtal mi tom: ", sumGuest );
+    //console.log("TOtal Money: ", totalMoney );
     return (    
         <>
            <div className="blockHistoryListMain__searchItem">   
@@ -33,7 +48,6 @@ const SearchHistoryTour = ({arrday}) => {
                                     placeholder="Search..."
                                     onChange={e => setValueSearch(e.target.value)}
                             />
-                            <span> MAX MI tOM: {max}</span>
                         </div>  
                  </form>
             </div>
