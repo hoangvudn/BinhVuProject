@@ -6,6 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { MdCardTravel } from 'react-icons/md';
 import { FaUserAlt,FaHistory } from 'react-icons/fa';
 import { SiHomeassistant } from 'react-icons/si'
+import { HiOutlineDocumentReport } from 'react-icons/hi'
 
 const SideBar = ( { show } ) => {
    let history = useHistory();
@@ -33,7 +34,7 @@ const SideBar = ( { show } ) => {
                   </Link> 
 
                   <Link to={"/reportHistoryTour"} className="blockSideBar__menuSideBar__linkTitle">     
-                        <FaHistory className="blockSideBar__menuSideBar__linkTitle--icon"/>
+                        <HiOutlineDocumentReport className="blockSideBar__menuSideBar__linkTitle--icon"/>
                         <li className="blockSideBar__menuSideBar__linkTitle--historyTitle">REPORT</li>
                   </Link> 
                   

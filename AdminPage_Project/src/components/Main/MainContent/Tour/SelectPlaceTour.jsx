@@ -8,7 +8,7 @@ import {
 
 const SelectPlaceTour = () => {
     const dispatch = useDispatch();
-    const [valueSearch, setValueSearch] = useState();
+    const [valueSearch, setValueSearch] = useState(0);
     useEffect(() => {
         const getToursListSelect = () => dispatch(selectPlaceAction(valueSearch));
         getToursListSelect(); 
@@ -68,6 +68,7 @@ const SelectPlaceTour = () => {
                  <form>
                     <div>
                         <select value={valueSearch} onChange={handleChange} className="blockTourListMain__selectDomestic--selectItem"> 
+                                <option value="0" disableds style={{color: "gray"}}>Select Place</option>
                                 {optionsDomestic.map((option) => (
                                     <option value={option.value}>{option.label}</option>
                                 ))}

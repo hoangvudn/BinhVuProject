@@ -15,6 +15,7 @@ import loadingIcon from '../../../../assets/loading2.gif'
 import './style/historyStyle.scss';
 import './style/responsive.scss';
 import DetailReportTour from "./DetailReportTour"
+import GoogleMap1 from "./GoogleMap";
 //import { array } from "prop-types";
 
 const ReportTour = () => {
@@ -43,9 +44,9 @@ const ReportTour = () => {
               </div>
           ) : null}
           <>
-              <div  className="headerTitle">
+              {/* <div  className="headerTitle">
                            <span>REPORT BOOKED TOUR HISTORY</span>
-              </div> 
+              </div>  */}
               <div>
                   {
                      historyBookTour.map((list,index) => {
@@ -55,7 +56,7 @@ const ReportTour = () => {
                   }
               </div>
               <DetailReportTour arrPrice={arrPrice} arrAmount={arrAmount}/>
-
+              {/* <GoogleMap1 /> */}
                {loading ?  <img src={loadingIcon}/> : null}
           </>
       </React.Fragment> 

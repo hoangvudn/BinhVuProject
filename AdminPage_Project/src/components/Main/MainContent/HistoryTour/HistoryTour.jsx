@@ -40,8 +40,8 @@ const HistoryTour = () => {
               </div>
           ) : null}
           <>
-              <div  className="headerTitle">
-                           <span>MANAGEMENT BOOK TOUR HISTORY</span>
+              <div className="headerTitle">
+                    <span>MANAGEMENT BOOK TOUR HISTORY</span>
               </div>   
               <div className="blockHistoryListMain">
                       <table className="blockHistoryListMain__table">

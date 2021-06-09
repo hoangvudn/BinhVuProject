@@ -6,6 +6,18 @@ import {
     searchHistoryAction
 } from "../../../../actions/historyTour";
 import Numeral from "numeral";
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
+
+
+const containerStyle = {
+    width: '1030px',
+    height: '400px'
+  };
+  
+  const center = {
+    lat: -3.745,
+    lng: -38.523
+  };
 
 const DetailReportTour = ({arrPrice,arrAmount}) => {
     const dispatch = useDispatch();
@@ -60,7 +72,22 @@ const DetailReportTour = ({arrPrice,arrAmount}) => {
                         <span className="blockReportTour__groupItem__listItem--titleTotalBookedTour"> Total BOOKED TOUR </span>
                         <span className="blockReportTour__groupItem__listItem--itemTotalBookedTour">  {historyBookTour.length}  </span>
                     </div>
-                </div>   
+                </div>
+
+                <div className="blockReportTour__googleMap">
+                  <LoadScript
+                        googleMapsApiKey="AIzaSyBEslUzkiODPHq1__azBfqk9UHFcAPKkog"
+                        >
+                        <GoogleMap
+                            mapContainerStyle={containerStyle}
+                            center={center}
+                            zoom={10}
+                        >
+                            { /* Child components, such as markers, info windows, etc. */ }
+                            <></>
+                        </GoogleMap>
+                   </LoadScript>
+                </div>
            </div>
         </>
     )
