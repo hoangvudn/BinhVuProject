@@ -44,7 +44,7 @@ const ReportTour = () => {
           ) : null}
           <>
               <div  className="headerTitle">
-                           <span>REPORT BOOK TOUR HISTORY</span>
+                           <span>REPORT BOOKED TOUR HISTORY</span>
               </div> 
               <div>
                   {

@@ -586,7 +586,7 @@ const EditTour = ({ match, history }) => {
                                 }}
                                 //defaultValue=""
                                 dateFormat="dd-MM-yyyy"
-                                minDate={eDay}
+                                minDate={new Date()}
                                 className="blockEditTour__formEdit__blockDatePicker__editStartDate--inputDatepicker"
                                 // onInputClick={showDate}
                           />

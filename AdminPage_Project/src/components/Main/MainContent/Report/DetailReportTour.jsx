@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     searchHistoryAction
 } from "../../../../actions/historyTour";
+import Numeral from "numeral";
 
 const DetailReportTour = ({arrPrice,arrAmount}) => {
     const dispatch = useDispatch();
@@ -29,8 +30,12 @@ const DetailReportTour = ({arrPrice,arrAmount}) => {
     const sumGuest = arrAmount.reduce((a,b) => {
         return a + b;
     });
-      
-
+     
+     let maxType = Numeral(max);
+     let priceMaxType =  maxType.format(); 
+     let priceType = Numeral(sum);
+     let priceTypeEdit = priceType.format();
+    
     //let total = arrday.reduce((total1, currentValue) => total1 = total1 + currentValue.prix,0));
     console.log("TOtal mi tom: ", sum );
     console.log("TOtal mi tom: ", sumGuest );
@@ -41,19 +46,19 @@ const DetailReportTour = ({arrPrice,arrAmount}) => {
                 <div className="blockReportTour__groupItem">
                     <div className="blockReportTour__groupItem__listItem">
                          <span className="blockReportTour__groupItem__listItem--titleMaxPrice"> Max Price Tour </span>
-                         <span className="blockReportTour__groupItem__listItem--itemMaxPrice"> {max +" "+"VND"}  </span>
+                         <span className="blockReportTour__groupItem__listItem--itemMaxPrice"> {priceMaxType +" "+"VND"}  </span>
                     </div>
                     <div className="blockReportTour__groupItem__listItem">
                         <span className="blockReportTour__groupItem__listItem--titleTotalMoney"> Total Money Per User</span>
-                        <span className="blockReportTour__groupItem__listItem--itemTotalMoney"> {sum +" "+"VND"}  </span>
+                        <span className="blockReportTour__groupItem__listItem--itemTotalMoney"> {priceTypeEdit +" "+"VND"}  </span>
                     </div>
                     <div className="blockReportTour__groupItem__listItem">
                         <span className="blockReportTour__groupItem__listItem--titleTotalGuest"> Total Guest </span>
                         <span className="blockReportTour__groupItem__listItem--itemTotalGuest">  {sumGuest}  </span>
                     </div>
                     <div className="blockReportTour__groupItem__listItem">
-                        <span className="blockReportTour__groupItem__listItem--titleTotalGuest"> Total BOOKED TOUR </span>
-                        <span className="blockReportTour__groupItem__listItem--itemTotalGuest">  {historyBookTour.length}  </span>
+                        <span className="blockReportTour__groupItem__listItem--titleTotalBookedTour"> Total BOOKED TOUR </span>
+                        <span className="blockReportTour__groupItem__listItem--itemTotalBookedTour">  {historyBookTour.length}  </span>
                     </div>
                 </div>   
            </div>

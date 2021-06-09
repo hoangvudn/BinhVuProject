@@ -335,13 +335,24 @@ $bg-th-color: whitesmoke;
         position: absolute;
         left: 36%;
         top: 44px;
-        width: 200px;
+        width: 135px;
+        background: yellow;
            &--selectItem {
                border-left: none;
                border-right: none;
                border-top: none;
            }
-        
+     }
+     &__selectDomestic {
+        position: absolute;
+        left: 50%;
+        top: 44px;
+        width: 135px;
+           &--selectItem {
+               border-left: none;
+               border-right: none;
+               border-top: none;
+           }
      }
 
      &__linkToAddTour {

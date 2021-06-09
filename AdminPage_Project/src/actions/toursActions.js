@@ -26,6 +26,10 @@ import {
     TOUR_SELECTTOUR_SUCCESS,
     TOUR_SELECTTOUR_ERROR,
 
+    GET_TOUR_SELECT_PLACE,
+    TOUR_SELECT_PLACE_SUCCESS,
+    TOUR_SELECT_PLACE_ERROR,
+
     GET_USER_LOGIN,
     GET_USER_SUCCESS,
     USER_LOGIN_SUCCESS,
@@ -254,6 +258,35 @@ export function selectTourAction(value) {
  })
 
  export const selectTourError = () => ({
+     type: TOUR_SELECTTOUR_ERROR
+ })
+ //=================================================SEARCH TOUR BY PLACE=================
+export function selectPlaceAction(value) {
+    return dispatch => {
+        dispatch(selectPlace(value));
+        axiosConfig
+           .get(`./toursTravel/?place=${value}`)
+           .then(response => {
+                 console.log("search result:",response);
+                 dispatch(selectPlaceSuccess(response.data));
+           })
+           .catch(error => {
+            console.log("NO display record: ",error);
+            dispatch(selectPlaceError());
+        });
+    };
+};
+
+ export const selectPlace = () => ({
+     type: GET_TOUR_SELECTTOUR
+ });
+
+ export const selectPlaceSuccess = toursList => ({
+     type: TOUR_SELECTTOUR_SUCCESS,
+     payload: toursList
+ })
+
+ export const selectPlaceError = () => ({
      type: TOUR_SELECTTOUR_ERROR
  })
 

@@ -1,26 +1,14 @@
 import React from 'react';
-import menuLogo from '../images/nav.png'
-import logoutIcon from '../../assets/logout.png'
 import SideBar from '../Main/SideBar/index'
-//import { useHistory } from "react-router-dom"
 import { useState } from 'react'
-import { GiHamburgerMenu } from 'react-icons/gi';
 import { useHistory } from "react-router-dom"
-
 import "./style/headerStyle.scss"
 import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuOpenIcon from '@material-ui/icons/MenuOpen';
-import DoubleArrowTwoToneIcon from '@material-ui/icons/DoubleArrowTwoTone';
 import FormatIndentDecreaseTwoToneIcon from '@material-ui/icons/FormatIndentDecreaseTwoTone';
 import FormatIndentIncreaseTwoToneIcon from '@material-ui/icons/FormatIndentIncreaseTwoTone';
-import TocIcon from '@material-ui/icons/Toc';
-import HomePage from '../Main/MainContent/HomePage/HomePage';
-import menuIcon1 from "./style/menuIcon1.png"
-import menuIcon from "./style/menuIcon.png"
 import PersonIcon from '@material-ui/icons/Person';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import AutorenewIcon from '@material-ui/icons/Autorenew';
 
 const useStyles = makeStyles((theme) => ({
    fab: {
@@ -51,6 +39,9 @@ const Header = ({isLogOut}) => {
          setShowSideBar(!showSideBar);
          !showIcon ? setShowIcon(true) : setShowIcon(false);
    }
+   const clickRefresh = () => {
+         window.location.reload();
+   }
    //============================================================
 
    //=============================================================
@@ -63,16 +54,17 @@ const Header = ({isLogOut}) => {
                   ? <FormatIndentIncreaseTwoToneIcon color="inherit" onClick={clickSideBar} className="blockHeader__hambugerSideBar"/>
                   : <FormatIndentDecreaseTwoToneIcon color="inherit" onClick={clickSideBar} className="blockHeader__hambugerSideBar"/>
              } 
-                {/* <TocIcon color="inherit" onClick={clickSideBar} className="blockHeader__hambugerSideBar"/> */}
-                {/* <img src={!showIcon ? menuIcon1 : menuIcon} onClick={clickSideBar} className="blockHeader__hambugerSideBar"/> */}
              </div>   
              <div className="blockHeader__groupAdmin">
+                 <Tooltip title="Refresh" aria-label="add" placement="right" className="blockHeader__groupAdmin__toolTipRefresh">
+                     <AutorenewIcon color="inherit" aria-controls="simple-menu" aria-haspopup="true"  
+                                    onClick={clickRefresh} className="blockHeader__groupAdmin__refreshIcon" />
+                 </Tooltip> 
                  <label >Administrator</label>
                  <Tooltip title="Log Out" aria-label="add" placement="right" className="blockHeader__groupAdmin__toolTip">
                      <PersonIcon  color="inherit" aria-controls="simple-menu" aria-haspopup="true" 
                                   onClick={clickModal} className="blockHeader__groupAdmin__logOutIcon" />
-                     {/* <img src={logoutIcon}  onClick={handleClick} className="blockHeader__logOutIcon" /> */}
-                 </Tooltip>  
+                 </Tooltip> 
                  <div className={ showModal ? "blockHeader__groupAdmin__modalLogout" 
                                              : "blockHeader__groupAdmin__modalLogout active" } >
                      <div className="blockHeader__groupAdmin__modalLogout--profile">

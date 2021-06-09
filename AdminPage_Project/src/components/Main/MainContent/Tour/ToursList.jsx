@@ -10,6 +10,7 @@ import { getToursAction } from "../../../../actions/toursActions";
 import Tour from './Tour';
 import SearchTour from './SearchTour';
 import SelectTour from './SelectTour';
+import SelectPlaceTour from './SelectPlaceTour';
 import loadingIcon from '../../../../assets/loading2.gif'
 
 const ToursList = () => { 
@@ -71,6 +72,7 @@ const ToursList = () => {
                 </Link>
                 <SearchTour />
                 <SelectTour />
+                <SelectPlaceTour />
                  {loading ?  <img src={loadingIcon}/> : null}
             </>
         </React.Fragment> 

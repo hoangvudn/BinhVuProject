@@ -435,6 +435,9 @@ $bg-th-color: whitesmoke;
                      justify-content: center;
                      align-items: center;   
                  }
+                 &--listItem span {
+                     line-height: 35px;
+                 }
              }
              &__leftItem span {
                  color: white;
@@ -478,6 +481,7 @@ $bg-th-color: whitesmoke;
                      align-items: center;
                  }
                  &--listItem span {
+                     line-height: 35px;
                      color: white;
                  }
              }

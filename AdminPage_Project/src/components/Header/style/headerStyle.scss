@@ -72,6 +72,15 @@ $base-color: #82A2F4;
         &__toolTip:hover {
             cursor: pointer;
         }
+        &__toolTipRefresh {
+            position: absolute;
+            top: -25px;
+            left: -130px;
+            color: white;
+        }
+        &__toolTipRefresh:hover {
+            cursor: pointer;
+        }
         &__logOut {
             cursor: pointer;
         }

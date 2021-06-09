@@ -13,7 +13,7 @@ $bg-th-color: whitesmoke;
 
 .headerTitle {
     position: absolute;
-    top: 20px;
+    top: 45px;
     display: flex;
     width: 65%;
     font-size: 35px;
@@ -34,7 +34,7 @@ $bg-th-color: whitesmoke;
      position: absolute;
      width: 90%;
      height: 150px;
-     top: 170px;
+     top: 160px;
      font-size: 12px;
     // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
      
@@ -53,9 +53,18 @@ $bg-th-color: whitesmoke;
             width: 23%;  
             height: 100%;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-            background: #EDE574;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #E1F5C4, #EDE574);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #E1F5C4, #EDE574); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #ECE9E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            // background: #1FA2FF;  /* fallback for old browsers */
+            // background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+            // background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+            // background: #EDE574;  /* fallback for old browsers */
+            // background: -webkit-linear-gradient(to right, #E1F5C4, #EDE574);  /* Chrome 10-25, Safari 5.1-6 */
+            // background: linear-gradient(to right, #E1F5C4, #EDE574); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             &--titleMaxPrice {
                 position: absolute;
                 top: 23px;
@@ -79,7 +88,7 @@ $bg-th-color: whitesmoke;
                 top: 65px;
                 width: 100%;
                 height: 23%;
-                padding-left: 108px;
+                padding-left: 103px;
                 right: 0px;
                 color: white;
                 //background:red;
@@ -115,7 +124,7 @@ $bg-th-color: whitesmoke;
                 top: 57px;
                 width: 100%;
                 height: 25%;
-                padding-left: 96px;
+                padding-left: 89px;
                 right: 0px;
                 color: white;
                 //background:red;
@@ -129,10 +138,10 @@ $bg-th-color: whitesmoke;
             } 
             &--titleTotalGuest {
                 position: absolute;
-                top: 15px;
+                top: 23px;
                 width: 100%;
                 height: 23%;
-                padding-left: 15px;
+                padding-left: 100px;
                 right: 0px;
                 color: white;
                 background-image: url(./giphy.gif);
@@ -143,18 +152,18 @@ $bg-th-color: whitesmoke;
                 text-transform: uppercase;
                 line-height: .75;
                 //background:blue;
-                font-size: 25px;
+                font-size: 20px;
             }
             &--itemTotalGuest {
                 position: relative;
                 top: 50px;
                 width: 100%;
                 height: 25%;
-                padding-left: 108px;
+                padding-left: 208px;
                 right: 0px;
                 color: white;
                 //background:red;
-                font-size: 25px;
+                font-size: 20px;
                 background-image: url(./giphy.gif);
                 background-size:cover;
                 color: transparent;
@@ -162,6 +171,41 @@ $bg-th-color: whitesmoke;
                 -webkit-background-clip: text;
                 text-transform: uppercase;
             }
+            &--titleTotalBookedTour {
+                position: absolute;
+                top: 23px;
+                width: 100%;
+                height: 23%;
+                padding-left: 25px;
+                right: 0px;
+                color: white;
+                background-image: url(./giphy.gif);
+                background-size:cover;
+                color: transparent;
+                -moz-background-clip: text;
+                -webkit-background-clip: text;
+                text-transform: uppercase;
+                line-height: .75;
+                //background:blue;
+                font-size: 20px;
+            }
+            &--itemTotalBookedTour {
+                position: relative;
+                top: 50px;
+                width: 100%;
+                height: 25%;
+                padding-left: 208px;
+                right: 0px;
+                color: white;
+                //background:red;
+                font-size: 20px;
+                background-image: url(./giphy.gif);
+                background-size:cover;
+                color: transparent;
+                -moz-background-clip: text;
+                -webkit-background-clip: text;
+                text-transform: uppercase;
+            } 
         }
      }
  }
