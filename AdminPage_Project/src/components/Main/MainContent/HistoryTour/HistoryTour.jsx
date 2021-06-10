@@ -15,6 +15,7 @@ import loadingIcon from '../../../../assets/loading2.gif'
 import './style/historyStyle.scss';
 import './style/responsive.scss';
 import SearchHistoryTour from "../HistoryTour/SearchHistoryTour"
+import SelectHistoryTour from "../HistoryTour/SelectHistoryTour";
 //import { array } from "prop-types";
 
 const HistoryTour = () => {
@@ -40,7 +41,7 @@ const HistoryTour = () => {
               </div>
           ) : null}
           <>
-              <div className="headerTitle">
+              <div className="headerTitle1">
                     <span>MANAGEMENT BOOK TOUR HISTORY</span>
               </div>   
               <div className="blockHistoryListMain">
@@ -71,7 +72,7 @@ const HistoryTour = () => {
                       </table>       
               </div>       
               <SearchHistoryTour />
-
+              <SelectHistoryTour />
                {loading ?  <img src={loadingIcon}/> : null}
           </>
       </React.Fragment> 

@@ -47,6 +47,18 @@ const SelectPlaceTour = () => {
             label : "TP HCM",
             value : "TP HCM",
         },
+        {
+            label : "New York",
+            value : "New York",
+        },
+        {
+            label : "Canada",
+            value : "Canada",
+        },
+        {
+            label : "Los Angeles",
+            value : "Los Angeles",
+        },
         
     ]
     

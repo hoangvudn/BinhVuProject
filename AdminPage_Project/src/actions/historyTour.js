@@ -16,6 +16,10 @@ import {
   TOUR_HISTORY_SELECT_TOUR_SUCCESS,
   TOUR_HISTORY_SELECT_TOUR_ERROR,
 
+  GET_HISTORY_TOUR_SELECT_DATE_TOUR,
+  TOUR_HISTORY_SELECT_DATE_TOUR_SUCCESS,
+  TOUR_HISTORY_SELECT_DATE_TOUR_ERROR,
+
   GET_HISTORY_TOUR_EDIT,
   TOUR_HISTORY_EDIT_SUCCESS,
   TOUR_HISTORY_EDIT_ERROR 
@@ -179,6 +183,37 @@ export const selectHistorySuccess = historyToursList => ({
 export const selectHistoryError = () => ({
    type: TOUR_HISTORY_SELECT_TOUR_ERROR
 })
+
+//=================================================SEARCH TOUR BY DATE================
+export function selectHistoryByDateAction(value) {
+  return dispatch => {
+      dispatch(selectHistoryByDate(value));
+      axiosConfig
+         .get(`./historyBookTour/?selectDay=${value}`)
+         .then(response => {
+               console.log("search result:",response);
+               dispatch(selectHistoryByDateSuccess(response.data));
+         })
+         .catch(error => {
+          console.log("NO display record: ",error);
+          dispatch(selectHistoryByDateError());
+      });
+  };
+};
+
+export const selectHistoryByDate = () => ({
+   type: GET_HISTORY_TOUR_SELECT_DATE_TOUR
+});
+
+export const selectHistoryByDateSuccess = historyToursList => ({
+   type: TOUR_HISTORY_SELECT_DATE_TOUR_SUCCESS,
+   payload: historyToursList
+})
+
+export const selectHistoryByDateError = () => ({
+   type: TOUR_HISTORY_SELECT_DATE_TOUR_ERROR
+})
+
 
 
 

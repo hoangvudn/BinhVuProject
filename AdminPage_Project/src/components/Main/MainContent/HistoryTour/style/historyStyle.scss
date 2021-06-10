@@ -26,7 +26,7 @@ $bg-th-color: whitesmoke;
     background: -webkit-gradient(left top, right bottom, color-stop(0%, #2f89fc), color-stop(100%, #5effc9));
     background: linear-gradient( 135deg , #e06f13 0%, #5effc9 100%);
 }  
-.headerTitle {
+.headerTitle1 {
     position: absolute;
     top: 20px;
     display: flex;
@@ -58,7 +58,18 @@ $bg-th-color: whitesmoke;
      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
      //box-shadow: rgba(12, 104, 197, 0.2) 0px 8px 24px;
      //===============================================NewStyle==================
- 
+     &__selectDomestic {
+        position: absolute;
+        left: 40%;
+        top: 125px;
+        width: 135px;
+           &--selectItem {
+               border-left: none;
+               border-right: none;
+               border-top: none;
+           }
+     }
+
      &__table {
         width: 100%;
         height: 80%;

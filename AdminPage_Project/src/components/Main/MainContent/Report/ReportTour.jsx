@@ -15,7 +15,7 @@ import loadingIcon from '../../../../assets/loading2.gif'
 import './style/historyStyle.scss';
 import './style/responsive.scss';
 import DetailReportTour from "./DetailReportTour"
-import GoogleMap1 from "./GoogleMap";
+
 //import { array } from "prop-types";
 
 const ReportTour = () => {

@@ -6,14 +6,76 @@ import {
     selectHistoryAction
 } from "../../../../actions/historyTour";
 
-const SelectTour = () => {
+const SelectHistoryTour = () => {
     const dispatch = useDispatch();
-    const [valueSearch, setValueSearch] = useState("");
+    const [valueSearch, setValueSearch] = useState(0);
+   
 
     useEffect(() => {
         const getHistoryTourSelect = () => dispatch(selectHistoryAction(valueSearch));
-        getHistoryTourSelect; 
+        getHistoryTourSelect(); 
     }, [dispatch, valueSearch]);
+     
+
+    const historyBookTour = useSelector(state => state.historyToursList.historyToursList);
+    console.log("List Search PLACE :", historyBookTour);
+    const optionsDomestic = [
+        {
+            label : "Đà Nẵng",
+            value : "Đà Nẵng",
+        },
+        {
+            label : "Yên Bái",
+            value : "Yên Bái",
+        },
+        {
+            label : "Cần Thơ",
+            value : "Cần Thơ",
+        },
+        {
+            label : "Hà Giang",
+            value : "Hà Giang",
+        },
+        {
+            label : "Quảng Bình",
+            value : "Quảng Bình",
+        },
+        {
+            label : "Hạ Long",
+            value : "Hạ Long",
+        },
+        {
+            label : "Hà Nội",
+            value : "Hà Nội",
+        },
+        {
+            label : "TP HCM",
+            value : "TP HCM",
+        },
+        {
+            label : "New York",
+            value : "New York",
+        },
+        {
+            label : "Canada",
+            value : "Canada",
+        },
+        {
+            label : "Los Angeles",
+            value : "Los Angeles",
+        },
+        {
+            label : "Korea",
+            value : "Korea",
+        },
+        {
+            label : "Japan",
+            value : "Japan",
+        },
+        
+    ]
+    
+   
     
     //===============Set Status Country======================
     const handleChange = e => {
@@ -23,28 +85,23 @@ const SelectTour = () => {
     console.log("Value Country:", valueSearch)
     //=======================================================
 
-    const historyBookTour = useSelector(state => state.historyToursList.historyToursList);
-    console.log("List Search :", historyBookTour);
+   
     return (
         
         <>
-           <div className="blockHistoryListMain__selectTour">
+           <div className="blockHistoryListMain__selectDomestic">
                  <form>
-                            <div>
-                                {/* <label>Select Tour</label> */}
-                                <select value={valueSearch} onChange={handleChange} className="blockHistoryListMain__selectTour--selectItem"> 
-                                    <option value="1">Domestic</option>
-                                    <option value="2">International</option>
-                                </select>        
-                            </div>
-                           {/* <div className="blockSearchTour__buttonSave">
-                                <button type="submit" onClick="">
-                                    SEARCH
-                                </button>
-                           </div> */}
+                    <div>
+                        <select value={valueSearch} onChange={handleChange} className="blockHistoryListMain__selectDomestic--selectItem"> 
+                                <option value="0" disableds style={{color: "gray"}}>Select Place</option>
+                                {optionsDomestic.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                ))}
+                        </select>        
+                    </div>
                  </form>
             </div>
         </>
     )
 }
-export default SelectTour;
+export default SelectHistoryTour;

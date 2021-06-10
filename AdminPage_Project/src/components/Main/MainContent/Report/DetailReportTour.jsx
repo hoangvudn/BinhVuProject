@@ -7,10 +7,11 @@ import {
 } from "../../../../actions/historyTour";
 import Numeral from "numeral";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
-
-
+import { TiGroup } from 'react-icons/ti';
+import { IoLogoUsd } from 'react-icons/io';
+import { MdCardTravel } from 'react-icons/md';
 const containerStyle = {
-    width: '1030px',
+    width: '100%',
     height: '400px'
   };
   
@@ -59,18 +60,22 @@ const DetailReportTour = ({arrPrice,arrAmount}) => {
                     <div className="blockReportTour__groupItem__listItem">
                          <span className="blockReportTour__groupItem__listItem--titleMaxPrice"> Max Price Tour </span>
                          <span className="blockReportTour__groupItem__listItem--itemMaxPrice"> {priceMaxType +" "+"VND"}  </span>
+                         <IoLogoUsd className="blockReportTour__groupItem__listItem--itemIcon" />
                     </div>
                     <div className="blockReportTour__groupItem__listItem">
                         <span className="blockReportTour__groupItem__listItem--titleTotalMoney"> Total Money Per User</span>
                         <span className="blockReportTour__groupItem__listItem--itemTotalMoney"> {priceTypeEdit +" "+"VND"}  </span>
+                        <IoLogoUsd className="blockReportTour__groupItem__listItem--itemIcon" />
                     </div>
                     <div className="blockReportTour__groupItem__listItem">
                         <span className="blockReportTour__groupItem__listItem--titleTotalGuest"> Total Guest </span>
                         <span className="blockReportTour__groupItem__listItem--itemTotalGuest">  {sumGuest}  </span>
+                        <TiGroup className="blockReportTour__groupItem__listItem--itemIcon" />
                     </div>
                     <div className="blockReportTour__groupItem__listItem">
                         <span className="blockReportTour__groupItem__listItem--titleTotalBookedTour"> Total BOOKED TOUR </span>
                         <span className="blockReportTour__groupItem__listItem--itemTotalBookedTour">  {historyBookTour.length}  </span>
+                        <MdCardTravel className="blockReportTour__groupItem__listItem--itemIcon" />
                     </div>
                 </div>
 

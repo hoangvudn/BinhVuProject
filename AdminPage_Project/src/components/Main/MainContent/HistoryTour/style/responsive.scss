@@ -2,12 +2,22 @@ $base-color: #F4F6FD;
 $border-color: #82A2F4;
 
 @media only screen and (max-width: 1125px) {
-    .headerTitle {
+    .headerTitle1 {
       position: absolute;
-      top: 32px;
-      font-size: 35px;
+      top: 20px;
       display: flex;
-      width: 75%;
+      width: 80%;
+      font-size: 35px;
+      justify-content: center;
+      align-items: center;
+      background-image: url(./giphy.gif);
+      background-size:cover;
+      color: transparent;
+      -moz-background-clip: text;
+      -webkit-background-clip: text;
+      text-transform: uppercase;
+      line-height: .75;
+      z-index: 99999;
     }
     .blockDetailHistoryTour {
         position: absolute;
@@ -54,13 +64,13 @@ $border-color: #82A2F4;
   }
 }
 
-@media only screen and (max-width: 1091px) {
-  .headerTitle {
-    position: absolute;
-    top: 20px;
-    display: flex;
-    font-size: 35px;
-    width: 80%;
-    //z-index: -2;
-  }
-}
+// @media only screen and (max-width: 1091px) {
+//   .headerTitle {
+//     position: absolute;
+//     top: 20px;
+//     display: flex;
+//     font-size: 35px;
+//     width: 80%;
+//     //z-index: -2;
+//   }
+// }

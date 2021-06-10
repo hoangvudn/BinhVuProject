@@ -623,21 +623,21 @@ const EditTour = ({ match, history }) => {
                 ))}
              
 
-              <div className="blockEditTour__formEdit__blockDatePicker__groupButton">
-                <div
-                  className="blockEditTour__formEdit__blockDatePicker__addButton"
-                  onClick={dayArray}
-                >
-                  <span> ADD DAY </span>
-                </div>
+              {/* <div className="blockEditTour__formEdit__blockDatePicker__groupButton">
+                  <div
+                    className="blockEditTour__formEdit__blockDatePicker__addButton"
+                    onClick={dayArray}
+                  >
+                    <span> ADD DAY </span>
+                  </div>
 
-                <div
-                  className="blockEditTour__formEdit__blockDatePicker__clearButton"
-                  onClick={clearDayArray}
-                >
-                  <span> CLEAR </span>
-                </div>
-              </div>
+                  <div
+                    className="blockEditTour__formEdit__blockDatePicker__clearButton"
+                    onClick={clearDayArray}
+                  >
+                    <span> CLEAR </span>
+                  </div>
+              </div> */}
             </div>
           </div>
 
