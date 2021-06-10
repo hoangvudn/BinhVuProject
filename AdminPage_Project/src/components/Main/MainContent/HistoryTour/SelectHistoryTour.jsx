@@ -9,7 +9,7 @@ import {
 const SelectHistoryTour = () => {
     const dispatch = useDispatch();
     const [valueSearch, setValueSearch] = useState(0);
-   
+    const [error, setError] = useState("");
 
     useEffect(() => {
         const getHistoryTourSelect = () => dispatch(selectHistoryAction(valueSearch));
@@ -26,7 +26,7 @@ const SelectHistoryTour = () => {
         },
         {
             label : "Yên Bái",
-            value : "Yên Bái",
+            value : "Yên bái",
         },
         {
             label : "Cần Thơ",
@@ -76,7 +76,9 @@ const SelectHistoryTour = () => {
     ]
     
    
-    
+    // if (historyBookTour.length == 0) {
+    //     setError("tamasabakamisilasa")
+    // };
     //===============Set Status Country======================
     const handleChange = e => {
         e.preventDefault();
@@ -97,7 +99,8 @@ const SelectHistoryTour = () => {
                                 {optionsDomestic.map((option) => (
                                     <option value={option.value}>{option.label}</option>
                                 ))}
-                        </select>        
+                        </select>  
+                        {/* <span>CAM{error}</span>       */}
                     </div>
                  </form>
             </div>

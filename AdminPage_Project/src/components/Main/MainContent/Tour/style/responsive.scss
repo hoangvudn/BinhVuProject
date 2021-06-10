@@ -44,8 +44,13 @@ $border-color: #82A2F4;
                    border-right: none;
                    border-top: none;
                }
-            
          }
+         &__selectDomestic {
+            position: absolute;
+            left: 55%;
+            top: 45px;
+            width: 200px;
+        }
    
     }
     //===============================================================
@@ -248,11 +253,29 @@ $border-color: #82A2F4;
         }
         &__selectTour {
             position: absolute;
-            left: 46%;
-            top: 33px;
+            left: 35%;
+            top: 50px;
+            width: 200px;
+        }
+        &__selectDomestic {
+            position: absolute;
+            left: 55%;
+            top: 50px;
             width: 200px;
         }
         
+    }
+
+    .blockDetailTour {
+        position: absolute;
+        top: -200px;
+        //background: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
     }
 }
 
